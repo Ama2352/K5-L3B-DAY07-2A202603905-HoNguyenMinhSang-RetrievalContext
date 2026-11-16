@@ -1,0 +1,231 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "What simplification does T5 apply to layer normalization?",
+    "expected_answer": "Activations are rescaled, with no additive bias.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 4,
+        "evidence": "We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "How are relative position embeddings simplified in the T5 implementation?",
+    "expected_answer": "Each position embedding is a scalar added to the attention logit.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 5,
+        "evidence": "We use a simplified form of position embeddings where each “embedding” is simply a scalar that is added to the corresponding logit used for computing the attention weights."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "What minimum sentence and word counts were required when cleaning Common Crawl for C4?",
+    "expected_answer": "Discard pages with fewer than five sentences; retain lines with at least three words.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 6,
+        "evidence": "We discarded any page with fewer than 5 sentences and only retained lines that contained at least 3 words."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "Approximately how large is the cleaned English C4 corpus described in the paper?",
+    "expected_answer": "About 750 GB.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 7,
+        "evidence": "This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "Within the Setup section, how does the text-to-text model know which task to perform?",
+    "expected_answer": "A task-specific text prefix is added to the original input sequence.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 8,
+        "evidence": "To specify which task the model should perform, we add a task-specific (text) prefix to the original input sequence before feeding it to the model."
+      }
+    ],
+    "filter": {
+      "section": "2. Setup"
+    }
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "How does T5 turn an STS-B similarity score such as 2.57 into a text target?",
+    "expected_answer": "Round to the nearest 0.2, so 2.57 becomes the string 2.6.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 9,
+        "evidence": "We found that most of these scores were annotated in increments of 0.2, so we simply rounded any score to the nearest increment of 0.2 and converted the result to a literal string representation of the number (e.g. the floating-point value 2.57 would be mapped to the string “2.6”)."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "Which optimizer and test-time decoding method does the baseline use?",
+    "expected_answer": "AdaFactor and greedy decoding.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 11,
+        "evidence": "For optimization, we use AdaFactor (Shazeer and Stern, 2018). At test time, we use greedy decoding (i.e. choosing the highest-probability logit at every timestep)."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "What tokenizer and vocabulary size are used across the experiments?",
+    "expected_answer": "SentencePiece; 32,000 wordpieces.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 12,
+        "evidence": "We use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "Within the Setup section, what happens if a classification output is not one of the allowed labels?",
+    "expected_answer": "It is always counted as wrong; the authors did not observe this in their trained models.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 8,
+        "evidence": "Note that an issue arises if our model outputs text on a text classification task that does not correspond to any of the possible labels (for example if the model outputs “hamburger” when the only possible labels for a task were “entailment”, “neutral”, or “contradiction”). In this case, we always count the model’s output as wrong, though we never observed this behavior in any of our trained models."
+      }
+    ],
+    "filter": {
+      "section": "2. Setup"
+    }
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "What fraction of input tokens does the baseline denoising objective drop, and how are consecutive dropped spans represented?",
+    "expected_answer": "Drop 15% of tokens; replace each consecutive span with one sentinel token.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 13,
+        "evidence": "we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "How did sharing encoder-decoder parameters compare with halving their numbers of layers?",
+    "expected_answer": "Sharing performed nearly as well, while halving the layers significantly hurt performance.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 19,
+        "evidence": "Surprisingly, we found that sharing parameters across the encoder and decoder performed nearly as well. In contrast, halving the number of layers in the encoder and decoder stacks significantly hurt performance."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "Which average corrupted span length slightly outperformed independent corruption on most non-translation benchmarks?",
+    "expected_answer": "An average span length of 3.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 24,
+        "evidence": "We also find in particular that using an average span length of 3 slightly (but significantly) outperforms the i.i.d. objective on most non-translation benchmarks."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q17",
+    "split": "dev",
+    "question": "Why do the authors suspect that shrinking the pre-training dataset can hurt downstream performance?",
+    "expected_answer": "The model may memorize the smaller pre-training dataset.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 28,
+        "evidence": "As expected, performance degrades as the data set size shrinks. We suspect this may be due to the fact that the model begins to memorize the pre-training data set."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q18",
+    "split": "dev",
+    "question": "What explanations are offered for the poor performance of equal task mixing?",
+    "expected_answer": "Low-resource tasks may overfit, high-resource tasks may see too little data, or the model may see too little unlabeled data.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 32,
+        "evidence": "The “equal” mixing strategy in particular results in dramatically degraded performance, which may be because the low-resource tasks have overfit, the high-resource tasks have not seen enough data, or the model has not seen enough unlabeled data to learn general-purpose language capabilities."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "q19",
+    "split": "dev",
+    "question": "How does the scaling experiment combine model outputs in an ensemble?",
+    "expected_answer": "Average logits before the output softmax to obtain an aggregate prediction.",
+    "answerable": true,
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 34,
+        "evidence": "We average the logits across the ensemble before feeding them into the output softmax nonlinearity to obtain an aggregate prediction."
+      }
+    ],
+    "filter": {}
+  }
+]
