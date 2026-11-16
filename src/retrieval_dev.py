@@ -26,13 +26,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--day6', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--split', choices=('dev', 'test'), default='dev')
     args = parser.parse_args()
+    if args.split == 'test' and not Path('results/checkpoint3/selection.json').is_file():
+        parser.error('Freeze the dev selection before running test')
     url = os.environ.get('DATABASE_URL')
     if not url:
         parser.error('DATABASE_URL is required')
     chunks = json.loads(Path('data/day6_chunks.json').read_text(encoding='utf-8'))
     questions = [q for q in json.loads(Path('data/benchmark.json').read_text(encoding='utf-8'))
-                 if q['split'] == 'dev' and q.get('answerable', True)]
+                 if q['split'] == args.split and q.get('answerable', True)]
     dense_index = DenseRetriever(args.day6.resolve(), url)
     lexical_index = TfidfIndex(chunks)
     traces = []

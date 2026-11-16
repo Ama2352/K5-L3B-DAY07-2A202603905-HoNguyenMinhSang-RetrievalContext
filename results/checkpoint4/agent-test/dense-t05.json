@@ -1,0 +1,126 @@
+{
+  "query_id": "t05",
+  "question": "How large was the resulting WebText-like dataset?",
+  "split": "test",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "17 GB [b96933bade1531b6f3c040483f05a42b]",
+  "citations": [
+    "b96933bade1531b6f3c040483f05a42b"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "WebText-like dataset size",
+      "filter": null,
+      "results": [
+        {
+          "id": "b96933bade1531b6f3c040483f05a42b",
+          "text": "ltering for C4, then applied the Reddit filter. This produced a 17 GB WebText-like data set, which is of comparable size to the original 40GB WebText data set (Radford et al., 2019).\n\nWikipedia The website Wikipedia consists of millions of encyclopedia articles written collaboratively. The content on the site is subject to strict quality guidelines and therefore has been used as a reliable source of clean and natural text. We use the English Wikipedia text data from TensorFlow Datasets,13 which omits any markup or reference sections from the articles.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 26,
+          "metadata": {
+            "end": 2243,
+            "page": 26,
+            "year": "2020",
+            "start": 1686,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.8173510919422576
+        },
+        {
+          "id": "1e8ceedb6071d4cc0780e306675999e3",
+          "text": "A drawback to only pre-training on a single domain is that the resulting data sets are often substantially smaller. Similarly, while the WebText-like variant performed as well or better than the C4 data set in our baseline setting, the Reddit-based filtering produced a data set that was about 40× smaller than C4 despite being based on 12× more data from Common Crawl. Note, however, that in our baseline setup we only pre-train on 235≈ 34B tokens, which is only about 8 times larger than the smallest pre-training data set we consider. We investigate at what point using a smaller pre-training data sets poses an issue in the following section.\n\n3.4.2. Pre-training Data set Size",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 27,
+          "metadata": {
+            "end": 2659,
+            "page": 27,
+            "year": "2020",
+            "start": 1978,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7819951046702343
+        },
+        {
+          "id": "4fe0198d64ccc9ffe36171825f4f114e",
+          "text": "WebText-like Similarly, the WebText data set (Radford et al., 2019) only uses content from webpages that were submitted to the content aggregation website Reddit and received a “score” of at least 3. The score for a webpage submitted to Reddit is computed based on the proportion of users who endorse (upvote) or oppose (downvote) the webpage. The idea behind using the Reddit score as a quality signal is that users of the site would only upvote high-quality text content. To generate a comparable data set, we first tried removing all content from C4 that did not originate from a URL that appeared in the list prepared by the OpenWebText effort.12 However, this resulted in comparatively little content—only about 2 GB—because most pages never appear on Reddit. Recall that C4 was created based on a single month of Common Crawl data. To avoid using a prohibitively small data set, we therefore downloaded 12 months of data from Common Crawl from August 2018 to July 2019, applied our heuristic fi",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 26,
+          "metadata": {
+            "end": 1686,
+            "page": 26,
+            "year": "2020",
+            "start": 686,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7812818391277053
+        }
+      ],
+      "context": "[b96933bade1531b6f3c040483f05a42b | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 26]\nltering for C4, then applied the Reddit filter. This produced a 17 GB WebText-like data set, which is of comparable size to the original 40GB WebText data set (Radford et al., 2019).\n\nWikipedia The website Wikipedia consists of millions of encyclopedia articles written collaboratively. The content on the site is subject to strict quality guidelines and therefore has been used as a reliable source of clean and natural text. We use the English Wikipedia text data from TensorFlow Datasets,13 which omits any markup or reference sections from the articles.\n\n[1e8ceedb6071d4cc0780e306675999e3 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 27]\nA drawback to only pre-training on a single domain is that the resulting data sets are often substantially smaller. Similarly, while the WebText-like variant performed as well or better than the C4 data set in our baseline setting, the Reddit-based filtering produced a data set that was about 40× smaller than C4 despite being based on 12× more data from Common Crawl. Note, however, that in our baseline setup we only pre-train on 235≈ 34B tokens, which is only about 8 times larger than the smallest pre-training data set we consider. We investigate at what point using a smaller pre-training data sets poses an issue in the following section.\n\n3.4.2. Pre-training Data set Size\n\n[4fe0198d64ccc9ffe36171825f4f114e | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 26]\nWebText-like Similarly, the WebText data set (Radford et al., 2019) only uses content from webpages that were submitted to the content aggregation website Reddit and received a “score” of at least 3. The score for a webpage submitted to Reddit is computed based on the proportion of users who endorse (upvote) or oppose (downvote) the webpage. The idea behind using the Reddit score as a quality signal is that users of the site would only upvote high-quality text content. To generate a comparable data set, we first tried removing all content from C4 that did not originate from a URL that appeared in the list prepared by the OpenWebText effort.12 However, this resulted in comparatively little content—only about 2 GB—because most pages never appear on Reddit. Recall that C4 was created based on a single month of Common Crawl data. To avoid using a prohibitively small data set, we therefore downloaded 12 months of data from Common Crawl from August 2018 to July 2019, applied our heuristic fi",
+      "context_ids": [
+        "b96933bade1531b6f3c040483f05a42b",
+        "1e8ceedb6071d4cc0780e306675999e3",
+        "4fe0198d64ccc9ffe36171825f4f114e"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 3.478400099999817,
+      "prompt_eval_count": 163,
+      "eval_count": 14,
+      "action": {
+        "action": "search",
+        "query": "WebText-like dataset size"
+      }
+    },
+    {
+      "duration_seconds": 42.009389399999236,
+      "prompt_eval_count": 896,
+      "eval_count": 55,
+      "action": {
+        "action": "answer",
+        "answer": "17 GB [b96933bade1531b6f3c040483f05a42b]",
+        "citations": [
+          "b96933bade1531b6f3c040483f05a42b"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 45.67775019999954
+}

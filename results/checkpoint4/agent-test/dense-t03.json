@@ -1,0 +1,126 @@
+{
+  "query_id": "t03",
+  "question": "Which ROUGE metric is reported for CNN/Daily Mail in the main tables?",
+  "split": "test",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "ROUGE-2-F [981df9a2bfea843cc215ae9b58ebdfe3]",
+  "citations": [
+    "981df9a2bfea843cc215ae9b58ebdfe3"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "ROUGE metric CNN/Daily Mail main tables",
+      "filter": null,
+      "results": [
+        {
+          "id": "981df9a2bfea843cc215ae9b58ebdfe3",
+          "text": "Finally, on CNN/Daily Mail we attain state-of-the-art performance, though only by a significant amount on the ROUGE-2-F score. It has been shown that improvements to the ROUGE score do not necessarily correspond to more coherent summaries (Paulus et al., 2017). Furthermore, while CNN/Daily Mail is posed as an abstractive summarization benchmark, purely extractive approaches have been shown to work well (Liu, 2019). It has also been argued that generative models trained with maximum likelihood are prone to producing repetitive summaries (See et al., 2017). Despite these potential issues, we find that our models do generate coherent and largely correct summaries. We provide some non-cherry-picked validation set examples in Appendix C.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 40,
+          "metadata": {
+            "end": 2459,
+            "page": 40,
+            "year": "2020",
+            "start": 1717,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7625348199169287
+        },
+        {
+          "id": "91da1e282df3ce22596df63301c1ace1",
+          "text": "When reporting results in the main text, we only report a subset of the scores across all the benchmarks to conserve space and ease interpretation. For GLUE and SuperGLUE, we report the average score across all subtasks (as stipulated by the official benchmarks) under the headings “GLUE” and “SGLUE”. For all translation tasks, we report the BLEU score (Papineni et al., 2002) as provided by SacreBLEU v1.3.0 (Post, 2018) with “exp” smoothing and “intl” tokenization. We refer to scores for WMT English to German, English to French, and English to Romanian as EnDe, EnFr, and EnRo, respectively. For CNN/Daily Mail, we find the performance of models on the ROUGE-1-F, ROUGE-2-F, and ROUGE-L-F metrics (Lin, 2004) to be highly correlated so we report the ROUGE-2-F score alone under the heading “CNNDM”. Similarly, for SQuAD we find the performance of the “exact match” and “F1” scores to be highly correlated so we report the “exact match” score alone. We provide every score achieved on every task ",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 14,
+          "metadata": {
+            "end": 1642,
+            "page": 14,
+            "year": "2020",
+            "start": 642,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7189958691596985
+        },
+        {
+          "id": "065c181f283ed6240d0de22550c247a4",
+          "text": "Data set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 26,
+          "metadata": {
+            "end": 684,
+            "page": 26,
+            "year": "2020",
+            "start": 0,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.6890709810895325
+        }
+      ],
+      "context": "[981df9a2bfea843cc215ae9b58ebdfe3 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nFinally, on CNN/Daily Mail we attain state-of-the-art performance, though only by a significant amount on the ROUGE-2-F score. It has been shown that improvements to the ROUGE score do not necessarily correspond to more coherent summaries (Paulus et al., 2017). Furthermore, while CNN/Daily Mail is posed as an abstractive summarization benchmark, purely extractive approaches have been shown to work well (Liu, 2019). It has also been argued that generative models trained with maximum likelihood are prone to producing repetitive summaries (See et al., 2017). Despite these potential issues, we find that our models do generate coherent and largely correct summaries. We provide some non-cherry-picked validation set examples in Appendix C.\n\n[91da1e282df3ce22596df63301c1ace1 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 14]\nWhen reporting results in the main text, we only report a subset of the scores across all the benchmarks to conserve space and ease interpretation. For GLUE and SuperGLUE, we report the average score across all subtasks (as stipulated by the official benchmarks) under the headings “GLUE” and “SGLUE”. For all translation tasks, we report the BLEU score (Papineni et al., 2002) as provided by SacreBLEU v1.3.0 (Post, 2018) with “exp” smoothing and “intl” tokenization. We refer to scores for WMT English to German, English to French, and English to Romanian as EnDe, EnFr, and EnRo, respectively. For CNN/Daily Mail, we find the performance of models on the ROUGE-1-F, ROUGE-2-F, and ROUGE-L-F metrics (Lin, 2004) to be highly correlated so we report the ROUGE-2-F score alone under the heading “CNNDM”. Similarly, for SQuAD we find the performance of the “exact match” and “F1” scores to be highly correlated so we report the “exact match” score alone. We provide every score achieved on every task \n\n[065c181f283ed6240d0de22550c247a4 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 26]\nData set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.",
+      "context_ids": [
+        "981df9a2bfea843cc215ae9b58ebdfe3",
+        "91da1e282df3ce22596df63301c1ace1",
+        "065c181f283ed6240d0de22550c247a4"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 4.618347299999186,
+      "prompt_eval_count": 169,
+      "eval_count": 18,
+      "action": {
+        "action": "search",
+        "query": "ROUGE metric CNN/Daily Mail main tables"
+      }
+    },
+    {
+      "duration_seconds": 38.23823490000086,
+      "prompt_eval_count": 1122,
+      "eval_count": 56,
+      "action": {
+        "action": "answer",
+        "answer": "ROUGE-2-F [981df9a2bfea843cc215ae9b58ebdfe3]",
+        "citations": [
+          "981df9a2bfea843cc215ae9b58ebdfe3"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 42.998743000000104
+}

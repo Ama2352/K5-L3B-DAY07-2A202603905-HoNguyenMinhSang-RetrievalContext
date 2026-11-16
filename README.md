@@ -31,3 +31,22 @@ Index một tài liệu thực tế từ **100 trang** có bảng, ảnh và bi�
 ![Các bước thử nghiệm trên dev và đánh giá trên test](assets/experiment-loop.svg)
 
 Nộp code, cách chạy, cấu hình, benchmark, trace và [báo cáo](report/individual/MSSV_HoTen.md). Thời gian ở [checkpoints](CHECKPOINTS.md) là gợi ý, có thể điều chỉnh theo lớp và phạm vi thử nghiệm.
+
+## Bài làm hiện tại
+
+- [Checkpoint 1: corpus, kết nối và benchmark](docs/checkpoint1.md)
+- [Checkpoint 2: agent và trace đầu tiên](docs/checkpoint2.md)
+- [Checkpoint 3: so sánh dev và chọn cấu hình](docs/checkpoint3.md)
+- [Checkpoint 4: đánh giá test](docs/checkpoint4.md) · [Báo cáo cá nhân](report/individual/2A202603905_HoNguyenMinhSang.md)
+
+Dữ liệu Day 6 được giả định nằm ở `../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion` tính từ repo này. Xem checkpoint 1 để dựng lại chunk, khởi động pgvector và cấu hình `DATABASE_URL`; không commit mật khẩu hay `.env`. Model embedding BGE và model agent `llama3.2:3b` qua Ollama chạy local. Các trace thực tế nằm trong `results/`; kết quả mock của test chỉ dùng kiểm tra code.
+
+Từ repo này, dùng Python/venv của Day 6 khi chạy truy xuất thật:
+
+```powershell
+python -m unittest discover -s tests -v
+../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion/.venv/Scripts/python.exe src/retrieval_dev.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion --split dev --output results/reproduction/retrieval-dev
+../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion/.venv/Scripts/python.exe src/agent_dev.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion --split dev --output results/reproduction/agent-dev
+```
+
+Các lệnh agent cần Ollama chạy và có model `llama3.2:3b`; lệnh có thể mất nhiều thời gian trên CPU. Bản test chỉ chạy sau khi chốt cấu hình trên dev, với `--split test` và thư mục output riêng; không dùng test để điều chỉnh hệ thống.

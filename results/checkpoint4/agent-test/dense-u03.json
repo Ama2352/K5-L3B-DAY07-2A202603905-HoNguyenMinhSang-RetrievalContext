@@ -1,0 +1,126 @@
+{
+  "query_id": "u03",
+  "question": "Within indexed pages 4?40, what was the purchase price of the hardware used for the baseline?",
+  "split": "test",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "The purchase price of the hardware used for the baseline is not explicitly stated in the provided text. However, the cost of the baseline model is reported as $83.28. [bb882f0a4f31654dc1e3e93fd365a00d]",
+  "citations": [
+    "bb882f0a4f31654dc1e3e93fd365a00d"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "purchase price of hardware baseline pages 4-40",
+      "filter": null,
+      "results": [
+        {
+          "id": "d81e790f3d4998f4a765194c6242c173",
+          "text": " other variants in Section 3.3.\n\n3.1.5. Baseline Performance",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 13,
+          "metadata": {
+            "end": 1697,
+            "page": 13,
+            "year": "2020",
+            "start": 1637,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.6180533398358035
+        },
+        {
+          "id": "bb882f0a4f31654dc1e3e93fd365a00d",
+          "text": "Architecture Objective Params Cost GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo ⋆Encoder-decoder Denoising 2P M 83.28 19.24 80.88 71.36 26.98 39.82 27.65\n\nEnc-dec, shared Denoising P M 82.81 18.78 80.63 70.73 26.72 39.03 27.46\n\nEnc-dec, 6 layers Denoising P M/2 80.88 18.97 77.59 68.42 26.38 38.40 26.95\n\nLanguage model Denoising P M 74.70 17.93 61.14 55.02 25.09 35.28 25.86\n\nPrefix LM Denoising P M 81.82 18.61 78.94 68.11 26.43 37.98 27.39\n\nEncoder-decoder LM 2P M 79.56 18.59 76.02 64.29 26.27 39.17 26.86\n\nEnc-dec, shared LM P M 79.60 18.13 76.35 63.50 26.62 39.17 27.05\n\nEnc-dec, 6 layers LM P M/2 78.67 18.26 75.32 64.06 26.13 38.42 26.89\n\nLanguage model LM P M 73.78 17.54 53.81 56.51 25.23 34.31 25.38\n\nPrefix LM LM P M 79.68 17.84 76.87 64.86 26.28 37.51 26.76",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 20,
+          "metadata": {
+            "end": 763,
+            "page": 20,
+            "year": "2020",
+            "start": 0,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.5988136173001767
+        },
+        {
+          "id": "0c7eb610e9e4882d0b7c7757401ae2f5",
+          "text": "GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆Baseline average 83.28 19.24 80.88 71.36 26.98 39.82 27.65 Baseline standard deviation 0.235 0.065 0.343 0.416 0.112 0.090 0.108 No pre-training 66.22 17.60 50.31 53.04 25.86 39.77 24.04\n\nTable 1: Average and standard deviation of scores achieved by our baseline model and training procedure. For comparison, we also report performance when training on each task from scratch (i.e. without any pre-training) for the same number of steps used to fine-tune the baseline model. All scores in this table (and every table in our paper except Table 14) are reported on the validation sets of each data set.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 14,
+          "metadata": {
+            "end": 640,
+            "page": 14,
+            "year": "2020",
+            "start": 0,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.5966152789226019
+        }
+      ],
+      "context": "[d81e790f3d4998f4a765194c6242c173 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 13]\n other variants in Section 3.3.\n\n3.1.5. Baseline Performance\n\n[bb882f0a4f31654dc1e3e93fd365a00d | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 20]\nArchitecture Objective Params Cost GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo ⋆Encoder-decoder Denoising 2P M 83.28 19.24 80.88 71.36 26.98 39.82 27.65\n\nEnc-dec, shared Denoising P M 82.81 18.78 80.63 70.73 26.72 39.03 27.46\n\nEnc-dec, 6 layers Denoising P M/2 80.88 18.97 77.59 68.42 26.38 38.40 26.95\n\nLanguage model Denoising P M 74.70 17.93 61.14 55.02 25.09 35.28 25.86\n\nPrefix LM Denoising P M 81.82 18.61 78.94 68.11 26.43 37.98 27.39\n\nEncoder-decoder LM 2P M 79.56 18.59 76.02 64.29 26.27 39.17 26.86\n\nEnc-dec, shared LM P M 79.60 18.13 76.35 63.50 26.62 39.17 27.05\n\nEnc-dec, 6 layers LM P M/2 78.67 18.26 75.32 64.06 26.13 38.42 26.89\n\nLanguage model LM P M 73.78 17.54 53.81 56.51 25.23 34.31 25.38\n\nPrefix LM LM P M 79.68 17.84 76.87 64.86 26.28 37.51 26.76\n\n[0c7eb610e9e4882d0b7c7757401ae2f5 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 14]\nGLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆Baseline average 83.28 19.24 80.88 71.36 26.98 39.82 27.65 Baseline standard deviation 0.235 0.065 0.343 0.416 0.112 0.090 0.108 No pre-training 66.22 17.60 50.31 53.04 25.86 39.77 24.04\n\nTable 1: Average and standard deviation of scores achieved by our baseline model and training procedure. For comparison, we also report performance when training on each task from scratch (i.e. without any pre-training) for the same number of steps used to fine-tune the baseline model. All scores in this table (and every table in our paper except Table 14) are reported on the validation sets of each data set.",
+      "context_ids": [
+        "d81e790f3d4998f4a765194c6242c173",
+        "bb882f0a4f31654dc1e3e93fd365a00d",
+        "0c7eb610e9e4882d0b7c7757401ae2f5"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 3.9931563000000097,
+      "prompt_eval_count": 174,
+      "eval_count": 19,
+      "action": {
+        "action": "search",
+        "query": "purchase price of hardware baseline pages 4-40"
+      }
+    },
+    {
+      "duration_seconds": 46.117198000000826,
+      "prompt_eval_count": 1069,
+      "eval_count": 90,
+      "action": {
+        "action": "answer",
+        "answer": "The purchase price of the hardware used for the baseline is not explicitly stated in the provided text. However, the cost of the baseline model is reported as $83.28. [bb882f0a4f31654dc1e3e93fd365a00d]",
+        "citations": [
+          "bb882f0a4f31654dc1e3e93fd365a00d"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 51.2221485
+}

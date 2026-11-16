@@ -1,0 +1,164 @@
+{
+  "query_id": "t02",
+  "question": "What minimum English classification probability did C4 filtering require?",
+  "split": "test",
+  "method": "hybrid",
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "budget_chars": 6000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "0.99 [c36804b1cd7489c46080974da046b153]",
+  "citations": [
+    "c36804b1cd7489c46080974da046b153"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "C4 filtering English classification probability",
+      "filter": null,
+      "results": [
+        {
+          "id": "c36804b1cd7489c46080974da046b153",
+          "text": "Unfiltered C4 To measure the effect of the heuristic filtering we used in creating C4 (deduplication, removing bad words, only retaining sentences, etc.), we also generate an alternate version of C4 that forgoes this filtering. Note that we still use langdetect to extract English text. As a result, our “unfiltered” variant still includes some filtering because langdetect sometimes assigns a low probability to non-natural English text.\n\nRealNews-like Recent work has used text data extracted from news websites (Zellers et al., 2019; Baevski et al., 2019). To compare to this approach, we generate another unlabeled data set by additionally filtering C4 to only include content from one of the domains used in the “RealNews” data set (Zellers et al., 2019). Note that for ease of\n\n11. https://www.tensorflow.org/datasets/catalog/c4",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 25,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2450,
+            "end": 3284
+          },
+          "score": 0.03278688524590164,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "08dea6b2189c19e795b550bccc14b1e4",
+          "text": "ase all of the C4 data set variants we consider as part of TensorFlow Datasets.11\n\n3.4.1. Unlabeled Data Sets\n\nIn creating C4, we developed various heuristics to filter the web-extracted text from Common Crawl (see Section 2.2 for a description). We are interested in measuring whether this filtering results in improved performance on downstream tasks, in addition to comparing it to other filtering approaches and common pre-training data sets. Towards this end, we compare the performance of our baseline model after pre-training on the following data sets:\n\nC4 As a baseline, we first consider pre-training on our proposed unlabeled data set as described in Section 2.2.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 25,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 1774,
+            "end": 2448
+          },
+          "score": 0.03225806451612903,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "aa53bb8beb4468aadb92d622e8dba806",
+          "text": "To assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 7,
+          "metadata": {
+            "section": [
+              "2. Setup"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 0,
+            "end": 563
+          },
+          "score": 0.03125763125763126,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "d1d48a9f64f62f446512e03144a77040",
+          "text": "The results achieved after pre-training on each of these data sets is shown in Table 8. A first obvious takeaway is that removing the heuristic filtering from C4 uniformly degrades performance and makes the unfiltered variant perform the worst in every task. Beyond this, we found that in some cases a pre-training data set with a more constrained domain outperformed the diverse C4 data set. For example, using the Wikipedia + TBC corpus produced a SuperGLUE score of 73.24, beating our baseline’s score (using C4) of 71.36. This is almost entirely attributable to a boost in performance from 25.78 (baseline, C4) to 50.93 (Wikipedia + TBC) on the Exact Match score for MultiRC (see Table 16). MultiRC is a reading comprehension data set whose largest source of data comes from fiction books, which is exactly the domain covered by TBC. Similarly, using the RealNews-like data set for pre-training conferred an increase from 68.16 to 73.72 on the Exact Match score for ReCoRD, a data set that measur",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 27,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 0,
+            "end": 1000
+          },
+          "score": 0.03125763125763126,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "72aea19debd2cf4ad37718988d0d796d",
+          "text": "Additionally, since most of our downstream tasks are focused on English-language text, we used langdetect7 to filter out any pages that were not classified as English with a probability of at least 0.99. Our heuristics are inspired by past work on using Common Crawl as a source of data for NLP: For example, Grave et al. (2018) also filter text using an automatic language detector and discard short lines and Smith et al. (2013); Grave et al. (2018) both perform line-level deduplication. However, we opted to create a new data set because prior data sets use a more limited set of filtering heuristics, are not publicly available, and/or are different in scope (e.g. are limited to News data (Zellers et al., 2019; Liu et al., 2019c), comprise only Creative Commons content (Habernal et al., 2016), or are focused on parallel training data for machine translation (Smith et al., 2013)).\n\n6. https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 6,
+          "metadata": {
+            "section": [
+              "2. Setup"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2120,
+            "end": 3094
+          },
+          "score": 0.030776515151515152,
+          "strategy": "tfidf"
+        }
+      ],
+      "context": "[c36804b1cd7489c46080974da046b153 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 25]\nUnfiltered C4 To measure the effect of the heuristic filtering we used in creating C4 (deduplication, removing bad words, only retaining sentences, etc.), we also generate an alternate version of C4 that forgoes this filtering. Note that we still use langdetect to extract English text. As a result, our “unfiltered” variant still includes some filtering because langdetect sometimes assigns a low probability to non-natural English text.\n\nRealNews-like Recent work has used text data extracted from news websites (Zellers et al., 2019; Baevski et al., 2019). To compare to this approach, we generate another unlabeled data set by additionally filtering C4 to only include content from one of the domains used in the “RealNews” data set (Zellers et al., 2019). Note that for ease of\n\n11. https://www.tensorflow.org/datasets/catalog/c4\n\n[08dea6b2189c19e795b550bccc14b1e4 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 25]\nase all of the C4 data set variants we consider as part of TensorFlow Datasets.11\n\n3.4.1. Unlabeled Data Sets\n\nIn creating C4, we developed various heuristics to filter the web-extracted text from Common Crawl (see Section 2.2 for a description). We are interested in measuring whether this filtering results in improved performance on downstream tasks, in addition to comparing it to other filtering approaches and common pre-training data sets. Towards this end, we compare the performance of our baseline model after pre-training on the following data sets:\n\nC4 As a baseline, we first consider pre-training on our proposed unlabeled data set as described in Section 2.2.\n\n[aa53bb8beb4468aadb92d622e8dba806 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 7]\nTo assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks\n\n[d1d48a9f64f62f446512e03144a77040 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 27]\nThe results achieved after pre-training on each of these data sets is shown in Table 8. A first obvious takeaway is that removing the heuristic filtering from C4 uniformly degrades performance and makes the unfiltered variant perform the worst in every task. Beyond this, we found that in some cases a pre-training data set with a more constrained domain outperformed the diverse C4 data set. For example, using the Wikipedia + TBC corpus produced a SuperGLUE score of 73.24, beating our baseline’s score (using C4) of 71.36. This is almost entirely attributable to a boost in performance from 25.78 (baseline, C4) to 50.93 (Wikipedia + TBC) on the Exact Match score for MultiRC (see Table 16). MultiRC is a reading comprehension data set whose largest source of data comes from fiction books, which is exactly the domain covered by TBC. Similarly, using the RealNews-like data set for pre-training conferred an increase from 68.16 to 73.72 on the Exact Match score for ReCoRD, a data set that measur\n\n[72aea19debd2cf4ad37718988d0d796d | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 6]\nAdditionally, since most of our downstream tasks are focused on English-language text, we used langdetect7 to filter out any pages that were not classified as English with a probability of at least 0.99. Our heuristics are inspired by past work on using Common Crawl as a source of data for NLP: For example, Grave et al. (2018) also filter text using an automatic language detector and discard short lines and Smith et al. (2013); Grave et al. (2018) both perform line-level deduplication. However, we opted to create a new data set because prior data sets use a more limited set of filtering heuristics, are not publicly available, and/or are different in scope (e.g. are limited to News data (Zellers et al., 2019; Liu et al., 2019c), comprise only Creative Commons content (Habernal et al., 2016), or are focused on parallel training data for machine translation (Smith et al., 2013)).\n\n6. https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words",
+      "context_ids": [
+        "c36804b1cd7489c46080974da046b153",
+        "08dea6b2189c19e795b550bccc14b1e4",
+        "aa53bb8beb4468aadb92d622e8dba806",
+        "d1d48a9f64f62f446512e03144a77040",
+        "72aea19debd2cf4ad37718988d0d796d"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 2.678245799999786,
+      "prompt_eval_count": 164,
+      "eval_count": 15,
+      "action": {
+        "action": "search",
+        "query": "C4 filtering English classification probability"
+      }
+    },
+    {
+      "duration_seconds": 54.25611670000035,
+      "prompt_eval_count": 1480,
+      "eval_count": 50,
+      "action": {
+        "action": "answer",
+        "answer": "0.99 [c36804b1cd7489c46080974da046b153]",
+        "citations": [
+          "c36804b1cd7489c46080974da046b153"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 57.07660029999988
+}

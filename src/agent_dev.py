@@ -1,4 +1,4 @@
-"""Run both real agent configurations on dev only, retaining per-case errors."""
+"""Run both real agent configurations on a specified split, retaining errors."""
 import argparse
 import json
 import os
@@ -11,9 +11,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--day6', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--split', choices=('dev', 'test'), default='dev')
     args = parser.parse_args()
+    if args.split == 'test' and not Path('results/checkpoint3/selection.json').is_file():
+        parser.error('Freeze the dev selection before running test')
     url = os.environ['DATABASE_URL']
-    cases = [x for x in json.loads(Path('data/benchmark.json').read_text(encoding='utf8')) if x['split'] == 'dev']
+    cases = [x for x in json.loads(Path('data/benchmark.json').read_text(encoding='utf8')) if x['split'] == args.split]
     indexes = {'dense': DenseRetriever(args.day6.resolve(), url),
                'hybrid': HybridRetriever(args.day6.resolve(), url)}
     args.output.mkdir(parents=True, exist_ok=True)
@@ -24,7 +27,7 @@ def main():
                 continue
             controller = OllamaController('llama3.2:3b')
             start = time.perf_counter()
-            trace = {'query_id': case['id'], 'question': case['question'], 'split': 'dev',
+            trace = {'query_id': case['id'], 'question': case['question'], 'split': args.split,
                      'method': method, 'model': controller.model,
                      'top_k': 3 if method == 'dense' else 5,
                      'budget_chars': 4000 if method == 'dense' else 6000, 'service_cost_usd': 0}
