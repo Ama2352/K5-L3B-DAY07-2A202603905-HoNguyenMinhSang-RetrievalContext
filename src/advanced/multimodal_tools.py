@@ -8,6 +8,9 @@ from collections import Counter
 from pathlib import Path
 from src.retrieval.fusion import rrf
 
+EXCERPT_STOPWORDS=frozenset('what which how many much was were is are the a an of at in on for to and by did does do from as with its this that according s'.split())
+SOURCE_TITLE_WEIGHT=3
+
 
 def readable(text):
     import re
@@ -120,15 +123,23 @@ class MultimodalTools:
         excerpts=[]
         for row in ranked:
             blocks=self.evidence_blocks(row)
-            order=sorted(range(len(blocks)),key=lambda i:-sum(
-                self.idf.get(t,0) for t in query_terms & set(terms(blocks[i]))))
+            content_terms=query_terms-EXCERPT_STOPWORDS
+            def relevance(block):
+                score=sum(self.idf.get(t,0) for t in content_terms & set(terms(block)))
+                if '\nLocation on original page:' in block:
+                    # A matching source heading identifies the requested table or
+                    # figure better than repeated surrounding narrative does.
+                    title=block.splitlines()[0].partition(':')[2]
+                    score+=SOURCE_TITLE_WEIGHT*sum(self.idf.get(t,0) for t in content_terms & set(terms(title)))
+                return score
+            order=sorted(range(len(blocks)),key=lambda i:-relevance(blocks[i]))
             chosen=[];remaining=1800
             for i in order:
                 if len(blocks[i])+2<=remaining:
                     chosen.append(i);remaining-=len(blocks[i])+2
             excerpt='\n\n'.join(blocks[i] for i in chosen)
             excerpts.append({**row,'text':excerpt,'metadata':{**row['metadata'],
-                'excerpt_policy':'IDF-weighted query overlap over complete visual regions and neighboring original text rows; original image retained for verification'}})
+                'excerpt_policy':'Content-term IDF overlap plus source-title weight 3 over complete visual regions and neighboring original rows; original image retained for verification'}})
         # Full selected snippets are above. Intermediate rankings need IDs/scores,
         # not 40 duplicate full pages in every function trace.
         def candidates(rows):

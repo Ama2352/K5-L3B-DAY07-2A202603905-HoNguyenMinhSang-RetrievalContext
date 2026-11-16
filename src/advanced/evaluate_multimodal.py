@@ -47,8 +47,8 @@ INSTRUCTIONS = (
     'Never infer an unreported exact number '
     'from merely related financial amounts. Answer directly in at most 100 words with source labels.'
 )
-BENCHMARKS = {'dev': Path('data/advanced/benchmark-dev-draft.json'),
-              'test': Path('data/advanced/benchmark-test-draft.json')}
+BENCHMARKS = {'dev': Path('data/advanced/benchmark-dev.json'),
+              'test': Path('data/advanced/benchmark-test.json')}
 CODE_FILES = [Path(__file__), Path('src/advanced/multimodal_tools.py'),
               Path('src/advanced/vision_index.py'), Path('src/advanced/build_verified_catalog.py'), Path('src/agents/function_agent.py'),
               Path('src/retrieval/fusion.py'), Path('src/common/secret_safety.py'),Path('src/common/embedding_worker.py')]

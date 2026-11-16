@@ -17,7 +17,7 @@ def main():
     parser.add_argument('--model', default='llama3.2:3b')
     parser.add_argument('--resume', action='store_true')
     args = parser.parse_args()
-    cases = json.loads(Path('data/advanced/benchmark-dev-draft.json').read_text(encoding='utf8'))
+    cases = json.loads(Path('data/advanced/benchmark-dev.json').read_text(encoding='utf8'))
     if any(q['split'] != 'dev' for q in cases):
         raise ValueError('This runner only accepts the advanced dev split')
     root = args.day6.resolve()
