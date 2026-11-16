@@ -1,0 +1,88 @@
+[
+  {
+    "id": "fresh01",
+    "split": "test",
+    "question": "How many relative position embeddings are used in each model, and at what offset do larger distances share an embedding?",
+    "answerable": true,
+    "expected_answer": "32 embeddings; offsets beyond 128 share the same embedding.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 5,
+        "evidence": "In this work, we use 32 embeddings for all of our models with ranges that increase in size logarithmically up to an offset of 128 beyond which we assign all relative positions to the same embedding."
+      }
+    ]
+  },
+  {
+    "id": "fresh02",
+    "split": "test",
+    "question": "How were repeated three-sentence spans handled during C4 deduplication?",
+    "answerable": true,
+    "expected_answer": "All but one instance were discarded.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 6,
+        "evidence": "To deduplicate the data set, we discarded all but one of any three-sentence span occurring more than once in the data set."
+      }
+    ]
+  },
+  {
+    "id": "fresh03",
+    "split": "test",
+    "question": "Which tool, smoothing and tokenization are reported for translation BLEU scores?",
+    "answerable": true,
+    "expected_answer": "SacreBLEU v1.3.0 with exp smoothing and intl tokenization.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 14,
+        "evidence": "For all translation tasks, we report the BLEU score (Papineni et al., 2002) as provided by SacreBLEU v1.3.0 (Post, 2018) with “exp” smoothing and “intl” tokenization."
+      }
+    ]
+  },
+  {
+    "id": "fresh04",
+    "split": "test",
+    "question": "What two types of content are omitted from the TensorFlow Datasets English Wikipedia text?",
+    "answerable": true,
+    "expected_answer": "Markup and reference sections.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 26,
+        "evidence": "We use the English Wikipedia text data from TensorFlow Datasets,13 which omits any markup or reference sections from the articles."
+      }
+    ]
+  },
+  {
+    "id": "fresh05",
+    "split": "test",
+    "question": "What difference did the authors observe between a 2x larger model trained twice as long and a 4x larger model?",
+    "answerable": true,
+    "expected_answer": "They did not observe a large difference on the studied tasks.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "page": 35,
+        "evidence": "We did not observe a large difference between training a 2× bigger model for 2× as long and training a 4× bigger model on any of the tasks we studied."
+      }
+    ]
+  },
+  {
+    "id": "fresh06",
+    "split": "test",
+    "question": "Within the indexed pages, how many liters of water were consumed to train the baseline?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No water occurrence found in the normalized 37 indexed pages; verify against the original before freezing."
+  },
+  {
+    "id": "fresh07",
+    "split": "test",
+    "question": "Within the indexed pages, on what date were the baseline training processors manufactured?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No manufacturing or fabrication date found in normalized pages; verify against the original before freezing."
+  }
+]

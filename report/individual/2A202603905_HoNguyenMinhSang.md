@@ -36,9 +36,15 @@ Model chọn query tìm kiếm; tối đa 3 lượt, dense top-3 hoặc hybrid t
 
 Trung bình grounded trong bảng là tổng điểm chia số câu có đáp án chạy thành công, trên thang 2. Lỗi được báo riêng theo benchmark; nếu tính lỗi hybrid là 0, tổng vẫn 0/5. Một câu hybrid thiếu evidence nói không có giá nhưng starter gắn `answered` vì có citation; chấm abstention dựa nội dung, citation không chứng minh sự vắng mặt. Test hybrid t04 timeout 185 giây; script không lưu được context đã có trước timeout, nên không thể chấm context câu này. Trung bình thời gian cả lỗi: dense 43,7 s/câu, hybrid 70,6 s/câu. Tất cả là một lần chạy, mẫu nhỏ.
 
-Context cuối theo query do agent viết lại, được đọc cho từng câu test có đáp án: dense mức 0/1/2 = 1/2/2; hybrid = 1/0/3 và 1 lỗi không có context. Context đủ evidence tự động: dense 2/5; hybrid 3/5 tính cả lỗi là không có context. Đây khác bảng query gốc. Lý do từng câu và citation tại `results/checkpoint4/test_reviews.json`, trace tại `results/checkpoint4/agent-test/`; nhãn do Codex kiểm tra, không phải đánh giá mù hay do học viên xác nhận.
+Context cuối theo query do agent viết lại, được đọc cho từng câu test có đáp án: dense mức 0/1/2 = 1/2/2; hybrid = 1/0/3 và 1 lỗi không có context. Context đủ evidence tự động: dense 2/5; hybrid 3/5 tính cả lỗi là không có context. Đây khác bảng query gốc. Lý do từng câu và citation tại `results/checkpoint4/test_reviews.json`, trace tại `results/checkpoint4/agent-test.json`; nhãn do Codex kiểm tra, không phải đánh giá mù hay do học viên xác nhận.
 
 Ví dụ: dense t05 trả 17 GB và dẫn đúng trang 26. Dense u04 bịa 0,5 kWh; hybrid u04 bịa một nghìn tỷ kWh, đều không được nguồn hỗ trợ. Hybrid t02 trả đúng 0,99 nhưng dẫn trang 25 thiếu ngưỡng; nguồn đúng ở trang 6. Các lỗi này cho thấy không thể tin citation hợp lệ về cú pháp, và hệ thống chưa sẵn sàng dùng cho câu hỏi thực tế.
+
+### Bổ sung: phương pháp và function tool
+
+Sau đánh giá trên, đã bổ sung BM25, hybrid dense+BM25, rerank theo độ phủ từ truy vấn và hai bước mở rộng query. So sánh chỉ trên dev: BM25, hybrid, rerank và hai bước đều đạt Hit@3 15/15; Hit@1 lần lượt 11/15, 11/15, 11/15 và 13/15. Hai bước dùng kết quả BM25 để mở rộng query, sau đó dense và RRF; trace ghi cả hai bước. Đây là metric retrieval, không phải điểm trả lời. Chi tiết, context, thời gian và hạn chế ở `docs/additional-methods.md`.
+
+Agent mới gửi schema function thực tới Ollama và ghi flow, tên/đối số/kết quả từng lượt, số lần gọi và công cụ trong câu trả lời. Trên 17 câu dev, 15 có truy xuất thành công; hai câu có lỗi tool. Trong 14 câu có đáp án truy xuất thành công, điểm grounded 0/1/2 là 11/2/1; citation được hỗ trợ 3/7. Hai lỗi không được tính là abstention đúng. Trace và nhãn nằm trong hai file `results/additional-methods/function-dev.json` và `function-dev-reviews.json`. Nhãn do Codex kiểm tra, chưa có người chấm độc lập. Test cũ đã bị xem trước khi thêm phương pháp, nên chưa có đánh giá độc lập cho agent mới; cần chốt cấu hình trên dev rồi tạo và chạy test mới.
 
 ## Thử thách nâng cao
 
