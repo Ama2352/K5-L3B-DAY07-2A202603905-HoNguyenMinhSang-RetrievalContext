@@ -10,7 +10,7 @@ From this directory, reconstruct the chunk export and import the 15 previously u
 python src/prepare_day6.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion
 ```
 
-This creates `data/day6_chunks.json` and `data/day6_dev_answerable.json`. Reconstructing chunks does not prove that the live database contains the same vectors. The Day 6 environment and selected model must be available to query the actual store. Start the existing Day 6 Docker Compose service without deleting its volume, set `DATABASE_URL` locally (do not commit it), then use the Day 6 virtual environment and dependencies:
+This creates `data/day6_chunks.json` and `data/day6_dev_answerable.json`. Reconstructing chunks does not prove that the live database contains the same vectors. The Day 6 environment and selected model must be available to query the actual store. Start the existing Day 6 Docker Compose service without deleting its volume. The script reads the connection privately from the local Day 6 `.env` or process environment; never print or commit the value. Use the Day 6 virtual environment and dependencies:
 
 ```powershell
 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion/.venv/Scripts/python.exe src/day6_search.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion --query "What tokenizer does T5 use?"

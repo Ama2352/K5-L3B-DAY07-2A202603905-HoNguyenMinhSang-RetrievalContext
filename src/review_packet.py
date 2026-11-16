@@ -13,8 +13,9 @@ def main():
              if q['split'] == 'dev'}
     sections = ['# Dev agent review packet', '', 'Fill grades and citation support by reading the source; '
                 'retrieved ID membership alone does not establish support.', '']
-    for path in sorted(args.traces.glob('*.json')):
-        trace = json.loads(path.read_text(encoding='utf8'))
+    traces = (json.loads(args.traces.read_text(encoding='utf8')) if args.traces.is_file()
+              else [json.loads(path.read_text(encoding='utf8')) for path in sorted(args.traces.glob('*.json'))])
+    for trace in traces:
         case = cases[trace['query_id']]
         sections.extend([f"## {trace['method']} / {case['id']}", '',
                          f"Question: {case['question']}", '',

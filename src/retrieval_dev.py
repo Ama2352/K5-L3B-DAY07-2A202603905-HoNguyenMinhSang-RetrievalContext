@@ -9,6 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'starter'))
 from baseline import TfidfIndex, hit, pack_context
 from run_agent import DenseRetriever
+from secret_safety import database_url, redact, redact_text
 
 
 def rrf(dense, lexical, limit=3, k=60):
@@ -30,9 +31,7 @@ def main():
     args = parser.parse_args()
     if args.split == 'test' and not Path('results/checkpoint3/selection.json').is_file():
         parser.error('Freeze the dev selection before running test')
-    url = os.environ.get('DATABASE_URL')
-    if not url:
-        parser.error('DATABASE_URL is required')
+    url = database_url(args.day6)
     chunks = json.loads(Path('data/day6_chunks.json').read_text(encoding='utf-8'))
     questions = [q for q in json.loads(Path('data/benchmark.json').read_text(encoding='utf-8'))
                  if q['split'] == args.split and q.get('answerable', True)]
@@ -69,9 +68,13 @@ def main():
                          'service_cost_usd': 0}
     args.output.mkdir(parents=True, exist_ok=True)
     for name, value in [('traces.json', traces), ('summary.json', summary)]:
-        (args.output / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+        (args.output / name).write_text(json.dumps(redact(value), ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps(summary, indent=2))
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except Exception as exc:
+        print(redact_text(f'{type(exc).__name__}: {exc}'), file=sys.stderr)
+        raise SystemExit(1)

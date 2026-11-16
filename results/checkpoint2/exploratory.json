@@ -1,0 +1,719 @@
+[
+  {
+    "original_file": "dev-q01-qwen.json",
+    "trace": {
+      "question": "What simplification does T5 apply to layer normalization?",
+      "model": "qwen2.5:1.5b",
+      "budget_chars": 4000,
+      "top_k": 3,
+      "max_searches": 3,
+      "service_cost_usd": 0,
+      "status": "abstain",
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "citations": [],
+      "events": [
+        {
+          "event": "search",
+          "query": "T5 layer normalization simplification",
+          "filter": null,
+          "results": [
+            {
+              "id": "0537cff0a7cba06538490e45baf3d7bd",
+              "text": "To achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 40,
+              "metadata": {
+                "end": 3449,
+                "page": 40,
+                "year": "2020",
+                "start": 2461,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.761624052427767
+            },
+            {
+              "id": "9908c13c86a56fd9a2a6781f1f3390de",
+              "text": "The first, “adapter layers” (Houlsby et al., 2019; Bapna et al., 2019), is motivated by the goal of keeping most of the original model fixed while fine-tuning. Adapter layers are additional dense-ReLU-dense blocks that are added after each of the preexisting feed-forward networks in each block of the Transformer. These new feed-forward networks are designed so that their output dimensionality matches their input. This allows them to be inserted into the network with no additional changes to the structure or parameters. When fine-tuning, only the adapter layer and layer normalization parameters are updated. The main hyperparameter of this approach is the inner dimensionality d of the feed-forward network, which changes the number of new parameters added to the model. We experiment with various values for d.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 29,
+              "metadata": {
+                "end": 1547,
+                "page": 29,
+                "year": "2020",
+                "start": 730,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7541135324801972
+            },
+            {
+              "id": "df9a6d9421b5c4078ef8d1c784191e6c",
+              "text": "Overall, our encoder-decoder Transformer implementation closely follows its originally-proposed form (Vaswani et al., 2017). First, an input sequence of tokens is mapped to a sequence of embeddings, which is then passed into the encoder. The encoder consists of a stack of “blocks”, each of which comprises two subcomponents: a self-attention layer followed by a small feed-forward network. Layer normalization (Ba et al., 2016) is applied to the input of each subcomponent. We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied. After layer normalization, a residual skip connection (He et al., 2016) adds each subcomponent’s input to its output. Dropout (Srivastava et al., 2014) is applied within the feed-forward network, on the skip connection, on the attention weights, and at the input and output of the entire stack. The decoder is similar in structure to the encoder except that it includes a standard attention",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 4,
+              "metadata": {
+                "end": 3316,
+                "page": 4,
+                "year": "2020",
+                "start": 2327,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "2. Setup"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7419199212932741
+            }
+          ],
+          "context": "[0537cff0a7cba06538490e45baf3d7bd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nTo achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.\n\n[9908c13c86a56fd9a2a6781f1f3390de | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 29]\nThe first, “adapter layers” (Houlsby et al., 2019; Bapna et al., 2019), is motivated by the goal of keeping most of the original model fixed while fine-tuning. Adapter layers are additional dense-ReLU-dense blocks that are added after each of the preexisting feed-forward networks in each block of the Transformer. These new feed-forward networks are designed so that their output dimensionality matches their input. This allows them to be inserted into the network with no additional changes to the structure or parameters. When fine-tuning, only the adapter layer and layer normalization parameters are updated. The main hyperparameter of this approach is the inner dimensionality d of the feed-forward network, which changes the number of new parameters added to the model. We experiment with various values for d.\n\n[df9a6d9421b5c4078ef8d1c784191e6c | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 4]\nOverall, our encoder-decoder Transformer implementation closely follows its originally-proposed form (Vaswani et al., 2017). First, an input sequence of tokens is mapped to a sequence of embeddings, which is then passed into the encoder. The encoder consists of a stack of “blocks”, each of which comprises two subcomponents: a self-attention layer followed by a small feed-forward network. Layer normalization (Ba et al., 2016) is applied to the input of each subcomponent. We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied. After layer normalization, a residual skip connection (He et al., 2016) adds each subcomponent’s input to its output. Dropout (Srivastava et al., 2014) is applied within the feed-forward network, on the skip connection, on the attention weights, and at the input and output of the entire stack. The decoder is similar in structure to the encoder except that it includes a standard attention",
+          "context_ids": [
+            "0537cff0a7cba06538490e45baf3d7bd",
+            "9908c13c86a56fd9a2a6781f1f3390de",
+            "df9a6d9421b5c4078ef8d1c784191e6c"
+          ]
+        },
+        {
+          "event": "search",
+          "query": "T5 layer normalization simplification",
+          "filter": null,
+          "results": [
+            {
+              "id": "0537cff0a7cba06538490e45baf3d7bd",
+              "text": "To achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 40,
+              "metadata": {
+                "end": 3449,
+                "page": 40,
+                "year": "2020",
+                "start": 2461,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.761624052427767
+            },
+            {
+              "id": "9908c13c86a56fd9a2a6781f1f3390de",
+              "text": "The first, “adapter layers” (Houlsby et al., 2019; Bapna et al., 2019), is motivated by the goal of keeping most of the original model fixed while fine-tuning. Adapter layers are additional dense-ReLU-dense blocks that are added after each of the preexisting feed-forward networks in each block of the Transformer. These new feed-forward networks are designed so that their output dimensionality matches their input. This allows them to be inserted into the network with no additional changes to the structure or parameters. When fine-tuning, only the adapter layer and layer normalization parameters are updated. The main hyperparameter of this approach is the inner dimensionality d of the feed-forward network, which changes the number of new parameters added to the model. We experiment with various values for d.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 29,
+              "metadata": {
+                "end": 1547,
+                "page": 29,
+                "year": "2020",
+                "start": 730,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7541135324801972
+            },
+            {
+              "id": "df9a6d9421b5c4078ef8d1c784191e6c",
+              "text": "Overall, our encoder-decoder Transformer implementation closely follows its originally-proposed form (Vaswani et al., 2017). First, an input sequence of tokens is mapped to a sequence of embeddings, which is then passed into the encoder. The encoder consists of a stack of “blocks”, each of which comprises two subcomponents: a self-attention layer followed by a small feed-forward network. Layer normalization (Ba et al., 2016) is applied to the input of each subcomponent. We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied. After layer normalization, a residual skip connection (He et al., 2016) adds each subcomponent’s input to its output. Dropout (Srivastava et al., 2014) is applied within the feed-forward network, on the skip connection, on the attention weights, and at the input and output of the entire stack. The decoder is similar in structure to the encoder except that it includes a standard attention",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 4,
+              "metadata": {
+                "end": 3316,
+                "page": 4,
+                "year": "2020",
+                "start": 2327,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "2. Setup"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7419199212932741
+            }
+          ],
+          "context": "[0537cff0a7cba06538490e45baf3d7bd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nTo achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.\n\n[9908c13c86a56fd9a2a6781f1f3390de | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 29]\nThe first, “adapter layers” (Houlsby et al., 2019; Bapna et al., 2019), is motivated by the goal of keeping most of the original model fixed while fine-tuning. Adapter layers are additional dense-ReLU-dense blocks that are added after each of the preexisting feed-forward networks in each block of the Transformer. These new feed-forward networks are designed so that their output dimensionality matches their input. This allows them to be inserted into the network with no additional changes to the structure or parameters. When fine-tuning, only the adapter layer and layer normalization parameters are updated. The main hyperparameter of this approach is the inner dimensionality d of the feed-forward network, which changes the number of new parameters added to the model. We experiment with various values for d.\n\n[df9a6d9421b5c4078ef8d1c784191e6c | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 4]\nOverall, our encoder-decoder Transformer implementation closely follows its originally-proposed form (Vaswani et al., 2017). First, an input sequence of tokens is mapped to a sequence of embeddings, which is then passed into the encoder. The encoder consists of a stack of “blocks”, each of which comprises two subcomponents: a self-attention layer followed by a small feed-forward network. Layer normalization (Ba et al., 2016) is applied to the input of each subcomponent. We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied. After layer normalization, a residual skip connection (He et al., 2016) adds each subcomponent’s input to its output. Dropout (Srivastava et al., 2014) is applied within the feed-forward network, on the skip connection, on the attention weights, and at the input and output of the entire stack. The decoder is similar in structure to the encoder except that it includes a standard attention",
+          "context_ids": [
+            "0537cff0a7cba06538490e45baf3d7bd",
+            "9908c13c86a56fd9a2a6781f1f3390de",
+            "df9a6d9421b5c4078ef8d1c784191e6c"
+          ]
+        },
+        {
+          "event": "search",
+          "query": "T5 layer normalization simplification",
+          "filter": null,
+          "results": [
+            {
+              "id": "0537cff0a7cba06538490e45baf3d7bd",
+              "text": "To achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 40,
+              "metadata": {
+                "end": 3449,
+                "page": 40,
+                "year": "2020",
+                "start": 2461,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.761624052427767
+            },
+            {
+              "id": "9908c13c86a56fd9a2a6781f1f3390de",
+              "text": "The first, “adapter layers” (Houlsby et al., 2019; Bapna et al., 2019), is motivated by the goal of keeping most of the original model fixed while fine-tuning. Adapter layers are additional dense-ReLU-dense blocks that are added after each of the preexisting feed-forward networks in each block of the Transformer. These new feed-forward networks are designed so that their output dimensionality matches their input. This allows them to be inserted into the network with no additional changes to the structure or parameters. When fine-tuning, only the adapter layer and layer normalization parameters are updated. The main hyperparameter of this approach is the inner dimensionality d of the feed-forward network, which changes the number of new parameters added to the model. We experiment with various values for d.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 29,
+              "metadata": {
+                "end": 1547,
+                "page": 29,
+                "year": "2020",
+                "start": 730,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7541135324801972
+            },
+            {
+              "id": "df9a6d9421b5c4078ef8d1c784191e6c",
+              "text": "Overall, our encoder-decoder Transformer implementation closely follows its originally-proposed form (Vaswani et al., 2017). First, an input sequence of tokens is mapped to a sequence of embeddings, which is then passed into the encoder. The encoder consists of a stack of “blocks”, each of which comprises two subcomponents: a self-attention layer followed by a small feed-forward network. Layer normalization (Ba et al., 2016) is applied to the input of each subcomponent. We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied. After layer normalization, a residual skip connection (He et al., 2016) adds each subcomponent’s input to its output. Dropout (Srivastava et al., 2014) is applied within the feed-forward network, on the skip connection, on the attention weights, and at the input and output of the entire stack. The decoder is similar in structure to the encoder except that it includes a standard attention",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 4,
+              "metadata": {
+                "end": 3316,
+                "page": 4,
+                "year": "2020",
+                "start": 2327,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "2. Setup"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7419199212932741
+            }
+          ],
+          "context": "[0537cff0a7cba06538490e45baf3d7bd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nTo achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.\n\n[9908c13c86a56fd9a2a6781f1f3390de | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 29]\nThe first, “adapter layers” (Houlsby et al., 2019; Bapna et al., 2019), is motivated by the goal of keeping most of the original model fixed while fine-tuning. Adapter layers are additional dense-ReLU-dense blocks that are added after each of the preexisting feed-forward networks in each block of the Transformer. These new feed-forward networks are designed so that their output dimensionality matches their input. This allows them to be inserted into the network with no additional changes to the structure or parameters. When fine-tuning, only the adapter layer and layer normalization parameters are updated. The main hyperparameter of this approach is the inner dimensionality d of the feed-forward network, which changes the number of new parameters added to the model. We experiment with various values for d.\n\n[df9a6d9421b5c4078ef8d1c784191e6c | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 4]\nOverall, our encoder-decoder Transformer implementation closely follows its originally-proposed form (Vaswani et al., 2017). First, an input sequence of tokens is mapped to a sequence of embeddings, which is then passed into the encoder. The encoder consists of a stack of “blocks”, each of which comprises two subcomponents: a self-attention layer followed by a small feed-forward network. Layer normalization (Ba et al., 2016) is applied to the input of each subcomponent. We use a simplified version of layer normalization where the activations are only rescaled and no additive bias is applied. After layer normalization, a residual skip connection (He et al., 2016) adds each subcomponent’s input to its output. Dropout (Srivastava et al., 2014) is applied within the feed-forward network, on the skip connection, on the attention weights, and at the input and output of the entire stack. The decoder is similar in structure to the encoder except that it includes a standard attention",
+          "context_ids": [
+            "0537cff0a7cba06538490e45baf3d7bd",
+            "9908c13c86a56fd9a2a6781f1f3390de",
+            "df9a6d9421b5c4078ef8d1c784191e6c"
+          ]
+        },
+        {
+          "event": "search_limit"
+        }
+      ],
+      "model_calls": [
+        {
+          "duration_seconds": 6.694878600000266,
+          "prompt_eval_count": 140,
+          "eval_count": 15,
+          "action": {
+            "action": "search",
+            "query": "T5 layer normalization simplification"
+          }
+        },
+        {
+          "duration_seconds": 14.54814660000011,
+          "prompt_eval_count": 1054,
+          "eval_count": 15,
+          "action": {
+            "action": "search",
+            "query": "T5 layer normalization simplification"
+          }
+        },
+        {
+          "duration_seconds": 13.695971699999973,
+          "prompt_eval_count": 1062,
+          "eval_count": 15,
+          "action": {
+            "action": "search",
+            "query": "T5 layer normalization simplification"
+          }
+        },
+        {
+          "duration_seconds": 13.080668299999616,
+          "prompt_eval_count": 1070,
+          "eval_count": 15,
+          "action": {
+            "action": "search",
+            "query": "T5 layer normalization simplification"
+          }
+        }
+      ],
+      "elapsed_seconds": 49.653093799999624
+    }
+  },
+  {
+    "original_file": "dev-q01.json",
+    "trace": {
+      "question": "What simplification does T5 apply to layer normalization?",
+      "model": "llama3.2:3b",
+      "budget_chars": 4000,
+      "top_k": 3,
+      "max_searches": 3,
+      "service_cost_usd": 0,
+      "status": "error",
+      "error": "ValueError: answer/citations không hợp lệ",
+      "model_calls": [
+        {
+          "duration_seconds": 15.303342000000157,
+          "prompt_eval_count": 152,
+          "eval_count": 15,
+          "action": {
+            "action": "answer",
+            "answer": "T5 applies the "
+          }
+        }
+      ],
+      "elapsed_seconds": 16.366813800000273
+    }
+  },
+  {
+    "original_file": "dev-q05-normalized.json",
+    "trace": {
+      "question": "Approximately how large is the cleaned English C4 corpus described in the paper?",
+      "model": "llama3.2:3b",
+      "budget_chars": 4000,
+      "top_k": 3,
+      "max_searches": 3,
+      "service_cost_usd": 0,
+      "status": "answered",
+      "answer": "Approximately 6.1TB [aa53bb8beb4468aadb92d622e8dba806]",
+      "citations": [
+        "aa53bb8beb4468aadb92d622e8dba806"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "query": "size of cleaned English C4 corpus",
+          "filter": null,
+          "results": [
+            {
+              "id": "aa53bb8beb4468aadb92d622e8dba806",
+              "text": "To assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 7,
+              "metadata": {
+                "end": 563,
+                "page": 7,
+                "year": "2020",
+                "start": 0,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "2. Setup"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.8305503129959106
+            },
+            {
+              "id": "065c181f283ed6240d0de22550c247a4",
+              "text": "Data set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 26,
+              "metadata": {
+                "end": 684,
+                "page": 26,
+                "year": "2020",
+                "start": 0,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7845887413375834
+            },
+            {
+              "id": "cd063464c2209148f7d91cc76282ca6a",
+              "text": "We use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 12,
+              "metadata": {
+                "end": 2523,
+                "page": 12,
+                "year": "2020",
+                "start": 1705,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7701228535028926
+            }
+          ],
+          "context": "[aa53bb8beb4468aadb92d622e8dba806 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 7]\nTo assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks\n\n[065c181f283ed6240d0de22550c247a4 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 26]\nData set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.\n\n[cd063464c2209148f7d91cc76282ca6a | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 12]\nWe use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+          "context_ids": [
+            "aa53bb8beb4468aadb92d622e8dba806",
+            "065c181f283ed6240d0de22550c247a4",
+            "cd063464c2209148f7d91cc76282ca6a"
+          ]
+        },
+        {
+          "event": "answer"
+        }
+      ],
+      "model_calls": [
+        {
+          "duration_seconds": 1.9765964999996868,
+          "prompt_eval_count": 169,
+          "eval_count": 16,
+          "action": {
+            "action": "search",
+            "query": "size of cleaned English C4 corpus"
+          }
+        },
+        {
+          "duration_seconds": 27.51977799999986,
+          "prompt_eval_count": 1021,
+          "eval_count": 36,
+          "action": {
+            "action": "answer",
+            "answer": "Approximately 6.1TB",
+            "citations": [
+              "aa53bb8beb4468aadb92d622e8dba806"
+            ]
+          }
+        }
+      ],
+      "elapsed_seconds": 30.369149299999663
+    }
+  },
+  {
+    "original_file": "dev-q05.json",
+    "trace": {
+      "question": "Approximately how large is the cleaned English C4 corpus described in the paper?",
+      "model": "llama3.2:3b",
+      "budget_chars": 4000,
+      "top_k": 3,
+      "max_searches": 3,
+      "service_cost_usd": 0,
+      "status": "abstain",
+      "answer": "Không đủ bằng chứng để trả lời.",
+      "citations": [],
+      "events": [
+        {
+          "event": "search",
+          "query": "size of cleaned English C4 corpus",
+          "filter": null,
+          "results": [
+            {
+              "id": "aa53bb8beb4468aadb92d622e8dba806",
+              "text": "To assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 7,
+              "metadata": {
+                "end": 563,
+                "page": 7,
+                "year": "2020",
+                "start": 0,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "2. Setup"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.8305503129959106
+            },
+            {
+              "id": "065c181f283ed6240d0de22550c247a4",
+              "text": "Data set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 26,
+              "metadata": {
+                "end": 684,
+                "page": 26,
+                "year": "2020",
+                "start": 0,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7845887413375834
+            },
+            {
+              "id": "cd063464c2209148f7d91cc76282ca6a",
+              "text": "We use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 12,
+              "metadata": {
+                "end": 2523,
+                "page": 12,
+                "year": "2020",
+                "start": 1705,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7701228535028926
+            }
+          ],
+          "context": "[aa53bb8beb4468aadb92d622e8dba806 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 7]\nTo assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks\n\n[065c181f283ed6240d0de22550c247a4 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 26]\nData set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.\n\n[cd063464c2209148f7d91cc76282ca6a | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 12]\nWe use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+          "context_ids": [
+            "aa53bb8beb4468aadb92d622e8dba806",
+            "065c181f283ed6240d0de22550c247a4",
+            "cd063464c2209148f7d91cc76282ca6a"
+          ]
+        },
+        {
+          "event": "invalid_or_missing_citations"
+        }
+      ],
+      "model_calls": [
+        {
+          "duration_seconds": 1.8733673000001545,
+          "prompt_eval_count": 169,
+          "eval_count": 16,
+          "action": {
+            "action": "search",
+            "query": "size of cleaned English C4 corpus"
+          }
+        },
+        {
+          "duration_seconds": 29.71927400000004,
+          "prompt_eval_count": 1021,
+          "eval_count": 36,
+          "action": {
+            "action": "answer",
+            "answer": "Approximately 6.1TB",
+            "citations": [
+              "aa53bb8beb4468aadb92d622e8dba806"
+            ]
+          }
+        }
+      ],
+      "elapsed_seconds": 32.74110370000017
+    }
+  },
+  {
+    "original_file": "tool-reporting-smoke.json",
+    "trace": {
+      "question": "What tokenizer does T5 use?",
+      "model": "llama3.2:3b",
+      "method": "dense",
+      "budget_chars": 4000,
+      "top_k": 3,
+      "max_searches": 3,
+      "service_cost_usd": 0,
+      "status": "answered",
+      "answer": "WordPiece tokenizer [0537cff0a7cba06538490e45baf3d7bd]",
+      "citations": [
+        "0537cff0a7cba06538490e45baf3d7bd"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "query": "T5 tokenizer",
+          "filter": null,
+          "results": [
+            {
+              "id": "1a89a28c8f855f22b29f8cc7183e6cbd",
+              "text": "“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 13,
+              "metadata": {
+                "end": 1637,
+                "page": 13,
+                "year": "2020",
+                "start": 637,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7212065888170368
+            },
+            {
+              "id": "a9ba79f478cec1e4f138957b4ecdeef6",
+              "text": "Table 3: Examples of inputs and targets produced by some of the unsupervised objectives we consider applied to the input text “Thank you for inviting me to your party last week .” Note that all of our objectives process tokenized text. For this particular sentence, all words were mapped to a single token by our vocabulary. We write (original text) as a target to denote that the model is tasked with reconstructing the entire input text. <M> denotes a shared mask token and <X>, <Y>, and <Z> denote sentinel tokens that are assigned unique token IDs. The BERT-style objective (second row) includes a corruption where some tokens are replaced by a random token ID; we show this via the greyed-out wordapple.\n\nObjective GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo Prefix language modeling 80.69 18.94 77.99 65.27 26.86 39.73 27.49 BERT-style (Devlin et al., 2018) 82.96 19.17 80.65 69.85 26.78 40.03 27.41 Deshuffling 73.17 18.59 67.61 58.47 26.11 39.30 25.62",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 21,
+              "metadata": {
+                "end": 1589,
+                "page": 21,
+                "year": "2020",
+                "start": 636,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.7180899809652568
+            },
+            {
+              "id": "0537cff0a7cba06538490e45baf3d7bd",
+              "text": "To achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+              "source_id": "t5_jmlr_2020",
+              "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+              "page": 40,
+              "metadata": {
+                "end": 3449,
+                "page": 40,
+                "year": "2020",
+                "start": 2461,
+                "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+                "section": [
+                  "3. Experiments"
+                ],
+                "version": "JMLR 21(140), 2020",
+                "language": "en",
+                "page_kind": "pdf",
+                "document_id": "t5_jmlr_2020",
+                "document_type": "research_paper"
+              },
+              "score": 0.712817055750911
+            }
+          ],
+          "context": "[1a89a28c8f855f22b29f8cc7183e6cbd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 13]\n“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many\n\n[a9ba79f478cec1e4f138957b4ecdeef6 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 21]\nTable 3: Examples of inputs and targets produced by some of the unsupervised objectives we consider applied to the input text “Thank you for inviting me to your party last week .” Note that all of our objectives process tokenized text. For this particular sentence, all words were mapped to a single token by our vocabulary. We write (original text) as a target to denote that the model is tasked with reconstructing the entire input text. <M> denotes a shared mask token and <X>, <Y>, and <Z> denote sentinel tokens that are assigned unique token IDs. The BERT-style objective (second row) includes a corruption where some tokens are replaced by a random token ID; we show this via the greyed-out wordapple.\n\nObjective GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo Prefix language modeling 80.69 18.94 77.99 65.27 26.86 39.73 27.49 BERT-style (Devlin et al., 2018) 82.96 19.17 80.65 69.85 26.78 40.03 27.41 Deshuffling 73.17 18.59 67.61 58.47 26.11 39.30 25.62\n\n[0537cff0a7cba06538490e45baf3d7bd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nTo achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+          "context_ids": [
+            "1a89a28c8f855f22b29f8cc7183e6cbd",
+            "a9ba79f478cec1e4f138957b4ecdeef6",
+            "0537cff0a7cba06538490e45baf3d7bd"
+          ]
+        },
+        {
+          "event": "answer"
+        }
+      ],
+      "model_calls": [
+        {
+          "duration_seconds": 23.599044600000525,
+          "prompt_eval_count": 160,
+          "eval_count": 12,
+          "action": {
+            "action": "search",
+            "query": "T5 tokenizer"
+          }
+        },
+        {
+          "duration_seconds": 42.361425000000054,
+          "prompt_eval_count": 1089,
+          "eval_count": 34,
+          "action": {
+            "action": "answer",
+            "answer": "WordPiece tokenizer",
+            "citations": [
+              "0537cff0a7cba06538490e45baf3d7bd"
+            ]
+          }
+        }
+      ],
+      "elapsed_seconds": 70.61764510000012,
+      "tools_used": {
+        "status": "complete",
+        "observed_searches": 1,
+        "tools": [
+          "BGE query embedding",
+          "Day 6 pgvector dense search"
+        ]
+      }
+    }
+  }
+]

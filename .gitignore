@@ -3,12 +3,19 @@ __pycache__/
 *.pyc
 .env
 .env.*
-!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+*.secrets.*
 .codex-log/
 
 # Local datasets and generated output; share permitted artifacts deliberately
 starter/data/
 starter/results/
+results/reproduction/
+/tmp/
 
 # Optional advanced corpus and large generated assets; reproduce from source URL.
 data/advanced/*.pdf

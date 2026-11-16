@@ -8,6 +8,7 @@ import time
 import urllib.request
 from pathlib import Path
 from tool_reporting import summarize_tools
+from secret_safety import redact, redact_text
 
 
 def ollama(model, messages, timeout):
@@ -33,6 +34,7 @@ def main():
     parser.add_argument('--pages', type=int, default=3)
     parser.add_argument('--timeout', type=int, default=300)
     args = parser.parse_args()
+    args.question = redact_text(args.question)
     if args.pages < 1 or args.pages > 5:
         parser.error('--pages must be between 1 and 5')
     root = args.day6.resolve()
@@ -96,6 +98,7 @@ def main():
         trace['error'] = f'{type(exc).__name__}: {exc}'
     trace['elapsed_seconds'] = time.perf_counter() - start
     trace['tools_used'] = summarize_tools(trace['events'], 'advanced', trace['status'])
+    trace = redact(trace)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(trace, ensure_ascii=False, indent=2) + '\n', encoding='utf8')
     print(json.dumps({k: trace.get(k) for k in ('status', 'answer', 'pages', 'tools_used', 'error', 'elapsed_seconds')}))

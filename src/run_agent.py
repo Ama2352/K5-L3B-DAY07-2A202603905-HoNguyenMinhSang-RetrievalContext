@@ -10,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'starter'))
 from agentic import run_agent
 from tool_reporting import summarize_tools
+from secret_safety import database_url, redact, redact_text
 
 
 class DenseRetriever:
@@ -98,14 +99,13 @@ def main():
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--budget', type=int, default=4000)
     args = parser.parse_args()
-    url = os.environ.get('DATABASE_URL')
-    if not url:
-        parser.error('DATABASE_URL must point to the Day 6 database')
+    args.question = redact_text(args.question)
     started = time.perf_counter()
     controller = OllamaController(args.model)
     trace = {'question': args.question, 'model': args.model, 'method': args.method, 'budget_chars': args.budget,
              'top_k': args.top_k, 'max_searches': 3, 'service_cost_usd': 0}
     try:
+        url = database_url(args.day6)
         retriever = (HybridRetriever if args.method == 'hybrid' else DenseRetriever)(args.day6.resolve(), url)
         trace.update(run_agent(args.question, controller, retriever, max_searches=3,
                                top_k=args.top_k, budget=args.budget))
@@ -114,6 +114,7 @@ def main():
     trace['model_calls'] = controller.calls
     trace['elapsed_seconds'] = time.perf_counter() - started
     trace['tools_used'] = summarize_tools(trace.get('events', []), args.method, trace['status'])
+    trace = redact(trace)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(trace, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: trace.get(k) for k in ('status', 'answer', 'citations', 'tools_used', 'error', 'elapsed_seconds')}, ensure_ascii=False))
