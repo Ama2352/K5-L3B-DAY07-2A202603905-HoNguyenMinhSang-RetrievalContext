@@ -1,0 +1,3732 @@
+{
+  "method": "Codex-assisted visual inspection of original renders; source-only corpus annotation",
+  "benchmark_input": false,
+  "source_pdf_sha256": "65ee29adf5f3a92fcd74701696c25dae8f2d18f1ba2e7f4fba2bcfc059acbefc",
+  "scope": "All pages viewed; informative visual regions described; not all table cells independently transcribed.",
+  "pages": [
+    {
+      "page": 1,
+      "summary": "Cover of NASA FY 2024 Agency Financial Report.",
+      "visual_description": "Full-page close-up of a helmeted astronaut in a dark environment, illuminated helmet lights and a small eyewear/display assembly visible near the eyes. NASA logo at upper right; large white/blue report title at bottom.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "full page",
+          "title": "Cover astronaut photograph",
+          "labels": [
+            "NASA",
+            "FY 2024",
+            "Agency Financial Report"
+          ],
+          "uncertainty": "Identity and equipment details require caption on physical page 2; they cannot be determined from face alone."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 2,
+      "summary": "Photo credits: Artemis II crew group portrait and description of the AR cover image.",
+      "visual_description": "Upper photograph shows four astronauts in blue flight suits kneeling in front of a large group in a room with blue curtains. Lower blue panel repeats the cover photograph beside its caption.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "upper two-thirds",
+          "title": "Artemis II crew with White House staff",
+          "labels": [
+            "Reid Wiseman",
+            "Victor Glover",
+            "Christina Koch",
+            "Jeremy Hansen",
+            "June 6, 2024",
+            "Bill Ingalls"
+          ],
+          "uncertainty": "Identities/order come from printed caption, not facial recognition."
+        },
+        {
+          "kind": "photo",
+          "location": "lower left",
+          "title": "Cover image: Andre Douglas wearing AR display",
+          "labels": [
+            "Andre Douglas",
+            "San Francisco Volcanic Field, Northern Arizona",
+            "May 21, 2024",
+            "NASA/Josh Valcarcel"
+          ],
+          "uncertainty": "Caption states AR monocular lens/pico-projector/waveguide; internal functioning is not visible."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 3,
+      "summary": "Table of contents lists Management Discussion and Analysis, Financial Section, Other Information and Appendix.",
+      "visual_description": "Two columns of blue/green/purple/pink section headings with horizontal rules and printed page numbers. NASA logo upper right.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "full page",
+          "title": "Table of Contents",
+          "labels": [
+            "Section 1 Management?s Discussion and Analysis 07",
+            "Section 2 Financial Section 45",
+            "Section 3 Other Information 94",
+            "Section 4 Appendix 116"
+          ],
+          "uncertainty": "Numbers are report printed-page labels, not physical PDF page indices; full row transcription not undertaken."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 4,
+      "summary": "NASA commemorates the 55th anniversary of the Apollo 11 Moon landing.",
+      "visual_description": "Black starfield page with large white anniversary title. Lower image shows an astronaut standing on lunar ground beside a US flag; lunar-module structure is at far left and footprints cross the foreground.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "lower half",
+          "title": "Buzz Aldrin on Apollo 11 moonwalk",
+          "labels": [
+            "Buzz Aldrin",
+            "July 20, 1969",
+            "United States flag",
+            "NASA"
+          ],
+          "uncertainty": "Caption identifies the person/date; no measurements can be read from the photo."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 5,
+      "summary": "NASA Johnson dedicates Building 12 to Dorothy Vaughan and women of Apollo.",
+      "visual_description": "Sepia portrait of an older woman fills the upper background. Lower dark panel carries HERstory title and dedication prose, with a yellow QR code on the right.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "upper two-thirds",
+          "title": "Dorothy Vaughan portrait",
+          "labels": [
+            "HERstory",
+            "NASA Johnson Dedicates Building to Dorothy Vaughan, Women of Apollo"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "text_panel",
+          "location": "lower portion",
+          "title": "Dedication event",
+          "labels": [
+            "Building 12",
+            "Dorothy Vaughan Center in Honor of the Women of Apollo",
+            "July 19"
+          ],
+          "uncertainty": "Caption/prose identifies subject; QR target not scanned."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 6,
+      "summary": "Administrator message dated November 15, 2024 introduces the FY 2024 AFR and strategic themes.",
+      "visual_description": "White page of prose under a gold title strip. A gold-bordered sidebar at upper right lists the four strategic themes and statements.",
+      "regions": [
+        {
+          "kind": "text_panel",
+          "location": "upper right",
+          "title": "NASA?s Major Themes and Strategic Goals",
+          "labels": [
+            "Discover: expand human knowledge through new scientific discoveries",
+            "Explore: extend human presence to Moon and Mars",
+            "Innovate: catalyze economic growth and innovation",
+            "Advance: enhance capabilities and operations"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "text",
+          "location": "main column",
+          "title": "Message from the Administrator",
+          "labels": [
+            "November 15, 2024",
+            "14th consecutive unmodified clean audit opinion",
+            "material weaknesses in internal controls"
+          ],
+          "uncertainty": "Prose spans continuation page; not a numerical chart."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 7,
+      "summary": "Continuation of Administrator message: ISS/Commercial Crew, Earth science, aeronautics, STEM and workforce; signed Bill Nelson.",
+      "visual_description": "Mostly prose. Small circular headshot and handwritten-style signature near lower left; pale yellow Spanish translation notice at bottom.",
+      "regions": [
+        {
+          "kind": "portrait",
+          "location": "lower left",
+          "title": "Administrator signature block",
+          "labels": [
+            "Bill Nelson"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "text_panel",
+          "location": "bottom",
+          "title": "Spanish Translation Available",
+          "labels": [
+            "view page 117"
+          ],
+          "uncertainty": "Printed page reference; no photographic scientific evidence."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 8,
+      "summary": "Section 1 divider: Management?s Discussion and Analysis; GRX-810 high-temperature superalloy application.",
+      "visual_description": "Dark green background with a centered square green-lit photo of a laser/bright tool point tracing a NASA insignia in metal-like powder or textured material. Caption below describes 3D printing.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "center",
+          "title": "NASA insignia 3D printed using GRX-810 superalloy",
+          "labels": [
+            "GRX-810",
+            "3D-printable high-temperature material",
+            "NASA/Jordan Salkin",
+            "May 11, 2024"
+          ],
+          "uncertainty": "Photo shows a fabrication process, not direct evidence of durability or temperature performance; those claims are caption text."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed. Text headings/caption checked; no inference about hidden image content."
+    },
+    {
+      "page": 9,
+      "summary": "Welcome to NASA explains report contents, fiscal stewardship, strategic-goal reporting and legal accounting framework.",
+      "visual_description": "Green title strip above prose. Bottom Did You Know panel has a small photo of Bill Nelson with Snoopy amid an outdoor crowd.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "lower left",
+          "title": "Bill Nelson and Snoopy at eclipse event",
+          "labels": [
+            "Great Lakes Science Center",
+            "Cleveland, OH",
+            "April 8, 2024"
+          ],
+          "uncertainty": "Identities/location from caption."
+        },
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Welcome to NASA",
+          "labels": [
+            "FY 2024 and FY 2023 audited financial statements",
+            "CFO Act of 1990",
+            "GPRAMA",
+            "2022 Strategic Plan"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Original page render visually reviewed; labels and captions cross-checked. Geometric placement approximate; no pixel coordinates asserted."
+    },
+    {
+      "page": 10,
+      "summary": "NASA vision, mission and five core values.",
+      "visual_description": "Wide upper photo from the ISS shows spacecraft structure/robotic arm above the curved blue Earth horizon and dark eclipse shadow. Bottom left is a black Earth-background values panel; right is a green-bordered vision/mission box.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "upper half",
+          "title": "Moon shadow photographed from ISS",
+          "labels": [
+            "Quebec",
+            "New Brunswick",
+            "Maine",
+            "261 miles above",
+            "NASA Johnson",
+            "April 8, 2024"
+          ],
+          "uncertainty": "Geographic identities/altitude from caption; boundaries not marked on photo."
+        },
+        {
+          "kind": "text_panel",
+          "location": "lower left",
+          "title": "NASA?s Core Values",
+          "labels": [
+            "Safety",
+            "Integrity",
+            "Inclusion",
+            "Teamwork",
+            "Excellence"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "text_panel",
+          "location": "lower right",
+          "title": "Vision and Mission",
+          "labels": [
+            "Vision: Exploring the secrets of the universe for the benefit of all.",
+            "Mission: NASA explores the unknown in air and space, innovates for the benefit of humanity, and inspires the world through discovery."
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Original page render visually reviewed; labels and captions cross-checked. Geometric placement approximate; no pixel coordinates asserted."
+    },
+    {
+      "page": 11,
+      "summary": "Organizational structure links NASA administrator leadership, mission directorates, offices and centers.",
+      "visual_description": "Green-lined organization chart: dark green administrator/deputy/associate box at top center; side advisory/oversight and staff offices; mission directorates lower center and center boxes in paired columns at lower right.",
+      "regions": [
+        {
+          "kind": "diagram",
+          "location": "central chart",
+          "title": "NASA Organizational Structure",
+          "labels": [
+            "Administrator / Deputy Administrator / Associate Administrator",
+            "Chief Financial Officer",
+            "Chief Information Officer",
+            "Inspector General",
+            "Office of Technology, Policy and Strategy",
+            "Aeronautics Research Mission Directorate",
+            "Science Mission Directorate",
+            "Space Technology Mission Directorate",
+            "Exploration Systems Development Mission Directorate",
+            "Space Operations Mission Directorate",
+            "Mission Support Directorate",
+            "NASA Centers",
+            "Jet Propulsion Laboratory"
+          ],
+          "uncertainty": "Dotted lines denote independent advisory/oversight organizations. Chart relationship lines checked visually; not every staff-office label transcribed."
+        },
+        {
+          "kind": "legend",
+          "location": "lower left",
+          "title": "Legend",
+          "labels": [
+            "JPL federally funded research and development center managed by Caltech",
+            "Dotted lines indicate independent advisory or oversight organizations",
+            "NASA Advisory Council",
+            "Aerospace Safety Advisory Panel"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Original page render visually reviewed; labels and captions cross-checked. Geometric placement approximate; no pixel coordinates asserted."
+    },
+    {
+      "page": 12,
+      "summary": "Map of NASA centers/facilities and three testing-capability examples.",
+      "visual_description": "Upper US map uses blue square center markers, red circular supporting-facility markers and a yellow diamond federally funded R&D marker, connected by labeled callouts. Three small lower photos show wind-tunnel model review, spacecraft facility work and a large tank test structure.",
+      "regions": [
+        {
+          "kind": "map",
+          "location": "upper two-thirds",
+          "title": "NASA Centers and Facilities",
+          "labels": [
+            "Ames Research Center",
+            "Jet Propulsion Laboratory",
+            "Armstrong Flight Research Center",
+            "Johnson Space Center",
+            "Stennis Space Center",
+            "Marshall Space Flight Center",
+            "Kennedy Space Center",
+            "Langley Research Center",
+            "Goddard Space Flight Center",
+            "Glenn Research Center",
+            "Mary W. Jackson Headquarters",
+            "White Sands Test Facility",
+            "Michoud Assembly Facility",
+            "NASA Shared Services Center",
+            "Wallops Flight Facility",
+            "Goddard Institute for Space Studies",
+            "Katherine Johnson Verification and Validation Facility",
+            "Neil A. Armstrong Test Facility"
+          ],
+          "uncertainty": "Locations are schematic US callouts; geographic coordinates are not supplied."
+        },
+        {
+          "kind": "photo_strip",
+          "location": "lower third",
+          "title": "Testing Capabilities Support Future Mission Success",
+          "labels": [
+            "Dragonfly half-scale lander wind tunnel test at Langley",
+            "Europa Clipper inspection at Kennedy",
+            "SLS liquid oxygen tank test at Michoud"
+          ],
+          "uncertainty": "Object/project identities from captions; small thumbnails do not reveal all hardware detail."
+        }
+      ],
+      "verification_notes": "Original page render visually reviewed; labels and captions cross-checked. Geometric placement approximate; no pixel coordinates asserted."
+    },
+    {
+      "page": 13,
+      "summary": "FY 2024 budget and NASA civil-service workforce by center.",
+      "visual_description": "Two boxed infographics: budget amounts/categories at left, workforce counts and percentages in two columns at right. Bottom small 2024 milestone promotion and QR code.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "left panel",
+          "title": "FY 2024 Budget",
+          "labels": [
+            "Total $24.9 billion",
+            "Research, Engineering, & Development $13.3B (54%)",
+            "Operations $9.0B (36%)",
+            "Grants $1.3B (5%)",
+            "Facilities and Equipment $1.3B (5%)",
+            "$4.5 million GSA Technology Modernization Fund transfer included"
+          ],
+          "uncertainty": "Rounded values/percentages as displayed."
+        },
+        {
+          "kind": "table",
+          "location": "right panel",
+          "title": "NASA Civil Service Workforce by Center",
+          "labels": [
+            "Total 18,475 employees",
+            "Johnson 3,229 (18%)",
+            "Goddard 3,180 (17%)",
+            "Marshall 2,345 (13%)",
+            "Kennedy 2,104 (11%)",
+            "Langley 1,848 (10%)",
+            "Headquarters 1,744 (9%)",
+            "Glenn 1,471 (8%)",
+            "Ames 1,327 (7%)",
+            "Other 675 (4%)",
+            "Armstrong 552 (3%)"
+          ],
+          "uncertainty": "Percentages are rounded as printed; counts and labels read visually."
+        }
+      ],
+      "verification_notes": "Original page render visually reviewed; labels and captions cross-checked. Geometric placement approximate; no pixel coordinates asserted."
+    },
+    {
+      "page": 14,
+      "summary": "Mission Performance divider featuring simulated lunar soil collection.",
+      "visual_description": "Centered portrait photo shows a helmeted astronaut in illuminated suit, raised hammer and drive tube at a work surface in darkness.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "center",
+          "title": "Kate Rubins collects simulated lunar soil sample",
+          "labels": [
+            "Kate Rubins",
+            "hammer",
+            "drive tube",
+            "nighttime simulated moonwalk",
+            "San Francisco Volcanic Field, Northern Arizona",
+            "May 16, 2024",
+            "NASA/Josh Valcarcel"
+          ],
+          "uncertainty": "Caption identifies astronaut/location; scene is simulation, not a photograph taken on the Moon."
+        }
+      ],
+      "verification_notes": "Original page render visually reviewed; labels and captions cross-checked. Geometric placement approximate; no pixel coordinates asserted."
+    },
+    {
+      "page": 15,
+      "summary": "2022 Strategic Plan framework connects strategic goals, objectives, performance goals, annual targets and activities.",
+      "visual_description": "Colored-box flow diagram with green primary planning chain, blue Priority Questions at right and purple President?s Management Agenda priorities linked by dashed arrow.",
+      "regions": [
+        {
+          "kind": "diagram",
+          "location": "center",
+          "title": "Strategic Plan Framework",
+          "labels": [
+            "Strategic Goals: timeless",
+            "Strategic Objectives: 10+ years",
+            "Performance Goals: 2?5 years",
+            "Annual Target",
+            "Milestone/Activity",
+            "Agency Priority Goals: 2 years",
+            "Priority Questions: 4 years",
+            "President?s Management Agenda Priorities: multi year",
+            "Legend: GPRAMA green; Evidence Act blue; PMA priorities purple"
+          ],
+          "uncertainty": "Arrows: goals down to objectives; performance goals up to objectives; annual target up to performance goals; milestone/activity up to annual target; Agency Priority Goals right to performance goals; objectives right to Priority Questions; PMA dashed left/up to performance goals."
+        },
+        {
+          "kind": "summary_numbers",
+          "location": "below diagram",
+          "title": "Performance Framework Breakdown",
+          "labels": [
+            "4 strategic goals",
+            "12 strategic objectives",
+            "50 performance goals"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Original page viewed at full resolution to verify diagram labels, timescales and arrow directions."
+    },
+    {
+      "page": 16,
+      "summary": "Four strategic themes with twelve strategic objectives.",
+      "visual_description": "Four horizontal sections pair bold goal statements at left with numbered objective lists at right, separated by green rules.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "full page",
+          "title": "Strategic Goals and Objectives",
+          "labels": [
+            "Discover: expand human knowledge through new scientific discoveries",
+            "1.1 Earth system and climate",
+            "1.2 Sun, solar system, universe",
+            "1.3 science data accessible and practical benefits",
+            "Explore: Moon and onwards to Mars",
+            "2.1 Moon and deep space",
+            "2.2 human space flight economy enabled by a commercial market",
+            "2.3 safeguard explorers",
+            "2.4 access to space",
+            "Innovate: economic growth and innovation",
+            "3.1 transformational space technologies",
+            "3.2 efficient sustainable aviation",
+            "Advance: capabilities and operations",
+            "4.1 diverse workforce",
+            "4.2 mission support",
+            "4.3 next generation explorers"
+          ],
+          "uncertainty": "Objective labels summarized rather than verbatim complete text; visible row numbering retained."
+        }
+      ],
+      "verification_notes": "Original page render visually reviewed; labels and captions cross-checked. Geometric placement approximate; no pixel coordinates asserted."
+    },
+    {
+      "page": 17,
+      "summary": "FY2024 requested budget versus Operating Plan by strategic objective; Acoustics Lab photo below.",
+      "visual_description": "Large color-banded table groups Discover green, Explore blue, Innovate purple, Advance orange. Below, five people stand in a room lined with blue wedge-shaped acoustic absorbers.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper two-thirds",
+          "title": "Strategic Goals and Objectives FY2024 Budget",
+          "labels": [
+            "Units: millions",
+            "Columns: strategic goal; strategic objective; Requested FY2024; OP FY2024",
+            "1.1: 1,974 / 1,740",
+            "1.2: 5,788 / 5,138",
+            "1.3: 499 / 447",
+            "2.1: 7,971 / 7,648",
+            "2.2: 3,488 / 3,215",
+            "2.3: 255 / 258",
+            "2.4: 791 / 747",
+            "3.1: 1,392 / 1,100",
+            "3.2: 996 / 935",
+            "4.1: 112 / 102",
+            "4.2: 3,711 / 3,356",
+            "4.3: 158 / 143"
+          ],
+          "uncertainty": "Values recorded Requested/OP in that order; table cells visually checked at full resolution."
+        },
+        {
+          "kind": "photo",
+          "location": "lower third",
+          "title": "Acoustics Lab quiet room",
+          "labels": [
+            "low acoustic noise",
+            "audio recording",
+            "subjective audio performance testing",
+            "Zach Jones",
+            "James Blair",
+            "April 2, 2024"
+          ],
+          "uncertainty": "Names/function from caption; sound level is not measurable from the photo."
+        }
+      ],
+      "verification_notes": "Original page zoomed; all12 requested/OP budget row pairs checked visually, as well as acoustic-room photo caption."
+    },
+    {
+      "page": 18,
+      "summary": "Agency Priority Goals overview and Climate Change Research priority supporting strategic goal1.",
+      "visual_description": "Green header contains priority-goal explanation. Main page is text; lower Did You Know strip shows a small nighttime rocket standing on a launchpad.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Climate Change Research",
+          "labels": [
+            "supporting Strategic Goal1",
+            "FY2024?2025 two-year cycle",
+            "September30,2025 target",
+            "Earth System Observatory",
+            "Greenhouse Gas Monitoring and Information Center",
+            "PREFIRE",
+            "Earth System Explorers"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "PREFIRE launch rocket",
+          "labels": [
+            "Rocket Lab Electron",
+            "Launch Complex1 M?hia New Zealand",
+            "May25,2024"
+          ],
+          "uncertainty": "Visible launchpad/rocket; mission/date from caption."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed; source labels/captions checked. Numeric claims limited to labels explicitly recorded."
+    },
+    {
+      "page": 19,
+      "summary": "Artemis and Space Technology Leadership Agency Priority Goals, supporting goals2 and3.",
+      "visual_description": "Two prose sections with green goal-number labels. Aerial Vehicle Assembly Building thumbnail near middle; bottom small clean-room photo shows three compact wheeled rover units.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "upper half",
+          "title": "Artemis",
+          "labels": [
+            "supporting Strategic Goal2",
+            "Artemis II",
+            "on-orbit propellant transfer",
+            "September30,2025 target"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "middle left",
+          "title": "SLS core stage transport at Kennedy",
+          "labels": [
+            "Vehicle Assembly Building",
+            "July24,2024"
+          ],
+          "uncertainty": "Aerial industrial campus and road scene; core-stage details small."
+        },
+        {
+          "kind": "text",
+          "location": "lower half",
+          "title": "Space Technology Leadership",
+          "labels": [
+            "supporting Strategic Goal3",
+            "Tipping Point opportunities",
+            "small business technology transitions",
+            "CADRE"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "CADRE rover test in clean room",
+          "labels": [
+            "three small Moon-bound rovers",
+            "Jet Propulsion Laboratory",
+            "December2023"
+          ],
+          "uncertainty": "Caption identifies autonomous teamwork demonstration; autonomy cannot be observed in a still image."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed; source labels/captions checked. Numeric claims limited to labels explicitly recorded."
+    },
+    {
+      "page": 20,
+      "summary": "Strategic Goals and Highlights divider features Psyche launch.",
+      "visual_description": "Large rectangular launch photograph shows a rocket rising beside its tower with bright exhaust, dense smoke and water reflection; a bird silhouette crosses near upper left.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "center",
+          "title": "Falcon Heavy launch carrying Psyche",
+          "labels": [
+            "SpaceX Falcon Heavy",
+            "Psyche",
+            "Launch Complex39A",
+            "October13,2023",
+            "Kennedy Space Center Florida",
+            "Deep Space Optical Communications",
+            "NASA/Aubrey Gemignani"
+          ],
+          "uncertainty": "Destination and payload from caption; rocket visible, asteroid not visible."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed; source labels/captions checked. Numeric claims limited to labels explicitly recorded."
+    },
+    {
+      "page": 21,
+      "summary": "Explains performance-goal assessment approach and four color ratings.",
+      "visual_description": "Upper-left explanatory text; upper-right bordered example LSP assessment. Four tall colored boxes across lower page define green, yellow, red and grey ratings.",
+      "regions": [
+        {
+          "kind": "text_panel",
+          "location": "upper right",
+          "title": "Example performance measurement",
+          "labels": [
+            "Launch Services Program",
+            "Psyche, PACE, GOES-U",
+            "FY2024 target:100percent launch services objectives completed",
+            "anticipated available-data result:100percent",
+            "anticipated rating:Green"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "legend",
+          "location": "lower row",
+          "title": "Performance ratings",
+          "labels": [
+            "Green:Complete or On Target to Complete",
+            "Yellow:Below Target",
+            "Red:Significantly Below Target/At Risk",
+            "Grey:Unrated"
+          ],
+          "uncertainty": "This is a rating-definition diagram, not a data distribution chart."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed; source labels/captions checked. Numeric claims limited to labels explicitly recorded."
+    },
+    {
+      "page": 22,
+      "summary": "Summary of preliminary FY2024 performance ratings by strategic goal, compared with FY2023.",
+      "visual_description": "100percent stacked vertical bars grouped in four strategic goals; each group has FY2023 and FY2024 bars. Green bases, yellow/red middle segments and grey unrated upper segments. Numbers inside bars are counts; vertical axis is percentages.",
+      "regions": [
+        {
+          "kind": "chart",
+          "location": "center",
+          "title": "FY2024 Performance Assessment",
+          "labels": [
+            "Y-axis:0?100percent",
+            "X-axis:Strategic Goals1,2,3,4; FY2023/FY2024",
+            "Legend green Complete or On Target to Complete; yellow Below Target; red Significantly Below Target/At Risk; grey Unrated",
+            "Goal1 FY2023 green5 grey11; FY2024 green3 red1 grey10",
+            "Goal2 FY2023 green7 yellow3; FY2024 green8 yellow1 grey1",
+            "Goal3 FY2023 green7 yellow3 red1; FY2024 green10 yellow1",
+            "Goal4 FY2023 green10 yellow1 red1; FY2024 green12 yellow1 red1 grey1"
+          ],
+          "uncertainty": "Embedded labels are counts, not percentages; normalized bar heights account for differing goal totals. FY2024 ratings preliminary at publication."
+        },
+        {
+          "kind": "text",
+          "location": "below chart",
+          "title": "Unrated goals explanation",
+          "labels": [
+            "12 performance goals unrated",
+            "10 await Science Advisory Committees",
+            "Performance Goal2.2.3 milestones not fully operational",
+            "Performance Goal4.2.8 data availability lag"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Original page zoomed; chart colors, both axes, legend and every embedded count checked visually. Do not infer precise percentages from pixel heights."
+    },
+    {
+      "page": 23,
+      "summary": "Continued FY2024 assessment explains changed goal counts and red-rated performance goals.",
+      "visual_description": "Mostly prose with three paragraphs; bottom small photo of people before a colorful geometric astronaut mural.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Red performance ratings and goal changes",
+          "labels": [
+            "Goal1.2.9 Science Mission Directorate milestones",
+            "Goal4.1.2 FEVS DEIA Index",
+            "target88percent or above",
+            "FY2024 index84.1percent",
+            "Dragonfly",
+            "IMAP",
+            "Farside Seismic Suite"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "To the Moon and Back mural",
+          "labels": [
+            "New York",
+            "NASA Art Program",
+            "350 Hudson Street",
+            "September24,2024"
+          ],
+          "uncertainty": "Mural depicts an astronaut against multicolored geometric panels; artist names derive from caption."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed; source labels/captions checked. Numeric claims limited to labels explicitly recorded."
+    },
+    {
+      "page": 24,
+      "summary": "Strategic Goal1 Discover: Earth climate, Sun/solar system/universe and open science overview.",
+      "visual_description": "Green goal1 heading and text-based highlights. Bottom small spacecraft-in-fairing photo shows metallic structures and technicians.",
+      "regions": [
+        {
+          "kind": "summary_numbers",
+          "location": "top",
+          "title": "Strategic Goal1 performance",
+          "labels": [
+            "14 performance goals",
+            "3 Green",
+            "1 Red",
+            "10 Unrated"
+          ],
+          "uncertainty": "Text summary, not a chart."
+        },
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Discover highlights",
+          "labels": [
+            "Earth Science to Action Strategy2024?2034",
+            "PACE",
+            "PREFIRE",
+            "Psyche",
+            "Perseverance",
+            "IMAP",
+            "Europa Clipper",
+            "Nancy Grace Roman",
+            "NEO Surveyor"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "PACE encapsulation",
+          "labels": [
+            "SpaceX technicians",
+            "Falcon9 payload fairing",
+            "Astrotech Space Operations",
+            "January30,2024"
+          ],
+          "uncertainty": "Hardware identity and protective-fairing purpose from caption; small image details limited."
+        }
+      ],
+      "verification_notes": "Original full-page render visually reviewed; source labels/captions checked. Numeric claims limited to labels explicitly recorded."
+    },
+    {
+      "page": 25,
+      "summary": "Strategic Goal2 Explore: Artemis, human spaceflight economy and commercial partners.",
+      "visual_description": "Large green goal2 header above prose; bottom photo shows four people in white space suits standing shoulder to shoulder in an industrial interior.",
+      "regions": [
+        {
+          "kind": "summary_numbers",
+          "location": "top",
+          "title": "Strategic Goal2 performance",
+          "labels": [
+            "10 performance goals",
+            "8 Green",
+            "1 Yellow",
+            "1 Unrated"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Explore highlights",
+          "labels": [
+            "Artemis",
+            "Moon and deep space",
+            "human spaceflight economy enabled by commercial market",
+            "Crew-8",
+            "ISS"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "SpaceX Crew-8 training",
+          "labels": [
+            "Crew Equipment Interface Test",
+            "Kennedy Space Center",
+            "January12,2024"
+          ],
+          "uncertainty": "Crew identity/context from caption; no individual names asserted from faces."
+        }
+      ],
+      "verification_notes": "Original rendered page reviewed; captions/headings and explicitly listed numeric labels checked visually."
+    },
+    {
+      "page": 26,
+      "summary": "Strategic Goal3 Innovate: space technology, Deep Space Optical Communications and sustainable aviation.",
+      "visual_description": "Green goal3 header and text highlights. Bottom photo thumbnail shows a large concave white/grey antenna dish.",
+      "regions": [
+        {
+          "kind": "summary_numbers",
+          "location": "top",
+          "title": "Strategic Goal3 performance",
+          "labels": [
+            "11 performance goals",
+            "10 Green",
+            "1 Yellow"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Innovation highlights",
+          "labels": [
+            "Deep Space Optical Communications DSOC",
+            "Cryogenic Fluid Management",
+            "Low Boom Flight Demonstrator X-59",
+            "Electrified Powertrain Flight Demonstration",
+            "Sustainable Flight Demonstrator"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "Deep Space Network hybrid antenna",
+          "labels": [
+            "radio frequency and near-infrared laser signals",
+            "Psyche",
+            "DSOC",
+            "NASA/JPL-Caltech"
+          ],
+          "uncertainty": "Radio/optical capability is stated by caption, not directly demonstrable from the dish photograph."
+        }
+      ],
+      "verification_notes": "Original rendered page reviewed; captions/headings and explicitly listed numeric labels checked visually."
+    },
+    {
+      "page": 27,
+      "summary": "Strategic Goal4 Advance: workforce, mission support and next generation of explorers.",
+      "visual_description": "Green goal4 header; mostly prose. Lower small photo shows a group of students in red shirts working together around a tabletop activity.",
+      "regions": [
+        {
+          "kind": "summary_numbers",
+          "location": "top",
+          "title": "Strategic Goal4 performance",
+          "labels": [
+            "15 performance goals",
+            "12 Green",
+            "1 Yellow",
+            "1 Red",
+            "1 Unrated"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Workforce and education highlights",
+          "labels": [
+            "time to hire80days Q1 to73days Q3 FY2024",
+            "six-phase Agencywide Full Workforce Barrier Analysis",
+            "STEM FY2023?2024 Learning Agenda"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "High School Aerospace Scholars",
+          "labels": [
+            "2024 cohort",
+            "Johnson Space Center",
+            "Engineering Design Challenge",
+            "July29,2024"
+          ],
+          "uncertainty": "Caption provides educational context; students cannot be individually identified from image."
+        }
+      ],
+      "verification_notes": "Original rendered page reviewed; captions/headings and explicitly listed numeric labels checked visually."
+    },
+    {
+      "page": 28,
+      "summary": "Financial Performance divider features GOES-U transport.",
+      "visual_description": "Large twilight photo shows a tall white fairing/payload transport on a roadway escorted by cars with flashing lights, traffic signals and a road sign.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "center",
+          "title": "GOES-U transport to SpaceX hangar",
+          "labels": [
+            "NOAA GOES-U",
+            "Astrotech Space Operations",
+            "Launch Complex39A",
+            "Kennedy Space Center Florida",
+            "June14?15,2024",
+            "NASA/Ben Smegelsky"
+          ],
+          "uncertainty": "Object and route from caption; visible scene is ground transport, not launch."
+        }
+      ],
+      "verification_notes": "Original rendered page reviewed; captions/headings and explicitly listed numeric labels checked visually."
+    },
+    {
+      "page": 29,
+      "summary": "Financial highlights define assets, liabilities and net position and compare FY2024/FY2023 balances.",
+      "visual_description": "Top three definition boxes use plus/minus/equal symbols. Lower chart pairs each yellow assets column with a stacked teal liabilities and dark-blue net-position column for each fiscal year.",
+      "regions": [
+        {
+          "kind": "diagram",
+          "location": "upper row",
+          "title": "Balance-sheet definitions",
+          "labels": [
+            "Assets:current/future economic benefits owned or available",
+            "Liabilities:debts not yet paid",
+            "Net position:difference between revenue/financing sources and costs since inception"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "chart",
+          "location": "lower center",
+          "title": "Balance Sheet Components FY2024 and FY2023",
+          "labels": [
+            "Units:millions",
+            "FY2024 Assets27,504; Liabilities7,664; Net Position19,840",
+            "FY2023 Assets26,135; Liabilities6,719; Net Position19,416",
+            "Legend:yellow Assets; teal Liabilities; dark blue Net Position"
+          ],
+          "uncertainty": "No numeric y-axis; read explicitly printed values. Stacked liabilities+net position equal assets."
+        }
+      ],
+      "verification_notes": "Original rendered page reviewed; captions/headings and explicitly listed numeric labels checked visually."
+    },
+    {
+      "page": 30,
+      "summary": "Asset composition comparison and FY2024 percentage distribution; explanation of Fund Balance with Treasury and PP&E.",
+      "visual_description": "Two chart panels: left stacked columns FY2024/FY2023 with green Treasury balance, blue property/plant/equipment and purple other; right a donut with callout percentages and central total.",
+      "regions": [
+        {
+          "kind": "chart",
+          "location": "upper left",
+          "title": "Assets by Type Comparison FY2024 and FY2023",
+          "labels": [
+            "Units:millions",
+            "FY2024 total27,504: Fund Balance with Treasury17,186; Property Plant and Equipment9,331; Other987",
+            "FY2023 total26,135: Fund Balance with Treasury17,378; Property Plant and Equipment8,651; Other106"
+          ],
+          "uncertainty": "Category order and year labels checked; no y-axis scale."
+        },
+        {
+          "kind": "chart",
+          "location": "upper right",
+          "title": "Assets by Type2024",
+          "labels": [
+            "Units:millions",
+            "Total27,504",
+            "Fund Balance with Treasury62percent $17,186",
+            "Property Plant and Equipment34percent $9,331",
+            "Other4percent $987"
+          ],
+          "uncertainty": "Percentages rounded as displayed; do not recompute and substitute unrounded percentages."
+        }
+      ],
+      "verification_notes": "Original rendered page reviewed; captions/headings and explicitly listed numeric labels checked visually."
+    },
+    {
+      "page": 31,
+      "summary": "Liabilities composition comparison, FY2024 shares and total-net-position discussion.",
+      "visual_description": "Two boxed charts: seven-category stacked bars at left for2024/2023; multicolor donut at right with total liabilities in center, percentage/value callouts and category labels.",
+      "regions": [
+        {
+          "kind": "chart",
+          "location": "middle left",
+          "title": "Liabilities by Type Comparison FY2024 and FY2023",
+          "labels": [
+            "Units:millions",
+            "FY2024 total7,664; FY2023 total6,719",
+            "Environmental/Disposal2,353 /2,305",
+            "Accounts Payable1,775 /1,766",
+            "Other Accrued1,902 /1,793",
+            "Other Liabilities1,046 /302",
+            "Federal Employee Salary Leave Benefits348 /288",
+            "Advances/Deferred Revenue214 /238",
+            "Pensions/Post-employment26 /27"
+          ],
+          "uncertainty": "Pairs listed2024/2023. All explicitly printed category values checked; fiscal totals include rounding."
+        },
+        {
+          "kind": "chart",
+          "location": "middle right",
+          "title": "Liabilities by Type FY2024",
+          "labels": [
+            "Total $7,664 million",
+            "Environmental/Disposal31percent $2,353",
+            "Accounts Payable23percent $1,775",
+            "Other Accrued25percent $1,902",
+            "Other Liabilities14percent $1,046",
+            "Federal Employee Salary Leave Benefits4percent $348",
+            "Advances/Deferred Revenue3percent $214",
+            "Pensions/Post-employment less than1percent $26"
+          ],
+          "uncertainty": "Colors link to legend: darkgreen environmental; lime accounts; purple accrued; blue other; orange salary; lightgreen advances; brown pensions."
+        }
+      ],
+      "verification_notes": "Original full page zoomed to verify small callouts, category legend, values and less-than1percent notation."
+    },
+    {
+      "page": 32,
+      "summary": "Results of Operations: Net Cost of Operations by strategic goal for FY2024.",
+      "visual_description": "Large donut uses blue upper-right Goal1, lime-green lower-right/bottom Goal2, purple lower-left Goal3 and orange upper-left Goal4. Callouts outside show percentages and values; center shows total.",
+      "regions": [
+        {
+          "kind": "chart",
+          "location": "center/lower page",
+          "title": "Net Cost of Operations By Strategic Goal for FY2024",
+          "labels": [
+            "Units:millions",
+            "Total net cost $24,734",
+            "Goal1 blue32percent $8,038",
+            "Goal2 lime-green44percent $10,920",
+            "Goal3 purple12percent $2,929",
+            "Goal4 orange12percent $2,847",
+            "Goal1 Discover",
+            "Goal2 Explore",
+            "Goal3 Innovate",
+            "Goal4 Advance"
+          ],
+          "uncertainty": "Percentages rounded; goal descriptions in legend below. Equal displayed12percent shares have different dollar values."
+        },
+        {
+          "kind": "text",
+          "location": "upper page",
+          "title": "Net cost definition and year comparison",
+          "labels": [
+            "gross costs less earned revenue",
+            "FY2024 gross costs $26.6billion",
+            "earned revenue $1.8billion",
+            "net cost $24.7billion",
+            "net-cost increase $118million fromFY2023"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Full-resolution original page inspected to verify all four colors, percentage callouts, dollar amounts and legend. No chart-color editorial extraction text used as evidence."
+    },
+    {
+      "page": 33,
+      "summary": "Comparative gross cost of operations by strategic goal and selected programs for FY2024/FY2023.",
+      "visual_description": "Large horizontal paired-bar chart divided into four goal groups; orange2024 bars above purple2023 bars against grey tracks. Dollar labels at right; total for each group beneath.",
+      "regions": [
+        {
+          "kind": "chart",
+          "location": "main panel",
+          "title": "Comparative Gross Cost of Operations By Strategic Goal FY2024 and FY2023",
+          "labels": [
+            "Units:millions",
+            "2024 orange;2023 purple",
+            "Agency total2024 $26,551;2023 $26,233",
+            "Goal1 total9,128 /9,166: EarthScienceResearch578 /522; EarthSystematicMissions831 /748; ReimbursableScience916 /713; Other6,803 /7,183",
+            "Goal2 total11,306 /11,030: HumanLandingSystem1,144 /1,463; ISS1,282 /1,313; CrewCargo1,552 /1,449; SLS2,719 /2,555; Other4,609 /4,250",
+            "Goal3 total3,075 /3,044: TechnologyDemonstration369 /337; ScienceEngineering577 /655; Other2,129 /2,052",
+            "Goal4 total3,042 /2,993: Infrastructure660 /666; MissionEnablingService683 /686; CenterEngineeringSafetyOperations800 /829; Other899 /812"
+          ],
+          "uncertainty": "All numeric pairs2024/2023. No labeled x-axis scale; use printed dollar amounts rather than estimating lengths."
+        }
+      ],
+      "verification_notes": "Original full-resolution chart checked: title, units, colors, goal totals and each program pair read visually."
+    },
+    {
+      "page": 34,
+      "summary": "Sources of funding: congressional appropriations, prior-year balances and offsetting collections.",
+      "visual_description": "Green definition callout near top; two lower chart panels show stacked fiscal-year columns and FY2024 donut. Lime dominates both funding charts.",
+      "regions": [
+        {
+          "kind": "text_panel",
+          "location": "upper",
+          "title": "Funding sources",
+          "labels": [
+            "Appropriations from Congress/current fiscal year and prior fiscal-year unobligated balances",
+            "Revenue from agreements with government/private entities"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "chart",
+          "location": "lower left",
+          "title": "Sources of Funding Comparison FY2024/FY2023",
+          "labels": [
+            "Units:millions",
+            "FY2024 total30,051: CongressionalAppropriations24,876; PriorYearAppropriations3,335; SpendingAuthorityOffsettingCollections1,840",
+            "FY2023 total30,923: CongressionalAppropriations25,573; PriorYearAppropriations3,242; SpendingAuthorityOffsettingCollections2,108"
+          ],
+          "uncertainty": "Colors:lime current appropriations;blue prior-year;purple offsetting collections."
+        },
+        {
+          "kind": "chart",
+          "location": "lower right",
+          "title": "Sources of Funding FY2024",
+          "labels": [
+            "Total $30,051 million",
+            "83percent CongressionalAppropriations $24,876",
+            "11percent PriorYearCongressionalAppropriations $3,335",
+            "6percent SpendingAuthorityOffsettingCollections $1,840"
+          ],
+          "uncertainty": "Displayed percentages rounded. Lower chart values and category labels checked visually."
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded labels/captions checked; no hidden text treated as visible evidence."
+    },
+    {
+      "page": 35,
+      "summary": "Limitations of Financial Statements and Women?s History Month group photo.",
+      "visual_description": "Green top text panel states accounting basis and reporting limitations. Large lower outdoor group portrait shows many staff in front of a modern glass-fronted low building.",
+      "regions": [
+        {
+          "kind": "text_panel",
+          "location": "top",
+          "title": "Limitations of the Financial Statements",
+          "labels": [
+            "31U.S.C.3515(b)",
+            "Federal GAAP",
+            "OMB formats",
+            "component of US Government"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "kind": "photo",
+          "location": "lower two-thirds",
+          "title": "Women?s History Month2024 at Langley",
+          "labels": [
+            "KatherineG.Johnson Computational Research Facility",
+            "Langley Research Center Hampton Virginia",
+            "February6,2024",
+            "NASA/DavidC.Bowman"
+          ],
+          "uncertainty": "Caption identifies event/location; participant count not manually counted."
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded labels/captions checked; no hidden text treated as visible evidence."
+    },
+    {
+      "page": 36,
+      "summary": "Divider: Analysis of Systems, Controls, and Legal Compliance; robotic camera demonstration.",
+      "visual_description": "Centered photo shows a small spherical white-and-black free-flying device with two glowing blue circular features in a spacecraft cabin.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "center",
+          "title": "JAXA JEM Internal Ball Camera2",
+          "labels": [
+            "Japan Aerospace Exploration Agency",
+            "Kibo laboratory module",
+            "International Space Station",
+            "NASA Johnson",
+            "February27,2024"
+          ],
+          "uncertainty": "Caption states autonomous maneuvering/navigation testing and photography/video purpose. A still photo alone cannot establish autonomous functionality."
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded labels/captions checked; no hidden text treated as visible evidence."
+    },
+    {
+      "page": 37,
+      "summary": "Internal Control Framework and NASA FMFIA annual statement-of-assurance process.",
+      "visual_description": "Upper wide landscape photo shows a curving bright rocket launch trail rising into a dark blue sky above an orange twilight horizon; bare tree silhouettes foreground. Lower half explains internal controls in prose.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "upper half",
+          "title": "Firefly Alpha CubeSat launch",
+          "labels": [
+            "eight CubeSats",
+            "NASA CubeSat Launch Initiative",
+            "Vandenberg Space Force Base California",
+            "July3,2024 9:04pmPDT",
+            "Noise of Summer",
+            "FireflyAerospace/SeanParker"
+          ],
+          "uncertainty": "Trail is long-exposure launch depiction; number/payload derived from caption, not visible individually."
+        },
+        {
+          "kind": "text",
+          "location": "lower half",
+          "title": "NASA FMFIA Annual Statement of Assurance Process",
+          "labels": [
+            "Federal Managers Financial Integrity Act",
+            "OMB CircularA-123",
+            "operations",
+            "reporting",
+            "compliance"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded labels/captions checked; no hidden text treated as visible evidence."
+    },
+    {
+      "page": 38,
+      "summary": "Continued FMFIA assurance process with an organizational pyramid and Juno image of Io.",
+      "visual_description": "Right-side green pyramid has five stacked bands and an upward arrow to Administrator. Main prose left; small yellow/brown moon disk at bottom in a Did You Know strip beside QR code.",
+      "regions": [
+        {
+          "kind": "diagram",
+          "location": "upper right",
+          "title": "Figure1 NASA FMFIA Annual Statement of Assurance Process",
+          "labels": [
+            "Top arrow:Administrator",
+            "Mission Support Council",
+            "Senior Assessment Team",
+            "Management System Working Group",
+            "NASA Officials-in-Charge/CenterDirectors/CFO Assurance Statements",
+            "Base:AnnualAssessment of InternalControls over ProgramOperations FinancialReportingSystems"
+          ],
+          "uncertainty": "Bands rise from assessment foundation through assurance statements/workgroups to leadership."
+        },
+        {
+          "kind": "photo",
+          "location": "bottom left",
+          "title": "Jupiter moon Io from Juno",
+          "labels": [
+            "JunoCam",
+            "December30,2023",
+            "about930miles/1500km flyby"
+          ],
+          "uncertainty": "Disk appears yellow/orange with dark patches; no surface-feature names read from image."
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded labels/captions checked; no hidden text treated as visible evidence."
+    },
+    {
+      "page": 39,
+      "summary": "Enterprise Risk Management and NASA UNICORN framework.",
+      "visual_description": "Large lower oval diagram encloses triangular council relationships above a multicolor risk strip and organizational/control foundation; curved green arrows surround the structure.",
+      "regions": [
+        {
+          "kind": "diagram",
+          "location": "lower half",
+          "title": "Figure2 NASA?s UNICORN",
+          "labels": [
+            "UNICORN:UnifiedComprehensiveOperationalRiskNetwork",
+            "EC ExecutiveCouncil red at top",
+            "APMC AgencyProgramManagementCouncil blue left",
+            "ASC AcquisitionStrategyCouncil white center",
+            "MSC MissionSupportCouncil green right",
+            "Program&MissionDecisions left;MissionEnablingDecisions right",
+            "Riskstrip:PoliticalReputational;Programmatic;Financial;Strategic;Operational",
+            "Foundation:HQMissionDirectorate;Centers;FunctionalOrganizationsSupportingCenterOperations",
+            "ControlCertifications-AnalysisofControls;FraudRiskManagement"
+          ],
+          "uncertainty": "Council arrows depict information/guidance and requirements/capabilities exchange, not numerical flow rates; small sub-arrow wording not fully transcribed."
+        }
+      ],
+      "verification_notes": "Original diagram viewed full resolution; council positions/colors, risk types and organizational foundation checked visually."
+    },
+    {
+      "page": 40,
+      "summary": "Enterprise Risk Management continued: enterprise-risk sources and collaboration.",
+      "visual_description": "Lower-middle flower-like overlapping-circle diagram centers ERM Sources, surrounded by seven labeled source categories with external callouts.",
+      "regions": [
+        {
+          "kind": "diagram",
+          "location": "lower middle",
+          "title": "Figure3 ERM Sources",
+          "labels": [
+            "Audits and Assessments",
+            "Management Councils",
+            "SoA MSWG SAT AFR",
+            "ARMO Collaborations ARMWG",
+            "BaselinePerformanceReview",
+            "TechnicalAuthorities",
+            "StrategicReview",
+            "Externalcallouts:GAO/OIG/auditreports/fraudriskassessments;EC/ASC/MSC/APMC;InternalControlReviews;RiskManagementWorkingGroups;OrganizationalPerformanceReporting;Safety/MissionAssurance/ChiefEngineer/ChiefHealthMedicalOfficer;ExternalReporting"
+          ],
+          "uncertainty": "Overlapping circles represent multiple risk-information sources; no weights, sequence or quantitative proportions shown."
+        }
+      ],
+      "verification_notes": "Full-resolution original diagram checked to identify all surrounding categories and callouts."
+    },
+    {
+      "page": 41,
+      "summary": "Management Assurances: Administrator?s Statement of Assurance dated November15,2024.",
+      "visual_description": "Text-only formal statement with NASA logo upper right, green date/title line and blue signature above Bill Nelson Administrator at lower left.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main page",
+          "title": "Administrator?s Statement of Assurance",
+          "labels": [
+            "November15,2024",
+            "Bill Nelson Administrator",
+            "FMFIA",
+            "FFMIA",
+            "OMB CircularA-123",
+            "effective operations/reporting/compliance except identified financial-control material weakness",
+            "financial-management systems substantially comply as ofSeptember30,2024"
+          ],
+          "uncertainty": "No chart/photo beyond signature/logo; scope of material weakness must be read with prose conditions."
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded text/caption labels checked."
+    },
+    {
+      "page": 42,
+      "summary": "Financial Systems Strategies: core financial modernization, ERP, G-Invoicing, lease accounting and AI.",
+      "visual_description": "Green heading above a full page of plain text paragraphs; no data chart or photo.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "full page",
+          "title": "Financial Systems Strategies",
+          "labels": [
+            "SAP Enterprise Central Component is core financial system",
+            "SAP ECC end-of-life December2027",
+            "ERP modernization options include cloud subscriptions and on-premise data centers",
+            "President?s Management Agenda",
+            "Treasury G-Invoicing implementation completed",
+            "SFFAS54 lease accounting",
+            "first Chief Artificial Intelligence Officer appointed May13,2024"
+          ],
+          "uncertainty": "Statements reflect report date and planned modernization, not current live system status."
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded text/caption labels checked."
+    },
+    {
+      "page": 43,
+      "summary": "Forward Looking divider features TechGirls visit to NASA Goddard.",
+      "visual_description": "Large central photograph shows an adult woman speaking/gesturing to a group of young women wearing visitor lanyards beside a Nancy Grace Roman exhibit poster in an indoor science display space.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "center",
+          "title": "TechGirls Tour NASA Goddard",
+          "labels": [
+            "U.S.DepartmentofState TechGirls program",
+            "August1,2024",
+            "133 girls",
+            "37 countries/territories",
+            "research labs and TV production studios",
+            "NASA/Jay Friedlander"
+          ],
+          "uncertainty": "Counts and visit itinerary from caption, not a headcount in this cropped photo; individual identities not inferred."
+        }
+      ],
+      "verification_notes": "Original rendered page visually reviewed; recorded text/caption labels checked."
+    },
+    {
+      "page": 44,
+      "summary": "2025 and Beyond. Text discusses upcoming Artemis milestones, ISS commercial missions, Earth-observing science, heliophysics and technology plans.",
+      "visual_description": "Text discusses upcoming Artemis milestones, ISS commercial missions, Earth-observing science, heliophysics and technology plans.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "2025 and Beyond",
+          "labels": [
+            "2025 and Beyond"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 45,
+      "summary": "2025 and Beyond continued. Text discusses space technology partnerships, small business research, X-59, equity, workforce, infrastructure and STEM engagement.",
+      "visual_description": "Text discusses space technology partnerships, small business research, X-59, equity, workforce, infrastructure and STEM engagement.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "2025 and Beyond continued",
+          "labels": [
+            "2025 and Beyond continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 46,
+      "summary": "Financial Section. Large photograph shows Starship and Super Heavy lifting off with bright exhaust and broad smoke beside a coastline. Caption connects third integrated flight test on March 14 to Artemis HLS.",
+      "visual_description": "Large photograph shows Starship and Super Heavy lifting off with bright exhaust and broad smoke beside a coastline. Caption connects third integrated flight test on March 14 to Artemis HLS.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "large central photograph with caption below",
+          "title": "Starship / Super Heavy third integrated flight test",
+          "labels": [
+            "SpaceX",
+            "March 14",
+            "Artemis III and Artemis IV",
+            "33 Raptor engines",
+            "methane and liquid oxygen",
+            "hot-staging at approximately three minutes"
+          ],
+          "uncertainty": "Photo and caption viewed at original render size; rocket identity/date/engine details come from caption rather than visual inference."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 47,
+      "summary": "Message from the Chief Financial Officer. CFO message with portrait/signature and boxed three-goal list; clean financial opinion, internal-control weakness and financial modernization are discussed.",
+      "visual_description": "CFO message with portrait/signature and boxed three-goal list; clean financial opinion, internal-control weakness and financial modernization are discussed.",
+      "regions": [
+        {
+          "kind": "sidebar",
+          "location": "upper right boxed panel",
+          "title": "Office of the Chief Financial Officer Goals",
+          "labels": [
+            "Goal I stewardship",
+            "Goal II analytical community",
+            "Goal III enterprise workforce"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 48,
+      "summary": "Introduction to Principal Financial Statements. Four vertically stacked explanations of balance sheets, net cost, changes in net position and budgetary resources, each with an illustrative finance icon.",
+      "visual_description": "Four vertically stacked explanations of balance sheets, net cost, changes in net position and budgetary resources, each with an illustrative finance icon.",
+      "regions": [
+        {
+          "kind": "illustrative_icons",
+          "location": "left side of four explanatory rows",
+          "title": "Principal financial statement types",
+          "labels": [
+            "Consolidated Balance Sheets",
+            "Consolidated Statements of Net Cost",
+            "Consolidated Statements of Changes in Net Position",
+            "Combined Statements of Budgetary Resources"
+          ],
+          "uncertainty": "Icons illustrate categories; no numerical information or diagram edges to infer."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 49,
+      "summary": "Financial Statements, Notes and Required Supplementary Information. Photograph shows a white suspended instrument gondola beside a black crane and wheeled launch vehicle on snow. Caption identifies GUSTO Antarctic balloon mission.",
+      "visual_description": "Photograph shows a white suspended instrument gondola beside a black crane and wheeled launch vehicle on snow. Caption identifies GUSTO Antarctic balloon mission.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "central photograph and caption below",
+          "title": "GUSTO instrument gondola in Antarctica",
+          "labels": [
+            "scientific balloon",
+            "39 million cubic-foot zero-pressure balloon",
+            "aiming for a NASA record of 55+ days in flight",
+            "Milky Way",
+            "Large Magellanic Cloud",
+            "around 120,000+ feet",
+            "NASA/Scott Battaion"
+          ],
+          "uncertainty": "Original-size photograph and caption inspected; stated mission details are caption facts, not inferred measurements."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 50,
+      "summary": "Consolidated Balance Sheets. 2024 and 2023 assets, liabilities and net position table, in millions.",
+      "visual_description": "2024 and 2023 assets, liabilities and net position table, in millions.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "main body",
+          "title": "Consolidated Balance Sheets",
+          "labels": [
+            "in millions",
+            "2024",
+            "2023",
+            "Total Assets: 27,504 / 26,135",
+            "Total Liabilities: 7,664 / 6,719",
+            "Total Net Position: 19,840 / 19,416",
+            "Total Liabilities and Net Position: 27,504 / 26,135"
+          ],
+          "uncertainty": "Header, column years and cited totals verified against full original render; other rows remain available in source text/table."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 51,
+      "summary": "Consolidated Statements of Net Cost. 2024 and 2023 gross costs, earned revenue and net costs for strategic goals 1-4 and total operations, in millions.",
+      "visual_description": "2024 and 2023 gross costs, earned revenue and net costs for strategic goals 1-4 and total operations, in millions.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "main body",
+          "title": "Consolidated Statements of Net Cost",
+          "labels": [
+            "in millions",
+            "2024",
+            "2023",
+            "Goal 1 net: 8,038 / 8,262",
+            "Goal 2 net: 10,920 / 10,676",
+            "Goal 3 net: 2,929 / 2,883",
+            "Goal 4 net: 2,847 / 2,795",
+            "Total gross: 26,551 / 26,233",
+            "Earned revenue: 1,817 / 1,617",
+            "Net costs: 24,734 / 24,616"
+          ],
+          "uncertainty": "All listed totals and year alignment verified in full original render; net cost is gross less earned revenue."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 52,
+      "summary": "Consolidated Statements of Changes in Net Position. Comparative 2024 and 2023 table of unexpended appropriations, cumulative results of operations and net position, in millions.",
+      "visual_description": "Comparative 2024 and 2023 table of unexpended appropriations, cumulative results of operations and net position, in millions.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper two-thirds",
+          "title": "Changes in Net Position",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "Unexpended appropriations total:13,157 / 13,333",
+            "Cumulative results total:6,683 / 6,083",
+            "Net position:19,840 / 19,416"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 53,
+      "summary": "Combined Statements of Budgetary Resources. 2024 and 2023 budgetary resources, obligations, unobligated balances and net outlays, in millions.",
+      "visual_description": "2024 and 2023 budgetary resources, obligations, unobligated balances and net outlays, in millions.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper two-thirds",
+          "title": "Budgetary Resources",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "Total budgetary resources:30,051 / 30,923",
+            "Agency outlays net:25,015 / 25,319"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 54,
+      "summary": "Note 1 Reporting Entity and Significant Accounting Policies. Prose describes NASA reporting entity, mission directorates, disclosure entities and inter-entity costs.",
+      "visual_description": "Prose describes NASA reporting entity, mission directorates, disclosure entities and inter-entity costs.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 1 Reporting Entity and Significant Accounting Policies",
+          "labels": [
+            "Note 1 Reporting Entity and Significant Accounting Policies"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 55,
+      "summary": "Note 1 continued. Prose describes accounting basis and presentation, budgets, R&D expenses and exchange/non-exchange revenue.",
+      "visual_description": "Prose describes accounting basis and presentation, budgets, R&D expenses and exchange/non-exchange revenue.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 1 continued",
+          "labels": [
+            "Note 1 continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 56,
+      "summary": "Note 1 continued. Prose describes accounting estimates, Fund Balance with Treasury, investments and net accounts receivable.",
+      "visual_description": "Prose describes accounting estimates, Fund Balance with Treasury, investments and net accounts receivable.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 1 continued",
+          "labels": [
+            "Note 1 continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 57,
+      "summary": "Note 1 continued. Prose covers PP&E capitalization, leases, advances/deferred revenue and liabilities covered by budgetary resources.",
+      "visual_description": "Prose covers PP&E capitalization, leases, advances/deferred revenue and liabilities covered by budgetary resources.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 1 continued",
+          "labels": [
+            "Note 1 continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 58,
+      "summary": "Note 1 continued. Prose covers liabilities not covered by budgetary resources, federal employee benefits, retirement and public-private partnerships.",
+      "visual_description": "Prose covers liabilities not covered by budgetary resources, federal employee benefits, retirement and public-private partnerships.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 1 continued",
+          "labels": [
+            "Note 1 continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 59,
+      "summary": "Note 1 continued. Short prose on reclassification of FY2024 information and subsequent events; large white space below.",
+      "visual_description": "Short prose on reclassification of FY2024 information and subsequent events; large white space below.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 1 continued",
+          "labels": [
+            "Note 1 continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 60,
+      "summary": "Notes 2 and 3 Fund Balance with Treasury and Investments. Treasury balances table and separate 2024/2023 investment tables, all in millions.",
+      "visual_description": "Treasury balances table and separate 2024/2023 investment tables, all in millions.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper third",
+          "title": "Fund Balance with Treasury",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "Unobligated available",
+            "Unobligated unavailable",
+            "Obligated not yet disbursed",
+            "Non-budgetary FBWT",
+            "Total:17,186 / 17,378"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "lower half, two stacked tables",
+          "title": "Investments Net",
+          "labels": [
+            "in millions",
+            "2024",
+            "2023",
+            "Non-marketable par value",
+            "cost",
+            "amortization method",
+            "interest rate",
+            "investments net",
+            "market value",
+            "total cost15 and net15 both years"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 61,
+      "summary": "Notes 4 and 5 Accounts Receivable and PP&E. Two receivable tables for 2024/2023 and a larger PP&E 2024 table with asset classes, methods, lives, costs, depreciation and book values.",
+      "visual_description": "Two receivable tables for 2024/2023 and a larger PP&E 2024 table with asset classes, methods, lives, costs, depreciation and book values.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper half, two side-by-side tables",
+          "title": "Accounts Receivable Net",
+          "labels": [
+            "in millions",
+            "2024",
+            "2023",
+            "intragovernmental",
+            "public",
+            "accounts receivable",
+            "allowance",
+            "net amount due",
+            "2024 total124;2023 total68"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "bottom half",
+          "title": "Property Plant and Equipment Net 2024",
+          "labels": [
+            "in millions",
+            "depreciation/amortization method",
+            "estimated useful life",
+            "cost",
+            "accumulated depreciation/amortization",
+            "book value",
+            "Total cost34,731; accumulated(25,400); book9,331"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 62,
+      "summary": "Notes 5 and 6 PP&E continued and Stewardship PP&E. PP&E 2023 table, comparative net PP&E rollforward and opening heritage-assets prose.",
+      "visual_description": "PP&E 2023 table, comparative net PP&E rollforward and opening heritage-assets prose.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper third",
+          "title": "Property Plant and Equipment Net 2023",
+          "labels": [
+            "in millions",
+            "method",
+            "life",
+            "cost33,746",
+            "accumulated depreciation(25,095)",
+            "book value8,651"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "middle right",
+          "title": "Net PP&E Rollforward",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "beginning balance",
+            "SFFAS54 adjustment",
+            "capitalized acquisitions",
+            "dispositions",
+            "depreciation expense",
+            "donations",
+            "ending9,331 / 8,651"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 63,
+      "summary": "Note 6 Stewardship PP&E continued. Heritage and multi-use asset explanations, with small physical-unit heritage-assets table at bottom right.",
+      "visual_description": "Heritage and multi-use asset explanations, with small physical-unit heritage-assets table at bottom right.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "bottom right",
+          "title": "Heritage Assets in Physical Units",
+          "labels": [
+            "2023",
+            "additions",
+            "withdrawals",
+            "2024",
+            "Air and Space Displays and Artifacts",
+            "Art",
+            "NASA Locations",
+            "Total Heritage Assets12 to11"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 64,
+      "summary": "Notes 7 and 8 Other Assets and Liabilities Not Covered by Budgetary Resources. Other-assets prose above comparative liability table; liabilities split by budgetary coverage.",
+      "visual_description": "Other-assets prose above comparative liability table; liabilities split by budgetary coverage.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "lower half",
+          "title": "Liabilities Not Covered by Budgetary Resources",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "total not covered3,436 / 2,643",
+            "covered4,203 / 4,048",
+            "not requiring25 / 28",
+            "total7,664 / 6,719"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 65,
+      "summary": "Note 9 Environmental and Disposal Liabilities. Explanation of cleanup obligations and a comparative liability table, followed by restoration-project prose.",
+      "visual_description": "Explanation of cleanup obligations and a comparative liability table, followed by restoration-project prose.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "middle",
+          "title": "Environmental and Disposal Liabilities",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "Restoration projects2,112 / 2,070",
+            "Asbestos181 / 176",
+            "End of life disposal60 / 59",
+            "Total2,353 / 2,305",
+            "Unfunded2,266 / 2,184",
+            "Funded87 / 121"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 66,
+      "summary": "Note 9 continued. Prose explains restoration risk, asbestos and end-of-life disposal; includes ISS controlled targeted deorbit discussion.",
+      "visual_description": "Prose explains restoration risk, asbestos and end-of-life disposal; includes ISS controlled targeted deorbit discussion.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 9 continued",
+          "labels": [
+            "Note 9 continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 67,
+      "summary": "Note 10 Other Liabilities. Prose and a current/noncurrent liabilities table for 2024 and 2023.",
+      "visual_description": "Prose and a current/noncurrent liabilities table for 2024 and 2023.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "lower half",
+          "title": "Other Liabilities",
+          "labels": [
+            "in millions",
+            "2024 current/non-current/total",
+            "2023 current/non-current/total",
+            "Intragovernmental",
+            "With the public",
+            "Total other liabilities2,948 / 2,095"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 68,
+      "summary": "Note 11 Leases. Lessee and lessor explanation with future lessee payment table and small annual intragovernmental expense table.",
+      "visual_description": "Lessee and lessor explanation with future lessee payment table and small annual intragovernmental expense table.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "middle left",
+          "title": "Lessee Future Payments",
+          "labels": [
+            "in millions",
+            "FY",
+            "principal",
+            "interest",
+            "total liability",
+            "2025 through2030-34",
+            "total principal24 interest4 liability28"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "lower middle right",
+          "title": "Intragovernmental Lease Annual Expense",
+          "labels": [
+            "in millions",
+            "Buildings/Other Structures",
+            "annual expense38"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 69,
+      "summary": "Note 11 continued and Note 12 Commitments and Contingencies. Future lessor receipts table at top; legal-contingencies prose and comparative table at bottom.",
+      "visual_description": "Future lessor receipts table at top; legal-contingencies prose and comparative table at bottom.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper half",
+          "title": "Lessor Future Receipts",
+          "labels": [
+            "in millions",
+            "FY2025 through2110-14",
+            "principal",
+            "interest",
+            "total receivable",
+            "total principal697 interest1,805 receivable2,502"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "bottom",
+          "title": "Legal Contingencies",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "accrued liabilities",
+            "estimated range of loss lower/upper",
+            "probable",
+            "reasonably possible"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 70,
+      "summary": "Notes 13 and 14 Budget Differences and Undelivered Orders. Table reconciles SBR to government budget; second table breaks undelivered orders into federal/nonfederal and paid/unpaid.",
+      "visual_description": "Table reconciles SBR to government budget; second table breaks undelivered orders into federal/nonfederal and paid/unpaid.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "middle",
+          "title": "SBR and Budget of US Government Reconciliation",
+          "labels": [
+            "in millions",
+            "FY2023",
+            "budgetary resources",
+            "new obligations upward adjustments",
+            "distributed offsetting receipts",
+            "net outlays"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "bottom",
+          "title": "Undelivered Orders",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "Federal unpaid/paid",
+            "Nonfederal unpaid/paid",
+            "Total12,214 / 12,909"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 71,
+      "summary": "Note 15 Reconciliation of Net Cost to Net Outlays. 2024 reconciliation table with intragovernmental, public and total columns.",
+      "visual_description": "2024 reconciliation table with intragovernmental, public and total columns.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "lower two-thirds",
+          "title": "2024 Reconciliation Net Cost to Net Outlays",
+          "labels": [
+            "in millions",
+            "intragovernmental",
+            "with the public",
+            "total",
+            "net cost24,734",
+            "total net outlays25,015"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 72,
+      "summary": "Note 15 continued and Note 16 Disclosure Entity. 2023 reconciliation table above text introducing NASA-owned JPL, managed by Caltech.",
+      "visual_description": "2023 reconciliation table above text introducing NASA-owned JPL, managed by Caltech.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper two-thirds",
+          "title": "2023 Reconciliation Net Cost to Net Outlays",
+          "labels": [
+            "in millions",
+            "intragovernmental",
+            "with the public",
+            "total",
+            "net cost24,616",
+            "total net outlays25,319"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 73,
+      "summary": "Notes 16 and 17 Disclosure Entity and Reclassification. JPL/Caltech relationship prose followed by governmentwide financial-report compilation and reclassification explanation.",
+      "visual_description": "JPL/Caltech relationship prose followed by governmentwide financial-report compilation and reclassification explanation.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Notes 16 and 17 Disclosure Entity and Reclassification",
+          "labels": [
+            "Notes 16 and 17 Disclosure Entity and Reclassification"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 74,
+      "summary": "Note 17 Reclassification continued. Two comparative mapping tables connect NASA FY2024 statements to governmentwide net-cost and changes-in-net-position line items.",
+      "visual_description": "Two comparative mapping tables connect NASA FY2024 statements to governmentwide net-cost and changes-in-net-position line items.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper half",
+          "title": "NASA Net Cost to Governmentwide Net Cost",
+          "labels": [
+            "in millions",
+            "gross cost26,551",
+            "earned revenue1,817",
+            "net cost24,734",
+            "NASA line item",
+            "amounts",
+            "reclassified line item"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "lower half",
+          "title": "NASA Changes in Net Position Reclassification",
+          "labels": [
+            "in millions",
+            "unexpended appropriations",
+            "cumulative results of operations",
+            "net position19,840",
+            "NASA line item",
+            "amounts",
+            "reclassified line item"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 75,
+      "summary": "Note 18 Public-Private Partnerships. Text explains commercial space partnerships, procurement arrangements and NextSTEP; no quantitative chart.",
+      "visual_description": "Text explains commercial space partnerships, procurement arrangements and NextSTEP; no quantitative chart.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 18 Public-Private Partnerships",
+          "labels": [
+            "Note 18 Public-Private Partnerships"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 76,
+      "summary": "Note 18 continued. Text covers energy savings performance contracts, utility energy service contracts and real-estate arrangements.",
+      "visual_description": "Text covers energy savings performance contracts, utility energy service contracts and real-estate arrangements.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Note 18 continued",
+          "labels": [
+            "Note 18 continued"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 77,
+      "summary": "Note 18 continued. Energy contract commitments table at top; lower prose discusses enhanced-use and National Historic Preservation Act leases.",
+      "visual_description": "Energy contract commitments table at top; lower prose discusses enhanced-use and National Historic Preservation Act leases.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper quarter",
+          "title": "Energy Performance and Utility Energy Service Contracts",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "ESPC",
+            "UESC",
+            "actual amount paid FY",
+            "estimated future payment",
+            "estimated cumulative life of arrangement",
+            "2024 estimated total paid19 future230 cumulative389"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 78,
+      "summary": "Note 18 continued. Lease-risk prose followed by 2024 and 2023 public-private-partnership receipts and in-kind-consideration tables.",
+      "visual_description": "Lease-risk prose followed by 2024 and 2023 public-private-partnership receipts and in-kind-consideration tables.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "bottom third, two stacked tables",
+          "title": "Public Private Partnership Lease Receipts",
+          "labels": [
+            "in millions",
+            "2024",
+            "2023",
+            "EUL",
+            "NHPA",
+            "Easement Authority",
+            "actual received",
+            "estimated future received",
+            "estimated cumulative",
+            "in-kind consideration",
+            "2024 estimated total1 / 581 / 583 / 22"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 79,
+      "summary": "Combining Statements of Budgetary Resources FY2024. Two vertically stacked tables allocate budgetary resources and outlays across mission/appropriation categories, in millions.",
+      "visual_description": "Two vertically stacked tables allocate budgetary resources and outlays across mission/appropriation categories, in millions.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper half",
+          "title": "Combining Budgetary Resources FY2024 Mission Columns",
+          "labels": [
+            "in millions",
+            "Space Operations",
+            "Science",
+            "Exploration",
+            "Aeronautics",
+            "Safety Security and Mission Services",
+            "STEM Engagement",
+            "budgetary resources",
+            "status",
+            "net outlays"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "lower half",
+          "title": "Combining Budgetary Resources FY2024 Remaining Columns",
+          "labels": [
+            "in millions",
+            "Office Inspector General",
+            "Space Technology",
+            "Construction Environmental Compliance Restoration",
+            "Other",
+            "Total budgetary resources30,051",
+            "Agency outlays net25,015"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 80,
+      "summary": "Combining Statements of Budgetary Resources FY2023. Two vertically stacked comparative prior-year tables allocate resources and outlays by mission/appropriation.",
+      "visual_description": "Two vertically stacked comparative prior-year tables allocate resources and outlays by mission/appropriation.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "upper half",
+          "title": "Combining Budgetary Resources FY2023 Mission Columns",
+          "labels": [
+            "in millions",
+            "Space Operations",
+            "Science",
+            "Exploration",
+            "Aeronautics",
+            "Safety Security and Mission Services",
+            "STEM Engagement",
+            "budgetary resources",
+            "status",
+            "net outlays"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        },
+        {
+          "kind": "table",
+          "location": "lower half",
+          "title": "Combining Budgetary Resources FY2023 Remaining Columns",
+          "labels": [
+            "in millions",
+            "Office Inspector General",
+            "Space Technology",
+            "Construction Environmental Compliance Restoration",
+            "Other",
+            "Total budgetary resources30,923",
+            "Agency outlays net25,319"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 81,
+      "summary": "Deferred Maintenance and Repairs FY2024. Prose defines deferred maintenance, policies, facility assessments and equipment maintenance planning.",
+      "visual_description": "Prose defines deferred maintenance, policies, facility assessments and equipment maintenance planning.",
+      "regions": [
+        {
+          "kind": "text",
+          "location": "main body",
+          "title": "Deferred Maintenance and Repairs FY2024",
+          "labels": [
+            "Deferred Maintenance and Repairs FY2024"
+          ],
+          "uncertainty": "Prose source remains full extracted page text; summary is not exhaustive."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 82,
+      "summary": "Deferred Maintenance and Repairs continued. Prose describes prioritization, condition standards and year changes; bottom table compares real-property maintenance totals.",
+      "visual_description": "Prose describes prioritization, condition standards and year changes; bottom table compares real-property maintenance totals.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "bottom quarter",
+          "title": "Deferred Maintenance and Repairs",
+          "labels": [
+            "in millions",
+            "2024 / 2023",
+            "PP&E Real Property4,068 / 3,710",
+            "Heritage Assets Real Property73 / 62",
+            "Total4,141 / 3,772"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 83,
+      "summary": "Government Land. Prose defines operational, conservation/preservation and commercial land; bottom acreage table compares start/end balances.",
+      "visual_description": "Prose defines operational, conservation/preservation and commercial land; bottom acreage table compares start/end balances.",
+      "regions": [
+        {
+          "kind": "table",
+          "location": "bottom third",
+          "title": "PP&E Land",
+          "labels": [
+            "in acres",
+            "2024",
+            "commercial",
+            "conservation and preservation",
+            "operational",
+            "total estimated acreage",
+            "start prior year",
+            "end prior/start current",
+            "end current",
+            "end current total135,315",
+            "held for disposal/exchange175"
+          ],
+          "uncertainty": "Not every table cell or prose detail was independently transcribed; consult the original page for exact values."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 84,
+      "summary": "Audit Reports. Large photograph shows a person in a blue cap and Rocket Scientist jacket gesturing toward a rising rocket with a smoke trail. Caption identifies Cindy Fuentes Rosal and Black Brant IX launch.",
+      "visual_description": "Large photograph shows a person in a blue cap and Rocket Scientist jacket gesturing toward a rising rocket with a smoke trail. Caption identifies Cindy Fuentes Rosal and Black Brant IX launch.",
+      "regions": [
+        {
+          "kind": "photo",
+          "location": "large central photo and caption below",
+          "title": "Black Brant IX sounding rocket launch",
+          "labels": [
+            "Cindy Fuentes Rosal",
+            "NASA Wallops Flight Facility Virginia",
+            "April8 2024 total solar eclipse",
+            "Atmospheric Perturbations around Eclipse Path APEP",
+            "ionosphere",
+            "before during after peak local eclipse",
+            "NASA/Chris Pirner"
+          ],
+          "uncertainty": "Original photograph/caption inspected full size. Identity and mission are caption facts; photo shows person from behind, blue cap, raised arm and rocket smoke trail."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 85,
+      "summary": "Letter from the Inspector General on Audit. Scanned-format letter dated November 15, 2024 with NASA OIG seal, addressees, audit subject and paragraphs about EY audit and internal control.",
+      "visual_description": "Scanned-format letter dated November 15, 2024 with NASA OIG seal, addressees, audit subject and paragraphs about EY audit and internal control.",
+      "regions": [
+        {
+          "kind": "letter",
+          "location": "central inset letter",
+          "title": "Office of Inspector General Audit Letter",
+          "labels": [
+            "November15 2024",
+            "Bill Nelson",
+            "Margaret Vo Schaus",
+            "EY",
+            "FY2024 financial statements",
+            "unmodified clean opinion",
+            "material weakness financial reporting oversight"
+          ],
+          "uncertainty": "Seal and letter layout inspected; no detailed forensic signature validation."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 86,
+      "summary": "Letter from the Inspector General continued. Second letter page has short closing paragraph, handwritten signature, George A. Scott Deputy Inspector General identification and enclosures notation.",
+      "visual_description": "Second letter page has short closing paragraph, handwritten signature, George A. Scott Deputy Inspector General identification and enclosures notation.",
+      "regions": [
+        {
+          "kind": "letter",
+          "location": "central inset letter",
+          "title": "Inspector General Letter Closing",
+          "labels": [
+            "George A. Scott",
+            "Deputy Inspector General",
+            "Enclosures2"
+          ],
+          "uncertainty": "Signature is visible, but handwriting not authenticated."
+        }
+      ],
+      "verification_notes": "Codex assistant inspected original PDF rendered page in a four-page contact sheet; pages46,49,50,51,84 additionally inspected at original render size. Source-only catalog authored without reading benchmark questions or gold. Physical PDF page; printed page is one lower. No claim every table cell was independently verified."
+    },
+    {
+      "page": 87,
+      "summary": "Independent auditor Ernst & Young reports on NASA FY2024 and FY2023 financial statements. The opinion states fair presentation in all material respects under U.S. GAAP. Basis for opinion cites GAAS, Government Auditing Standards and OMB Bulletin 24-02. Adoption of SFFAS54 Leases in FY2024 does not modify the opinion.",
+      "visual_description": "A typeset EY letter on a white page inset; no informative chart, table or photograph.",
+      "regions": [
+        {
+          "id": "p087-r01",
+          "kind": "text",
+          "location": "central white letter body",
+          "title": "Report of Independent Auditors: Opinion; Basis for Opinion; Adoption of SFFAS54, Leases",
+          "labels": [
+            "NASA",
+            "September 30, 2024 and 2023",
+            "SFFAS54 Leases",
+            "OMB Bulletin24-02"
+          ],
+          "uncertainty": "The letter text is the evidence; EY logo is decorative."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 88,
+      "summary": "Continuation of independent auditor report describes management responsibilities and auditor responsibilities. Management prepares fair financial statements and maintains controls. Auditors seek reasonable, not absolute, assurance and exercise professional judgment, assess risks, understand relevant controls, evaluate accounting policies/estimates and going concern.",
+      "visual_description": "Text-only inset EY letter with two italic subsection headings and a five-item bullet list.",
+      "regions": [
+        {
+          "id": "p088-r01",
+          "kind": "text",
+          "location": "central white letter body",
+          "title": "Responsibilities of Management; Auditor Responsibilities",
+          "labels": [
+            "reasonable assurance",
+            "fraud or error",
+            "GAAS",
+            "Government Auditing Standards"
+          ],
+          "uncertainty": "No informative plot or table."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 89,
+      "summary": "Auditor report discusses required supplementary information (RSI), including combining budgetary resource statements, deferred maintenance and repairs and government land. Limited procedures do not provide an opinion/assurance on RSI. Auditors identify doubts concerning land-reporting modifications under SFFAS59. Other information excludes financial statements, notes and auditor report and is not covered by the audit opinion.",
+      "visual_description": "Text-only EY letter page with Required Supplementary Information and Other Information headings.",
+      "regions": [
+        {
+          "id": "p089-r01",
+          "kind": "text",
+          "location": "central white letter body",
+          "title": "Required Supplementary Information; Other Information",
+          "labels": [
+            "SFFAS59 Accounting and Reporting of Government Land",
+            "pages78-82",
+            "limited procedures"
+          ],
+          "uncertainty": "No independent visual data."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 90,
+      "summary": "Auditor letter states that a separate report under Government Auditing Standards dated November15,2024 addresses internal controls and compliance. It describes testing scope/results without an opinion on internal-control effectiveness or compliance.",
+      "visual_description": "Short EY closing letter; handwritten-style Ernst & Young LLP signature near the center-right and a date below the text.",
+      "regions": [
+        {
+          "id": "p090-r01",
+          "kind": "text",
+          "location": "upper half of white letter",
+          "title": "Other Reporting Required by Government Auditing Standards",
+          "labels": [
+            "internal control over financial reporting",
+            "compliance",
+            "November15,2024"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p090-r02",
+          "kind": "signature",
+          "location": "middle-right below body",
+          "title": "Ernst & Young LLP report closing",
+          "labels": [
+            "Ernst & Young LLP",
+            "November15,2024"
+          ],
+          "uncertainty": "Signature identity/date are supplied by printed text, not handwriting inference."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 91,
+      "summary": "Report of independent auditors on internal control over financial reporting and compliance and other matters. The report references an unmodified financial-statement opinion dated November15,2024. It explains the scope of control consideration and defines deficiency, material weakness and significant deficiency without expressing an internal-control-effectiveness opinion.",
+      "visual_description": "EY letter-style page with long centered report title and text definitions; no informative chart/table/photo.",
+      "regions": [
+        {
+          "id": "p091-r01",
+          "kind": "text",
+          "location": "central white letter body",
+          "title": "Report on Internal Control Over Financial Reporting",
+          "labels": [
+            "Government Auditing Standards",
+            "material weakness",
+            "significant deficiency",
+            "November15,2024"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 92,
+      "summary": "Auditors identify a material weakness in financial reporting oversight controls. A routine contract-cost accrual misstated accounts payable by $254million; reviews and variance analysis failed to detect it in time, and the September accrual was not corrected until November2024. The individual error was corrected and not material to overall financial statements, but multiple failed controls create future risk.",
+      "visual_description": "Text-only EY report page with bold Material Weakness in Financial Reporting Oversight Controls heading.",
+      "regions": [
+        {
+          "id": "p092-r01",
+          "kind": "text",
+          "location": "upper/middle body of white letter",
+          "title": "Material Weakness in Financial Reporting Oversight Controls",
+          "labels": [
+            "$254million accounts payable misstatement",
+            "September accrual",
+            "corrected November2024",
+            "GAO Principle12",
+            "Principle16"
+          ],
+          "uncertainty": "Distinguish the corrected individual error from the reported material weakness."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 93,
+      "summary": "Auditors recommend controls that operate as designed, documented reviews, consideration of training and ongoing monitoring. Compliance testing disclosed no reportable instances of noncompliance and no instances in which NASA financial-management systems failed substantially to comply with FFMIA Section803(a). NASA response received limited procedures and no audit opinion.",
+      "visual_description": "Text-only EY report continuation with compliance and NASA response headings.",
+      "regions": [
+        {
+          "id": "p093-r01",
+          "kind": "text",
+          "location": "central white letter body",
+          "title": "Report on Compliance and Other Matters; NASA Response to Findings",
+          "labels": [
+            "FFMIA",
+            "Section803(a)",
+            "no instances of noncompliance",
+            "limited procedures"
+          ],
+          "uncertainty": "Absence of reportable findings is limited to the audit scope described here."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 94,
+      "summary": "Closing of auditor internal-control/compliance report. Purpose is to describe scope and testing results rather than provide effectiveness or compliance opinions; report is integral to the Government Auditing Standards audit and unsuitable for other purposes.",
+      "visual_description": "Short EY closing page with signature beneath purpose paragraph and November15,2024 date.",
+      "regions": [
+        {
+          "id": "p094-r01",
+          "kind": "text",
+          "location": "upper body of white letter",
+          "title": "Purpose of this Report",
+          "labels": [
+            "internal control",
+            "compliance",
+            "Government Auditing Standards"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p094-r02",
+          "kind": "signature",
+          "location": "middle-right below purpose paragraph",
+          "title": "Ernst & Young LLP closing",
+          "labels": [
+            "November15,2024"
+          ],
+          "uncertainty": "Printed date; no chart or table."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 95,
+      "summary": "Section3 Other Information divider. Caption describes a top-down OSIRIS-REx TAGSAM sample head with lid removed, photographed using high-resolution precision photography and semi-automated focus stacking. Remaining sample includes dust and rocks up to about0.4inch/1cm.",
+      "visual_description": "Large monochrome close-up of a round mechanical sampling head. Dark granular asteroid dust and rocks occupy an annulus around a lighter central circular mechanism, surrounded by bolts and supports.",
+      "regions": [
+        {
+          "id": "p095-r01",
+          "kind": "photograph",
+          "location": "large central rectangle",
+          "title": "OSIRIS-REx Touch-and-Go-Sample-Acquisition-Mechanism (TAGSAM) head with lid removed",
+          "labels": [
+            "asteroid sample",
+            "dust and rocks up to about0.4in (1cm)",
+            "NASA/Erika Blumenfeld & Joseph Aebersold",
+            "January17,2024"
+          ],
+          "uncertainty": "Visible appearance reviewed; sample identity/size/method come from printed caption, not inferred scale."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 96,
+      "summary": "Summary tables of financial-statement audit and management assurances for FY2024. Audit opinion is Unmodified with No restatement. Financial-reporting oversight/control weakness: beginning0,new1,resolved0,consolidated0,ending1. Management financial-reporting assurance is Modified; operations assurance Unmodified. Federal systems conform and all nonconformance counts are0. Agency and auditor report no lack of compliance in three FFMIA categories.",
+      "visual_description": "Stacked tables with purple section headers, thin gray gridlines and numeric count columns; no graphical chart.",
+      "regions": [
+        {
+          "id": "p096-r01",
+          "kind": "table",
+          "location": "upper table below Table1 heading",
+          "title": "Summary of Financial Statement Audit",
+          "labels": [
+            "Audit Opinion: Unmodified",
+            "Restatement: No",
+            "Material Weaknesses",
+            "Beginning Balance0; New1; Resolved0; Consolidated0; Ending Balance1",
+            "Deficiencies in Financial Reporting Oversight Controls",
+            "Total Material Weaknesses"
+          ],
+          "uncertainty": "Counts, not dollars."
+        },
+        {
+          "id": "p096-r02",
+          "kind": "table",
+          "location": "middle/lower stacked sections under Table2",
+          "title": "Summary of Management Assurances",
+          "labels": [
+            "Financial Reporting (FMFIA2): Modified",
+            "Financial Controls weakness0/1/0/0/0/1 including Reassessed0",
+            "Operations(FMFIA2): Unmodified; all weakness counts0",
+            "Financial Management System Requirements(FMFIA4): conform; all nonconformances0",
+            "FFMIA columns Agency and Auditor",
+            "Federal Financial Management System Requirements; Applicable Federal Accounting Standards; USSGL at Transaction Level: No lack of compliance noted"
+          ],
+          "uncertainty": "Values checked against original full-page render individually."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. Also opened the original page96 individually to check column alignment and all displayed count rows."
+    },
+    {
+      "page": 97,
+      "summary": "Summary of Reports page links Payment Integrity Information Act annual-data-call reporting and NASA annual OIG audit follow-up reports. FY2023 follow-up available; FY2024 will be posted when released. Lower sidebar introduces Gateway HALO primary structure after welding in Turin,Italy, with Northrop Grumman and Thales Alenia Space.",
+      "visual_description": "Upper wide color photograph shows two suited field trainees with backpack equipment collecting geology samples outdoors; lower sidebar shows looking into the circular interior of a cylindrical module.",
+      "regions": [
+        {
+          "id": "p097-r01",
+          "kind": "photograph",
+          "location": "upper half beneath Summary of Reports title",
+          "title": "NASA astronauts Andre Douglas and Kate Rubins simulated moonwalk",
+          "labels": [
+            "Andre Douglas holds sample bag",
+            "Kate Rubins pours geology samples",
+            "San Francisco Volcanic Field,Northern Arizona",
+            "May17,2024",
+            "NASA/Josh Valcarcel"
+          ],
+          "uncertainty": "Identities/action supported by printed caption; faces are not independently identified."
+        },
+        {
+          "id": "p097-r02",
+          "kind": "text",
+          "location": "middle body",
+          "title": "PIIA Reporting; NASA Annual OIG Audit Follow-up Activity Report",
+          "labels": [
+            "PaymentAccuracy.gov",
+            "Inspector General Act1978",
+            "5U.S.C.Section405(c)"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p097-r03",
+          "kind": "photograph",
+          "location": "lower-left Did You Know sidebar",
+          "title": "A Home for Astronauts around the Moon: HALO",
+          "labels": [
+            "Habitation and Logistics Outpost",
+            "Turin,Italy",
+            "April12,2024",
+            "Northrop Grumman/Thales Alenia Space"
+          ],
+          "uncertainty": "Small photo shows module interior; technical identification comes from adjacent text."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 98,
+      "summary": "Deputy Inspector General message introduces the2024 NASA top management/performance challenges report. Seven prior challenges are consolidated into three: improving management of major programs/projects; partnering with commercial industry; enabling mission-critical capabilities/support services. Discusses cost growth,schedule delays,technical issues,commercial partnering and workforce/facility/IT/procurement needs.",
+      "visual_description": "Inset letter with three bullet-point challenges and signed closing; no chart, table or informative photograph.",
+      "regions": [
+        {
+          "id": "p098-r01",
+          "kind": "text",
+          "location": "central white letter",
+          "title": "Message from the Deputy Inspector General",
+          "labels": [
+            "George A.Scott",
+            "three broader challenges",
+            "Improving the Management of Major Programs and Projects",
+            "Partnering with Commercial Industry",
+            "Enabling Mission Critical Capabilities and Support Services"
+          ],
+          "uncertainty": "Summary follows printed letter and list."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 99,
+      "summary": "Administrator response to OIG2024 top-management-challenges draft, dated November5,2024. NASA agrees with three broad challenge areas and introduces mitigation/remediation. Challenge1 discusses project-management improvement and Chief Program Management Officer established in2022, annual symposia, project-management networks and governance.",
+      "visual_description": "Inset memorandum with NASA letterhead, TO/FROM/SUBJECT fields and a bold Challenge1 heading.",
+      "regions": [
+        {
+          "id": "p099-r01",
+          "kind": "text",
+          "location": "central white memo",
+          "title": "Agency Response to OIG Report: Challenge1",
+          "labels": [
+            "November5,2024",
+            "TO Inspector General(Acting)",
+            "FROM Administrator",
+            "CPMO established2022",
+            "Improving the Management of Major Programs and Projects"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 100,
+      "summary": "Continuation of agency response addresses early formulation optimism and risk-management framework. NASA plans Mission Concept Reviews and independent assessments/cost estimates before acquisition-strategy meetings; updates NPD1000.5,NPR7120.5 and Standing Review Board handbook. Agency Baseline Commitments are established for projects over$250million, and OMB/Congress receive updates.",
+      "visual_description": "Text-only inset memo page numbered2; no informative figure.",
+      "regions": [
+        {
+          "id": "p100-r01",
+          "kind": "text",
+          "location": "central white memo",
+          "title": "Early formulation realism,risk management and baseline commitments",
+          "labels": [
+            "Mission Concept Review(MCR)",
+            "NPD1000.5",
+            "NPR7120.5",
+            "Agency Risk Management Officer",
+            "projects over$250million"
+          ],
+          "uncertainty": "Dollar threshold is a policy description, not a table cell."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 101,
+      "summary": "Artemis Campaign response describes safety,post-mission lessons,ArtemisI heat-shield anomaly and flexible architecture. Lists baseline commitments for Orion,SLSBlock1B Exploration Upper Stage,initial Gateway,HLS and Mobile Launcher2. June2024 ML2 baseline reflects construction phase; initial scope underestimated and subsequently understood by Bechtel. Cost assessments integrate program phases rather than individual flight-only figures.",
+      "visual_description": "Text-only inset memo page numbered3 with Artemis Campaign italic heading and two footnotes.",
+      "regions": [
+        {
+          "id": "p101-r01",
+          "kind": "text",
+          "location": "central white memo and bottom footnotes",
+          "title": "Artemis Campaign",
+          "labels": [
+            "Mobile Launcher2(ML2)",
+            "June2024 ABC",
+            "Bechtel",
+            "NPR7120.5",
+            "Power and Propulsion Element and HALO initial Gateway capability"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 102,
+      "summary": "Response discusses ISS multinational partnership and commercial cargo/crew services,transition to commercial LEO destinations and controlled deorbit. Russia participation authorized through2028; U.S.through2030. NASA/Roscosmos June2024 contingency-deorbit memorandum and SpaceX U.S.Deorbit Vehicle contract for2028 are described. Science/aeronautics section notes18 SMD projects delivered on budget between2009 and2022 and flagship challenges.",
+      "visual_description": "Text-only inset memo page numbered4; italic ISS and Science/Aeronautics headings.",
+      "regions": [
+        {
+          "id": "p102-r01",
+          "kind": "text",
+          "location": "upper/middle memo",
+          "title": "International Space Station",
+          "labels": [
+            "United States,Russia,Japan,Canada,European Union",
+            "2028",
+            "2030",
+            "U.S.Deorbit Vehicle(USDV)",
+            "System Requirements Review early2025"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p102-r02",
+          "kind": "text",
+          "location": "lower memo",
+          "title": "Science and Aeronautics Research Missions",
+          "labels": [
+            "18projects on budget2009–2022",
+            "James Webb Space Telescope",
+            "Mars Sample Return(MSR)"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 103,
+      "summary": "Agency response describes pausing/reformulating optimistic projects,including MSR,and reporting/testing metrics for X-59 Low Boom Flight Demonstrator with Lockheed Martin. Challenge2 addresses commercial industry: LEO economy,ISS-to-commercial destinations transition and2024 LEO Microgravity Strategy; Lunar Economy discussion begins.",
+      "visual_description": "Text-only inset memo page numbered5 with bold Challenge2 and italic LEO/Lunar Economy headings.",
+      "regions": [
+        {
+          "id": "p103-r01",
+          "kind": "text",
+          "location": "upper memo",
+          "title": "Project reformulation and X-59 performance management",
+          "labels": [
+            "MSR new architecture proposals",
+            "X-59 Low Boom Flight Demonstrator",
+            "Lockheed Martin"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p103-r02",
+          "kind": "text",
+          "location": "middle/lower memo",
+          "title": "Challenge2: Partnering with Commercial Industry",
+          "labels": [
+            "Commercial LEO Destinations(CLD)",
+            "LEO Microgravity Strategy",
+            "2024",
+            "The Lunar Economy"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 104,
+      "summary": "Commercial-partner discussion covers competition,innovation,reusable rockets,contractor evaluation,safety standards and NASA authority for Flight Readiness certification. Commercial Lunar Payload Services enables industry to deliver scientific instruments/technology to the lunar surface;14 contracted providers are eligible to bid on task orders. NASA will review experiences to improve CLPS program and contracts.",
+      "visual_description": "Text-only inset memo page numbered6; underlined Commercial Lunar Payload Services subsection.",
+      "regions": [
+        {
+          "id": "p104-r01",
+          "kind": "text",
+          "location": "upper memo",
+          "title": "Commercial partnership oversight and lunar economy",
+          "labels": [
+            "Certification of Flight Readiness",
+            "reusable rocket systems"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p104-r02",
+          "kind": "text",
+          "location": "lower memo",
+          "title": "Commercial Lunar Payload Services",
+          "labels": [
+            "CLPS",
+            "14providers on contract eligible to bid",
+            "SMD",
+            "Office of Procurement",
+            "Office of General Counsel"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 105,
+      "summary": "Human Landing System response describes firm-fixed-price partnerships,risk-based government insight,safety reviews,testing and integrated NASA/commercial teams. Reports five SpaceX Starship test flights,planned2025 long-duration and propellant-transfer tests and summer2025 critical design review. Blue Origin New Glenn first test flight described as no earlier than November2024; Blue Moon testing begins at Kennedy.",
+      "visual_description": "Text-only inset memo page numbered7 with underlined Human Landing System heading.",
+      "regions": [
+        {
+          "id": "p105-r01",
+          "kind": "text",
+          "location": "central white memo",
+          "title": "Human Landing System",
+          "labels": [
+            "firm-fixed-price contracts",
+            "SpaceX five Starship test flights",
+            "2025 tests",
+            "summer2025 critical design review",
+            "Blue Origin New Glenn",
+            "Blue Moon",
+            "ArtemisV"
+          ],
+          "uncertainty": "Future dates are source-era plans as printed, not current mission status."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 106,
+      "summary": "Continuation concludes commercial partnership/safe lunar missions. Challenge3 begins: enabling mission-critical capabilities and support services. Workforce section describes coordinated recruiting,digital platforms,diversity,outreach,multiple hiring authorities and incentives. NASA2040 launched June2023 aligns institutional operations and workforce development to priority missions.",
+      "visual_description": "Text-only inset memo page numbered8 with Challenge3 and Workforce headings plus long awards footnote.",
+      "regions": [
+        {
+          "id": "p106-r01",
+          "kind": "text",
+          "location": "middle/lower memo",
+          "title": "Challenge3: Mission Critical Capabilities and Support Services—Workforce",
+          "labels": [
+            "NASA2040",
+            "June2023",
+            "Chief Human Capital Officer",
+            "recruitment strategy",
+            "talent exchange"
+          ],
+          "uncertainty": "Awards named in the footnote remain in extracted text."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 107,
+      "summary": "Workforce continuation discusses Employee Value Proposition refreshed through NASA2040,digital recruitment reaching over6million LinkedIn/social-media followers,STEM and underserved talent,Pathways internships and over2000 annual hands-on interns. Infrastructure subsection introduces mission-driven Agency Master Plan,20-year physical infrastructure vision,critical assets and investment prioritization.",
+      "visual_description": "Text-only inset memo page numbered9; underlined Infrastructure near bottom.",
+      "regions": [
+        {
+          "id": "p107-r01",
+          "kind": "text",
+          "location": "upper/middle memo",
+          "title": "Workforce recruitment and STEM pipeline",
+          "labels": [
+            "Employee Value Proposition(EVP)",
+            "over6million followers",
+            "over2000students annually",
+            "Pathways Internship Program"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p107-r02",
+          "kind": "text",
+          "location": "lower memo",
+          "title": "Infrastructure",
+          "labels": [
+            "Agency Master Plan(AMP)",
+            "20-year vision",
+            "mission-critical assets"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 108,
+      "summary": "Infrastructure response discusses demolition,sustainment,investment and NPR8820.2H facility-project changes,updated to2I inSeptember2024. Real-estate functions centralize under OSI-FRED; process changes may reduce lease-agreement completion time by up to50%. Reliability Centered Maintenance and condition-based maintenance target critical systems and deferred maintenance.",
+      "visual_description": "Text-only inset memo page numbered10 with three numbered footnotes at bottom.",
+      "regions": [
+        {
+          "id": "p108-r01",
+          "kind": "text",
+          "location": "central white memo",
+          "title": "Infrastructure investment,real estate and maintenance",
+          "labels": [
+            "Office of Strategic Infrastructure(OSI)",
+            "OSI-FRED",
+            "up to50percent lease-completion time reduction",
+            "Reliability Centered Maintenance(RCM)",
+            "NPR8820.2I September2024"
+          ],
+          "uncertainty": "Time reduction is a stated expected capability, not measured performance chart."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 109,
+      "summary": "Infrastructure conclusion precedes Information Technology and Data. NASA filled CDO inJune2023 and appointed CAIO inMay2024. FY2025–FY2027 data strategy includes catalogs,metadata,Zero Trust and AI governance. AI Strategy Board,AI Registry and privacy/risk controls are described. Summer of AI reached over4000 unique participants across40events in three months.",
+      "visual_description": "Text-only inset memo page numbered11; italic Information Technology and Data heading and Executive Order14110/OMB MemorandumM-24-10 footnote.",
+      "regions": [
+        {
+          "id": "p109-r01",
+          "kind": "text",
+          "location": "middle/lower memo",
+          "title": "Information Technology and Data",
+          "labels": [
+            "CDO June2023",
+            "CAIO May2024",
+            "FY2025–FY2027 NASA Data Strategy",
+            "AI Registry",
+            "Summer of AI: >4000participants,40events,3months"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 110,
+      "summary": "Procurement response describes contract oversight and instrument distribution of FY2024 obligations. Firm-Fixed-Price31%,Cost-Plus-Award-Fee28%,Cost-Plus-Fixed-Fee23%,Cost-Plus-Incentive-Fee6%,Grant6%,Other6%. Other includes Cost-No-Fee,Fixed-Price-Award-Fee and Time-and-Materials. Procurement Management Review and independent award-fee panels for procurements over$1billion are discussed.",
+      "visual_description": "Small centered two-column blue-header table between procurement prose,followed by oversight and Award Fees subsections.",
+      "regions": [
+        {
+          "id": "p110-r01",
+          "kind": "table",
+          "location": "upper-middle white memo",
+          "title": "FY2024 instrument types and percentage of total obligations",
+          "labels": [
+            "Instrument Type",
+            "Percentage of Total Obligations",
+            "Firm-Fixed-Price31%",
+            "Cost-Plus-Award-Fee28%",
+            "Cost-Plus-Fixed-Fee23%",
+            "Cost-Plus-Incentive-Fee6%",
+            "Grant6%",
+            "Other6%"
+          ],
+          "uncertainty": "Values are percentages,not dollar amounts; footnote defines Other."
+        },
+        {
+          "id": "p110-r02",
+          "kind": "text",
+          "location": "lower memo",
+          "title": "Award Fees",
+          "labels": [
+            "independent award-fee panel",
+            "over$1billion",
+            "Peer Review policy"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 111,
+      "summary": "Procurement response describes Enterprise Pricing Office,dedicated vendor management,Sustaining Vendor Management,Pricing Academy and Prices Paid capabilities. Grant controls include transaction testing at least once every five years per award,semiannual Federal Financial Report reviews and technical-officer concurrence for future funding. FY2024 had968Transaction Testing Reviews and6738Federal Financial Report reviews.",
+      "visual_description": "Text-only inset memo page numbered13 with three procurement initiative bullets.",
+      "regions": [
+        {
+          "id": "p111-r01",
+          "kind": "text",
+          "location": "central white memo",
+          "title": "Procurement Fraud Avoidance and Improper Use of Grant Funds",
+          "labels": [
+            "Enterprise Pricing Office(EPO)",
+            "Sustaining Vendor Management",
+            "Pricing Academy",
+            "Prices Paid capabilities",
+            "968Transaction Testing Reviews",
+            "6738Federal Financial Report reviews",
+            "FY2024"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 112,
+      "summary": "Closing page of NASA response to OIG2024 management/performance challenges. Gives GAO/OIG audit liaison contact and copy distribution to chief financial/information officers,mission-directorate leaders,procurement,infrastructure and human-capital offices.",
+      "visual_description": "Short closing memo page numbered14 with blue Bill Nelson signature beneath paragraph and multi-line cc list.",
+      "regions": [
+        {
+          "id": "p112-r01",
+          "kind": "signature",
+          "location": "upper-middle white memo",
+          "title": "Administrator response closing",
+          "labels": [
+            "Bill Nelson"
+          ],
+          "uncertainty": "Name is legible in signature; report context identifies the Administrator."
+        },
+        {
+          "id": "p112-r02",
+          "kind": "text",
+          "location": "upper/lower white memo",
+          "title": "Closing and cc distribution",
+          "labels": [
+            "GAO/OIG Audit Liaison Program Manager",
+            "Chief Financial Officer/Ms.Schaus",
+            "Chief Information Officer/Mr.Seaton"
+          ],
+          "uncertainty": "Full public contact and distribution text is separately extracted."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 113,
+      "summary": "Civil Monetary Penalty Adjustment for Inflation for fiscal year endedSeptember30,2024. Describes annual inflation adjustment/reporting under2015law and links Federal Register Volume89No56 penalty updates. Lower sidebar discusses Cygnus engine firing to raise ISS orbital altitude,viewed263miles over Indian Ocean near Aurora Australis.",
+      "visual_description": "Large upper photo shows an astronaut floating in an orange suit and helmet next to a spacecraft mockup,holding a line. Small lower photo shows a docked spacecraft firing its engine with Earth/space background.",
+      "regions": [
+        {
+          "id": "p113-r01",
+          "kind": "photograph",
+          "location": "upper half beneath title",
+          "title": "Reid Wiseman Neutral Buoyancy Lab training",
+          "labels": [
+            "NASA astronaut and ArtemisII Commander Reid Wiseman",
+            "January23",
+            "Johnson Space Center,Houston",
+            "NASA Johnson Space Center"
+          ],
+          "uncertainty": "Identity/location/action are caption-supported; the photo shows water training,not an actual flight."
+        },
+        {
+          "id": "p113-r02",
+          "kind": "text",
+          "location": "middle body",
+          "title": "For the Fiscal Year Ended September30,2024",
+          "labels": [
+            "Federal Civil Penalties Inflation Adjustment Act Improvements Act2015",
+            "Public Law114-74",
+            "Federal Register89No56"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p113-r03",
+          "kind": "photograph",
+          "location": "lower-left Did You Know box",
+          "title": "Cygnus space freighter engine reboost",
+          "labels": [
+            "Northrop Grumman Cygnus",
+            "ISS orbital altitude",
+            "263miles above Indian Ocean",
+            "Aurora Australis"
+          ],
+          "uncertainty": "Small long-duration station-camera photo; orbital details from caption."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 114,
+      "summary": "NASA monitors undisbursed balances in expired grant accounts monthly and reviews stale obligations/supporting documentation. The table covers expired grants with undisbursed balances;2024:975grants/$12936thousand;2023:663/$8126thousand;2022:669/$16718thousand. Text says balances are obligated to specific projects and none currently returnable to Treasury. Lower sidebar describes NASA Podcast Movement participation inNationalHarbor,August20,2024.",
+      "visual_description": "Three-column purple-header numeric table occupies lower-middle page; bottom-left small conference photo shows people near a NASA podcast sign.",
+      "regions": [
+        {
+          "id": "p114-r01",
+          "kind": "table",
+          "location": "lower-middle body",
+          "title": "Undisbursed Balances in Expired Grant Accounts",
+          "labels": [
+            "Fiscal Year",
+            "Total Number of Expired Grants with Undisbursed Balances",
+            "Total Amount of Undisbursed Balances for Expired Grants (in thousands)",
+            "2024:975;$12936",
+            "2023:663;$8126",
+            "2022:669;$16718"
+          ],
+          "uncertainty": "Amounts in thousands; counts are awards,not dollars."
+        },
+        {
+          "id": "p114-r02",
+          "kind": "photograph",
+          "location": "bottom-left Did You Know box",
+          "title": "NASA Participates in the Podcast Movement",
+          "labels": [
+            "August20,2024",
+            "Gaylord National Resort and Convention Center,NationalHarbor,Md.",
+            "Eclipses,Moon Missions,and Climate Change: How NASA Reaches Curious Listeners",
+            "NASA/Bill Ingalls"
+          ],
+          "uncertainty": "Small photo supports conference setting; named event and panel title are adjacent printed text."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 115,
+      "summary": "Grants Programs Information describes expired but unclosed awards,weekly automated closeouts and ongoing financial control monitoring. Grants expired at least2years fell14to8; related undisbursed balances rose$7169to$202870. Three awards could not close due to subaward closeout,PI-transfer legal review or missing documentation. Table groups2–3years,4–5years,more than5years.",
+      "visual_description": "Large three-age-band table in middle-lower page. Bottom-left photograph shows a smiling technician with Thermal Blanket Technician text; a QR code appears to the right.",
+      "regions": [
+        {
+          "id": "p115-r01",
+          "kind": "table",
+          "location": "middle-lower body",
+          "title": "Expired grants/cooperative agreements by age",
+          "labels": [
+            "Columns:2–3years;4–5years;More than5years",
+            "Zero Dollar Balances count:1;1;3",
+            "Undisbursed Balances count:2;1;0",
+            "Total Undisbursed Balances (in thousands):$183;$20;$—"
+          ],
+          "uncertainty": "Narrative exact dollar totals and table rounded thousands must not be mixed; dash is printed rather than numeric zero."
+        },
+        {
+          "id": "p115-r02",
+          "kind": "photograph",
+          "location": "bottom-left Did You Know box",
+          "title": "Surprisingly STEM: Paula Cain,thermal blanket technician",
+          "labels": [
+            "Paula Cain",
+            "NASA Goddard Space Flight Center",
+            "November3,2023",
+            "Thermal Blanket Technician"
+          ],
+          "uncertainty": "Small promotional portrait; role/name/date from adjacent text."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. Also opened original page115 individually and checked table row/column alignment,units and narrative dollar totals."
+    },
+    {
+      "page": 116,
+      "summary": "Climate-Related Financial Risk explains adaptation and sustainability plans and their alignment with strategic/master plans. Links2024–2027 NASA Climate Adaptation Plan and2022NASA Sustainability Plan. Upper caption identifies DC-8 last mission ASIA-AQ collecting Asian air-quality data; lower sidebar describes Third Rock Radio launched2011.",
+      "visual_description": "Large upper color photograph shows white four-engine NASA DC-8 aircraft climbing with landing gear extended over an airfield and snow-covered mountains. Bottom-left sidebar contains blue Third Rock Radio logo.",
+      "regions": [
+        {
+          "id": "p116-r01",
+          "kind": "photograph",
+          "location": "upper half beneath title",
+          "title": "DC-8 ASIA-AQ final mission",
+          "labels": [
+            "ASIA-AQ",
+            "air quality data in Asia",
+            "NASA/Carla Thomas",
+            "January24,2024"
+          ],
+          "uncertainty": "Caption identifies aircraft/mission; photo visually shows four engines and deployed wheels."
+        },
+        {
+          "id": "p116-r02",
+          "kind": "text",
+          "location": "middle body",
+          "title": "Climate Adaptation Plan and Sustainability Plan",
+          "labels": [
+            "2024–2027Climate Adaptation Plan",
+            "2022Sustainability Plan",
+            "environmental,institutional,programmatic,operational risks"
+          ],
+          "uncertainty": ""
+        },
+        {
+          "id": "p116-r03",
+          "kind": "graphic",
+          "location": "bottom-left Did You Know box",
+          "title": "Welcome to NASA Third Rock Radio",
+          "labels": [
+            "Third Rock",
+            "America’s Space Station",
+            "launched2011",
+            "RFC Media LLC"
+          ],
+          "uncertainty": "Logo is a locator for an informative sidebar; no numerical chart."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 117,
+      "summary": "Section4 Appendix divider caption explains a multiple-exposure composite of partial solar-eclipse progression above Washington Monument onApril8,2024. Totality crossed a narrow North-American path fromMexicoPacific coast toNewfoundland; partial eclipse visible acrossNorthAmerica and partsCentralAmerica/Europe.",
+      "visual_description": "Large composite photograph shows an obelisk monument at bottom center,trees at left and a diagonal descending sequence of orange/red sun disks and crescents against blue sky,illustrating eclipse progression.",
+      "regions": [
+        {
+          "id": "p117-r01",
+          "kind": "photograph",
+          "location": "large central rectangle",
+          "title": "Partial solar eclipse over Washington Monument",
+          "labels": [
+            "Monday,April8,2024",
+            "Washington,D.C.",
+            "multiple exposures",
+            "NASA/Bill Ingalls"
+          ],
+          "uncertainty": "Composite positions represent time progression; no time scale/axes printed and should not be inferred."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 118,
+      "summary": "Spanish Administrator message dated15de noviembrede2024 explains transparent FY2024 financial reporting,14th consecutive unmodified opinion and a material financial-control weakness being mitigated. Discusses ArtemisII/III,lunarSouthPole,IntuitiveMachines commercial landing and ISS operations. Sidebar states four NASA strategic themes: Descubrir,Explorar,Innovar,Avanzar.",
+      "visual_description": "Spanish text page with tall pink-outlined sidebar at upper-right listing four strategic themes; no photograph/chart.",
+      "regions": [
+        {
+          "id": "p118-r01",
+          "kind": "text_panel",
+          "location": "upper-right outlined sidebar",
+          "title": "Principales temas y objetivos estratégicos de la NASA",
+          "labels": [
+            "DESCUBRIR:human knowledge through scientific discoveries",
+            "EXPLORAR:human presence Moon/Mars",
+            "INNOVAR:economic growth and innovation",
+            "AVANZAR:capabilities and operations for mission success"
+          ],
+          "uncertainty": "English summaries translate displayed Spanish; original Spanish text retained separately."
+        },
+        {
+          "id": "p118-r02",
+          "kind": "text",
+          "location": "main left/body columns",
+          "title": "Mensaje del Administrador",
+          "labels": [
+            "15de noviembrede2024",
+            "ArtemisII",
+            "ArtemisIII",
+            "GAAP"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 119,
+      "summary": "Spanish Administrator message continues with Crew-8/Crew-9 launches,Earth observation,NASA-ISRO NISAR dual-frequency radar,X-59 quiet supersonic aircraft,X-66 sustainable flight/net-zero aviation2050,STEM2024–2026 plan,workforce and equitable opportunity. Closing is Bill Nelson.",
+      "visual_description": "Text page with small circular portrait of Bill Nelson and blue signature at bottom-left.",
+      "regions": [
+        {
+          "id": "p119-r01",
+          "kind": "text",
+          "location": "main body",
+          "title": "Mensaje del Administrador (continuación)",
+          "labels": [
+            "Crew-8",
+            "Crew-9",
+            "NISAR",
+            "NASA/ISRO",
+            "X-59",
+            "X-66",
+            "2050",
+            "STEM2024–2026"
+          ],
+          "uncertainty": "English summary translates Spanish source."
+        },
+        {
+          "id": "p119-r02",
+          "kind": "portrait",
+          "location": "bottom-left closing",
+          "title": "Bill Nelson portrait and signature",
+          "labels": [
+            "Bill Nelson",
+            "Atentamente"
+          ],
+          "uncertainty": "Identity printed next to portrait; no facial identification inference."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 120,
+      "summary": "Spanish CFO message by Margaret Vo Schaus describes FY2024 financial management,14th consecutive unmodified audit opinion,control-weakness mitigation,lease accounting,G-Invoicing and organizational health/performance. Notes10th AGA CEAR award and Best-in-Class award forFY2023AFR. Sidebar lists three OCFO objectives: stewardship of taxpayer investment,analytical community/capabilities and engaged enterprise workforce.",
+      "visual_description": "Spanish text page with tall pink-outlined objectives sidebar at upper-right and small circular CFO portrait plus signature at bottom-left.",
+      "regions": [
+        {
+          "id": "p120-r01",
+          "kind": "text_panel",
+          "location": "upper-right sidebar",
+          "title": "Objetivos de la Oficina de la Directora de Finanzas",
+          "labels": [
+            "OBJETIVOI:steward taxpayer investment",
+            "OBJETIVOII:develop community and analytic capabilities",
+            "OBJETIVOIII:develop and engage workforce for futureNASA"
+          ],
+          "uncertainty": "Translated descriptions; original Spanish retained."
+        },
+        {
+          "id": "p120-r02",
+          "kind": "portrait",
+          "location": "bottom-left closing",
+          "title": "Margaret Vo Schaus portrait and signature",
+          "labels": [
+            "Margaret Vo Schaus",
+            "Atentamente"
+          ],
+          "uncertainty": "Name printed below signature."
+        },
+        {
+          "id": "p120-r03",
+          "kind": "text",
+          "location": "main body",
+          "title": "Mensaje del Director Financiero",
+          "labels": [
+            "15de noviembrede2024",
+            "G-Invoicing",
+            "14th consecutive opinion",
+            "10th CEAR"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 121,
+      "summary": "Awards page celebrates NASA10+years of excellence. NASA ranked Best Place to Work in Federal Government among large agencies for12consecutive years,#1since2012. Received10th CEAR forFY2023AFR; FY2023financial statements received13th consecutive unmodified/clean audit opinion.",
+      "visual_description": "Wide workforce group photo at top; beneath it a2row6column chronological grid of plaque thumbnails labelled2023through2012. Lower-middle photograph shows multiple clear triangular AGA awards,with report-and-magnifier illustration at bottom-left.",
+      "regions": [
+        {
+          "id": "p121-r01",
+          "kind": "photograph",
+          "location": "upper half below title",
+          "title": "NASA award-winning workforce group",
+          "labels": [
+            "Celebrating NASA10+Years of Excellence"
+          ],
+          "uncertainty": "People shown as group; no individual identities supplied."
+        },
+        {
+          "id": "p121-r02",
+          "kind": "image_grid",
+          "location": "middle-left",
+          "title": "Best Place to Work plaques by year",
+          "labels": [
+            "top row:2023,2022,2021,2020,2019,2018",
+            "bottom row:2017,2016,2015,2014,2013,2012",
+            "12consecutive years",
+            "#1since2012"
+          ],
+          "uncertainty": "Year labels checked visually; tiny plaque wording beyond adjacent statement is not transcribed."
+        },
+        {
+          "id": "p121-r03",
+          "kind": "photograph",
+          "location": "lower-right",
+          "title": "AGA Certificate of Excellence in Accountability Reporting awards",
+          "labels": [
+            "10th CEAR",
+            "FY2023AFR",
+            "AGA"
+          ],
+          "uncertainty": "Awards shown; number of individual photographed trophies not inferred."
+        },
+        {
+          "id": "p121-r04",
+          "kind": "text",
+          "location": "bottom body",
+          "title": "Unmodified audit opinion",
+          "labels": [
+            "13th consecutive year",
+            "FY2023financial statements",
+            "GAAP"
+          ],
+          "uncertainty": "Different fiscal-year statement fromFY2024message."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 122,
+      "summary": "Certificate of Excellence in Accountability Reporting Award page: AGA CEAR and Best-in-Class recognize NASA financial-reporting excellence for10thyear. Lower biography names Frank E.Petersen,III as Deputy CFO forFinance,overseeing policy/systems,quality assurance and financial management; AGA National President2024–2025.",
+      "visual_description": "Large group photograph shows award recipients holding two framed certificates and a central clear triangular trophy in front of a white geometric wall with blue lighting. Small inset at lower-left is trophy image. Bottom biography includes Frank Petersen portrait.",
+      "regions": [
+        {
+          "id": "p122-r01",
+          "kind": "photograph",
+          "location": "large upper/middle image",
+          "title": "CEAR and Best-in-Class award recipients",
+          "labels": [
+            "AGA",
+            "Certificate of Excellence in Accountability Reporting",
+            "Best-in-Class Award",
+            "10thyear"
+          ],
+          "uncertainty": "Identities of individual group members not stated in caption; no identification inferred."
+        },
+        {
+          "id": "p122-r02",
+          "kind": "portrait",
+          "location": "bottom-left biography box",
+          "title": "Frank E.Petersen,III",
+          "labels": [
+            "Deputy Chief Financial Officer forFinance",
+            "AGA National President2024–2025"
+          ],
+          "uncertainty": "Role/name from adjacent printed biography; visual portrait reviewed."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 123,
+      "summary": "Glossary of Acronyms begins with A,C,D,E entries in two text-table columns. Includes Agency Baseline Commitment,AFR,AI,AIVA,AgencyMasterPlan,CAIO,CDO,CEAR,CFO,Commercial LEO programs,CPMO,DSN,DSOC,ESDMD and Ernst&Young.",
+      "visual_description": "Two-column glossary layout with bold acronym cells on left of each narrow definition row,light gray horizontal rules and pink alphabet dividers. No chart/photo.",
+      "regions": [
+        {
+          "id": "p123-r01",
+          "kind": "table",
+          "location": "left full-height glossary column",
+          "title": "A and C acronyms",
+          "labels": [
+            "ABC—Agency Baseline Commitment",
+            "AFR—Agency Financial Report",
+            "AIVA—Advanced Imaging and Visualization of Astromaterials",
+            "CAP—Climate Adaptation Plan",
+            "CEAR—Certificate of Excellence in Accountability Reporting",
+            "CFO—Chief Financial Officer",
+            "CLPS—Commercial Lunar Payload Services"
+          ],
+          "uncertainty": "Not every definition repeated in curated description; complete source text remains indexed. ASC appears twice with different expansions."
+        },
+        {
+          "id": "p123-r02",
+          "kind": "table",
+          "location": "right full-height glossary column",
+          "title": "C continuation,D and E acronyms",
+          "labels": [
+            "CPMO—Chief Program Management Officer",
+            "DATA—Digital Accountability and Transparency Act",
+            "DSN—Deep Space Network",
+            "DSOC—Deep Space Optical Communications",
+            "ESDMD—Exploration Systems Development Mission Directorate",
+            "EY—Ernst&Young LLP"
+          ],
+          "uncertainty": "Source row ordering preserved by original page,not inferred alphabet completeness."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 124,
+      "summary": "Glossary continuation covers F throughI in left column and ISS,J,K,L,M,N in right. Defines accounting/audit terms,government entities,missions,centers and programs including FASAB,FFMIA,FMFIA,GAAP,GAAS,HALO,HLS,ISRO,ISS,JAXA,JPL,JSC,KSC,LEO,MCR,ML2,MSR,NASA,NISAR and NPD.",
+      "visual_description": "Two dense glossary columns with bold acronym cells,light horizontal rules and pink alphabet divider lines. No plot or photograph; both columns contain useful tabular text.",
+      "regions": [
+        {
+          "id": "p124-r01",
+          "kind": "table",
+          "location": "left full-height glossary column",
+          "title": "F,G,H,I glossary",
+          "labels": [
+            "FASAB—Federal Accounting Standards Advisory Board",
+            "FFMIA—Federal Financial Management Improvement Act",
+            "FMFIA—Federal Managers’ Financial Integrity Act",
+            "GAAP—Generally Accepted Accounting Principles",
+            "GAAS—Generally Accepted Auditing Standards",
+            "HALO—Habitation and Logistics Outpost",
+            "HLS—Human Landing System",
+            "ISRO—Indian Space Research Organisation"
+          ],
+          "uncertainty": "Curated key definitions only; every source row remains separately extracted."
+        },
+        {
+          "id": "p124-r02",
+          "kind": "table",
+          "location": "right full-height glossary column",
+          "title": "ISS,J,K,L,M,N glossary",
+          "labels": [
+            "ISS—International Space Station",
+            "JAXA—Japan Aerospace Exploration Agency",
+            "JPL—Jet Propulsion Laboratory",
+            "JSC—Johnson Space Center",
+            "MCR—Mission Concept Review",
+            "ML2—Mobile Launcher2",
+            "MSR—Mars Sample Return",
+            "NISAR—NASA-ISRO Synthetic Aperture Radar",
+            "NPD—NASA Policy Directive"
+          ],
+          "uncertainty": "Acronym expansion text,not a numeric data table."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 125,
+      "summary": "Glossary final page covers NPR throughSLS in left column and SM throughxEVAS in right. Includes financial statements,procurement,maintenance,science missions,sample mechanism,education and deorbit terminology.",
+      "visual_description": "Two glossary columns,light horizontal row rules and pink alphabet dividers; no photograph/chart.",
+      "regions": [
+        {
+          "id": "p125-r01",
+          "kind": "table",
+          "location": "left full-height glossary column",
+          "title": "NPR,O,P,Q,R,S glossary",
+          "labels": [
+            "NPR—NASA Procedural Requirements",
+            "OCFO—Office of the Chief Financial Officer",
+            "OIG—Office of Inspector General",
+            "PIIA—Payment Integrity Information Act",
+            "PP&E—Property,Plant,and Equipment",
+            "RCM—Reliability Centered Maintenance",
+            "SBR—Statement of Budgetary Resources",
+            "SFFAS—Statement of Federal Financial Accounting Standards",
+            "SLS—Space Launch System"
+          ],
+          "uncertainty": "Key definitions only in curated layer; full row text indexed separately."
+        },
+        {
+          "id": "p125-r02",
+          "kind": "table",
+          "location": "right full-height glossary column",
+          "title": "SM,S,T,U,V,X glossary",
+          "labels": [
+            "SNC—Statement of Net Cost",
+            "SoA—Statement of Assurance",
+            "TAGSAM—Touch-and-Go-Sample-Acquisition-Mechanism",
+            "STEM—Science,Technology,Engineering,and Mathematics",
+            "USDV—United States Deorbit Vehicle",
+            "USSGL—United States Standard General Ledger",
+            "xEVAS—Exploration Extravehicular Activity Services"
+          ],
+          "uncertainty": "Definitions checked in source-render layout; no numerical values."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 126,
+      "summary": "Acknowledgments thank NASA report contributors under CFO Margaret Vo Schaus,plus Office of Strategic Infrastructure,Inspector General,Executive Secretariat and Safety/Mission Assurance. Recognizes Deloitte&Touche review,Ernst&Young financial-statement audit,ChiefHumanCapitalOfficer,Communications and graphic designer Darren Fuller.",
+      "visual_description": "Text-only acknowledgments arranged in four name columns beneath CFO heading,followed by smaller office groups and thank-you paragraphs. Pink section headings and divider lines; no informative image.",
+      "regions": [
+        {
+          "id": "p126-r01",
+          "kind": "text_columns",
+          "location": "main body four columns",
+          "title": "Office of the Chief Financial Officer contributors",
+          "labels": [
+            "Margaret Vo Schaus,CFO",
+            "NASA employees inWashington,D.C."
+          ],
+          "uncertainty": "Full public names retained in source text; curated summary does not reproduce every person."
+        },
+        {
+          "id": "p126-r02",
+          "kind": "text",
+          "location": "lower body",
+          "title": "Other offices and acknowledgments",
+          "labels": [
+            "Deloitte&Touche LLP",
+            "Ernst&Young LLP",
+            "Office of the Chief Human Capital Officer",
+            "Office of Communications",
+            "Darren Fuller,graphic designer"
+          ],
+          "uncertainty": ""
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    },
+    {
+      "page": 127,
+      "summary": "Back cover combines NASA headquarters contact/social links and A Moonlit Moonwalk photograph caption. Kate Rubins places a sample marker before collecting a sample during nighttime simulated moonwalk inSanFranciscoVolcanicField,NorthernArizona,May16,2024; markers provide photographic reference for lunar science samples.",
+      "visual_description": "Full-page nighttime field photograph shows a suited person bent over illuminated ground near center,another suited participant at left and observers near right against a rocky scrub hillside and dark blue sky. Upper-left contact text; bottom QR code and social-media icons.",
+      "regions": [
+        {
+          "id": "p127-r01",
+          "kind": "photograph",
+          "location": "full-page background,main subject near center-lower",
+          "title": "A Moonlit Moonwalk",
+          "labels": [
+            "Kate Rubins places sample marker",
+            "nighttime simulated moonwalk",
+            "San Francisco Volcanic Field,Northern Arizona",
+            "May16,2024",
+            "NASA/Josh Valcarcel"
+          ],
+          "uncertainty": "Identification,purpose,location,date from printed caption. Setting visibly terrestrial simulation; not claimed to be the lunar surface."
+        },
+        {
+          "id": "p127-r02",
+          "kind": "text",
+          "location": "upper-left contact block",
+          "title": "Mary W.Jackson NASA Headquarters",
+          "labels": [
+            "300E StreetSW(Hidden Figures Way)",
+            "Washington,DC20546",
+            "NASA.GOV"
+          ],
+          "uncertainty": "Contact details from print; no QR destination inference."
+        },
+        {
+          "id": "p127-r03",
+          "kind": "text",
+          "location": "bottom contact/social blocks",
+          "title": "Report feedback and Stay Connected with NASA",
+          "labels": [
+            "NASA FY2024AFR",
+            "Facebook",
+            "YouTube",
+            "X",
+            "Flickr",
+            "Instagram",
+            "LinkedIn"
+          ],
+          "uncertainty": "QR code visible but not decoded."
+        }
+      ],
+      "verification_notes": "Codex visually inspected the original physical-page render in a full-resolution four-page source contact sheet. No benchmark file was consulted for this catalog. Printed page numbers are one below physical PDF page numbers. Running headers, logos and decorative backgrounds are excluded. Full extracted source text remains separate. "
+    }
+  ]
+}

@@ -387,21 +387,21 @@
     "id": "adv-test-multihop-03",
     "split": "test",
     "group": "multi-hop",
-    "question": "According to Notes 3 and 4, what was the combined FY 2024 value of net investments and net accounts receivable?",
-    "expected_answer": "$139 million.",
+    "question": "Combining the superalloy commercialization overview with the FY 2024 investment disclosure, how many American companies license GRX-810, and what was NASA's total net investments value in FY 2024?",
+    "expected_answer": "Four American companies and $15 million in total net investments.",
     "evidence": [
       {
-        "page": 60,
-        "region": "Note 3 2024 Total investments, net",
-        "source_value": "$15 million"
+        "page": 8,
+        "region": "Superalloy photograph caption, first paragraph",
+        "source_value": "The agency is licensing GRX-810 to four American companies."
       },
       {
-        "page": 61,
-        "region": "Note 4 2024 Total net amount due",
-        "source_value": "$124 million; 15 + 124 = 139 million"
+        "page": 60,
+        "region": "Note 3 Investments, Net; 2024 table; Total row; Investments, Net column; units in millions",
+        "source_value": "$15 million."
       }
     ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
+    "review": "Blind validator checked both original source page renders at full size. Required facts do not coexist in one alternative source table. Repaired before freeze; both locations required.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
     "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },

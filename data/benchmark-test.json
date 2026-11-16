@@ -1,0 +1,128 @@
+[
+  {
+    "id": "test01",
+    "split": "test",
+    "question": "What dropout probability is used throughout the baseline model?",
+    "answerable": true,
+    "expected_answer": "0.1 wherever dropout is applied.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+        "page": 11,
+        "evidence": "For regularization, we use a dropout probability of 0.1 everywhere dropout is applied in the model."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "test02",
+    "split": "test",
+    "question": "Using the RealNews-like pre-training data, from what value to what value did the ReCoRD Exact Match score increase?",
+    "answerable": true,
+    "expected_answer": "From 68.16 to 73.72.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+        "page": 27,
+        "evidence": "Similarly, using the RealNews-like data set for pre-training conferred an increase from 68.16 to 73.72 on the Exact Match score for ReCoRD"
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "test03",
+    "split": "test",
+    "question": "What performance and speed effects did gradual unfreezing have during fine-tuning?",
+    "answerable": true,
+    "expected_answer": "A minor degradation in performance across all tasks, with some speedup during fine-tuning.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+        "page": 30,
+        "evidence": "We found that gradual unfreezing caused a minor degradation in performance across all tasks, though it did provide some speedup during fine-tuning."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "test04",
+    "split": "test",
+    "question": "What real-world situation does leave-one-out multi-task training simulate?",
+    "answerable": true,
+    "expected_answer": "Fine-tuning a pre-trained model on a task it had not seen during pre-training.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+        "page": 33,
+        "evidence": "This simulates the real-world setting where a pre-trained model is fine-tuned on a task it had not seen during pre-training."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "test05",
+    "split": "test",
+    "question": "How many encoder layers, decoder layers and approximate parameters does the Small T5 variant have?",
+    "answerable": true,
+    "expected_answer": "6 encoder layers, 6 decoder layers, about 60 million parameters.",
+    "gold": [
+      {
+        "source_id": "t5_jmlr_2020",
+        "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+        "page": 36,
+        "evidence": "only 6 layers each in the encoder and decoder. This variant has about 60 million parameters."
+      }
+    ],
+    "filter": {}
+  },
+  {
+    "id": "test06",
+    "split": "test",
+    "question": "Within indexed PDF pages 4-40, what are the serial numbers of the TPU chips used for the baseline training run?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The training hardware paragraph on PDF page 5 identifies Cloud TPU Pods and TPU v3 chips, but gives no device serial numbers. All 37 original PDF pages were extracted and searched for the listed identifier terms; no occurrences were found. This absence claim is limited to the indexed pages, not external sources.",
+    "absence_check": {
+      "original_pdf_pages": [
+        4,
+        40
+      ],
+      "terms_and_page_hits": {
+        "serial": [],
+        "serial number": [],
+        "device identifier": [],
+        "chip identifier": []
+      },
+      "relevant_section_reviewed": "PDF page 5, model/training hardware prose"
+    },
+    "filter": {}
+  },
+  {
+    "id": "test07",
+    "split": "test",
+    "question": "Within indexed PDF pages 4-40, what geographic coordinates identify the data center used to train the baseline?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The original PDF training-hardware description on page 5 provides TPU Pod architecture and software information, but no data-center coordinates. All 37 indexed original PDF pages were searched for the listed location terms and none occurred. This is a corpus-scoped absence claim; a city or coordinate must not be guessed from external knowledge.",
+    "absence_check": {
+      "original_pdf_pages": [
+        4,
+        40
+      ],
+      "terms_and_page_hits": {
+        "geographic": [],
+        "latitude": [],
+        "longitude": [],
+        "datacenter": [],
+        "data center": [],
+        "data centre": []
+      },
+      "relevant_section_reviewed": "PDF page 5, model/training hardware prose"
+    },
+    "filter": {}
+  }
+]

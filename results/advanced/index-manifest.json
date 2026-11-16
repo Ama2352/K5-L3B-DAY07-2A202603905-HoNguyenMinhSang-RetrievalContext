@@ -1,0 +1,1708 @@
+{
+  "source": {
+    "title": "NASA FY2024 Agency Financial Report",
+    "physical_pages": 127,
+    "url": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "sha256": "65ee29adf5f3a92fcd74701696c25dae8f2d18f1ba2e7f4fba2bcfc059acbefc",
+    "sharing": "Source and access recipe supplied; original PDF/third-party images not rehosted."
+  },
+  "index": {
+    "pages": 127,
+    "unprocessed_pages": [],
+    "vector_count": 127,
+    "dimensions": 384,
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_view": "visual_catalog_then_original_text",
+    "lexical_scope": "All original extracted text and source-reviewed visual descriptions",
+    "catalog_method": "Codex-assisted visual inspection of original renders; source-only corpus annotation",
+    "benchmark_used_to_build_index": false,
+    "visual_region_kinds": {
+      "photo": 28,
+      "table": 48,
+      "text_panel": 10,
+      "text": 65,
+      "portrait": 4,
+      "diagram": 6,
+      "legend": 2,
+      "map": 1,
+      "photo_strip": 1,
+      "summary_numbers": 5,
+      "chart": 10,
+      "sidebar": 1,
+      "illustrative_icons": 1,
+      "letter": 2,
+      "signature": 3,
+      "photograph": 13,
+      "graphic": 1,
+      "image_grid": 1,
+      "text_columns": 1
+    },
+    "original_text_characters": 338646
+  },
+  "hashes": {
+    "annotations": "3ab5c537c10218d6749d8e350caf80c4202550692f6da19252190649338f1e26",
+    "catalog": "c47246e297c585045e1e3b05118f10e3b6dae4323e46acab489b75dc71cbf48a",
+    "vectors": "ab237f766e54d83160ee66cc24a209a8508944b41ce3aeeb185f858b03398a8a"
+  },
+  "verification_scope": "All pages viewed; informative visual regions described; not all table cells independently transcribed.",
+  "limitations": [
+    "Tables retain original text and rendered pages; not every cell is independently retyped.",
+    "Source page remains authoritative; every benchmark answer/citation needs original-page review.",
+    "Dense embedding may truncate long inputs; BM25 indexes full page text/catalog.",
+    "Descriptions were reviewed against all original pages, not every financial table cell independently retyped.",
+    "Benchmark answer/citation checks use original pages, not catalog assertions alone."
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "image_sha256": "c6e18ad810914f8784ea648a469c18487e3e5bed4942615d787f33cbf0eabc65",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-001.png",
+      "text_characters": 77,
+      "region_count": 1
+    },
+    {
+      "page": 2,
+      "image_sha256": "ad9f93c0246639d5ba31c982bc5a2dbc4ca575ae7f44b85deadc749e5e81c5a5",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-002.png",
+      "text_characters": 975,
+      "region_count": 2
+    },
+    {
+      "page": 3,
+      "image_sha256": "171c75f096ea0ef992ca4b5b9ab7bddaf0c768d60b16ada9dfab5fa7bba684e0",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-003.png",
+      "text_characters": 2223,
+      "region_count": 1
+    },
+    {
+      "page": 4,
+      "image_sha256": "e2527c6db2238234054e77f7bfc6083adcf896fc44d7d99bde4fb87be9862fb0",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-004.png",
+      "text_characters": 1415,
+      "region_count": 1
+    },
+    {
+      "page": 5,
+      "image_sha256": "374113c6be8d64809ae973cd0195095f90898cfae75b6df27e23e6a7cf4b19d5",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-005.png",
+      "text_characters": 1739,
+      "region_count": 2
+    },
+    {
+      "page": 6,
+      "image_sha256": "c38a1060872f677d93c234b9f884806572404b945dbf6ce704f07b04e9d04afe",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-006.png",
+      "text_characters": 4443,
+      "region_count": 2
+    },
+    {
+      "page": 7,
+      "image_sha256": "2228c4310323ae854c984d2b80c2712ed521ee4ccd57591725d141f71bb34a36",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-007.png",
+      "text_characters": 4094,
+      "region_count": 2
+    },
+    {
+      "page": 8,
+      "image_sha256": "068463fa15a11976370874818929098f381b598d19278dea1097dfb4a91adc83",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-008.png",
+      "text_characters": 783,
+      "region_count": 1
+    },
+    {
+      "page": 9,
+      "image_sha256": "f08ac4f48f1550af3cb8ce789d54902ce1236b2526e0fd4ad840eff4d176b444",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-009.png",
+      "text_characters": 4025,
+      "region_count": 2
+    },
+    {
+      "page": 10,
+      "image_sha256": "76efacb9e43723a70c439f10baab912a8a3d77dc0777409e11d91f8000065330",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-010.png",
+      "text_characters": 2495,
+      "region_count": 3
+    },
+    {
+      "page": 11,
+      "image_sha256": "6eca0d09c2b01c55f13d706ffe5dfabad969cb473a217533c34b409b59a1d9a6",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-011.png",
+      "text_characters": 2717,
+      "region_count": 2
+    },
+    {
+      "page": 12,
+      "image_sha256": "2cc39b279787e22651d38062a06014e3dd5d86f94b0af937ba53c031a8ed8cef",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-012.png",
+      "text_characters": 2061,
+      "region_count": 2
+    },
+    {
+      "page": 13,
+      "image_sha256": "05b508a0328fd9e8005c95347124db08bffefe57b3a4e34bd0f1d3631e9760ae",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-013.png",
+      "text_characters": 1211,
+      "region_count": 2
+    },
+    {
+      "page": 14,
+      "image_sha256": "07a9dcfb8d8449477bbb08c6fee7fa0fd8d41c7cb250294b50da42d75b3b955b",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-014.png",
+      "text_characters": 459,
+      "region_count": 1
+    },
+    {
+      "page": 15,
+      "image_sha256": "388b633a3859715d1bc2b66d826d205fb4c6705c599e66a114f7b8d510619f63",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-015.png",
+      "text_characters": 2342,
+      "region_count": 2
+    },
+    {
+      "page": 16,
+      "image_sha256": "f5fc61ee94736e261ec962e10cffd6b8ef310106588e059968b6e17ddb479cbd",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-016.png",
+      "text_characters": 2066,
+      "region_count": 1
+    },
+    {
+      "page": 17,
+      "image_sha256": "79efadaef0e6f654898841d63ce397373fce60feba6c0b4280a1b0f2959de67e",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-017.png",
+      "text_characters": 2102,
+      "region_count": 2
+    },
+    {
+      "page": 18,
+      "image_sha256": "4831264f0f48318541f4aea7203234bae57369a36a97711e18a0ac2f0f863933",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-018.png",
+      "text_characters": 4851,
+      "region_count": 2
+    },
+    {
+      "page": 19,
+      "image_sha256": "97c6e0b57a3d939542d6782121143e26799abcda7b052154a7b3892378bddeae",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-019.png",
+      "text_characters": 3893,
+      "region_count": 4
+    },
+    {
+      "page": 20,
+      "image_sha256": "49af37016ee4383071fd559d752ac2800143eff1e253bb993c1c62ce02c0a7af",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-020.png",
+      "text_characters": 625,
+      "region_count": 1
+    },
+    {
+      "page": 21,
+      "image_sha256": "3fdb54b085d63acd287f86c4756e876c0e9a6bc6ea047dd05bef1d817b18fc3d",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-021.png",
+      "text_characters": 2808,
+      "region_count": 2
+    },
+    {
+      "page": 22,
+      "image_sha256": "886eed9f0577bc94704f602297c03fd6636948d0c0a8af6bc34e649dab881d63",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-022.png",
+      "text_characters": 2742,
+      "region_count": 2
+    },
+    {
+      "page": 23,
+      "image_sha256": "58b3f1fb4eba11aa98873bbb4a1172cd20175bf21a014e04b60c793ff487863c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-023.png",
+      "text_characters": 2572,
+      "region_count": 2
+    },
+    {
+      "page": 24,
+      "image_sha256": "79c4f0e1dbdf55fd7ff6a03febd60f0d36ee63a4534130ba5ff4dca88c6ce583",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-024.png",
+      "text_characters": 3641,
+      "region_count": 3
+    },
+    {
+      "page": 25,
+      "image_sha256": "b38ad30def6bde8c120bad84e876c03abb181b0a0daacaae73bf0b606142e5a9",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-025.png",
+      "text_characters": 4296,
+      "region_count": 3
+    },
+    {
+      "page": 26,
+      "image_sha256": "421779a7e5aea31bc6a4f3bd719989458b6efb58e2b0f4cd0e9ee9946f5bff64",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-026.png",
+      "text_characters": 3647,
+      "region_count": 3
+    },
+    {
+      "page": 27,
+      "image_sha256": "33ff18d1916f7a8e6d05204d26d7faf07180a8ab974812c772e358fff51affd2",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-027.png",
+      "text_characters": 2548,
+      "region_count": 3
+    },
+    {
+      "page": 28,
+      "image_sha256": "8675822277ee5889cd48b9680a609fb52c4bcc9af63ab2bb1bc54b8a3b7a5878",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-028.png",
+      "text_characters": 697,
+      "region_count": 1
+    },
+    {
+      "page": 29,
+      "image_sha256": "3b89b8d885f4ba07c37b301be6039bd9ffb48c02d484c588d092ba196779024e",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-029.png",
+      "text_characters": 775,
+      "region_count": 2
+    },
+    {
+      "page": 30,
+      "image_sha256": "ed8b8f7b086c47863e0fca4e2e077b5f3798e1f25f17c415a852ae2c8c3e18ec",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-030.png",
+      "text_characters": 2067,
+      "region_count": 2
+    },
+    {
+      "page": 31,
+      "image_sha256": "80b0f1ad1dad73d413e3f6e1f6e1c2b767a64fc1ea2d7f2fd521d0799ed692fc",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-031.png",
+      "text_characters": 2532,
+      "region_count": 2
+    },
+    {
+      "page": 32,
+      "image_sha256": "7feb2264d57c578693ea0ce82b6bbfeee8be609c48bc3bfd4363bc6ab972660c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-032.png",
+      "text_characters": 1454,
+      "region_count": 2
+    },
+    {
+      "page": 33,
+      "image_sha256": "ca6c71520ca73c3d6b179e17286dddeada8499fc759fa056e945ea7518bcfbaf",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-033.png",
+      "text_characters": 2076,
+      "region_count": 1
+    },
+    {
+      "page": 34,
+      "image_sha256": "55f2433b82e2977adf312022bcf26d3e394164c9b13a74a7f882d01fa3cc6027",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-034.png",
+      "text_characters": 2257,
+      "region_count": 3
+    },
+    {
+      "page": 35,
+      "image_sha256": "77092857c733bc8c554d91c1c6e54501a8c76654c17439fcb4c8c12b06d84502",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-035.png",
+      "text_characters": 1123,
+      "region_count": 2
+    },
+    {
+      "page": 36,
+      "image_sha256": "ced9743b30280948314467715782afbf63f7a79e430c3ff479586c78da799136",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-036.png",
+      "text_characters": 600,
+      "region_count": 1
+    },
+    {
+      "page": 37,
+      "image_sha256": "2372c252ffc0b20db5dc0345abc40d5a85e8da838323ac42fe5b86d13876b797",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-037.png",
+      "text_characters": 2587,
+      "region_count": 2
+    },
+    {
+      "page": 38,
+      "image_sha256": "7f67de2e25d20032173211666e3e9dbfad8ff813aedac5fa3a9208376e0f2128",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-038.png",
+      "text_characters": 3629,
+      "region_count": 2
+    },
+    {
+      "page": 39,
+      "image_sha256": "417293f6819d411e1fcbd92bddf255472ec722c77d67d7e9f23d6a149def1c67",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-039.png",
+      "text_characters": 2324,
+      "region_count": 1
+    },
+    {
+      "page": 40,
+      "image_sha256": "7b067e188f4b4b688cfba67332f2cf3e528eaf7853c9ff94d9fd052fbc4e1a3c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-040.png",
+      "text_characters": 3431,
+      "region_count": 1
+    },
+    {
+      "page": 41,
+      "image_sha256": "ad6808347b0eddc909b6c67a0b0f7931ed1755f54ec01e71d6db32106279b7d3",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-041.png",
+      "text_characters": 2831,
+      "region_count": 1
+    },
+    {
+      "page": 42,
+      "image_sha256": "c69f06efaa7444344fdbb3fc58b5f9941d6ea3b1f9d6c55c062b0998c930d0a7",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-042.png",
+      "text_characters": 4827,
+      "region_count": 1
+    },
+    {
+      "page": 43,
+      "image_sha256": "4adb6f5a5889459ac85465bfc3f80887d18ac87c2fff0bfcd508dc80585400cc",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-043.png",
+      "text_characters": 477,
+      "region_count": 1
+    },
+    {
+      "page": 44,
+      "image_sha256": "e9bbf45431ccc4932a953f2e718900c73f91febdeca3b9678c651b555ec1ea65",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-044.png",
+      "text_characters": 5496,
+      "region_count": 1
+    },
+    {
+      "page": 45,
+      "image_sha256": "5ae4ccfb032695c00ac98b593314d225734613367332789bd385196cff47674a",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-045.png",
+      "text_characters": 5514,
+      "region_count": 1
+    },
+    {
+      "page": 46,
+      "image_sha256": "024523679089bf678b6bdceb9b75fa73f160d682979f18fdd3c892ee79e07de0",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-046.png",
+      "text_characters": 1044,
+      "region_count": 1
+    },
+    {
+      "page": 47,
+      "image_sha256": "c5020634fe36eb26047f377be77083f0ecf392c35f15c51db8a323d9cd8167cb",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-047.png",
+      "text_characters": 3921,
+      "region_count": 1
+    },
+    {
+      "page": 48,
+      "image_sha256": "295cb067d976a5a4b858995f62c991b3a3fcd973a84784ad2e34d6df3e8ca947",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-048.png",
+      "text_characters": 1548,
+      "region_count": 1
+    },
+    {
+      "page": 49,
+      "image_sha256": "2b9e32226d5ffb33d1811698f20c58d24c96e2869cfbb8490c4f91d3e6c5e26f",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-049.png",
+      "text_characters": 928,
+      "region_count": 1
+    },
+    {
+      "page": 50,
+      "image_sha256": "d0985c2341c25c7a4e4d32c2841d8f6a4c6dc4ccd56a05362f6c2ce2d2583f9b",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-050.png",
+      "text_characters": 1763,
+      "region_count": 1
+    },
+    {
+      "page": 51,
+      "image_sha256": "1b83f8c02720286611f2991837f3d85210a641f94cbd18aee9a7930485f026b3",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-051.png",
+      "text_characters": 1274,
+      "region_count": 1
+    },
+    {
+      "page": 52,
+      "image_sha256": "cd8f6a4cc0eded578deaf8559906fb06bef6535ba63c00dadefa573e0cdb0c3a",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-052.png",
+      "text_characters": 1126,
+      "region_count": 1
+    },
+    {
+      "page": 53,
+      "image_sha256": "f5dbf2a5e9247bf453155420ed3998509f96d23b569e3b535de8871731c4c913",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-053.png",
+      "text_characters": 1192,
+      "region_count": 1
+    },
+    {
+      "page": 54,
+      "image_sha256": "c442e58e77378c054dc9458b2d8f8f69a6db2beb70c7f0ee3c79ef4909e4ef2f",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-054.png",
+      "text_characters": 3841,
+      "region_count": 1
+    },
+    {
+      "page": 55,
+      "image_sha256": "026c333bad38d5ed613bdf1225101813809b372738685bdcce2b111fa95b4661",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-055.png",
+      "text_characters": 4635,
+      "region_count": 1
+    },
+    {
+      "page": 56,
+      "image_sha256": "853e97c8b11e4497e50a7aa15c23b5b3c0a7d43526a55ddeba4ff1389871b92f",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-056.png",
+      "text_characters": 4195,
+      "region_count": 1
+    },
+    {
+      "page": 57,
+      "image_sha256": "2939c5953a014e95895421394d763adfb01ad149ba5f314c9a755fc8e49d1c3e",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-057.png",
+      "text_characters": 4351,
+      "region_count": 1
+    },
+    {
+      "page": 58,
+      "image_sha256": "730791baa5d7d6b443584afceaf15d4ac8bb44e17dcf36f2878f7cd09cf43ebd",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-058.png",
+      "text_characters": 4159,
+      "region_count": 1
+    },
+    {
+      "page": 59,
+      "image_sha256": "016461d8b4d680784113362c90cd4b0cd08b6dd45bd5c9acf3c7574cea44ec5c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-059.png",
+      "text_characters": 841,
+      "region_count": 1
+    },
+    {
+      "page": 60,
+      "image_sha256": "8f92ad22728bcb23868c2cc1292c272559b04c501d778ecfc204636980e46cff",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-060.png",
+      "text_characters": 2428,
+      "region_count": 2
+    },
+    {
+      "page": 61,
+      "image_sha256": "64763697d056dcf0ce31b6bd79addc9623bf23ffc716d586c1d72d650a985f22",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-061.png",
+      "text_characters": 2912,
+      "region_count": 2
+    },
+    {
+      "page": 62,
+      "image_sha256": "734829117286f9968add09a6eea9632ef7b4436d8df5390fe601353f5dbfffa4",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-062.png",
+      "text_characters": 2760,
+      "region_count": 2
+    },
+    {
+      "page": 63,
+      "image_sha256": "3945ee6f63147228178c07a6354d014c62b2dbaf31254acf390fd88ad8002057",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-063.png",
+      "text_characters": 4413,
+      "region_count": 1
+    },
+    {
+      "page": 64,
+      "image_sha256": "2bc769f13ca693ccaf7c604cf74fc51e840f0fb5fed1f0a379a55541e391542c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-064.png",
+      "text_characters": 2831,
+      "region_count": 1
+    },
+    {
+      "page": 65,
+      "image_sha256": "e8d70bac03f2208a1818aaefa31c68b80e3985f32f0ba9e91ad01c743f9a6d9c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-065.png",
+      "text_characters": 3280,
+      "region_count": 1
+    },
+    {
+      "page": 66,
+      "image_sha256": "01a74ec4f3db6420b7794c4df8277c4f14e134992cccd0aa3b1d2eb6e36eb4a6",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-066.png",
+      "text_characters": 4222,
+      "region_count": 1
+    },
+    {
+      "page": 67,
+      "image_sha256": "dad4ee5e6b970c11a0a1899a373ac2d88fe45f72b405cacf648ad5c808c549b1",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-067.png",
+      "text_characters": 3177,
+      "region_count": 1
+    },
+    {
+      "page": 68,
+      "image_sha256": "24446788edfc136c15a216b73cf9b2bd5527550016ff64ba973ce7d2582e16bb",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-068.png",
+      "text_characters": 3293,
+      "region_count": 2
+    },
+    {
+      "page": 69,
+      "image_sha256": "70122663df1eb8013b0ddf9dda1b957836147240669786eab2ef43c82a0d2bc0",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-069.png",
+      "text_characters": 2159,
+      "region_count": 2
+    },
+    {
+      "page": 70,
+      "image_sha256": "8fe4aea9edeff1b0bf64814066f435071c1a74c333c0a65f8bc4183adff5bf91",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-070.png",
+      "text_characters": 1861,
+      "region_count": 2
+    },
+    {
+      "page": 71,
+      "image_sha256": "3910480a9e2b60f1ecfd6c6eecd43174fd2d45159285e471d37fc78968b40a82",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-071.png",
+      "text_characters": 2779,
+      "region_count": 1
+    },
+    {
+      "page": 72,
+      "image_sha256": "06679068a994ee13298de63ccb797a0728fe7e19eb6e82caba156715e0c816d3",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-072.png",
+      "text_characters": 2193,
+      "region_count": 1
+    },
+    {
+      "page": 73,
+      "image_sha256": "944835fe9a80b600624dedf21714134f8e56febe9edec2fac30b1c0be467cbdc",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-073.png",
+      "text_characters": 4117,
+      "region_count": 1
+    },
+    {
+      "page": 74,
+      "image_sha256": "0a95d45f3cd59e7b1654abf85431c01f7eccc31af957d9762ef87c54893dd3b9",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-074.png",
+      "text_characters": 2529,
+      "region_count": 2
+    },
+    {
+      "page": 75,
+      "image_sha256": "af5d40a692453b370a6f308ffd8bcb6ce06938fdf0b40cb8c398057e69125497",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-075.png",
+      "text_characters": 5468,
+      "region_count": 1
+    },
+    {
+      "page": 76,
+      "image_sha256": "b5e76f84fe2acad7b173fc8937b90e8037d8b95f55930f4b2736bc090b7f207a",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-076.png",
+      "text_characters": 4551,
+      "region_count": 1
+    },
+    {
+      "page": 77,
+      "image_sha256": "a85a9429a4ad5635ea6684c4d995681a4f26f4da620104478ddc0f2a70bae9f2",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-077.png",
+      "text_characters": 4014,
+      "region_count": 1
+    },
+    {
+      "page": 78,
+      "image_sha256": "056441508bc80ff75164aee632d9e2a22b40b821d0fcaf9f939ac4e990559312",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-078.png",
+      "text_characters": 3427,
+      "region_count": 1
+    },
+    {
+      "page": 79,
+      "image_sha256": "ed68998e0fff4e8e87325d306f9bed2661442c3293438a0d03e8ac50f7571021",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-079.png",
+      "text_characters": 2830,
+      "region_count": 2
+    },
+    {
+      "page": 80,
+      "image_sha256": "49e961646b84d4fc955c04ff0f8bb45dc1376aadb84ac0c893092422b8ee1a59",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-080.png",
+      "text_characters": 2782,
+      "region_count": 2
+    },
+    {
+      "page": 81,
+      "image_sha256": "942cb9bcb8e7a5a2db450758aee0281b0932ad330dc9456cccad4a42b4ac89dc",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-081.png",
+      "text_characters": 4653,
+      "region_count": 1
+    },
+    {
+      "page": 82,
+      "image_sha256": "41d4471ace3936b59aee0cd147bfec66859089332c78d2a0ada419dccb69bd34",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-082.png",
+      "text_characters": 2703,
+      "region_count": 1
+    },
+    {
+      "page": 83,
+      "image_sha256": "15ecc4c6df8d71ec29655619e2e75649eca231bfd2fc80583afc8f1e71146ff9",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-083.png",
+      "text_characters": 2406,
+      "region_count": 1
+    },
+    {
+      "page": 84,
+      "image_sha256": "920a604283dffe31095944258201034d012108aa1b03cdf63aeb15d31c4b2603",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-084.png",
+      "text_characters": 668,
+      "region_count": 1
+    },
+    {
+      "page": 85,
+      "image_sha256": "df17cfbefc09a98989d99dc1c63fd5790b6c1b2b45c216683a41623ba877d1be",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-085.png",
+      "text_characters": 1997,
+      "region_count": 1
+    },
+    {
+      "page": 86,
+      "image_sha256": "1e6c26d3b43436d6e99fa76834630cdd035b56277c74fc899b350e4bef9bbdb6",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-086.png",
+      "text_characters": 412,
+      "region_count": 1
+    },
+    {
+      "page": 87,
+      "image_sha256": "b855ddb176ec90f5362d4224e3c8b2b728a492d71fd1843e1c8b02c55bdcc70c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-087.png",
+      "text_characters": 2676,
+      "region_count": 1
+    },
+    {
+      "page": 88,
+      "image_sha256": "856d9db14f3e576f909da467ff872be51831f33610f3c1a835d649a87a849bcb",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-088.png",
+      "text_characters": 2928,
+      "region_count": 1
+    },
+    {
+      "page": 89,
+      "image_sha256": "fc78b2947c16412dee918548015ea773429631847a57db8fafa7f6ce46b72070",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-089.png",
+      "text_characters": 3308,
+      "region_count": 1
+    },
+    {
+      "page": 90,
+      "image_sha256": "3eb5f028a5f1cc922539a01aa2ef0e1d9de2f3ec6ef305acb072fb8b26baecb3",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-090.png",
+      "text_characters": 1034,
+      "region_count": 2
+    },
+    {
+      "page": 91,
+      "image_sha256": "6abb52a11520ab169e3bc27858558c0390a3ef38dbe7dc41ab2bf598a26d60f1",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-091.png",
+      "text_characters": 2872,
+      "region_count": 1
+    },
+    {
+      "page": 92,
+      "image_sha256": "67a23cd68889297c3ccc5bec90a262d9a0b7a6cc139b4d1cab23b93fc5af8ac0",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-092.png",
+      "text_characters": 3604,
+      "region_count": 1
+    },
+    {
+      "page": 93,
+      "image_sha256": "6c55cab0d212b5af2e6e41abaea0adaa822161d93b26921f4bfa4b5ab78562fb",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-093.png",
+      "text_characters": 2227,
+      "region_count": 1
+    },
+    {
+      "page": 94,
+      "image_sha256": "cdb1a104a95eb486657dd88e2d73750c3db79dc49c1d408e6daf9d009b491028",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-094.png",
+      "text_characters": 616,
+      "region_count": 2
+    },
+    {
+      "page": 95,
+      "image_sha256": "3c1a6b074d543430060ffd6f09def4ab56886429d44622f978b7ff59b226784c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-095.png",
+      "text_characters": 807,
+      "region_count": 1
+    },
+    {
+      "page": 96,
+      "image_sha256": "3aa7142e87f0b05afd099e0293ac2d5654577fa0e384b214d507ac3a0d1fa09a",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-096.png",
+      "text_characters": 2034,
+      "region_count": 2
+    },
+    {
+      "page": 97,
+      "image_sha256": "1ed64a449458d18d377041f0d6744aa1c6a86f8189c3511b40a844199a2377b7",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-097.png",
+      "text_characters": 1762,
+      "region_count": 3
+    },
+    {
+      "page": 98,
+      "image_sha256": "e54d680d1a3c1374cfb4fa513a8db89644eddd1039a7286b37a0baf5090b7f15",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-098.png",
+      "text_characters": 3577,
+      "region_count": 1
+    },
+    {
+      "page": 99,
+      "image_sha256": "276631bb16526f728ab9afae085d2d617524a07c8338ccc0afcf63013f0d3920",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-099.png",
+      "text_characters": 3140,
+      "region_count": 1
+    },
+    {
+      "page": 100,
+      "image_sha256": "c7c0fbe894b6583e757130eeb0fda2d877f198a524534d3c907c91dfa1dcac80",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-100.png",
+      "text_characters": 3444,
+      "region_count": 1
+    },
+    {
+      "page": 101,
+      "image_sha256": "d536cdf46ca073cbe4b52ffe20d30c43ce2dc7fd46a75368b4d5d025968e7268",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-101.png",
+      "text_characters": 3429,
+      "region_count": 1
+    },
+    {
+      "page": 102,
+      "image_sha256": "fbba5114ca4bde071744e1a48f938c7a58283d01007f43298ece5f5b6e6bf264",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-102.png",
+      "text_characters": 3680,
+      "region_count": 2
+    },
+    {
+      "page": 103,
+      "image_sha256": "89283b67811c72bbc9f6093190d046a755bef7e703ea612d20b38fdf416e1803",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-103.png",
+      "text_characters": 3415,
+      "region_count": 2
+    },
+    {
+      "page": 104,
+      "image_sha256": "a28c4eff0f109ab6b5def2468a79a736e21e57b35578dd0f147764382a3f8580",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-104.png",
+      "text_characters": 3696,
+      "region_count": 2
+    },
+    {
+      "page": 105,
+      "image_sha256": "cbbdf90913dda7daa130b0f45a279233d5f1201d0651386b21fcd1b75d38111c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-105.png",
+      "text_characters": 3757,
+      "region_count": 1
+    },
+    {
+      "page": 106,
+      "image_sha256": "5c5a41d843da823151275a807b8a7c95fcccbbfab660f0f5af574ff8b488ec10",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-106.png",
+      "text_characters": 3306,
+      "region_count": 1
+    },
+    {
+      "page": 107,
+      "image_sha256": "3b67e4a93146b2385653e9170bc2bcbf68ed09693fbad3fa27ff7d9985e84e59",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-107.png",
+      "text_characters": 3746,
+      "region_count": 2
+    },
+    {
+      "page": 108,
+      "image_sha256": "b45a67896900b9b3c97afe05c944c63c37db63c7ed4024299461e7bac01b1a00",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-108.png",
+      "text_characters": 3870,
+      "region_count": 1
+    },
+    {
+      "page": 109,
+      "image_sha256": "ac088165556e7aeabedc17362c59ebb8adf80f4aa7cb02b124c86f7176e8333c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-109.png",
+      "text_characters": 3880,
+      "region_count": 1
+    },
+    {
+      "page": 110,
+      "image_sha256": "8c2278345cdfc54d145404a1873ca9223c0ba338dde306217504abe0de729679",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-110.png",
+      "text_characters": 2562,
+      "region_count": 2
+    },
+    {
+      "page": 111,
+      "image_sha256": "fe47ac5778a4561eedf988764638b42c3641f1b568241fb5f87035940f9fbe75",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-111.png",
+      "text_characters": 3570,
+      "region_count": 1
+    },
+    {
+      "page": 112,
+      "image_sha256": "3b3fb8e11bbad102e2984e06ea3392c13802ee588f1fcf310dccee6f26464cc3",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-112.png",
+      "text_characters": 1069,
+      "region_count": 2
+    },
+    {
+      "page": 113,
+      "image_sha256": "e13278a60a8abd71d8d4ec37e886290a27a259d32a69855609bb1dcc95249598",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-113.png",
+      "text_characters": 1769,
+      "region_count": 3
+    },
+    {
+      "page": 114,
+      "image_sha256": "24ce6ebd919b3ab2dabc7214bb85d3a7b5b6b141f713cdd39819b1309297c722",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-114.png",
+      "text_characters": 3438,
+      "region_count": 2
+    },
+    {
+      "page": 115,
+      "image_sha256": "8e1a456f70cc8ea2a734baceef800e484dde942f01dc69d10436db48e1806142",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-115.png",
+      "text_characters": 2346,
+      "region_count": 2
+    },
+    {
+      "page": 116,
+      "image_sha256": "5af3afb8dc12ceac1ede0199e035ed7c4a5c685ddc1a6adc9bc809257cc2074c",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-116.png",
+      "text_characters": 2678,
+      "region_count": 3
+    },
+    {
+      "page": 117,
+      "image_sha256": "10c66516968750308e3d88e4417c1211c96668a1e551c2b2d63cf18bd50d7d33",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-117.png",
+      "text_characters": 599,
+      "region_count": 1
+    },
+    {
+      "page": 118,
+      "image_sha256": "bdff2d2c24f250850cde9c5ea176eb3f08daec3a31d3c229d1fac35d1883d91f",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-118.png",
+      "text_characters": 5053,
+      "region_count": 2
+    },
+    {
+      "page": 119,
+      "image_sha256": "3324f301d249b97982c746b439684ddb11f46599aeffa0dd5fb73673858b7073",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-119.png",
+      "text_characters": 4615,
+      "region_count": 2
+    },
+    {
+      "page": 120,
+      "image_sha256": "4e3444cbf9014bc4684c3b7e6cdcdd20a3a5b2f513c1970cb333a1ab9d1a5c4a",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-120.png",
+      "text_characters": 4460,
+      "region_count": 3
+    },
+    {
+      "page": 121,
+      "image_sha256": "0e3b733abd2af0c819bbbc9e3df8043e10131600df99177f4b3eb4da15c434f7",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-121.png",
+      "text_characters": 1205,
+      "region_count": 4
+    },
+    {
+      "page": 122,
+      "image_sha256": "043eb4c5842a1cb1f50895cc763547401bf8ba0fdd0d2d9135ec066c5d767d10",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-122.png",
+      "text_characters": 939,
+      "region_count": 2
+    },
+    {
+      "page": 123,
+      "image_sha256": "e61b84afbb0fc79ba165e369a67d4d12353ed7d7757203a9153194f4d15706e7",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-123.png",
+      "text_characters": 2554,
+      "region_count": 2
+    },
+    {
+      "page": 124,
+      "image_sha256": "844dde9ca6be371c327316da1b95798b6673d34fe65afb3d11383d90f33cdf94",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-124.png",
+      "text_characters": 2608,
+      "region_count": 2
+    },
+    {
+      "page": 125,
+      "image_sha256": "8ccbaed271e774126519f9faae44c358aaf5ca5aa61d6716fb76d5063b4e7a8e",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-125.png",
+      "text_characters": 2287,
+      "region_count": 2
+    },
+    {
+      "page": 126,
+      "image_sha256": "e97c7d4ab226eae7df905cf04f61e179803aad22e4b7cbca382ba16cc205e492",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-126.png",
+      "text_characters": 1918,
+      "region_count": 2
+    },
+    {
+      "page": 127,
+      "image_sha256": "c4e522f9a6ffecc2bf718cb1a8dc4beb79242d1878557551ac366b526e2da50e",
+      "bbox_points": [
+        0.0,
+        0.0,
+        612.0,
+        792.0
+      ],
+      "page_image": "rendered/page-127.png",
+      "text_characters": 938,
+      "region_count": 3
+    }
+  ]
+}

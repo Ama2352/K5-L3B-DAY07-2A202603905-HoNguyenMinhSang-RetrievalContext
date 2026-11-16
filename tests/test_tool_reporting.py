@@ -2,8 +2,7 @@ import sys
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
-from tool_reporting import summarize_tools
+from src.common.tool_reporting import summarize_tools
 
 
 class ToolReportingTests(unittest.TestCase):

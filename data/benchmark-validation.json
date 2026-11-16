@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-16T07:02:51.115330+00:00",
+  "status": "source-validated held-out questions; not run; freeze together with dev-selected pipeline before first test run",
+  "source": {
+    "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+    "version": "JMLR 21(140), 2020",
+    "url": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+    "sha256": "66cf9f77e46691853703eb6982dea337a53361d509fb99be719b5410c5467e41",
+    "physical_page_scope": [
+      4,
+      40
+    ],
+    "indexed_pages": 37
+  },
+  "counts": {
+    "answerable": 5,
+    "missing_evidence": 2,
+    "total": 7
+  },
+  "independence": {
+    "created_after_old_test_exposure": true,
+    "dev_question_or_answer_rephrases": false,
+    "old_test_question_or_answer_rephrases": false,
+    "supersedes_exposed_draft": "data/benchmark-fresh-test-draft.json",
+    "protocol": "Test targets authored by a separate validation agent, not disclosed to the implementation agent before dev selection. No test was run and no test metric was used to choose a pipeline. Do not pass expected answers, gold evidence or validation metadata to retrieval or model."
+  },
+  "checks": [
+    {
+      "query_id": "test01",
+      "original_pdf_page": 11,
+      "source_text_match": true,
+      "rendered_page_checked": true,
+      "matching_chunk_id": "a4d26d069d36929beb024b46fa1a764f",
+      "dev_answer_overlap": false,
+      "old_test_answer_overlap": false,
+      "reviewer": "Codex validation agent; AI-assisted source review, not independent human adjudication"
+    },
+    {
+      "query_id": "test02",
+      "original_pdf_page": 27,
+      "source_text_match": true,
+      "rendered_page_checked": true,
+      "matching_chunk_id": "d1d48a9f64f62f446512e03144a77040",
+      "dev_answer_overlap": false,
+      "old_test_answer_overlap": false,
+      "reviewer": "Codex validation agent; AI-assisted source review, not independent human adjudication"
+    },
+    {
+      "query_id": "test03",
+      "original_pdf_page": 30,
+      "source_text_match": true,
+      "rendered_page_checked": true,
+      "matching_chunk_id": "81af22132b6fd0fcff18eefae4294348",
+      "dev_answer_overlap": false,
+      "old_test_answer_overlap": false,
+      "reviewer": "Codex validation agent; AI-assisted source review, not independent human adjudication"
+    },
+    {
+      "query_id": "test04",
+      "original_pdf_page": 33,
+      "source_text_match": true,
+      "rendered_page_checked": true,
+      "matching_chunk_id": "564d0a6f11ed24aa8f784444c17ad2f9",
+      "dev_answer_overlap": false,
+      "old_test_answer_overlap": false,
+      "reviewer": "Codex validation agent; AI-assisted source review, not independent human adjudication"
+    },
+    {
+      "query_id": "test05",
+      "original_pdf_page": 36,
+      "source_text_match": true,
+      "rendered_page_checked": true,
+      "matching_chunk_id": "a6de1fa40b18d31e892bc17573f77705",
+      "dev_answer_overlap": false,
+      "old_test_answer_overlap": false,
+      "reviewer": "Codex validation agent; AI-assisted source review, not independent human adjudication"
+    },
+    {
+      "query_id": "test06",
+      "answerable": false,
+      "original_pdf_pages_checked": 37,
+      "terms_and_page_hits": {
+        "serial": [],
+        "serial number": [],
+        "device identifier": [],
+        "chip identifier": []
+      },
+      "related_source_page_reviewed": 5,
+      "scope_limitation": "Text extraction and related training prose checked; absence limited to indexed pages 4-40."
+    },
+    {
+      "query_id": "test07",
+      "answerable": false,
+      "original_pdf_pages_checked": 37,
+      "terms_and_page_hits": {
+        "geographic": [],
+        "latitude": [],
+        "longitude": [],
+        "datacenter": [],
+        "data center": [],
+        "data centre": []
+      },
+      "related_source_page_reviewed": 5,
+      "scope_limitation": "Text extraction and related training prose checked; absence limited to indexed pages 4-40."
+    }
+  ],
+  "limitations": [
+    "Semantic independence was reviewed by an AI assistant, not a human adjudicator.",
+    "Missing-evidence checks combine a full original-PDF text search with review of relevant hardware prose; no claim about outside the indexed source is made."
+  ]
+}

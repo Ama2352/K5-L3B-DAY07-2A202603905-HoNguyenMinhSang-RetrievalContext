@@ -271,8 +271,8 @@
     "question": "How many kilowatt-hours did the Artemis II mission consume during its flight?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No kilowatt or kWh occurrences in extracted text across 127 pages; visual coverage still requires review.",
-    "review": "Provisional absence check; not verified across all visual regions; draft.",
+    "absence_reason": "All 127 original PDF pages were searched for kilowatt and exact-word kWh, with no occurrences. The independently source-reviewed visual catalog for all 127 pages likewise contains no kilowatt-hour measurement for Artemis II. The relevant 2025 and Beyond prose on physical page 44 describes Artemis II as a future crewed Orion mission, not a completed flight with measured electricity use. No requested flight-consumption value is provided in this report; this is a report-scoped absence claim.",
+    "review": "Absence checked against all 127 original-PDF page texts and the source-only visual catalog; relevant original mission prose on physical page 44 visually reviewed. AI-assisted source review, not independent human adjudication.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
     "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
@@ -283,8 +283,8 @@
     "question": "What was the carbon footprint in tonnes of CO2 of the Apollo 11 moonwalk?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No carbon footprint occurrence in extracted text across 127 pages; visual coverage still requires review.",
-    "review": "Provisional absence check; not verified across all visual regions; draft.",
+    "absence_reason": "All 127 original PDF pages were searched for carbon footprint and exact-word CO2, with no occurrences; the full source-reviewed visual catalog likewise contains no Apollo 11 emissions measurement. Original physical page 4's Apollo 11 anniversary article, photograph and caption describe the landing, astronaut, flag, Lunar Module and footprints but supply no tonnes-of-CO2 footprint. No requested value is provided in this report; absence is not inferred from retrieval top-k alone.",
+    "review": "Absence checked against all 127 original-PDF page texts and the source-only visual catalog; Apollo 11 original article, image and caption on physical page 4 visually reviewed. AI-assisted source review, not independent human adjudication.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
     "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
@@ -295,8 +295,8 @@
     "question": "What was the purchase price of the flag shown in the Apollo 11 photograph?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No price of the flag occurrence in extracted text; flag appears on pages 4 and 102. Visual coverage still requires review.",
-    "review": "Provisional absence check; not verified across all visual regions; draft.",
+    "absence_reason": "Exact-word flag occurs only on physical page 4 in all 127 original PDF page texts, and the full source-reviewed visual catalog likewise locates the Apollo flag only on page 4. Its photograph and caption give no purchase price. Exact-word price hits on pages 55, 75, 105, 106 and 110 concern agreements or procurement contracts, not the flag. The former page-102 hit was a substring match to flagship; the original page 102 contains ISS and science-mission prose, not a flag photograph. No purchase price for the photographed flag is provided in this report.",
+    "review": "Absence checked across all 127 original-PDF page texts and the source-only visual catalog; original pages 4 and 102 visually reviewed, distinguishing exact-word flag from flagship. AI-assisted source review, not independent human adjudication.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
     "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   }

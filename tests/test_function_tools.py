@@ -5,10 +5,9 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
-from function_agent import run
-from retrieval_tools import TOOL_SCHEMAS, RetrievalTools, execute_tool
-from trace_flow import add_reconstructed_flow
+from src.agents.function_agent import run, is_explicit_abstention
+from src.retrieval.retrieval_tools import TOOL_SCHEMAS, RetrievalTools, execute_tool
+from src.common.trace_flow import add_reconstructed_flow
 
 CID = 'a' * 32
 CHUNK = {'id': CID, 'text': 'Evidence.', 'source_id': 'doc', 'source': 'doc.pdf',
@@ -21,6 +20,10 @@ class FakeTools:
 
 
 class FunctionToolTests(unittest.TestCase):
+    def test_plural_sources_refusal_is_abstention(self):
+        self.assertTrue(is_explicit_abstention('The sources do not provide carbon-footprint details.'))
+        self.assertFalse(is_explicit_abstention('The source provides a carbon-footprint figure.'))
+
     def test_bm25_and_multistage_use_real_corpus_content(self):
         other = {**CHUNK, 'id': 'b' * 32, 'text': 'Unrelated apples and oranges.'}
         relevant = {**CHUNK, 'text': 'Tokenizer vocabulary sentencepiece tokenizer vocabulary.'}
@@ -31,7 +34,7 @@ class FunctionToolTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / 'chunks.json'
             path.write_text(json.dumps([other, relevant]), encoding='utf8')
-            with patch('retrieval_tools.DenseRetriever', FakeDense):
+            with patch('src.retrieval.retrieval_tools.DenseRetriever', FakeDense):
                 tools = RetrievalTools(Path(folder), 'unused', path)
             self.assertEqual(tools.search_bm25('tokenizer vocabulary')[0]['id'], CID)
             result = execute_tool(tools, 'search_multistage', {'query': 'tokenizer'})
@@ -51,7 +54,7 @@ class FunctionToolTests(unittest.TestCase):
         messages = [({'message': {'role': 'assistant', 'tool_calls': [{'function': {
             'name': 'search_bm25', 'arguments': {'query': 'evidence', 'top_k': 3}}}]}}, .1),
             ({'message': {'role': 'assistant', 'content': 'Evidence [C1]'}}, .1)]
-        with patch('function_agent.call_model', side_effect=messages):
+        with patch('src.agents.function_agent.call_model', side_effect=messages):
             trace = run('question', 'test-model', FakeTools())
         self.assertEqual(trace['status'], 'answered')
         self.assertEqual(trace['citations'][0]['page'], 4)
@@ -68,12 +71,35 @@ class FunctionToolTests(unittest.TestCase):
     def test_model_failure_preserves_prior_tool_results(self):
         first = ({'message': {'role': 'assistant', 'tool_calls': [{'function': {
             'name': 'search_bm25', 'arguments': {'query': 'evidence'}}}]}}, .1)
-        with patch('function_agent.call_model', side_effect=[first, TimeoutError('timeout')]):
+        with patch('src.agents.function_agent.call_model', side_effect=[first, TimeoutError('timeout')]):
             trace = run('question', 'test-model', FakeTools())
         self.assertEqual(trace['status'], 'error')
         self.assertEqual(trace['tool_calls'][0]['status'], 'ok')
         self.assertIn('[C1] Source:', trace['context'])
         self.assertEqual(trace['flow'][-2]['event'], 'error')
+        self.assertEqual(trace['model_request_count'], 2)
+        self.assertEqual(trace['model_call_count'], 1)
+        self.assertEqual(trace['tool_calls'][0]['call_number'], 1)
+        self.assertEqual(trace['tool_calls'][0]['call_id'], 'tool-1')
+
+    def test_explicit_abstention_is_preserved_without_forcing_citation(self):
+        messages = [({'message': {'role': 'assistant', 'tool_calls': [{'function': {
+            'name': 'search_bm25', 'arguments': {'query': 'evidence'}}}]}}, .1),
+            ({'message': {'role': 'assistant', 'content': 'Insufficient evidence to determine the cost.'}}, .1)]
+        with patch('src.agents.function_agent.call_model', side_effect=messages) as model:
+            trace = run('question', 'test-model', FakeTools())
+        self.assertEqual(trace['status'], 'abstain')
+        self.assertEqual(trace['answer'], trace['raw_answer'])
+        self.assertEqual(model.call_count, 2)
+
+    def test_unoffered_function_is_not_executed(self):
+        messages = [({'message': {'role': 'assistant', 'tool_calls': [{'function': {
+            'name': 'search_bm25', 'arguments': {'query': 'evidence'}}}]}}, .1),
+            ({'message': {'role': 'assistant', 'content': 'Insufficient evidence.'}}, .1)]
+        with patch('src.agents.function_agent.call_model', side_effect=messages):
+            trace = run('question', 'test-model', FakeTools(), schemas=[])
+        self.assertEqual(trace['status'], 'error')
+        self.assertIn('not offered', trace['tool_calls'][0]['error'])
 
     def test_existing_trace_flow_counts_only_recorded_calls(self):
         trace = {'status': 'answered', 'answer': 'Evidence', 'citations': [],
@@ -89,7 +115,7 @@ class FunctionToolTests(unittest.TestCase):
         messages = [({'message': {'role': 'assistant', 'tool_calls': [{'function': {
             'name': 'search_bm25', 'arguments': {'query': 'evidence', 'top_k': 50}}}]}}, .1),
             ({'message': {'role': 'assistant', 'content': 'Insufficient evidence.'}}, .1)]
-        with patch('function_agent.call_model', side_effect=messages):
+        with patch('src.agents.function_agent.call_model', side_effect=messages):
             trace = run('question', 'test-model', FakeTools())
         self.assertEqual(trace['status'], 'error')
         self.assertEqual(trace['tool_counts']['search_bm25']['failed'], 1)
@@ -104,7 +130,7 @@ class FunctionToolTests(unittest.TestCase):
             return {'message': {'role': 'assistant', 'content': 'Evidence [C1]'}}, .1
         def provider(_results):
             return [{'page': 4, 'path': 'rendered/page.png', 'data': 'IMAGE_PAYLOAD_TEST'}]
-        with patch('function_agent.call_model', side_effect=model):
+        with patch('src.agents.function_agent.call_model', side_effect=model):
             trace = run('question', 'test-model', FakeTools(), image_provider=provider)
         self.assertEqual(trace['status'], 'answered')
         self.assertEqual(calls[1][-1]['images'], ['IMAGE_PAYLOAD_TEST'])

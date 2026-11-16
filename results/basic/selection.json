@@ -1,0 +1,249 @@
+{
+  "frozen": true,
+  "selected": "bm25",
+  "configs": {
+    "dense_baseline": {
+      "function": "search_dense",
+      "top_k": 3,
+      "budget": 4000,
+      "hypothesis": "Semantic dense baseline on the Day 6 vector store."
+    },
+    "bm25": {
+      "function": "search_bm25",
+      "top_k": 3,
+      "budget": 4000,
+      "hypothesis": "Lexical ranking recovers exact technical terms missed by dense."
+    },
+    "hybrid": {
+      "function": "search_hybrid",
+      "top_k": 5,
+      "budget": 6000,
+      "hypothesis": "Dense+BM25 RRF and larger context combine lexical and semantic evidence."
+    }
+  },
+  "rule": "Highest dev grounded grade sum (errors=0), then correct abstentions, then agent context grade sum, then lower total time.",
+  "frozen_at_utc": "2026-11-16T08:16:01.471370+00:00",
+  "dev_sha256": "222f2627346cf9894c1d7a50520a415d26c577e8c9f3fe409cecdcc4c20ea14c",
+  "test_sha256": "3b58dbad137e1ae3dd934e3d369a9e6a1b551201e46abbafd7b38b7466ed77e8",
+  "code_sha256": "4f227af3d955da8e41f750ae414839057a2933f5a264fb1498c56ba9dbebb196",
+  "dev_summary": {
+    "dense_baseline": {
+      "retrieval": {
+        "hit1": {
+          "n": 9,
+          "N": 15,
+          "percent": 60.0
+        },
+        "hit3": {
+          "n": 10,
+          "N": 15,
+          "percent": 66.66666666666667
+        },
+        "context_hit": {
+          "n": 10,
+          "N": 15,
+          "percent": 66.66666666666667
+        }
+      },
+      "retrieval_errors": 4,
+      "retrieval_mean_ms": 1305.8226266667286,
+      "agent_cases": 17,
+      "agent_errors": 4,
+      "tool_use": {
+        "n": 13,
+        "N": 13,
+        "percent": 100.0
+      },
+      "tool_call_distribution": {
+        "1": 17
+      },
+      "grounded_grades_0_1_2": [
+        11,
+        2,
+        2
+      ],
+      "grounded_sum": 6,
+      "grounded_mean_out_of_2": 0.4,
+      "context_grades_0_1_2": [
+        4,
+        0,
+        11
+      ],
+      "agent_context_evidence": {
+        "n": 11,
+        "N": 15,
+        "percent": 73.33333333333333
+      },
+      "context_grade_sum": 22,
+      "citation_validity": {
+        "n": 2,
+        "N": 7,
+        "percent": 28.571428571428573
+      },
+      "answers_with_citation": {
+        "n": 7,
+        "N": 17,
+        "percent": 41.1764705882353
+      },
+      "abstention": {
+        "n": 1,
+        "N": 2,
+        "percent": 50.0
+      },
+      "false_abstention": {
+        "n": 5,
+        "N": 15,
+        "percent": 33.333333333333336
+      },
+      "agent_total_seconds": 545.4550187999957,
+      "agent_mean_seconds": 32.08558934117622,
+      "service_cost_usd": 0
+    },
+    "bm25": {
+      "retrieval": {
+        "hit1": {
+          "n": 11,
+          "N": 15,
+          "percent": 73.33333333333333
+        },
+        "hit3": {
+          "n": 15,
+          "N": 15,
+          "percent": 100.0
+        },
+        "context_hit": {
+          "n": 15,
+          "N": 15,
+          "percent": 100.0
+        }
+      },
+      "retrieval_errors": 0,
+      "retrieval_mean_ms": 4.74308666671277,
+      "agent_cases": 17,
+      "agent_errors": 0,
+      "tool_use": {
+        "n": 17,
+        "N": 17,
+        "percent": 100.0
+      },
+      "tool_call_distribution": {
+        "1": 17
+      },
+      "grounded_grades_0_1_2": [
+        8,
+        3,
+        4
+      ],
+      "grounded_sum": 11,
+      "grounded_mean_out_of_2": 0.7333333333333333,
+      "context_grades_0_1_2": [
+        0,
+        0,
+        15
+      ],
+      "agent_context_evidence": {
+        "n": 15,
+        "N": 15,
+        "percent": 100.0
+      },
+      "context_grade_sum": 30,
+      "citation_validity": {
+        "n": 6,
+        "N": 10,
+        "percent": 60.0
+      },
+      "answers_with_citation": {
+        "n": 10,
+        "N": 17,
+        "percent": 58.8235294117647
+      },
+      "abstention": {
+        "n": 2,
+        "N": 2,
+        "percent": 100.0
+      },
+      "false_abstention": {
+        "n": 5,
+        "N": 15,
+        "percent": 33.333333333333336
+      },
+      "agent_total_seconds": 424.3580617999942,
+      "agent_mean_seconds": 24.962238929411424,
+      "service_cost_usd": 0
+    },
+    "hybrid": {
+      "retrieval": {
+        "hit1": {
+          "n": 11,
+          "N": 15,
+          "percent": 73.33333333333333
+        },
+        "hit3": {
+          "n": 15,
+          "N": 15,
+          "percent": 100.0
+        },
+        "context_hit": {
+          "n": 15,
+          "N": 15,
+          "percent": 100.0
+        }
+      },
+      "retrieval_errors": 0,
+      "retrieval_mean_ms": 60.261780000291765,
+      "agent_cases": 17,
+      "agent_errors": 0,
+      "tool_use": {
+        "n": 16,
+        "N": 17,
+        "percent": 94.11764705882354
+      },
+      "tool_call_distribution": {
+        "1": 16,
+        "0": 1
+      },
+      "grounded_grades_0_1_2": [
+        10,
+        3,
+        2
+      ],
+      "grounded_sum": 7,
+      "grounded_mean_out_of_2": 0.4666666666666667,
+      "context_grades_0_1_2": [
+        2,
+        0,
+        13
+      ],
+      "agent_context_evidence": {
+        "n": 13,
+        "N": 15,
+        "percent": 86.66666666666667
+      },
+      "context_grade_sum": 26,
+      "citation_validity": {
+        "n": 4,
+        "N": 12,
+        "percent": 33.333333333333336
+      },
+      "answers_with_citation": {
+        "n": 12,
+        "N": 17,
+        "percent": 70.58823529411765
+      },
+      "abstention": {
+        "n": 1,
+        "N": 2,
+        "percent": 50.0
+      },
+      "false_abstention": {
+        "n": 4,
+        "N": 15,
+        "percent": 26.666666666666668
+      },
+      "agent_total_seconds": 496.9891048999925,
+      "agent_mean_seconds": 29.234653229411325,
+      "service_cost_usd": 0
+    }
+  },
+  "note": "Test gold kept separate from implementation until dev selection was frozen."
+}
