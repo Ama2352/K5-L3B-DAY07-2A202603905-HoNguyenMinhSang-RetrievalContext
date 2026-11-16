@@ -9,3 +9,7 @@ __pycache__/
 # Local datasets and generated output; share permitted artifacts deliberately
 starter/data/
 starter/results/
+
+# Optional advanced corpus and large generated assets; reproduce from source URL.
+data/advanced/*.pdf
+data/advanced/generated/

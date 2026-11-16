@@ -38,6 +38,7 @@ Nộp code, cách chạy, cấu hình, benchmark, trace và [báo cáo](report/i
 - [Checkpoint 2: agent và trace đầu tiên](docs/checkpoint2.md)
 - [Checkpoint 3: so sánh dev và chọn cấu hình](docs/checkpoint3.md)
 - [Checkpoint 4: đánh giá test](docs/checkpoint4.md) · [Báo cáo cá nhân](report/individual/2A202603905_HoNguyenMinhSang.md)
+- [Tiến độ thử thách nâng cao (chưa hoàn thành)](docs/advanced-progress.md)
 
 Dữ liệu Day 6 được giả định nằm ở `../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion` tính từ repo này. Xem checkpoint 1 để dựng lại chunk, khởi động pgvector và cấu hình `DATABASE_URL`; không commit mật khẩu hay `.env`. Model embedding BGE và model agent `llama3.2:3b` qua Ollama chạy local. Các trace thực tế nằm trong `results/`; kết quả mock của test chỉ dùng kiểm tra code.
 

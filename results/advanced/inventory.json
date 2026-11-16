@@ -1,0 +1,16 @@
+{
+  "url": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+  "sha256": "65ee29adf5f3a92fcd74701696c25dae8f2d18f1ba2e7f4fba2bcfc059acbefc",
+  "pages": 127,
+  "text_characters": 341302,
+  "pages_without_text": [],
+  "embedded_images": 97,
+  "image_failures": [],
+  "limitations": [
+    "Embedded image extraction does not capture vector charts.",
+    "Page text is not a verified description of embedded images.",
+    "Image positions and rendered regions are not yet indexed.",
+    "Some JPEG 2000 soft masks have dimensions that do not match their images; extracted appearance needs checking against the PDF.",
+    "No advanced benchmark or multimodal retrieval has been completed."
+  ]
+}
