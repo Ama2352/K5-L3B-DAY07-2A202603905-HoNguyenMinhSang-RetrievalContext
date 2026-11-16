@@ -1,0 +1,267 @@
+[
+  {
+    "id": "adv-dev-chart-01",
+    "split": "dev",
+    "group": "chart",
+    "question": "In NASA's FY 2024 net cost chart, what percentage is attributed to Strategic Goal 2?",
+    "expected_answer": "44%.",
+    "evidence": [
+      {
+        "page": 32,
+        "region": "Net Cost of Operations by Strategic Goal chart; lower-right Goal 2 label",
+        "source_value": "44%"
+      }
+    ],
+    "review": "Visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-chart-02",
+    "split": "dev",
+    "group": "chart",
+    "question": "According to the comparative gross cost chart, by how many millions of dollars did the FY 2024 total exceed the FY 2023 total?",
+    "expected_answer": "$318 million.",
+    "evidence": [
+      {
+        "page": 33,
+        "region": "Comparative Gross Cost of Operations, upper-right total labels",
+        "source_value": "$26,551 million in 2024; $26,233 million in 2023; 26,551 - 26,233 = 318"
+      }
+    ],
+    "review": "Visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-table-01",
+    "split": "dev",
+    "group": "table",
+    "question": "In the 2023 reconciliation table, what is the total net outlays calculated total?",
+    "expected_answer": "$25,319 million.",
+    "evidence": [
+      {
+        "page": 72,
+        "region": "Note 15, 2023 table, Total Net Outlays (Calculated Total) row, Total column",
+        "source_value": "$25,319 million"
+      }
+    ],
+    "review": "Visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-image-01",
+    "split": "dev",
+    "group": "image",
+    "question": "In the Apollo 11 anniversary photograph, what stands beside the astronaut and what spacecraft appears to the left?",
+    "expected_answer": "A deployed United States flag stands beside the astronaut, and the Lunar Module is on the left.",
+    "evidence": [
+      {
+        "page": 4,
+        "region": "Large Apollo 11 photograph and its caption at the bottom",
+        "source_value": "United States flag; Lunar Module on the left"
+      }
+    ],
+    "review": "Image and caption visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-text-01",
+    "split": "dev",
+    "group": "text",
+    "question": "Which mission is described as Orion's first crewed mission?",
+    "expected_answer": "Artemis II.",
+    "evidence": [
+      {
+        "page": 44,
+        "region": "2025 and Beyond, first paragraph",
+        "source_value": "Artemis II will mark NASA's first crewed mission of the Orion spacecraft."
+      }
+    ],
+    "review": "Paragraph visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-multihop-01",
+    "split": "dev",
+    "group": "multi-hop",
+    "question": "How much higher was Strategic Goal 2's FY 2024 gross cost than its FY 2024 net cost, according to the two financial charts?",
+    "expected_answer": "$386 million higher.",
+    "evidence": [
+      {
+        "page": 32,
+        "region": "Net cost doughnut chart, Goal 2 label",
+        "source_value": "$10,920 million net cost"
+      },
+      {
+        "page": 33,
+        "region": "Comparative gross cost chart, Strategic Goal 2 total",
+        "source_value": "$11,306 million gross cost; 11,306 - 10,920 = 386 million"
+      }
+    ],
+    "review": "Both chart values visually checked; requires both evidence locations. Draft, not frozen."
+  },
+  {
+    "id": "adv-dev-chart-03",
+    "split": "dev",
+    "group": "chart",
+    "question": "What percentage of FY 2024 funding came from Congressional appropriations in the funding chart?",
+    "expected_answer": "83%.",
+    "evidence": [
+      {
+        "page": 34,
+        "region": "Sources of Funding FY 2024 doughnut chart, lower-right label",
+        "source_value": "83% Congressional appropriations"
+      }
+    ],
+    "review": "Visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-table-02",
+    "split": "dev",
+    "group": "table",
+    "question": "In Note 8, what were total liabilities in FY 2024?",
+    "expected_answer": "$7,664 million.",
+    "evidence": [
+      {
+        "page": 64,
+        "region": "Note 8 table, Total Liabilities row, 2024 column",
+        "source_value": "$7,664 million"
+      }
+    ],
+    "review": "Visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-text-02",
+    "split": "dev",
+    "group": "text",
+    "question": "What did NASA name Building 12 to honor at the Johnson Space Center?",
+    "expected_answer": "The Dorothy Vaughan Center in Honor of the Women of Apollo.",
+    "evidence": [
+      {
+        "page": 5,
+        "region": "NASA Johnson Dedicates Building to Dorothy Vaughan, Women of Apollo; fourth paragraph",
+        "source_value": "Dorothy Vaughan Center in Honor of the Women of Apollo"
+      }
+    ],
+    "review": "Visually checked against the rendered PDF page; draft, not frozen."
+  },
+  {
+    "id": "adv-dev-image-02",
+    "split": "dev",
+    "group": "image",
+    "question": "Where did the group photographed for Women’s History Month 2024 gather?",
+    "expected_answer": "In front of the Katherine G. Johnson Computational Research Facility at NASA Langley Research Center in Hampton, Virginia.",
+    "evidence": [
+      {
+        "page": 35,
+        "region": "Group photograph and caption at bottom",
+        "source_value": "Katherine G. Johnson Computational Research Facility at NASA Langley Research Center, Hampton, Virginia"
+      }
+    ],
+    "review": "Photograph and caption visually checked; draft."
+  },
+  {
+    "id": "adv-dev-image-03",
+    "split": "dev",
+    "group": "image",
+    "question": "What marks are visible in the lunar soil in the Apollo 11 anniversary photograph?",
+    "expected_answer": "Astronaut footprints.",
+    "evidence": [
+      {
+        "page": 4,
+        "region": "Foreground of Apollo 11 photograph and its caption",
+        "source_value": "Astronaut footprints in lunar soil"
+      }
+    ],
+    "review": "Image and caption visually checked; draft."
+  },
+  {
+    "id": "adv-dev-table-03",
+    "split": "dev",
+    "group": "table",
+    "question": "How many total heritage assets are shown for 2024 in the physical-units table?",
+    "expected_answer": "11 physical units.",
+    "evidence": [
+      {
+        "page": 63,
+        "region": "Heritage Assets table, Total Heritage Assets row, 2024 column",
+        "source_value": "11 physical units"
+      }
+    ],
+    "review": "Table visually checked; draft."
+  },
+  {
+    "id": "adv-dev-table-04",
+    "split": "dev",
+    "group": "table",
+    "question": "What were total undelivered orders at the end of FY 2024?",
+    "expected_answer": "$12,214 million.",
+    "evidence": [
+      {
+        "page": 70,
+        "region": "Note 14 table, Total Undelivered Orders row, 2024 column",
+        "source_value": "$12,214 million"
+      }
+    ],
+    "review": "Table visually checked; draft."
+  },
+  {
+    "id": "adv-dev-text-03",
+    "split": "dev",
+    "group": "text",
+    "question": "How many multi-use heritage assets did NASA report for 2024 and 2023?",
+    "expected_answer": "507 for 2024 and 502 for 2023.",
+    "evidence": [
+      {
+        "page": 63,
+        "region": "Stewardship PP&E, second paragraph",
+        "source_value": "507 and 502, respectively"
+      }
+    ],
+    "review": "Paragraph visually checked; draft."
+  },
+  {
+    "id": "adv-dev-multihop-02",
+    "split": "dev",
+    "group": "multi-hop",
+    "question": "By how much did FY 2024 total funding exceed FY 2024 total undelivered orders?",
+    "expected_answer": "$17,837 million.",
+    "evidence": [
+      {
+        "page": 34,
+        "region": "Sources of Funding FY 2024 chart, total funding",
+        "source_value": "$30,051 million"
+      },
+      {
+        "page": 70,
+        "region": "Note 14 table, Total Undelivered Orders row, 2024 column",
+        "source_value": "$12,214 million; 30,051 - 12,214 = 17,837 million"
+      }
+    ],
+    "review": "Both values visually checked; requires both locations; draft."
+  },
+  {
+    "id": "adv-dev-u01",
+    "split": "dev",
+    "group": "missing-evidence",
+    "question": "How many kilowatt-hours did the Artemis II mission consume during its flight?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No kilowatt or kWh occurrences in extracted text across 127 pages; visual coverage still requires review.",
+    "review": "Provisional absence check; not verified across all visual regions; draft."
+  },
+  {
+    "id": "adv-dev-u02",
+    "split": "dev",
+    "group": "missing-evidence",
+    "question": "What was the carbon footprint in tonnes of CO2 of the Apollo 11 moonwalk?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No carbon footprint occurrence in extracted text across 127 pages; visual coverage still requires review.",
+    "review": "Provisional absence check; not verified across all visual regions; draft."
+  },
+  {
+    "id": "adv-dev-u03",
+    "split": "dev",
+    "group": "missing-evidence",
+    "question": "What was the purchase price of the flag shown in the Apollo 11 photograph?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No price of the flag occurrence in extracted text; flag appears on pages 4 and 102. Visual coverage still requires review.",
+    "review": "Provisional absence check; not verified across all visual regions; draft."
+  }
+]
