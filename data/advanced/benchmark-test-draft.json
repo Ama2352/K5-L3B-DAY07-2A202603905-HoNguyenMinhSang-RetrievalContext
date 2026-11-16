@@ -1,0 +1,442 @@
+[
+  {
+    "id": "adv-test-image-01",
+    "split": "test",
+    "group": "image",
+    "question": "What symbol is being 3D printed in the superalloy photograph?",
+    "expected_answer": "The NASA insignia.",
+    "evidence": [
+      {
+        "page": 8,
+        "region": "Central 3D-printing photograph and caption",
+        "source_value": "NASA insignia printed using GRX-810"
+      }
+    ],
+    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-image-02",
+    "split": "test",
+    "group": "image",
+    "question": "Who is pictured with the NASA administrator viewing the eclipse?",
+    "expected_answer": "Snoopy.",
+    "evidence": [
+      {
+        "page": 9,
+        "region": "Did You Know photograph and adjacent caption",
+        "source_value": "Administrator Bill Nelson and Snoopy"
+      }
+    ],
+    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-image-03",
+    "split": "test",
+    "group": "image",
+    "question": "What tool is the astronaut using to drive the sample tube into the ground?",
+    "expected_answer": "A hammer.",
+    "evidence": [
+      {
+        "page": 14,
+        "region": "Mission Performance photograph and caption",
+        "source_value": "Kate Rubins uses a hammer on a drive tube"
+      }
+    ],
+    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-image-04",
+    "split": "test",
+    "group": "image",
+    "question": "What rocket is shown on the pad carrying the first PREFIRE CubeSat?",
+    "expected_answer": "Rocket Lab Electron.",
+    "evidence": [
+      {
+        "page": 18,
+        "region": "Did You Know photograph and caption",
+        "source_value": "Rocket Lab Electron rocket carrying the first PREFIRE CubeSat"
+      }
+    ],
+    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-image-05",
+    "split": "test",
+    "group": "image",
+    "question": "Which rocket core stage is being transported to the Vehicle Assembly Building?",
+    "expected_answer": "The Space Launch System (SLS) core stage.",
+    "evidence": [
+      {
+        "page": 19,
+        "region": "First Did You Know photograph and caption",
+        "source_value": "SLS core stage transported to the Vehicle Assembly Building"
+      }
+    ],
+    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-chart-01",
+    "split": "test",
+    "group": "chart",
+    "question": "In the FY 2024 performance assessment chart, how many Strategic Goal 2 performance goals are complete or on target to complete?",
+    "expected_answer": "8.",
+    "evidence": [
+      {
+        "page": 22,
+        "region": "Green section of Strategic Goal 2 FY 2024 stacked bar",
+        "source_value": "8 goals"
+      }
+    ],
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-chart-02",
+    "split": "test",
+    "group": "chart",
+    "question": "In the balance sheet components chart, what was FY 2023 net position?",
+    "expected_answer": "$19,416 million.",
+    "evidence": [
+      {
+        "page": 29,
+        "region": "FY 2023 bar, dark-blue net-position section",
+        "source_value": "$19,416 million"
+      }
+    ],
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-chart-03",
+    "split": "test",
+    "group": "chart",
+    "question": "In the FY 2024 assets-by-type chart, what is the value of property, plant, and equipment?",
+    "expected_answer": "$9,331 million.",
+    "evidence": [
+      {
+        "page": 30,
+        "region": "FY 2024 doughnut chart, blue property-plant-equipment label",
+        "source_value": "$9,331 million"
+      }
+    ],
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-chart-04",
+    "split": "test",
+    "group": "chart",
+    "question": "What percentage of FY 2024 liabilities was other accrued liabilities in the liabilities-by-type chart?",
+    "expected_answer": "25%.",
+    "evidence": [
+      {
+        "page": 31,
+        "region": "FY 2024 liabilities doughnut chart, purple other-accrued-liabilities label",
+        "source_value": "25%"
+      }
+    ],
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-chart-05",
+    "split": "test",
+    "group": "chart",
+    "question": "According to the comparative gross-cost chart, by how much did the Technology Demonstration cost under Strategic Goal 3 increase from FY 2023 to FY 2024?",
+    "expected_answer": "$32 million.",
+    "evidence": [
+      {
+        "page": 33,
+        "region": "Strategic Goal 3 Technology Demonstration bar pair",
+        "source_value": "$369 million in FY 2024 minus $337 million in FY 2023 equals $32 million"
+      }
+    ],
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-table-01",
+    "split": "test",
+    "group": "table",
+    "question": "What was net accounts receivable from the public on the 2024 consolidated balance sheet?",
+    "expected_answer": "$26 million.",
+    "evidence": [
+      {
+        "page": 50,
+        "region": "Assets: With the Public; Accounts Receivable, Net row; 2024 column",
+        "source_value": "$26 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-table-02",
+    "split": "test",
+    "group": "table",
+    "question": "What was Strategic Goal 3 earned revenue in FY 2024?",
+    "expected_answer": "$146 million.",
+    "evidence": [
+      {
+        "page": 51,
+        "region": "Strategic Goal 3; Less: Earned Revenue row; 2024 column",
+        "source_value": "$146 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-table-03",
+    "split": "test",
+    "group": "table",
+    "question": "What was imputed financing in FY 2023 in the consolidated statements of changes in net position?",
+    "expected_answer": "$231 million.",
+    "evidence": [
+      {
+        "page": 52,
+        "region": "Cumulative Results from Operations; Imputed Financing row; 2023 column",
+        "source_value": "$231 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-table-04",
+    "split": "test",
+    "group": "table",
+    "question": "What was the total end-of-year unobligated balance in FY 2024?",
+    "expected_answer": "$2,881 million.",
+    "evidence": [
+      {
+        "page": 53,
+        "region": "Status of Budgetary Resources; Unobligated Balance, End of Year (Total); 2024 column",
+        "source_value": "$2,881 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-table-05",
+    "split": "test",
+    "group": "table",
+    "question": "What was the obligated balance not yet disbursed in FY 2024?",
+    "expected_answer": "$14,280 million.",
+    "evidence": [
+      {
+        "page": 60,
+        "region": "Note 2, Status of Fund Balance with Treasury; Obligated Balance Not Yet Disbursed; 2024 column",
+        "source_value": "$14,280 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-table-06",
+    "split": "test",
+    "group": "table",
+    "question": "What was the net amount due from the public in FY 2023?",
+    "expected_answer": "$1 million.",
+    "evidence": [
+      {
+        "page": 61,
+        "region": "Note 4, 2023 table; Public row; Net Amount Due column",
+        "source_value": "$1 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+  },
+  {
+    "id": "adv-test-text-01",
+    "split": "test",
+    "group": "text",
+    "question": "Which two fiscal years of audited financial statements are included in the report?",
+    "expected_answer": "FY 2024 and FY 2023.",
+    "evidence": [
+      {
+        "page": 9,
+        "region": "Welcome to NASA, opening summary",
+        "source_value": "Audited FY 2024 and FY 2023 financial statements"
+      }
+    ],
+    "review": "Text visually checked; draft, not frozen."
+  },
+  {
+    "id": "adv-test-text-02",
+    "split": "test",
+    "group": "text",
+    "question": "What five core values are listed for NASA?",
+    "expected_answer": "Safety, Integrity, Inclusion, Teamwork, and Excellence.",
+    "evidence": [
+      {
+        "page": 10,
+        "region": "NASA Core Values box",
+        "source_value": "Safety, Integrity, Inclusion, Teamwork, and Excellence"
+      }
+    ],
+    "review": "Text visually checked; draft, not frozen."
+  },
+  {
+    "id": "adv-test-text-03",
+    "split": "test",
+    "group": "text",
+    "question": "Where is NASA Headquarters located?",
+    "expected_answer": "Washington, DC.",
+    "evidence": [
+      {
+        "page": 11,
+        "region": "Organizational Structure, first paragraph",
+        "source_value": "NASA Headquarters, located in Washington, DC"
+      }
+    ],
+    "review": "Text visually checked; draft, not frozen."
+  },
+  {
+    "id": "adv-test-text-04",
+    "split": "test",
+    "group": "text",
+    "question": "What region of the electromagnetic spectrum does PREFIRE study to improve understanding of polar heat loss?",
+    "expected_answer": "Far-infrared radiation.",
+    "evidence": [
+      {
+        "page": 18,
+        "region": "Climate Change Research, PREFIRE paragraph",
+        "source_value": "Polar Radiant Energy in the Far-Infrared Experiment"
+      }
+    ],
+    "review": "Text visually checked; draft, not frozen."
+  },
+  {
+    "id": "adv-test-multihop-01",
+    "split": "test",
+    "group": "multi-hop",
+    "question": "What was NASA’s civil-service workforce count and its FY 2024 net agency outlays?",
+    "expected_answer": "18,475 employees and $25,015 million.",
+    "evidence": [
+      {
+        "page": 13,
+        "region": "NASA civil service workforce heading",
+        "source_value": "18,475 employees"
+      },
+      {
+        "page": 53,
+        "region": "Agency Outlays, Net row, 2024 column",
+        "source_value": "$25,015 million"
+      }
+    ],
+    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+  },
+  {
+    "id": "adv-test-multihop-02",
+    "split": "test",
+    "group": "multi-hop",
+    "question": "For Strategic Goal 2, how many FY 2024 performance goals were complete or on target, and what were its FY 2024 net costs?",
+    "expected_answer": "8 goals and $10,920 million.",
+    "evidence": [
+      {
+        "page": 22,
+        "region": "Strategic Goal 2 FY 2024 green bar",
+        "source_value": "8 goals"
+      },
+      {
+        "page": 51,
+        "region": "Strategic Goal 2 Net Costs row, 2024 column",
+        "source_value": "$10,920 million"
+      }
+    ],
+    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+  },
+  {
+    "id": "adv-test-multihop-03",
+    "split": "test",
+    "group": "multi-hop",
+    "question": "According to Notes 3 and 4, what was the combined FY 2024 value of net investments and net accounts receivable?",
+    "expected_answer": "$139 million.",
+    "evidence": [
+      {
+        "page": 60,
+        "region": "Note 3 2024 Total investments, net",
+        "source_value": "$15 million"
+      },
+      {
+        "page": 61,
+        "region": "Note 4 2024 Total net amount due",
+        "source_value": "$124 million; 15 + 124 = 139 million"
+      }
+    ],
+    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+  },
+  {
+    "id": "adv-test-multihop-04",
+    "split": "test",
+    "group": "multi-hop",
+    "question": "Using the rounded FY 2024 budget shown in NASA by the Numbers and the net agency outlays in the budgetary resources statement, by how many millions did outlays exceed that rounded budget?",
+    "expected_answer": "$115 million.",
+    "evidence": [
+      {
+        "page": 13,
+        "region": "FY 2024 budget heading",
+        "source_value": "$24.9 billion, or $24,900 million"
+      },
+      {
+        "page": 53,
+        "region": "Agency Outlays, Net row, 2024 column",
+        "source_value": "$25,015 million; 25,015 - 24,900 = 115 million"
+      }
+    ],
+    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+  },
+  {
+    "id": "adv-test-u01",
+    "split": "test",
+    "group": "missing-evidence",
+    "question": "What was the exact licensing fee in dollars paid by each company for GRX-810?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No licensing fee or license fee phrase in extracted 127-page text; page 8 only identifies four licensees in aggregate.",
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+  },
+  {
+    "id": "adv-test-u02",
+    "split": "test",
+    "group": "missing-evidence",
+    "question": "How many photographs were taken during the simulated moonwalk shown in the report?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No photographs were taken phrase in extracted text; page 14 caption describes a sample-collection exercise.",
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+  },
+  {
+    "id": "adv-test-u03",
+    "split": "test",
+    "group": "missing-evidence",
+    "question": "What was the average age of NASA civil-service employees in FY 2024?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No average age phrase in extracted text; page 13 lists counts, not ages.",
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+  },
+  {
+    "id": "adv-test-u04",
+    "split": "test",
+    "group": "missing-evidence",
+    "question": "How many liters of rocket propellant were consumed by the Psyche launch shown in the report?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No liters of fuel phrase in extracted text; inspect propellant/fuel synonyms and visual regions before freezing.",
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+  },
+  {
+    "id": "adv-test-u05",
+    "split": "test",
+    "group": "missing-evidence",
+    "question": "What was the exact mass in kilograms of the battery aboard the PREFIRE CubeSat pictured in the report?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No battery mass phrase in extracted text; inspect battery synonyms and visual regions before freezing.",
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+  },
+  {
+    "id": "adv-test-u06",
+    "split": "test",
+    "group": "missing-evidence",
+    "question": "How many NASA employees were trained to use the GRX-810 printer in FY 2024?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "No specific training count identified in the GRX-810 source page; check full document and visual regions before freezing.",
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+  }
+]
