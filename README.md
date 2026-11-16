@@ -51,3 +51,5 @@ python -m unittest discover -s tests -v
 ```
 
 Các lệnh agent cần Ollama chạy và có model `llama3.2:3b`; lệnh có thể mất nhiều thời gian trên CPU. Bản test chỉ chạy sau khi chốt cấu hình trên dev, với `--split test` và thư mục output riêng; không dùng test để điều chỉnh hệ thống.
+
+Kết quả agent mới hiển thị `answer`, `citations` và `tools_used`. Trường `tools_used` được tạo từ sự kiện search đã ghi, bao gồm số lượt và tên các thành phần truy xuất; nếu chạy lỗi, trạng thái `incomplete` cho biết trace có thể thiếu. Các trace benchmark cũ giữ nguyên để bảo toàn kết quả đã đo; trong đó xem `method` và sự kiện `search` để biết công cụ được dùng. Tên công cụ hay citation hợp lệ không tự chứng minh câu trả lời đúng.

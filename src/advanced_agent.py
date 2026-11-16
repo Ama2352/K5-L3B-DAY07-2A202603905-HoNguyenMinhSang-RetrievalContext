@@ -7,6 +7,7 @@ import sys
 import time
 import urllib.request
 from pathlib import Path
+from tool_reporting import summarize_tools
 
 
 def ollama(model, messages, timeout):
@@ -94,9 +95,10 @@ def main():
     except Exception as exc:
         trace['error'] = f'{type(exc).__name__}: {exc}'
     trace['elapsed_seconds'] = time.perf_counter() - start
+    trace['tools_used'] = summarize_tools(trace['events'], 'advanced', trace['status'])
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(trace, ensure_ascii=False, indent=2) + '\n', encoding='utf8')
-    print(json.dumps({k: trace.get(k) for k in ('status', 'answer', 'pages', 'error', 'elapsed_seconds')}))
+    print(json.dumps({k: trace.get(k) for k in ('status', 'answer', 'pages', 'tools_used', 'error', 'elapsed_seconds')}))
     if trace['status'] == 'error':
         raise SystemExit(1)
 

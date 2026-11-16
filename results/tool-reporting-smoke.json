@@ -1,0 +1,133 @@
+{
+  "question": "What tokenizer does T5 use?",
+  "model": "llama3.2:3b",
+  "method": "dense",
+  "budget_chars": 4000,
+  "top_k": 3,
+  "max_searches": 3,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "WordPiece tokenizer [0537cff0a7cba06538490e45baf3d7bd]",
+  "citations": [
+    "0537cff0a7cba06538490e45baf3d7bd"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "T5 tokenizer",
+      "filter": null,
+      "results": [
+        {
+          "id": "1a89a28c8f855f22b29f8cc7183e6cbd",
+          "text": "“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 13,
+          "metadata": {
+            "end": 1637,
+            "page": 13,
+            "year": "2020",
+            "start": 637,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7212065888170368
+        },
+        {
+          "id": "a9ba79f478cec1e4f138957b4ecdeef6",
+          "text": "Table 3: Examples of inputs and targets produced by some of the unsupervised objectives we consider applied to the input text “Thank you for inviting me to your party last week .” Note that all of our objectives process tokenized text. For this particular sentence, all words were mapped to a single token by our vocabulary. We write (original text) as a target to denote that the model is tasked with reconstructing the entire input text. <M> denotes a shared mask token and <X>, <Y>, and <Z> denote sentinel tokens that are assigned unique token IDs. The BERT-style objective (second row) includes a corruption where some tokens are replaced by a random token ID; we show this via the greyed-out wordapple.\n\nObjective GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo Prefix language modeling 80.69 18.94 77.99 65.27 26.86 39.73 27.49 BERT-style (Devlin et al., 2018) 82.96 19.17 80.65 69.85 26.78 40.03 27.41 Deshuffling 73.17 18.59 67.61 58.47 26.11 39.30 25.62",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 21,
+          "metadata": {
+            "end": 1589,
+            "page": 21,
+            "year": "2020",
+            "start": 636,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7180899809652568
+        },
+        {
+          "id": "0537cff0a7cba06538490e45baf3d7bd",
+          "text": "To achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 40,
+          "metadata": {
+            "end": 3449,
+            "page": 40,
+            "year": "2020",
+            "start": 2461,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.712817055750911
+        }
+      ],
+      "context": "[1a89a28c8f855f22b29f8cc7183e6cbd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 13]\n“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many\n\n[a9ba79f478cec1e4f138957b4ecdeef6 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 21]\nTable 3: Examples of inputs and targets produced by some of the unsupervised objectives we consider applied to the input text “Thank you for inviting me to your party last week .” Note that all of our objectives process tokenized text. For this particular sentence, all words were mapped to a single token by our vocabulary. We write (original text) as a target to denote that the model is tasked with reconstructing the entire input text. <M> denotes a shared mask token and <X>, <Y>, and <Z> denote sentinel tokens that are assigned unique token IDs. The BERT-style objective (second row) includes a corruption where some tokens are replaced by a random token ID; we show this via the greyed-out wordapple.\n\nObjective GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo Prefix language modeling 80.69 18.94 77.99 65.27 26.86 39.73 27.49 BERT-style (Devlin et al., 2018) 82.96 19.17 80.65 69.85 26.78 40.03 27.41 Deshuffling 73.17 18.59 67.61 58.47 26.11 39.30 25.62\n\n[0537cff0a7cba06538490e45baf3d7bd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nTo achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+      "context_ids": [
+        "1a89a28c8f855f22b29f8cc7183e6cbd",
+        "a9ba79f478cec1e4f138957b4ecdeef6",
+        "0537cff0a7cba06538490e45baf3d7bd"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 23.599044600000525,
+      "prompt_eval_count": 160,
+      "eval_count": 12,
+      "action": {
+        "action": "search",
+        "query": "T5 tokenizer"
+      }
+    },
+    {
+      "duration_seconds": 42.361425000000054,
+      "prompt_eval_count": 1089,
+      "eval_count": 34,
+      "action": {
+        "action": "answer",
+        "answer": "WordPiece tokenizer",
+        "citations": [
+          "0537cff0a7cba06538490e45baf3d7bd"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 70.61764510000012,
+  "tools_used": {
+    "status": "complete",
+    "observed_searches": 1,
+    "tools": [
+      "BGE query embedding",
+      "Day 6 pgvector dense search"
+    ]
+  }
+}

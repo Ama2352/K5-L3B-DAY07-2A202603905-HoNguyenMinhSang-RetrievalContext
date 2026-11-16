@@ -5,6 +5,7 @@ import os
 import time
 from pathlib import Path
 from run_agent import DenseRetriever, HybridRetriever, OllamaController, run_agent
+from tool_reporting import summarize_tools
 
 
 def main():
@@ -38,6 +39,7 @@ def main():
                 trace.update(status='error', error=f'{type(exc).__name__}: {exc}')
             trace['model_calls'] = controller.calls
             trace['elapsed_seconds'] = time.perf_counter() - start
+            trace['tools_used'] = summarize_tools(trace.get('events', []), method, trace['status'])
             path.write_text(json.dumps(trace, ensure_ascii=False, indent=2) + '\n', encoding='utf8')
             print(method, case['id'], trace['status'], round(trace['elapsed_seconds'], 1), flush=True)
 

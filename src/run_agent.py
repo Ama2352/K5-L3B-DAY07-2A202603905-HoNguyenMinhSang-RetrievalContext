@@ -9,6 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'starter'))
 from agentic import run_agent
+from tool_reporting import summarize_tools
 
 
 class DenseRetriever:
@@ -112,9 +113,10 @@ def main():
         trace.update(status='error', error=f'{type(exc).__name__}: {exc}')
     trace['model_calls'] = controller.calls
     trace['elapsed_seconds'] = time.perf_counter() - started
+    trace['tools_used'] = summarize_tools(trace.get('events', []), args.method, trace['status'])
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(trace, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print(json.dumps({k: trace.get(k) for k in ('status', 'answer', 'citations', 'error', 'elapsed_seconds')}, ensure_ascii=False))
+    print(json.dumps({k: trace.get(k) for k in ('status', 'answer', 'citations', 'tools_used', 'error', 'elapsed_seconds')}, ensure_ascii=False))
     if trace['status'] == 'error':
         raise SystemExit(1)
 
