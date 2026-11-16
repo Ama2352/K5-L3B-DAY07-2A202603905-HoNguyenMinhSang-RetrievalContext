@@ -15,6 +15,7 @@ credentials*.json
 starter/data/
 starter/results/
 results/reproduction/
+results/**/*.tmp
 /tmp/
 
 # Optional advanced corpus and large generated assets; reproduce from source URL.

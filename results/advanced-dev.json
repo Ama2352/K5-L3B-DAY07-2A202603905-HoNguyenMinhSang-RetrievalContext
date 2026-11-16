@@ -2474,5 +2474,24 @@
       "reason": "Final abstention on an answerable question; earlier uncited response stated an incorrect percentage. The cited chart on physical page 32 shows 44%.",
       "reviewer": "Codex; AI-assisted, no independent adjudication"
     }
+  },
+  {
+    "kind": "full_advanced_dev_summary",
+    "split": "dev",
+    "model": "llama3.2:3b",
+    "mode": "text/layout only; no vision model",
+    "total": 18,
+    "answerable_passed": 1,
+    "answerable_total": 15,
+    "unanswerable_pending": 3,
+    "tool_use_cases": 9,
+    "tool_attempt_counts": {
+      "search_layout": 13,
+      "inspect_page": 3
+    },
+    "errors": 0,
+    "mean_seconds": 37.47400780555543,
+    "service_cost_usd": 0,
+    "note": "Provisional AI-assisted dev review; no advanced test run and no claim of bonus completion."
   }
 ]

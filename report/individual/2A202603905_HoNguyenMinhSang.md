@@ -48,4 +48,4 @@ Agent mới gửi schema function thực tới Ollama và ghi flow, tên/đối 
 
 ## Thử thách nâng cao
 
-Chưa hoàn thành: chưa có corpus đa phương thức từ 100 trang, benchmark riêng, truy xuất hình/bảng/biểu đồ, hoặc test đạt 90%. Không tuyên bố điểm bonus.
+Chưa hoàn thành. Đã chuẩn bị báo cáo NASA 127 trang, ảnh render, index text/layout, function tìm theo layout, và benchmark dev/test nháp. Chưa hoàn tất index nội dung ảnh/biểu đồ, xác minh các câu thiếu evidence, chọn cấu hình hay chạy test độc lập. Agent text/layout chỉ đạt **1/15 câu có đáp án trên dev**; ba câu thiếu evidence chờ xác minh, không tính là đạt. Trace, flow, công cụ và lý do chấm nằm trong `results/advanced-dev-full.json`; nhãn do Codex hỗ trợ, chưa có người chấm độc lập. Không tuyên bố đạt ngưỡng 90% hay điểm bonus.
