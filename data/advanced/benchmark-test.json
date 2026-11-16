@@ -1,502 +1,523 @@
 [
   {
-    "id": "adv-test-image-01",
+    "id": "adv3-test-image-01",
     "split": "test",
     "group": "image",
-    "question": "What symbol is being 3D printed in the superalloy photograph?",
-    "expected_answer": "The NASA insignia.",
+    "question": "Who wears the augmented-reality display in the cover photograph?",
+    "expected_answer": "NASA astronaut Andre Douglas.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 8,
-        "region": "Central 3D-printing photograph and caption",
-        "source_value": "NASA insignia printed using GRX-810"
+        "page": 2,
+        "region": "Cover-image photograph and caption"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-image-02",
+    "id": "adv3-test-image-02",
     "split": "test",
     "group": "image",
-    "question": "Who is pictured with the NASA administrator viewing the eclipse?",
-    "expected_answer": "Snoopy.",
+    "question": "Which astronaut is identified at the left of the Artemis II crew photograph?",
+    "expected_answer": "Reid Wiseman.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 9,
-        "region": "Did You Know photograph and adjacent caption",
-        "source_value": "Administrator Bill Nelson and Snoopy"
+        "page": 2,
+        "region": "Crew photograph caption; leftmost astronaut in front row"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-image-03",
+    "id": "adv3-test-image-03",
     "split": "test",
     "group": "image",
-    "question": "What tool is the astronaut using to drive the sample tube into the ground?",
-    "expected_answer": "A hammer.",
+    "question": "Which mission is identified in the photograph of the scientific balloon instrument on Antarctica?",
+    "expected_answer": "GUSTO.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 14,
-        "region": "Mission Performance photograph and caption",
-        "source_value": "Kate Rubins uses a hammer on a drive tube"
+        "page": 49,
+        "region": "Large instrument photograph and caption"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-image-04",
+    "id": "adv3-test-image-04",
     "split": "test",
     "group": "image",
-    "question": "What rocket is shown on the pad carrying the first PREFIRE CubeSat?",
-    "expected_answer": "Rocket Lab Electron.",
+    "question": "At what launch site was the Electron rocket carrying the first PREFIRE CubeSat photographed?",
+    "expected_answer": "Launch Complex 1 in Mahia, New Zealand.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 18,
-        "region": "Did You Know photograph and caption",
-        "source_value": "Rocket Lab Electron rocket carrying the first PREFIRE CubeSat"
+        "region": "PREFIRE rocket photograph and caption"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-image-05",
+    "id": "adv3-test-image-05",
     "split": "test",
     "group": "image",
-    "question": "Which rocket core stage is being transported to the Vehicle Assembly Building?",
-    "expected_answer": "The Space Launch System (SLS) core stage.",
+    "question": "At which laboratory and in which region was the CADRE clean-room photograph taken?",
+    "expected_answer": "NASA Jet Propulsion Laboratory in Southern California.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 19,
-        "region": "First Did You Know photograph and caption",
-        "source_value": "SLS core stage transported to the Vehicle Assembly Building"
+        "region": "Bottom CADRE rover photograph and caption"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-chart-01",
+    "id": "adv3-test-chart-01",
     "split": "test",
     "group": "chart",
-    "question": "In the FY 2024 performance assessment chart, how many Strategic Goal 2 performance goals are complete or on target to complete?",
-    "expected_answer": "8.",
+    "question": "In the performance assessment chart, how many Strategic Goal 4 performance goals were complete or on target in FY 2024?",
+    "expected_answer": "12 goals.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 22,
-        "region": "Green section of Strategic Goal 2 FY 2024 stacked bar",
-        "source_value": "8 goals"
+        "region": "Goal 4 FY2024 column; green segment"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-chart-02",
+    "id": "adv3-test-chart-02",
     "split": "test",
     "group": "chart",
-    "question": "In the balance sheet components chart, what was FY 2023 net position?",
-    "expected_answer": "$19,416 million.",
-    "evidence": [
-      {
-        "page": 29,
-        "region": "FY 2023 bar, dark-blue net-position section",
-        "source_value": "$19,416 million"
-      }
-    ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
+    "question": "In the assets-by-type comparison chart, what was FY 2023 Fund Balance with Treasury, in millions of dollars?",
+    "expected_answer": "$17,378 million.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
-    "id": "adv-test-chart-03",
-    "split": "test",
-    "group": "chart",
-    "question": "In the FY 2024 assets-by-type chart, what is the value of property, plant, and equipment?",
-    "expected_answer": "$9,331 million.",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 30,
-        "region": "FY 2024 doughnut chart, blue property-plant-equipment label",
-        "source_value": "$9,331 million"
+        "region": "Left comparison chart, FY2023 green segment"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-chart-04",
+    "id": "adv3-test-chart-03",
     "split": "test",
     "group": "chart",
-    "question": "What percentage of FY 2024 liabilities was other accrued liabilities in the liabilities-by-type chart?",
-    "expected_answer": "25%.",
+    "question": "In the FY 2024 net-cost chart, what was Strategic Goal 4 net cost, in millions of dollars?",
+    "expected_answer": "$2,847 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
+    "evidence": [
+      {
+        "page": 32,
+        "region": "Orange Goal 4 label on net-cost doughnut"
+      }
+    ],
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
+  },
+  {
+    "id": "adv3-test-chart-04",
+    "split": "test",
+    "group": "chart",
+    "question": "In the FY 2024 liabilities-by-type doughnut chart, what was Other Accrued Liabilities, in millions of dollars?",
+    "expected_answer": "$1,902 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 31,
-        "region": "FY 2024 liabilities doughnut chart, purple other-accrued-liabilities label",
-        "source_value": "25%"
+        "region": "Right doughnut chart, purple Other Accrued Liabilities label"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-chart-05",
+    "id": "adv3-test-chart-05",
     "split": "test",
     "group": "chart",
-    "question": "According to the comparative gross-cost chart, by how much did the Technology Demonstration cost under Strategic Goal 3 increase from FY 2023 to FY 2024?",
-    "expected_answer": "$32 million.",
+    "question": "In the FY 2024 sources-of-funding doughnut chart, what percentage came from Spending Authority from Offsetting Collections?",
+    "expected_answer": "6%.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 33,
-        "region": "Strategic Goal 3 Technology Demonstration bar pair",
-        "source_value": "$369 million in FY 2024 minus $337 million in FY 2023 equals $32 million"
+        "page": 34,
+        "region": "Right doughnut chart, purple Spending Authority from Offsetting Collections label"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-table-01",
+    "id": "adv3-test-table-01",
     "split": "test",
     "group": "table",
-    "question": "What was net accounts receivable from the public on the 2024 consolidated balance sheet?",
-    "expected_answer": "$26 million.",
+    "question": "In the consolidated balance sheets under Assets, what was Total Intragovernmental in the 2023 column, in millions of dollars?",
+    "expected_answer": "$17,460 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 50,
-        "region": "Assets: With the Public; Accounts Receivable, Net row; 2024 column",
-        "source_value": "$26 million"
+        "region": "Assets; Total Intragovernmental row; 2023 column"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-table-02",
+    "id": "adv3-test-table-02",
     "split": "test",
     "group": "table",
-    "question": "What was Strategic Goal 3 earned revenue in FY 2024?",
-    "expected_answer": "$146 million.",
+    "question": "In the consolidated balance sheets under Assets, what was Total with the Public in the 2024 column, in millions of dollars?",
+    "expected_answer": "$10,097 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 51,
-        "region": "Strategic Goal 3; Less: Earned Revenue row; 2024 column",
-        "source_value": "$146 million"
+        "page": 50,
+        "region": "Assets; Total with the Public row; 2024 column"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-table-03",
+    "id": "adv3-test-table-03",
     "split": "test",
     "group": "table",
-    "question": "What was imputed financing in FY 2023 in the consolidated statements of changes in net position?",
-    "expected_answer": "$231 million.",
+    "question": "In the changes-in-net-position statement under Unexpended Appropriations, what was Beginning Balance in the 2023 column, in millions of dollars?",
+    "expected_answer": "$12,951 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 52,
-        "region": "Cumulative Results from Operations; Imputed Financing row; 2023 column",
-        "source_value": "$231 million"
+        "region": "Unexpended Appropriations; Beginning Balance row; 2023 column"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-table-04",
+    "id": "adv3-test-table-04",
     "split": "test",
     "group": "table",
-    "question": "What was the total end-of-year unobligated balance in FY 2024?",
-    "expected_answer": "$2,881 million.",
+    "question": "In the budgetary resources statement, what was Spending Authority from Offsetting Collections in the 2023 column, in millions of dollars?",
+    "expected_answer": "$2,108 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 53,
-        "region": "Status of Budgetary Resources; Unobligated Balance, End of Year (Total); 2024 column",
-        "source_value": "$2,881 million"
+        "region": "Budgetary Resources; Spending Authority from Offsetting Collections row; 2023 column"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-table-05",
+    "id": "adv3-test-table-05",
     "split": "test",
     "group": "table",
-    "question": "What was the obligated balance not yet disbursed in FY 2024?",
-    "expected_answer": "$14,280 million.",
+    "question": "In Note 2, what was Unavailable under Unobligated Balances in the 2023 column, in millions of dollars?",
+    "expected_answer": "$181 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 60,
-        "region": "Note 2, Status of Fund Balance with Treasury; Obligated Balance Not Yet Disbursed; 2024 column",
-        "source_value": "$14,280 million"
+        "region": "Note 2; Unobligated Balances; Unavailable row; 2023 column"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-table-06",
+    "id": "adv3-test-table-06",
     "split": "test",
     "group": "table",
-    "question": "What was the net amount due from the public in FY 2023?",
-    "expected_answer": "$1 million.",
+    "question": "In the consolidated balance sheets under Liabilities With the Public, what was Federal Employee Salary, Leave and Benefits Payable in the 2024 column, in millions of dollars?",
+    "expected_answer": "$348 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 61,
-        "region": "Note 4, 2023 table; Public row; Net Amount Due column",
-        "source_value": "$1 million"
+        "page": 50,
+        "region": "Liabilities With the Public; Federal Employee Salary, Leave and Benefits Payable row; 2024 column"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-text-01",
+    "id": "adv3-test-text-01",
     "split": "test",
     "group": "text",
-    "question": "Which two fiscal years of audited financial statements are included in the report?",
-    "expected_answer": "FY 2024 and FY 2023.",
+    "question": "Which year appears in the title Foundations for Evidence-Based Policymaking Act discussed in Strategic Plan Framework?",
+    "expected_answer": "2018.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 9,
-        "region": "Welcome to NASA, opening summary",
-        "source_value": "Audited FY 2024 and FY 2023 financial statements"
+        "page": 15,
+        "region": "Last paragraph; Foundations for Evidence-Based Policymaking Act of 2018"
       }
     ],
-    "review": "Text visually checked; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-text-02",
+    "id": "adv3-test-text-02",
     "split": "test",
     "group": "text",
-    "question": "What five core values are listed for NASA?",
-    "expected_answer": "Safety, Integrity, Inclusion, Teamwork, and Excellence.",
+    "question": "In Note 1, which act governs the workers compensation claims for which NASA records a liability?",
+    "expected_answer": "Federal Employees Compensation Act (FECA).",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 10,
-        "region": "NASA Core Values box",
-        "source_value": "Safety, Integrity, Inclusion, Teamwork, and Excellence"
+        "page": 58,
+        "region": "Federal Employees Compensation Act subsection"
       }
     ],
-    "review": "Text visually checked; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-text-03",
+    "id": "adv3-test-text-03",
     "split": "test",
     "group": "text",
-    "question": "Where is NASA Headquarters located?",
-    "expected_answer": "Washington, DC.",
+    "question": "In Note 1, what minimum acquisition cost is stated for capitalized Property, Plant, and Equipment?",
+    "expected_answer": "$500,000 or more.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 11,
-        "region": "Organizational Structure, first paragraph",
-        "source_value": "NASA Headquarters, located in Washington, DC"
+        "page": 57,
+        "region": "Property, Plant, and Equipment subsection; first paragraph"
       }
     ],
-    "review": "Text visually checked; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-text-04",
+    "id": "adv3-test-text-04",
     "split": "test",
     "group": "text",
-    "question": "What region of the electromagnetic spectrum does PREFIRE study to improve understanding of polar heat loss?",
-    "expected_answer": "Far-infrared radiation.",
+    "question": "According to Note 16, during which decade did the Jet Propulsion Laboratory commence activities?",
+    "expected_answer": "The mid-1930s.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
+    "evidence": [
+      {
+        "page": 72,
+        "region": "Note 16 Disclosure Entity; first paragraph"
+      }
+    ],
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
+  },
+  {
+    "id": "adv3-test-multi-hop-01",
+    "split": "test",
+    "group": "multi-hop",
+    "question": "Name the astronaut wearing the AR display in the cover photograph and give FY 2023 Total Intragovernmental Liabilities from the consolidated balance sheets.",
+    "expected_answer": "Andre Douglas; $250 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
+    "evidence": [
+      {
+        "page": 2,
+        "region": "Cover photograph caption"
+      },
+      {
+        "page": 50,
+        "region": "Liabilities; Total Intragovernmental; 2023"
+      }
+    ],
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
+  },
+  {
+    "id": "adv3-test-multi-hop-02",
+    "split": "test",
+    "group": "multi-hop",
+    "question": "Name the mission in the Antarctica balloon-instrument photograph and give FY 2024 Advances and Prepayments under Assets With the Public in the consolidated balance sheets.",
+    "expected_answer": "GUSTO; $43 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
+    "evidence": [
+      {
+        "page": 49,
+        "region": "Scientific instrument photograph and caption"
+      },
+      {
+        "page": 50,
+        "region": "Assets With the Public; Advances and Prepayments; 2024"
+      }
+    ],
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
+  },
+  {
+    "id": "adv3-test-multi-hop-03",
+    "split": "test",
+    "group": "multi-hop",
+    "question": "Give the launch site of the Electron carrying the first PREFIRE CubeSat in the photograph and the FY 2023 Pensions and Post-Employment Benefits Payable in the consolidated balance sheets.",
+    "expected_answer": "Launch Complex 1 in Mahia, New Zealand; $27 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
         "page": 18,
-        "region": "Climate Change Research, PREFIRE paragraph",
-        "source_value": "Polar Radiant Energy in the Far-Infrared Experiment"
-      }
-    ],
-    "review": "Text visually checked; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
-    "id": "adv-test-multihop-01",
-    "split": "test",
-    "group": "multi-hop",
-    "question": "What was NASA’s civil-service workforce count and its FY 2024 net agency outlays?",
-    "expected_answer": "18,475 employees and $25,015 million.",
-    "evidence": [
-      {
-        "page": 13,
-        "region": "NASA civil service workforce heading",
-        "source_value": "18,475 employees"
+        "region": "PREFIRE rocket photograph caption"
       },
       {
-        "page": 53,
-        "region": "Agency Outlays, Net row, 2024 column",
-        "source_value": "$25,015 million"
+        "page": 50,
+        "region": "Liabilities With the Public; Pensions and Post-Employment Benefits Payable; 2023"
       }
     ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-multihop-02",
+    "id": "adv3-test-multi-hop-04",
     "split": "test",
     "group": "multi-hop",
-    "question": "For Strategic Goal 2, how many FY 2024 performance goals were complete or on target, and what were its FY 2024 net costs?",
-    "expected_answer": "8 goals and $10,920 million.",
+    "question": "Name the laboratory and region in the CADRE clean-room photograph caption and give FY 2024 Appropriations Received under Unexpended Appropriations in the changes-in-net-position statement.",
+    "expected_answer": "Jet Propulsion Laboratory in Southern California; $24,875 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY2024 Agency Financial Report; physical PDF pages",
     "evidence": [
       {
-        "page": 22,
-        "region": "Strategic Goal 2 FY 2024 green bar",
-        "source_value": "8 goals"
+        "page": 19,
+        "region": "CADRE rover photograph caption"
       },
       {
-        "page": 51,
-        "region": "Strategic Goal 2 Net Costs row, 2024 column",
-        "source_value": "$10,920 million"
+        "page": 52,
+        "region": "Unexpended Appropriations; Appropriations Received; 2024"
       }
     ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "validation": "Original source regions inspected before model evaluation; every produced answer and citation requires original-source review."
   },
   {
-    "id": "adv-test-multihop-03",
-    "split": "test",
-    "group": "multi-hop",
-    "question": "Combining the superalloy commercialization overview with the FY 2024 investment disclosure, how many American companies license GRX-810, and what was NASA's total net investments value in FY 2024?",
-    "expected_answer": "Four American companies and $15 million in total net investments.",
-    "evidence": [
-      {
-        "page": 8,
-        "region": "Superalloy photograph caption, first paragraph",
-        "source_value": "The agency is licensing GRX-810 to four American companies."
-      },
-      {
-        "page": 60,
-        "region": "Note 3 Investments, Net; 2024 table; Total row; Investments, Net column; units in millions",
-        "source_value": "$15 million."
-      }
-    ],
-    "review": "Blind validator checked both original source page renders at full size. Required facts do not coexist in one alternative source table. Repaired before freeze; both locations required.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
-    "id": "adv-test-multihop-04",
-    "split": "test",
-    "group": "multi-hop",
-    "question": "Using the rounded FY 2024 budget shown in NASA by the Numbers and the net agency outlays in the budgetary resources statement, by how many millions did outlays exceed that rounded budget?",
-    "expected_answer": "$115 million.",
-    "evidence": [
-      {
-        "page": 13,
-        "region": "FY 2024 budget heading",
-        "source_value": "$24.9 billion, or $24,900 million"
-      },
-      {
-        "page": 53,
-        "region": "Agency Outlays, Net row, 2024 column",
-        "source_value": "$25,015 million; 25,015 - 24,900 = 115 million"
-      }
-    ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
-    "id": "adv-test-u01",
+    "id": "adv3-test-u01",
     "split": "test",
     "group": "missing-evidence",
-    "question": "What was the exact licensing fee in dollars paid by each company for GRX-810?",
+    "question": "What is the mass in grams of the AR display worn in the cover photograph?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No licensing fee or license fee phrase in extracted 127-page text; page 8 only identifies four licensees in aggregate.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "absence_audit": {
+      "related_pages": [
+        2
+      ],
+      "terms": [
+        "mass",
+        "grams",
+        "AR"
+      ],
+      "reason": "The source describes the display optics but gives no headset mass."
+    }
   },
   {
-    "id": "adv-test-u02",
+    "id": "adv3-test-u02",
     "split": "test",
     "group": "missing-evidence",
-    "question": "How many photographs were taken during the simulated moonwalk shown in the report?",
+    "question": "What was the purchase price in dollars of the scientific balloon used by GUSTO?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No photographs were taken phrase in extracted text; page 14 caption describes a sample-collection exercise.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "absence_audit": {
+      "related_pages": [
+        49
+      ],
+      "terms": [
+        "GUSTO",
+        "purchase",
+        "price"
+      ],
+      "reason": "The balloon caption gives size, mission and duration, not its purchase price."
+    }
   },
   {
-    "id": "adv-test-u03",
+    "id": "adv3-test-u03",
     "split": "test",
     "group": "missing-evidence",
-    "question": "What was the average age of NASA civil-service employees in FY 2024?",
+    "question": "How many liters of propellant did the Electron launch of the first PREFIRE CubeSat consume?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No average age phrase in extracted text; page 13 lists counts, not ages.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "absence_audit": {
+      "related_pages": [
+        18
+      ],
+      "terms": [
+        "PREFIRE",
+        "Electron",
+        "propellant",
+        "liters"
+      ],
+      "reason": "The launch caption gives mission, site and date, not propellant consumption."
+    }
   },
   {
-    "id": "adv-test-u04",
+    "id": "adv3-test-u04",
     "split": "test",
     "group": "missing-evidence",
-    "question": "How many liters of rocket propellant were consumed by the Psyche launch shown in the report?",
+    "question": "What was the maximum speed in centimeters per second during the CADRE clean-room drive test?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No liters of fuel phrase in extracted text; inspect propellant/fuel synonyms and visual regions before freezing.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "absence_audit": {
+      "related_pages": [
+        19
+      ],
+      "terms": [
+        "CADRE",
+        "speed",
+        "centimeter"
+      ],
+      "reason": "The caption describes an autonomous team drive test but provides no measured speed."
+    }
   },
   {
-    "id": "adv-test-u05",
+    "id": "adv3-test-u05",
     "split": "test",
     "group": "missing-evidence",
-    "question": "What was the exact mass in kilograms of the battery aboard the PREFIRE CubeSat pictured in the report?",
+    "question": "On what exact date does the GRX-810 patent expire?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No battery mass phrase in extracted text; inspect battery synonyms and visual regions before freezing.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "absence_audit": {
+      "related_pages": [
+        8
+      ],
+      "terms": [
+        "GRX",
+        "patent",
+        "expire"
+      ],
+      "reason": "The superalloy caption discusses commercialization and licensing, not a patent expiration date."
+    }
   },
   {
-    "id": "adv-test-u06",
+    "id": "adv3-test-u06",
     "split": "test",
     "group": "missing-evidence",
-    "question": "How many NASA employees were trained to use the GRX-810 printer in FY 2024?",
+    "question": "What are the exact latitude and longitude of the clean room in the CADRE photograph?",
     "answerable": false,
     "expected_behavior": "search_and_abstain",
-    "absence_reason": "No specific training count identified in the GRX-810 source page; check full document and visual regions before freezing.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+    "absence_audit": {
+      "related_pages": [
+        19
+      ],
+      "terms": [
+        "CADRE",
+        "latitude",
+        "longitude"
+      ],
+      "reason": "The caption names JPL in Southern California but supplies no clean-room coordinates."
+    }
   }
 ]

@@ -2,11 +2,11 @@
 
 ## Dữ liệu và benchmark
 
-Đây là báo cáo đợt **chạy lại thật** bằng native function agent, thay cho các kết quả cũ đã gộp. Dev bắt đầu 2026-11-16T07:47:17.113001+00:00; test bắt đầu 2026-11-16T08:16:12.131345+00:00. Có đủ 51 lượt agent dev, 14 lượt test và 65 nhãn đọc đối chiếu; retrieval có 45 bản ghi dev và 10 bản ghi test. Kết quả sai, lỗi hệ thống và raw answer đều được giữ, không dùng mock làm benchmark.
+Đánh giá Basic gồm 51 lượt agent trên dev, 14 lượt trên test và 65 nhãn đối chiếu nguồn. Đánh giá retrieval trên query gốc gồm 45 bản ghi dev và 10 bản ghi test. Các kết quả lưu cả câu trả lời, context, citation, lỗi và thời gian từng truy vấn.
 
 Corpus Day 6: Raffel và cộng sự, *Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer*, JMLR 21(140), 2020, [nguồn PDF](https://www.jmlr.org/papers/volume21/20-074/20-074.pdf), CC BY 4.0. Chọn trang PDF vật lý 4–40 (37 trang), 160 chunk theo đoạn tối đa 1.000 ký tự; giữ ID/nguồn/trang/offset. Vector store PostgreSQL/pgvector Day 6, exact cosine, FastEmbed `BAAI/bge-small-en-v1.5`, 384 chiều và prefix query tương thích. Bảng/công thức có thể mất định dạng; bản gốc là nguồn kiểm chứng.
 
-`data/benchmark.json` cung cấp dev 15 câu có đáp án + 2 thiếu bằng chứng; các câu test lịch sử trong tệp này không dùng trong đợt đánh giá mới. Test thực tế dùng riêng `data/benchmark-test.json`: 5 câu có đáp án + 2 thiếu bằng chứng. Tệp `data/benchmark-validation.json` ghi kiểm tra nguồn, hash PDF, phạm vi trang và tính độc lập của test mới. Dev/gold chỉ được dùng để đánh giá, không truyền vào agent/retrieval. Cấu hình được chốt tại 2026-11-16T08:16:01.471370+00:00 trước khi chạy test; không chỉnh pipeline từ kết quả test.
+Benchmark Basic sử dụng các bản ghi `split=dev` trong `data/benchmark.json`: 15 câu có đáp án và 2 câu thiếu bằng chứng. `data/benchmark-test.json` chứa 5 câu có đáp án và 2 câu thiếu bằng chứng. `data/benchmark-validation.json` ghi nguồn, hash PDF, phạm vi trang và kiểm tra độc lập dev/test. Agent và retriever chỉ nhận câu hỏi, không nhận gold. Cấu hình được khóa tại 2026-11-16 08:16:01 UTC trước đánh giá test.
 
 ## Retrieval và thử nghiệm
 
@@ -27,36 +27,42 @@ Hai giả thuyết cải thiện được công bố trong cấu hình trước 
 1. **BM25 thay dense:** truy vấn chứa thuật ngữ kỹ thuật có thể hưởng lợi từ lexical matching. Dev Evidence Hit@3 tăng từ 10/15 lên 15/15 và grounded tăng 6/30 → 11/30. Tuy nhiên dense có 4 lỗi database, nên mức chênh không thể quy hoàn toàn cho thuật toán.
 2. **Hybrid + context lớn:** kết hợp lexical/semantic và giữ thêm candidate có thể tăng evidence. Query gốc dev Hit@3 đạt 15/15 nhưng grounded chỉ 7/30, thấp hơn BM25. Thử nghiệm thay cả fusion và budget; không tách riêng tác động của từng thay đổi.
 
-Phân tích lỗi trước/sau trên dev: q01 dense có evidence đúng ở C3 nhưng trỏ C1 không hỗ trợ; BM25 đưa đoạn đúng lên C1 và tăng grounded từ 0 lên 1, vẫn diễn giải sai gamma/beta. q15 dense từ chối (0), BM25 trả đúng span length 3 (2), hybrid lại từ chối dù context đủ (0). q05 mọi context đều có khoảng 750 GB, nhưng BM25/hybrid bịa số lượng tài liệu; tăng retrieval chưa sửa được lỗi sinh câu trả lời. Đây là các lỗi đã đọc, không phải chỉ suy từ metric.
+Phân tích lỗi dev: q01 dense có evidence đúng ở C3 nhưng dẫn C1 không hỗ trợ; BM25 đưa đoạn đúng lên C1 và tăng grounded từ 0 lên 1, song vẫn diễn giải sai gamma/beta. q15 dense từ chối (0), BM25 trả đúng span length 3 (2), hybrid từ chối dù context đủ (0). q05 context của cả ba phương pháp có khoảng 750 GB nhưng BM25/hybrid suy đoán sai số lượng tài liệu: tăng retrieval chưa khắc phục được lỗi sinh câu trả lời.
 
 ## Agent và đánh giá
 
 Model thực tế `qwen2.5:1.5b`, temperature 0, num_predict 256, num_ctx 4096. Mỗi cấu hình chỉ cung cấp schema function tương ứng (`search_dense`, `search_bm25`, `search_hybrid`); model chọn query và gọi function thật. Tối đa 3 tool call, có điều kiện dừng và một lượt nhắc tìm khi chưa truy xuất. Source/tool output được coi là dữ liệu, không phải chỉ dẫn. Từ chối khi thiếu evidence/citation hợp lệ; kiểm tra cú pháp ID không thay thế việc đọc citation.
 
-Tiêu chí lựa chọn: tổng grounded dev (lỗi tính 0), tiếp theo số abstention đúng, tổng điểm context, rồi tổng thời gian. Cấu hình chọn **bm25**, được khóa cùng hash code/test/dev tại `results/basic/selection.json`. Grounded 2 yêu cầu trả lời đầy đủ và citation hỗ trợ mọi khẳng định chính; đúng một phần hoặc dẫn nhầm label chấm 1; sai/thiếu evidence/từ chối câu có đáp án chấm 0. Abstention được đọc theo nội dung, không chỉ dựa runtime status. Nhãn do Codex hỗ trợ đọc bản gốc, chưa có người chấm độc lập.
+Tiêu chí lựa chọn: tổng grounded dev (lỗi tính 0), tiếp theo số abstention đúng, tổng điểm context, rồi tổng thời gian. Cấu hình chọn **bm25**, được khóa cùng hash code/test/dev tại `results/basic/selection.json`. Grounded 2 yêu cầu trả lời đầy đủ và citation hỗ trợ mọi khẳng định chính; đúng một phần hoặc dẫn nhầm label chấm 1; sai/thiếu evidence/từ chối câu có đáp án chấm 0. Abstention được đọc theo nội dung, không chỉ dựa runtime status. Nhãn do trợ lý AI hỗ trợ đối chiếu bản gốc; chưa có người chấm độc lập.
 
-| Cấu hình/split | Tool use | Grounded 0/1/2; trung bình /2 | Citation hỗ trợ | Câu có citation | Abstention | Từ chối nhầm | Thời gian TB | Lỗi |
-|---|---|---|---|---|---|---|---|---|
-| dense_baseline/dev | 13/13 (100.00%) | 11/2/2; 0.400 | 2/7 (28.57%) | 7/17 (41.18%) | 1/2 (50.00%) | 5/15 (33.33%) | 32.09 s | 4 |
-| bm25/dev | 17/17 (100.00%) | 8/3/4; 0.733 | 6/10 (60.00%) | 10/17 (58.82%) | 2/2 (100.00%) | 5/15 (33.33%) | 24.96 s | 0 |
-| hybrid/dev | 16/17 (94.12%) | 10/3/2; 0.467 | 4/12 (33.33%) | 12/17 (70.59%) | 1/2 (50.00%) | 4/15 (26.67%) | 29.23 s | 0 |
-| dense_baseline/test | 7/7 (100.00%) | 5/0/0; 0.000 | 1/7 (14.29%) | 5/7 (71.43%) | 0/2 (0.00%) | 2/5 (40.00%) | 23.77 s | 0 |
-| bm25/test | 7/7 (100.00%) | 4/0/1; 0.400 | 2/4 (50.00%) | 4/7 (57.14%) | 1/2 (50.00%) | 2/5 (40.00%) | 34.59 s | 0 |
+| Cấu hình/split | Tool use | Số lượt gọi tool / model | Grounded 0/1/2; trung bình /2 | Citation hỗ trợ | Câu có citation | Abstention | Từ chối nhầm | Thời gian TB | Lỗi |
+|---|---|---|---|---|---|---|---|---|---|
+| dense_baseline/dev | 13/13 (100.00%) | 17 / 63 | 11/2/2; 0.400 | 2/7 (28.57%) | 7/17 (41.18%) | 1/2 (50.00%) | 5/15 (33.33%) | 32.09 s | 4 |
+| bm25/dev | 17/17 (100.00%) | 17 / 65 | 8/3/4; 0.733 | 6/10 (60.00%) | 10/17 (58.82%) | 2/2 (100.00%) | 5/15 (33.33%) | 24.96 s | 0 |
+| hybrid/dev | 16/17 (94.12%) | 16 / 64 | 10/3/2; 0.467 | 4/12 (33.33%) | 12/17 (70.59%) | 1/2 (50.00%) | 4/15 (26.67%) | 29.23 s | 0 |
+| dense_baseline/test | 7/7 (100.00%) | 7 / 27 | 5/0/0; 0.000 | 1/7 (14.29%) | 5/7 (71.43%) | 0/2 (0.00%) | 2/5 (40.00%) | 23.77 s | 0 |
+| bm25/test | 7/7 (100.00%) | 7 / 28 | 4/0/1; 0.400 | 2/4 (50.00%) | 4/7 (57.14%) | 1/2 (50.00%) | 2/5 (40.00%) | 34.59 s | 0 |
 
-Đã đọc đủ 5 context có đáp án của mỗi cấu hình test, không còn trường hợp mất context như đợt cũ:
+Kết quả kiểm chứng context test trên 5 câu có đáp án của mỗi cấu hình:
 
 - dense_baseline: mức 0/1/2 = 2/0/3; đủ evidence 3/5 (60.00%).
 - bm25: mức 0/1/2 = 1/0/4; đủ evidence 4/5 (80.00%).
 
-Mọi lượt test đều có một retrieval function thành công. Dev dense có 4 timeout kết nối database lúc RAM máy bị áp lực bởi model vision; giữ trong mẫu số và báo riêng, không thay bằng kết quả giả. Thời gian là một lần chạy, chịu ảnh hưởng tải máy, không bao gồm khởi tạo embedding/index. API local 0 USD; chưa tính điện, phần cứng hay công chuẩn bị/đối chiếu corpus bằng trợ lý.
+Cả 14 lượt agent test đều có một retrieval function thành công. Dev dense có 4 timeout kết nối PostgreSQL trong điều kiện áp lực RAM khi xử lý vision; các trường hợp này được tính lỗi và giữ trong mẫu số. Thời gian là một lần đo, chịu ảnh hưởng tải máy và không bao gồm khởi tạo embedding/index. Phí API inference local là 0 USD, chưa tính điện và phần cứng.
 
-Ba ví dụ trình bày: BM25 test02 trả ReCoRD Exact Match 68,16 → 73,72, chênh 5,56 điểm, cite C1 trang PDF 27 đầy đủ. BM25 test07 cuối cùng từ chối yêu cầu tọa độ data center, nhưng raw answer đã bịa tọa độ New York rồi bị chặn do thiếu citation; cần giữ giới hạn này. BM25 test05 nhầm Small T5 thành 12/12 layer và khoảng 100 triệu tham số; bản gốc trang 36 ghi 6/6 layer và khoảng 60 triệu; context thiếu thông số kiến trúc. Test06 cả hai trả đoạn liên quan nhưng không từ chối rõ yêu cầu serial number, nên abstention không đạt.
+| Query ID/cấu hình | Loại câu | Tool và kết quả | Câu trả lời/citation | Nhãn và lý do |
+|---|---|---|---|---|
+| test02/bm25 | Có đáp án | `search_bm25`, tìm được bảng ReCoRD | Exact Match 68,16 → 73,72, tăng 5,56 điểm; C1 trang PDF 27 | Grounded 2, đủ giá trị và citation |
+| test07/bm25 | Thiếu bằng chứng | `search_bm25`, không có tọa độ data center | Final answer từ chối | Abstention đúng; raw answer có tọa độ suy đoán bị chặn do thiếu citation, là giới hạn của cơ chế kiểm soát |
+| test05/bm25 | Lỗi trả lời | `search_bm25`, context thiếu kiến trúc Small T5 | 12/12 layer, khoảng 100 triệu tham số | Grounded 0; bản gốc trang 36 ghi 6/6 layer và khoảng 60 triệu tham số |
 
-`results/basic/dev.json` và `test.json` chứa ranking, query gốc, các tool call thật, context, answer/raw answer, citation, thời gian, lỗi và nhãn từng câu. Function trace có `name`, `call_id`, `call_number`, arguments, results, `tool_call_count`, `tool_counts`, flow và số request model. `selection.json` lưu quyết định trước test. Không tạo một JSON cho mỗi câu, không trình bày kết quả gộp lịch sử thành lượt chạy mới.
+Ở test06, cả dense và BM25 đều trả thông tin liên quan nhưng không từ chối rõ yêu cầu serial number, nên không đạt abstention.
 
-Credential chỉ đọc riêng từ environment hoặc `.env` Day 6; không có giá trị secret trong lệnh mẫu. `src/common/submission_audit.py` chặn tệp env, kể cả example, token/private key, URL có mật khẩu và credential gán literal; kết quả chỉ ghi metadata, không in secret. Audit working tree và reachable history đã thực hiện; cần chạy lại trước nộp. Không nộp `tmp/`, cache/model, PDF/ảnh sinh hoặc bản backup.
+`results/basic/dev.json` và `test.json` chứa ranking query gốc, tool call, context, answer/raw answer, citation, nhãn, thời gian và lỗi. Function trace có `name`, `call_id`, `call_number`, arguments, results, `tool_call_count`, `tool_counts` và flow. `results/basic/selection.json` ghi quyết định lựa chọn trước test.
 
-Chạy từ gốc repo bằng PowerShell. Giữ môi trường Day 6 và volume pgvector cũ; không thay embedding model/index bằng vector ngẫu nhiên.
+Credential được đọc từ biến môi trường hoặc cấu hình riêng của Day 6. `src/common/submission_audit.py` kiểm tra file env, token/private key, URL có mật khẩu và credential literal; đầu ra audit chỉ ghi đường dẫn/loại phát hiện. Credential, model/cache, PDF/ảnh sinh và bản sao làm việc không lưu trong phần nộp.
+
+Các lệnh tái lập chạy từ gốc repository bằng PowerShell, sử dụng môi trường Day 6, PostgreSQL/pgvector và cache embedding tương ứng:
 
 ```powershell
 $day6 = '../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion'
@@ -68,7 +74,7 @@ docker compose -f (Join-Path $day6 'starter/docker-compose.yml') up -d
 & $py -m src.common.submission_audit --output tmp/security-audit.json
 ```
 
-Ollama cần đang chạy; tải model bằng `ollama pull qwen2.5:1.5b`. Tái lập vào thư mục riêng để không ghi đè bằng chứng đã chấm:
+Model Basic: `ollama pull qwen2.5:1.5b`. Lệnh đánh giá và chốt cấu hình:
 
 ```powershell
 & $py -m src.evaluation.evaluate_lab --day6 $day6 --split dev --output-root results/reproduction/basic
@@ -78,52 +84,90 @@ Ollama cần đang chạy; tải model bằng `ollama pull qwen2.5:1.5b`. Tái l
 & $py -m src.evaluation.summarize_lab --split test --reviews <file-nhan-test> --output-root results/reproduction/basic
 ```
 
-Không dùng test đã xem để chỉnh pipeline rồi gọi là đánh giá độc lập. Nếu thay pipeline bằng thông tin từ test, tạo test mới. Thư mục tái lập được Git bỏ qua.
+Dev dùng để lựa chọn cấu hình; test được chạy sau khi khóa. Script kiểm tra hash benchmark/code và quyết định đã chốt trước khi cho phép đánh giá test. Thư mục `results/reproduction/` dành cho các lượt tái lập.
 
-`src/agents/`: agent; `src/retrieval/`: functions/fusion; `src/evaluation/`: benchmark/metrics; `src/data_pipeline/`: Day 6; `src/advanced/`: PDF/catalog/nâng cao; `src/common/`: bảo mật/trace. README và các tệp đề bài được giữ đúng commit gốc; báo cáo cá nhân này là tài liệu nộp bằng tiếng Việt.
+Mã nguồn: `src/agents/` điều phối agent, `src/retrieval/` chứa retriever/fusion, `src/evaluation/` đánh giá Basic, `src/data_pipeline/` tái sử dụng Day 6, `src/advanced/` xử lý tài liệu nâng cao và `src/common/` quản lý trace/bảo mật.
 
 ## Thử thách nâng cao (nếu thực hiện)
 
-NASA FY2024 Agency Financial Report, 127 trang, [nguồn](https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf), SHA-256 `65ee29adf5f3a92fcd74701696c25dae8f2d18f1ba2e7f4fba2bcfc059acbefc`. Không rehost PDF/ảnh khi chưa rà hết quyền bên thứ ba; giữ nguồn và cách tái tạo. Các trang được index toàn bộ text/layout, bổ sung catalog trực quan source-only được đối chiếu từ ảnh gốc, không dùng gold để xây index. Chưa tuyên bố đạt bonus cho tới khi hoàn tất và chấm toàn bộ test đạt ít nhất 90%. Kết quả mới sẽ ở `results/advanced/`; các số liệu Advanced cũ không phải kết quả của pipeline mới.
+Phần nâng cao đã hoàn thành với **27/30 câu test đạt (90%)**, đáp ứng ngưỡng yêu cầu. Bộ nộp gồm code và cách tái lập, nguồn/index toàn bộ tài liệu, benchmark dev/test, trace và nhãn đối chiếu nguồn cho từng câu, metrics theo nhóm và phân tích ba câu không đạt.
 
-Dev có 18 câu (15 có đáp án, 3 thiếu evidence). Test độc lập có 30 câu: 6 bảng, 5 ảnh, 5 biểu đồ, 4 multi-hop, 4 text và 6 thiếu evidence. Đạt bonus cần ít nhất 27/30 câu test theo chấm nghiêm ngặt; kết quả dev hoặc kiểm tra tự động không thay thế ngưỡng này. Không chỉnh pipeline bằng đáp án test.
+Tài liệu: *NASA FY2024 Agency Financial Report*, phiên bản FY2024, **127 trang PDF vật lý**, [nguồn PDF công khai](https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf). SHA-256: `65ee29adf5f3a92fcd74701696c25dae8f2d18f1ba2e7f4fba2bcfc059acbefc`. Sử dụng bản công khai để nghiên cứu, cung cấp đường dẫn và cách tải hợp lệ; không phân phối lại PDF/ảnh có thể chứa nội dung bên thứ ba. Trang trích dẫn là trang PDF vật lý, không phải số in ở chân trang.
 
-Benchmark được nộp tại `data/advanced/benchmark-dev.json` và `data/advanced/benchmark-test.json`. Việc bỏ hậu tố `-draft` chỉ đổi tên, không đổi câu hỏi/gold; SHA-256 test giữ nguyên `7441e969e4c03c11c3dcc0a12c82f21b974f9d5da2df4c5645b51d4e7cad848b` trước khi chốt pipeline.
+Index bao phủ **127/127 trang**, không có trang bị bỏ qua. PyMuPDF 1.26.7 trích text/layout và render 110 dpi; catalog trực quan được AI hỗ trợ đọc, đối chiếu từng trang gốc. Mỗi vùng giữ loại, vị trí, nhãn và giới hạn; mỗi trang giữ hash ảnh gốc và bounding box. `data/advanced/visual-catalog.json` là annotation nguồn; `results/advanced/index-manifest.json` ghi cấu hình, thống kê và liên kết ảnh trang để kiểm chứng. Không chỉ index các trang có trong benchmark; chưa phiên âm độc lập mọi ô bảng, nên bản gốc vẫn là căn cứ chấm.
 
-`data/advanced/visual-catalog.json` là chú thích toàn bộ 127 trang được trợ lý hỗ trợ đối chiếu ảnh nguồn, không phải kết quả một lượt OCR/vision Ollama đầy đủ. Catalog giữ mô tả vùng, nhãn và giới hạn kiểm chứng; không khẳng định đã gõ lại độc lập mọi ô bảng. Dense BGE 384 chiều kết hợp BM25 và RRF truy xuất text/mô tả trực quan. Model trả lời local đọc catalog và text; ảnh gốc là nguồn kiểm chứng ngoài luồng, không được gửi cho text model. `results/advanced/index-manifest.json` ghi thống kê, hash và liên kết từng trang.
+Toàn corpus tạo **3169 đơn vị BM25** trên **127 trang**: hàng bảng có header/năm/đơn vị, nhãn từng vùng biểu đồ, mô tả ảnh và đoạn text gốc. Mỗi vùng ảnh được ghép đoạn nguồn theo độ trùng từ của tiêu đề/nhãn, giữ quan hệ người–vai trò, công nghệ và địa điểm trong caption để kiểm chứng. Bộ tách hàng xử lý nhiều hàng bị PDF ghép chung một text block; bảng Accounts Receivable giữ hàng Public/Intragovernmental và các cột receivable/allowance/net, không kéo cấu trúc sang Note tiếp theo. Corpus còn có 127 vector BGE `BAAI/bge-small-en-v1.5`, 384 chiều cho phương án hybrid; cấu hình cuối dùng BM25.
 
-Đợt dev tiếp theo dùng Ollama `qwen3:4b-instruct`, context 4.096 token, tối đa 384 token sinh/lượt, budget evidence 8.000 ký tự và tối đa 5 tool call. Ba function: `search_evidence` (top-k từ 1 đến 8), `inspect_page`, `calculate`. Các thay đổi dựa trên lỗi dev: yêu cầu top-k 5 từng bị từ chối, nhầm loại hàng tổng và từ chối dù đã có thông tin được hỏi. Cấu hình chỉ được chốt sau khi đọc đủ dev; chưa có kết quả test của cấu hình này. Theo lựa chọn hiện tại của chủ repo, chỉ chạy inference Ollama local, không dùng Groq hoặc Codex CLI.
+Benchmark hiện tại: `data/advanced/benchmark-dev.json` có **23 câu**, gồm 20 câu có đáp án và 3 câu thiếu bằng chứng; `benchmark-test.json` có **30 câu**, gồm 6 bảng, 5 ảnh, 5 biểu đồ, 4 text, 4 multi-hop và 6 thiếu bằng chứng. Mỗi câu chỉ tính một nhóm chính. Ảnh/caption cung cấp nhận diện, công nghệ hoặc địa điểm của đối tượng hữu ích, không dùng hình trang trí. Multi-hop kết hợp ít nhất hai trang/vùng gốc. Mỗi câu có ID, nguồn, đáp án và trang/vùng kiểm chứng hoặc cách kiểm tra thiếu bằng chứng.
 
-Context giữ từng vùng trực quan cùng tiêu đề, đơn vị, chú giải và nhãn thay vì cắt các dòng JSON riêng lẻ. Các đoạn text gốc giữ hàng lân cận; khi inspect trang, giữ toàn bộ text gốc theo thứ tự. Nếu query của model nêu rõ duy nhất một loại nguồn (biểu đồ, ảnh chụp, sơ đồ hoặc bảng), retriever ưu tiên metadata loại vùng tương ứng trong tập ứng viên RRF và giữ nguồn khác làm fallback; query yêu cầu nhiều loại giữ fusion thông thường. Suy luận này chỉ dùng query và catalog nguồn, không dùng nhóm/gold benchmark. Trace ghi `query_modality_preference` và nguồn suy luận. Ranking trung gian giữ ID/rank/score/nguồn/trang; snippet đã chọn, context model thực nhận và function call vẫn được lưu đầy đủ, tránh lặp nguyên 40 trang trong mỗi trace.
+Quy trình chia bộ: một pilot ban đầu đã được xem để phân tích lỗi; bộ kế tiếp chạy đủ và đạt **25/30**, với năm lỗi gồm nhầm phần trăm/số tiền, hai hàng bảng và hai câu multi-hop thiếu vế. Năm câu lỗi này chuyển sang dev, mở rộng từ 18 lên 23 câu. Bộ test hiện tại được định nghĩa lúc `2026-11-16T17:45:32.854818+00:00`, **trước thay đổi pipeline truy xuất theo từng evidence item và xử lý riêng từng vế**. Câu hỏi/đáp án hoàn chỉnh khác các bộ dev và test đã dùng; không dùng test hiện tại để chọn cấu hình. Chính sách test là tra cứu trực tiếp theo mục/hàng/năm/đơn vị và tổng hợp hai nguồn, không có phép tính. Một số thành phần multi-hop lặp trong cùng test, làm các câu có tương quan. Không cung cấp đáp án, gold evidence hoặc gợi ý số trang cho agent.
 
-Lượt dev đầy đủ đầu tiên đạt 16/18 (88,89%), không có lỗi hệ thống; tổng thời gian các trace 2.258,28 giây, 47 lượt model và 18 lượt search. Hai lỗi dùng cùng nguồn Note 14: context giữ prose làm tròn 12 tỷ USD nhưng bỏ hàng Total Undelivered Orders 12.214 triệu USD. Câu tra bảng vì vậy thiếu độ chính xác; câu multi-hop funding trừ undelivered orders đã từ chối. Ba câu thiếu bằng chứng đều từ chối đúng. Kết quả này chưa đủ để công bố đạt Advanced.
+Test SHA-256: `99abaad66f61cde83664152bc866bc9bb794fd7bfd5b56db5406820277ca7bea`. Chốt cấu hình lúc `2026-11-16T18:33:46.222244+00:00`, trước test bắt đầu `2026-11-16T18:33:47.107484+00:00`. `selection.json` khóa hash model, code, corpus, benchmark và kết quả dev; script kiểm tra chúng trước khi cho phép chạy test.
 
-Thay đổi tiếp theo trên dev: loại từ chức năng khỏi chấm relevance excerpt và cộng trọng số 3 cho term khớp tiêu đề vùng nguồn, giữ bảng cùng năm/đơn vị/nhãn số trước prose. Thay đổi áp dụng chung cho mọi trang và query, không chứa đáp án/ID benchmark. Kiểm tra hồi quy dùng bảng giả lập với số liệu khác benchmark để xác nhận bảng chính xác sống sót khi prose làm tròn dài lấn budget. Cấu hình mới phải chạy lại dev trước khi chốt và mở test.
+Cấu hình cuối: Ollama local **`qwen3:4b-instruct`**, digest `0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0`, temperature 0, context 2.048 token, tối đa 192 token sinh, 8 CPU thread. BM25 trên các evidence item chọn tối đa 3 candidate cho mỗi vế, budget 4.000 ký tự. Điều kiện loại nguồn, đơn vị, Goal hoặc mục Assets/Liabilities được lấy từ **câu hỏi**; query và điều kiện loại nguồn/tỷ lệ được ghi trong trace; không suy ra filter từ gold. Ranking giữ năm và đơn vị của nguồn, ưu tiên nhãn phần trăm khi hỏi tỷ lệ.
 
-Đã chạy lại đầy đủ và đối chiếu từng câu của cấu hình mới: **dev 18/18 (100%)**, gồm bảng 4/4, ảnh 3/3, biểu đồ 3/3, text 3/3, multi-hop 2/2 và thiếu bằng chứng 3/3. Không có lỗi hệ thống; 18 lượt `search_evidence`, 46 lượt model, tổng thời gian trace 2.198,08 giây. Hai câu lỗi trước sửa nay trả đúng 12.214 và 17.837 triệu USD với nguồn cần thiết. So sánh trước/sau và hai trace lỗi cũ được lưu gọn trong `development_experiments` của `results/advanced/dev.json`, không trộn vào mẫu số lượt mới.
+Câu ghép Give/Name/Identify được tách theo liên từ; các điều kiện FY/Goal/chart có trong câu hỏi được giữ ở query từng vế. Mỗi vế có một request Ollama và function thật **`select_evidence`**. Model phát JSON có `name` và `arguments`; arguments gồm một nhãn nguồn được chọn, đáp án tối đa 220 ký tự và abstention. Runtime giới hạn số nhãn để tránh lặp JSON; giữ raw output và mọi giá trị model. Function chọn context, định dạng đơn vị theo nguồn/câu hỏi và gắn citation; không sửa giá trị bằng gold. Nhãn C1–C3 của từng vế được ánh xạ sang nhãn toàn cục và ghi rõ trong trace. Đây là function calling qua JSON schema, không phải native tool-call protocol. Tối đa hai model request/function call cho câu hai vế; không dùng ảnh trực tiếp khi sinh đáp án. Nội dung nguồn/tool là dữ liệu, không phải chỉ dẫn.
 
-Pipeline được khóa lúc **2026-11-16 15:40:12 UTC** trong `results/advanced/selection.json`, trước khi chạy toàn bộ test. Hash kết quả dev là `a701c3f7465a64c9fd6aab526751231a88007b608968aa8ddc88fc635ebbcb34`; source code được ghi nhận ở commit `f6d50b5`. Các nhãn dev có hash từng trace mới để đối chiếu. Test đang chạy, chưa công bố tỷ lệ đạt hoặc bonus. Thời gian tổng là tổng duration của các trace hoàn tất, không gồm thời gian chủ repo tạm dừng hay probe dev bị bỏ.
+Thử nghiệm dev:
 
-Chi phí inference của đợt Ollama local là 0 USD phí API, chưa tính điện/phần cứng. Trước đợt này đã có thử nghiệm Codex CLI bị dừng theo yêu cầu chủ repo: 7 câu dev và 2 probe đã có số usage, tổng 537.052 input token (trong đó 372.224 cached) và 1.845 output token; usage của lượt bị hủy dở có thể chưa được ghi đầy đủ. Chưa xác minh khoản tiền thực tế, nên không tuyên bố các thử nghiệm đó miễn phí. Chúng không thuộc kết quả benchmark local đang nộp; không chạy thêm Codex CLI hoặc Groq.
+| Cấu hình | Phạm vi dev | Đạt / tổng |
+|---|---|---|
+| Local 1.5B, context theo trang | 18 câu ban đầu | 11/18 (61,11%) |
+| Local 4B, context theo trang | Cùng 18 câu | 16/18 (88,89%) |
+| Local 4B, evidence item và xử lý riêng từng vế | Cùng 18 câu | 17/18 (94.44%) |
+| Cấu hình cuối, năm câu lỗi bổ sung | 5 câu bổ sung | 5/5 (100.00%) |
+| Local 4B, evidence item trước ghép caption và sửa đơn vị | Cùng 23 câu | 16/23 (69,57%) |
+| **Cấu hình cuối, toàn dev** | **23 câu** | **22/23 (95.65%)** |
 
-Tái tạo Advanced từ nguồn công khai và catalog đã nộp (chạy từ gốc repo; tải PDF chỉ vào đường dẫn được Git bỏ qua):
+Trên cùng 23 câu dev, cấu hình trước ghép caption đạt 16/23, cấu hình cuối đạt 22/23. Thời gian hai lượt lần lượt 354,16 và 539,29 giây; tải máy không được kiểm soát độc lập. Thay cả cách ghép caption, hướng dẫn trích xuất và chuẩn hóa đơn vị, nên không tách riêng tác động từng thay đổi. `development_runs` trong `dev.json` giữ kết quả dev của các cấu hình trước; phần phân tích lỗi ghi điều kiện chuyển test cũ sang dev. Các lượt dev có JSON lặp nhãn hoặc nhãn citation cục bộ chưa nhất quán được dùng sửa schema/renderer trước khi chạy toàn dev cấu hình cuối. Lỗi không được thay bằng kết quả giả.
+
+Các câu dev không đạt của cấu hình cuối:
+
+- `adv-dev-image-02`: Chưa đủ: chỉ nêu Hampton, Virginia, thiếu Katherine G. Johnson Computational Research Facility tại NASA Langley Research Center. Caption gốc trang 35 và context C1 có vị trí đầy đủ. Chấm không đạt dù phần thành phố/bang đúng.
+
+Chấm test đạt/không đạt bằng đối chiếu câu trả lời và citation với **PDF gốc**, không chỉ catalog. Câu có đáp án phải đủ ý, đúng điều kiện/năm/đơn vị và có evidence hỗ trợ toàn bộ; đúng một phần, sai citation hoặc từ chối đều không đạt. Câu thiếu evidence phải từ chối rõ, không thêm khẳng định không được hỗ trợ. Timeout, lỗi và không có kết quả được giữ trong mẫu số. Nhãn do AI hỗ trợ đọc nguồn, chưa có người chấm độc lập. **Đạt ngưỡng ít nhất 90% trên toàn bộ bộ test đã công bố.**
+
+| Nhóm test | Đạt / tổng | Tỷ lệ | Lỗi / nhận xét |
+|---|---|---|---|
+| Bảng | 6/6 | 100.00% | 0 lỗi hệ thống |
+| Ảnh, sơ đồ | 5/5 | 100.00% | 0 lỗi hệ thống |
+| Biểu đồ | 5/5 | 100.00% | 0 lỗi hệ thống |
+| Multi-hop | 3/4 | 75.00% | 0 lỗi hệ thống |
+| Text | 3/4 | 75.00% | 0 lỗi hệ thống |
+| Thiếu bằng chứng | 5/6 | 83.33% | 0 lỗi thực thi; 1 đáp án rỗng |
+| **Toàn bộ** | **27/30** | **90.00%** | **0 lỗi thực thi; 1 đáp án rỗng** |
+
+Các câu test không đạt:
+
+- `adv3-test-text-03`: Sai mục và giá trị: ngưỡng acquisition cost ghi nhận PP&E trong Note 1 trang 57 là $500,000 or more. Đáp án 1.227 triệu USD lấy Capitalized Acquisitions/FY2024 của bảng rollforward Note 5 trang 62, không phải ngưỡng. Context còn gắn nhãn Heritage assets từ đoạn khác, cho thấy giới hạn thứ tự text/nhóm mục PDF. Chấm không đạt.
+- `adv3-test-multi-hop-04`: Chỉ đúng Appropriations Received/FY2024 là 24.875 triệu USD với C4 trang 52. Vế ảnh chỉ trả Laboratory, không nêu Jet Propulsion Laboratory và Southern California; C1 trang 11 không xác định CADRE clean-room. Bộ tách liên từ cắt laboratory and region quá sớm, làm mất entity ở vế đầu. Đúng một phần nên không đạt.
+- `adv3-test-u02`: Không đạt abstention: raw answer rỗng nhưng abstain=false; final chỉ còn [C3], không có nội dung từ chối hay câu trả lời. C3 trang 52 là Appropriations Used, không cung cấp giá mua bóng GUSTO. Ghi riêng là đáp án rỗng/không có kết quả nội dung, không loại khỏi mẫu số.
+
+`results/advanced/test.json` lưu đủ 30 trace và nhãn từng câu: query gốc/query từng vế, ranking retrieval, candidate context/context được chọn, JSON model, function name/arguments/lượt gọi/kết quả, câu trả lời/raw answer, citation, thời gian, lỗi và lý do đối chiếu nguồn. Nhãn chứa trang/vùng gốc, nhận xét citation, kiểm tra thiếu bằng chứng và hash trace. Citation ở nguồn tương đương được chấp nhận sau khi mở và kiểm chứng ảnh gốc, không buộc trùng trang gold. `benchmark_validation` ghi kiểm tra corpus và giới hạn chia bộ. Chỉ có bốn file kết quả Advanced: **`index-manifest.json`, `dev.json`, `selection.json`, `test.json`**.
+
+Test có **34 lượt model**, **34 lượt function**, **0 lỗi thực thi/timeout**, **1 đáp án rỗng không từ chối** (đã tính không đạt); tổng thời gian từng câu **956.80 giây**, trung bình **31.89 giây/câu**. Dev cuối mất 539.29 giây. Phí API inference local **0 USD**, chưa tính điện, phần cứng, chuẩn bị index và công đọc nguồn. Đây là một lượt đo trên máy CPU; tải và bộ nhớ ảnh hưởng tốc độ.
+
+Giới hạn: bộ test nhỏ, thiên về tra cứu có cấu trúc, có các thành phần tương quan; điểm không suy ra năng lực tổng quát hay độ đúng của mọi ô bảng. Annotation có thể bỏ sót chi tiết; BM25 có thể bỏ lỡ đồng nghĩa, model có thể chọn nhầm đối tượng hoặc từ chối nhầm. Cấu trúc nguồn/năm/đơn vị và citation cần kiểm tra bằng bản gốc. Bộ tách liên từ đơn giản có thể xử lý sai câu chứa đối tượng ghép hoặc nhiều liên từ. Thứ tự text PDF có thể gắn sai nhãn mục cho hàng bảng, như đã thấy ở trang 62; cần đối chiếu layout gốc. Thao tác chuẩn hóa chỉ định dạng câu trả lời, không bảo đảm giá trị model suy luận đúng.
+
+Tái lập từ gốc repository bằng PowerShell, dùng `$py`, `$day6` ở phần Agent. Cần Ollama và cache embedding Day 6; inference chỉ dùng model local. Tải đúng PDF/hash, tái tạo ảnh/layout/catalog và dùng thư mục kết quả riêng:
 
 ```powershell
-$day6 = '../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion'
-$py = Join-Path $day6 '.venv/Scripts/python.exe'
 $pdf = 'data/advanced/nasa-fy-2024-afr.pdf'
-Invoke-WebRequest -Uri 'https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf' -OutFile $pdf
+$advOut = 'results/reproduction/advanced'
+New-Item -ItemType Directory -Force 'data/advanced/generated' | Out-Null
+Invoke-WebRequest 'https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf' -OutFile $pdf
 & $py -m pip install --target data/advanced/generated/vendor PyMuPDF==1.26.7
 & $py -m src.advanced.advanced_render --pdf $pdf --dpi 110
 & $py -m src.advanced.advanced_layout_index --day6 $day6 --pdf $pdf
 & $py -m src.advanced.build_verified_catalog --pdf $pdf
 ollama pull qwen3:4b-instruct
-& $py -m src.advanced.evaluate_multimodal --day6 $day6 --split dev --output-root results/reproduction/advanced
-# Đối chiếu từng câu với PDF gốc, lập nhãn theo schema reviews trong kết quả.
-& $py -m src.advanced.score_results --split dev --reviews <file-nhan-dev> --output-root results/reproduction/advanced
-& $py -m src.advanced.evaluate_multimodal --freeze --output-root results/reproduction/advanced
-& $py -m src.advanced.evaluate_multimodal --day6 $day6 --split test --output-root results/reproduction/advanced
-& $py -m src.advanced.score_results --split test --reviews <file-nhan-test> --output-root results/reproduction/advanced
+& $py -m src.advanced.evaluate_multimodal --day6 $day6 --split dev --output-root $advOut
+& $py -m src.advanced.index_manifest --output (Join-Path $advOut 'index-manifest.json')
+# Đọc output và lập nhãn từng câu theo PDF gốc, theo schema reviews của kết quả.
+& $py -m src.advanced.score_results --split dev --reviews <file-nhan-dev> --output-root $advOut
+& $py -m src.advanced.evaluate_multimodal --freeze --output-root $advOut
+& $py -m src.advanced.evaluate_multimodal --day6 $day6 --split test --output-root $advOut
+& $py -m src.advanced.score_results --split test --reviews <file-nhan-test> --output-root $advOut
 ```
 
-Constructor của retriever tạo vector thật khi chưa có `multimodal_vectors.json`; không dùng vector ngẫu nhiên. Catalog/index/model/code/benchmark được ghi hash trong kết quả và kiểm tra khi resume hoặc chạy test. Kết quả test, nhãn và tỷ lệ theo nhóm chỉ được công bố sau khi chạy và đối chiếu đủ toàn bộ 30 câu; không loại lỗi hay timeout khỏi mẫu số.
+Nếu bị ngắt, thêm `--resume` cho đúng split; script kiểm tra fingerprint và tập câu hỏi trước khi tiếp tục. Nhãn phải đọc lại theo output thực tế của lượt tái lập. Không nộp PDF/ảnh sinh, cache/model, credential hoặc file env; chỉ chia sẻ nguồn công khai và cách tái tạo.

@@ -5,6 +5,18 @@ from src.advanced.multimodal_tools import MultimodalTools,terms
 
 
 class AdvancedContextTests(unittest.TestCase):
+    def test_fast_excerpt_keeps_the_sentence_with_year_specific_counts(self):
+        background=('Multi-use artifacts have historical value and remain operational. ')*18
+        original=background+'As of September 30, 2024 and 2023, there were 913 and 907 multi-use artifacts respectively.'
+        row={'id':'fixture','page':1,'source':'fixture','text':original,'metadata':{}}
+        tools=MultimodalTools.__new__(MultimodalTools)
+        tools.retrieval_mode='bm25';tools.excerpt_chars=700
+        tools.pages={1:{'text':original,'visual':{'regions':[]}}};tools.rows=[row]
+        tools.counts=[Counter(terms(original))];tools.lengths=[sum(tools.counts[0].values())]
+        tools.mean_length=tools.lengths[0];tools.idf={t:1 for t in terms(original)}
+        found=tools.search_evidence('How many multi-use artifacts were reported in 2024 and 2023?',1)
+        self.assertIn('913 and 907',found['results'][0]['text'])
+
     def test_requested_table_survives_long_rounded_narrative(self):
         narrative=('The total outstanding purchase orders at the end of FY2024 were about 900 million. '+
                    'The annual financial report discusses the total outstanding purchase orders at the end of FY2024. ')*8

@@ -15,41 +15,24 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-from src.agents.function_agent import run
+from src.advanced.selection_agent import run
+from src.advanced.evidence_items import EvidenceItems
 from src.advanced.multimodal_tools import MultimodalTools, SCHEMAS, dispatch
 from src.common.secret_safety import redact
 from src.common.embedding_worker import ProcessEmbedder
 
 
 MODEL = 'qwen3:4b-instruct'
-OPTIONS = {'temperature': 0, 'num_ctx': 4096, 'num_predict': 384, 'num_thread': 4, 'num_batch':128}
-PIPELINE = {'model': MODEL, 'model_options': OPTIONS, 'context_budget_chars': 8000,
-            'max_tool_calls': 5, 'max_page_images': 0, 'timeout_seconds': 900,
-            'input_mode':'source_only_verified_visual_catalog_and_original_text'}
-INSTRUCTIONS = (
-    'Use search_evidence before answering. Search the question, inspect a useful page if needed, '
-    'and use the source-only reviewed visual catalog and original text for tables, charts and photographs. '
-    'Physical PDF page numbers are used. Original page images remain provenance for external checking; '
-    'do not claim you viewed an image in this text-model run. Read uncertainties in catalog annotations. '
-    'For comparisons retrieve all needed pages. If the question asks about two distinct charts, '
-    'cite both charts, even if a single table repeats their numbers. '
-    'Use calculate for arithmetic on retrieved numbers. '
-    'For numerical comparisons identify each input value, year and unit before computing. '
-    'If a required value seems missing from search snippets, inspect the relevant full page '
-    'or make a more specific second search before refusing. Paired-year values follow their stated legend order. '
-    'A derived arithmetic result is a computation, not a source: cite the original page evidence '
-    'for every input and state units and conditions. Never cite only a calculation label. '
-    'If the source does not establish the requested information, explicitly say insufficient '
-    'evidence without guessing or adding unsupported figures. Do not invent extra requirements '
-    'beyond the question: when the requested fact is plainly supported, answer it directly '
-    'instead of demanding additional unasked details. Keep the final answer limited to the requested facts. '
-    'Preserve the exact row/category associated with a number; a total includes its component categories. '
-    'Never infer an unreported exact number '
-    'from merely related financial amounts. Answer directly in at most 100 words with source labels.'
-)
+OPTIONS = {'temperature': 0, 'num_ctx': 2048, 'num_predict': 192, 'num_thread': 8, 'num_batch':128}
+PIPELINE = {'model': MODEL, 'model_options': OPTIONS, 'context_budget_chars': 4000,
+            'agent_mode':'schema_guided_function_calling_per_question_part', 'max_tool_calls': 2, 'max_page_images': 0, 'timeout_seconds': 300,
+            'retrieval_mode':'bm25','excerpt_chars':1100,'candidate_items_per_part':3,
+            'input_mode':'all_source_rows_visual_labels_and_paragraphs'}
+from src.advanced.selection_agent import INSTRUCTIONS, SCHEMA as ACTIVE_SCHEMAS
 BENCHMARKS = {'dev': Path('data/advanced/benchmark-dev.json'),
               'test': Path('data/advanced/benchmark-test.json')}
-CODE_FILES = [Path(__file__), Path('src/advanced/multimodal_tools.py'),
+CODE_FILES = [Path(__file__), Path('src/advanced/multimodal_tools.py'), Path('src/advanced/selection_agent.py'),
+              Path('src/advanced/evidence_items.py'),
               Path('src/advanced/vision_index.py'), Path('src/advanced/build_verified_catalog.py'), Path('src/agents/function_agent.py'),
               Path('src/retrieval/fusion.py'), Path('src/common/secret_safety.py'),Path('src/common/embedding_worker.py')]
 
@@ -75,7 +58,7 @@ def fingerprint(data):
     if not model or not model.get('digest'):
         raise ValueError(f'Install and identify the exact Ollama model before evaluation: {MODEL}')
     return {'pipeline': PIPELINE, 'model_digest': model['digest'],
-            'instructions': INSTRUCTIONS, 'schemas': SCHEMAS,
+            'instructions': INSTRUCTIONS, 'schemas': ACTIVE_SCHEMAS,
             'code_sha256': {p.resolve().relative_to(Path.cwd().resolve()).as_posix(): digest(p) for p in CODE_FILES},
             'catalog_sha256': digest(data / 'multimodal_pages.json'),
             'vectors_sha256': digest(data / 'multimodal_vectors.json'),
@@ -138,7 +121,7 @@ def summarize(document):
             'status_counts': dict(Counter(t['status'] for t in traces)),
             'system_errors': sum(t['status'] == 'error' for t in traces),
             'cases_with_successful_retrieval': sum(any(c.get('status') == 'ok' and
-                c.get('name') in ('search_evidence', 'inspect_page') for c in t.get('tool_calls', [])) for t in traces),
+                c.get('name') in ('search_evidence', 'inspect_page', 'select_evidence') for c in t.get('tool_calls', [])) for t in traces),
             'tool_call_count': len(calls), 'function_call_counts': dict(counts),
             'model_call_count': sum(t.get('model_call_count', 0) for t in traces),
             'elapsed_seconds_total': sum(t.get('elapsed_seconds', 0) for t in traces),
@@ -185,7 +168,7 @@ def freeze(output_root, data):
     selection = {'schema_version': 1, 'frozen': True, 'frozen_at_utc': datetime.now(timezone.utc).isoformat(),
                  'fingerprint': signature, 'dev_result_sha256': digest(dev_path),
                  'selection_rule': 'Source-reviewed full dev results and documented error analysis; fixed multimodal pipeline.',
-                 'selected': 'multimodal_dense_bm25_rrf_over_source_verified_visual_catalog'}
+                 'selected': 'multimodal_bm25_over_structured_source_rows_and_visual_catalog'}
     path = Path(output_root) / 'selection.json'
     if path.exists():
         raise FileExistsError('Selection already frozen; do not silently overwrite test provenance')
@@ -195,7 +178,7 @@ def freeze(output_root, data):
 def evaluate(args):
     check_catalog(args.data)
     root = args.day6.resolve()
-    tools = MultimodalTools(ProcessEmbedder(root), args.data)
+    tools = EvidenceItems(ProcessEmbedder(root), args.data, retrieval_mode=PIPELINE['retrieval_mode'], excerpt_chars=PIPELINE['excerpt_chars'])
     signature = fingerprint(args.data)
     selection = None
     if args.split == 'test':
@@ -228,11 +211,11 @@ def evaluate(args):
             continue
         trace = run(case['question'], MODEL, tools, max_calls=PIPELINE['max_tool_calls'],
                     budget=PIPELINE['context_budget_chars'], timeout=PIPELINE['timeout_seconds'],
-                    schemas=SCHEMAS, dispatcher=runtime_dispatch,
+                    schemas=ACTIVE_SCHEMAS, dispatcher=runtime_dispatch,
                     image_provider=image_provider(args.data,PIPELINE['max_page_images']),
                     extra_instructions=INSTRUCTIONS, model_options=OPTIONS)
         trace.update(query_id=case['id'], split=args.split,
-                     pipeline='multimodal_dense_bm25_rrf_over_source_verified_visual_catalog')
+                     pipeline='multimodal_bm25_over_structured_source_rows_and_visual_catalog')
         document['traces'].append(trace)
         document['summary'] = summarize(document)
         save(path, document)

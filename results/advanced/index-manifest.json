@@ -37,12 +37,39 @@
       "image_grid": 1,
       "text_columns": 1
     },
-    "original_text_characters": 338646
+    "original_text_characters": 338646,
+    "bm25_evidence_items": 3169,
+    "bm25_item_pages": 127,
+    "bm25_item_kinds": {
+      "visual_description": 127,
+      "photo": 28,
+      "text": 2724,
+      "table": 48,
+      "text_panel": 10,
+      "portrait": 4,
+      "diagram": 6,
+      "legend": 2,
+      "map": 1,
+      "photo_strip": 1,
+      "summary_numbers": 5,
+      "chart": 60,
+      "sidebar": 1,
+      "illustrative_icons": 1,
+      "table_row": 130,
+      "letter": 2,
+      "signature": 3,
+      "photograph": 13,
+      "graphic": 1,
+      "image_grid": 1,
+      "text_columns": 1
+    },
+    "query_constraints": "Only question-derived modality, unit and explicit financial-section conditions; no benchmark/gold input."
   },
   "hashes": {
     "annotations": "3ab5c537c10218d6749d8e350caf80c4202550692f6da19252190649338f1e26",
     "catalog": "c47246e297c585045e1e3b05118f10e3b6dae4323e46acab489b75dc71cbf48a",
-    "vectors": "ab237f766e54d83160ee66cc24a209a8508944b41ce3aeeb185f858b03398a8a"
+    "vectors": "ab237f766e54d83160ee66cc24a209a8508944b41ce3aeeb185f858b03398a8a",
+    "itemizer_code": "5e2af1e0f78c91c6b9408f48e9be9358b7c297269ecaaf63fa0158e8a809c663"
   },
   "verification_scope": "All pages viewed; informative visual regions described; not all table cells independently transcribed.",
   "limitations": [

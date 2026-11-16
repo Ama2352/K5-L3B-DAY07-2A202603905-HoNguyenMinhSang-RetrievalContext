@@ -37,6 +37,13 @@ def main():
         'pages':[{'page':page['page'],'image_sha256':page['image_sha256'],'bbox_points':page['bbox_points'],
                   'page_image':page['page_image'],'text_characters':len(page['text']),
                   'region_count':len(page['visual'].get('regions',[]))} for page in catalog['pages']]}
+    from src.advanced.evidence_items import EvidenceItems
+    items=EvidenceItems(None,args.data,retrieval_mode='bm25')
+    manifest['index']['bm25_evidence_items']=len(items.items)
+    manifest['index']['bm25_item_pages']=len({row['page'] for row in items.items})
+    manifest['index']['bm25_item_kinds']=dict(Counter(row['metadata']['evidence_type'] for row in items.items))
+    manifest['index']['query_constraints']='Only question-derived modality, unit and explicit financial-section conditions; no benchmark/gold input.'
+    manifest['hashes']['itemizer_code']=digest(Path('src/advanced/evidence_items.py'))
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(redact(manifest),ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print('Exported127-page index provenance:',args.output)

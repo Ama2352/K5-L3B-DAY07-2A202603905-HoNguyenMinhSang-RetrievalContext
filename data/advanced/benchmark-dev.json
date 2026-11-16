@@ -1,5 +1,95 @@
 [
   {
+    "id": "adv-dev-caption-precision",
+    "split": "dev",
+    "group": "image",
+    "question": "Who is pictured with the NASA administrator viewing the eclipse?",
+    "expected_answer": "Snoopy.",
+    "evidence": [
+      {
+        "page": 9,
+        "region": "Did You Know photograph and adjacent caption",
+        "source_value": "Administrator Bill Nelson and Snoopy"
+      }
+    ],
+    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering",
+    "origin_case": "adv-test-image-02"
+  },
+  {
+    "id": "adv-dev-year-order",
+    "split": "dev",
+    "group": "chart",
+    "question": "According to the comparative gross-cost chart, by how much did the Technology Demonstration cost under Strategic Goal 3 increase from FY 2023 to FY 2024?",
+    "expected_answer": "$32 million.",
+    "evidence": [
+      {
+        "page": 33,
+        "region": "Strategic Goal 3 Technology Demonstration bar pair",
+        "source_value": "$369 million in FY 2024 minus $337 million in FY 2023 equals $32 million"
+      }
+    ],
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering",
+    "origin_case": "adv-test-chart-05"
+  },
+  {
+    "id": "adv-dev-earned-revenue",
+    "split": "dev",
+    "group": "table",
+    "question": "What was Strategic Goal 3 earned revenue in FY 2024?",
+    "expected_answer": "$146 million.",
+    "evidence": [
+      {
+        "page": 51,
+        "region": "Strategic Goal 3; Less: Earned Revenue row; 2024 column",
+        "source_value": "$146 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering",
+    "origin_case": "adv-test-table-02"
+  },
+  {
+    "id": "adv-dev-obligated-balance",
+    "split": "dev",
+    "group": "table",
+    "question": "What was the obligated balance not yet disbursed in FY 2024?",
+    "expected_answer": "$14,280 million.",
+    "evidence": [
+      {
+        "page": 60,
+        "region": "Note 2, Status of Fund Balance with Treasury; Obligated Balance Not Yet Disbursed; 2024 column",
+        "source_value": "$14,280 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering",
+    "origin_case": "adv-test-table-05"
+  },
+  {
+    "id": "adv-dev-public-net",
+    "split": "dev",
+    "group": "table",
+    "question": "What was the net amount due from the public in FY 2023?",
+    "expected_answer": "$1 million.",
+    "evidence": [
+      {
+        "page": 61,
+        "region": "Note 4, 2023 table; Public row; Net Amount Due column",
+        "source_value": "$1 million"
+      }
+    ],
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering",
+    "origin_case": "adv-test-table-06"
+  },
+  {
     "id": "adv-dev-chart-01",
     "split": "dev",
     "group": "chart",
@@ -10,23 +100,6 @@
         "page": 32,
         "region": "Net Cost of Operations by Strategic Goal chart; lower-right Goal 2 label",
         "source_value": "44%"
-      }
-    ],
-    "review": "Visually checked against the rendered PDF page; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
-    "id": "adv-dev-chart-02",
-    "split": "dev",
-    "group": "chart",
-    "question": "According to the comparative gross cost chart, by how many millions of dollars did the FY 2024 total exceed the FY 2023 total?",
-    "expected_answer": "$318 million.",
-    "evidence": [
-      {
-        "page": 33,
-        "region": "Comparative Gross Cost of Operations, upper-right total labels",
-        "source_value": "$26,551 million in 2024; $26,233 million in 2023; 26,551 - 26,233 = 318"
       }
     ],
     "review": "Visually checked against the rendered PDF page; draft, not frozen.",
@@ -51,23 +124,6 @@
     "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
-    "id": "adv-dev-image-01",
-    "split": "dev",
-    "group": "image",
-    "question": "In the Apollo 11 anniversary photograph, what stands beside the astronaut and what spacecraft appears to the left?",
-    "expected_answer": "A deployed United States flag stands beside the astronaut, and the Lunar Module is on the left.",
-    "evidence": [
-      {
-        "page": 4,
-        "region": "Large Apollo 11 photograph and its caption at the bottom",
-        "source_value": "United States flag; Lunar Module on the left"
-      }
-    ],
-    "review": "Image and caption visually checked against the rendered PDF page; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
     "id": "adv-dev-text-01",
     "split": "dev",
     "group": "text",
@@ -88,8 +144,8 @@
     "id": "adv-dev-multihop-01",
     "split": "dev",
     "group": "multi-hop",
-    "question": "How much higher was Strategic Goal 2's FY 2024 gross cost than its FY 2024 net cost, according to the two financial charts?",
-    "expected_answer": "$386 million higher.",
+    "question": "Give Strategic Goal 2 FY 2024 gross cost and net cost from the two financial charts. Cite both sources.",
+    "expected_answer": "$11,306 million gross cost and $10,920 million net cost.",
     "evidence": [
       {
         "page": 32,
@@ -117,40 +173,6 @@
         "page": 34,
         "region": "Sources of Funding FY 2024 doughnut chart, lower-right label",
         "source_value": "83% Congressional appropriations"
-      }
-    ],
-    "review": "Visually checked against the rendered PDF page; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
-    "id": "adv-dev-table-02",
-    "split": "dev",
-    "group": "table",
-    "question": "In Note 8, what were total liabilities in FY 2024?",
-    "expected_answer": "$7,664 million.",
-    "evidence": [
-      {
-        "page": 64,
-        "region": "Note 8 table, Total Liabilities row, 2024 column",
-        "source_value": "$7,664 million"
-      }
-    ],
-    "review": "Visually checked against the rendered PDF page; draft, not frozen.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
-    "id": "adv-dev-text-02",
-    "split": "dev",
-    "group": "text",
-    "question": "What did NASA name Building 12 to honor at the Johnson Space Center?",
-    "expected_answer": "The Dorothy Vaughan Center in Honor of the Women of Apollo.",
-    "evidence": [
-      {
-        "page": 5,
-        "region": "NASA Johnson Dedicates Building to Dorothy Vaughan, Women of Apollo; fourth paragraph",
-        "source_value": "Dorothy Vaughan Center in Honor of the Women of Apollo"
       }
     ],
     "review": "Visually checked against the rendered PDF page; draft, not frozen.",
@@ -209,23 +231,6 @@
     "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
-    "id": "adv-dev-table-04",
-    "split": "dev",
-    "group": "table",
-    "question": "What were total undelivered orders at the end of FY 2024?",
-    "expected_answer": "$12,214 million.",
-    "evidence": [
-      {
-        "page": 70,
-        "region": "Note 14 table, Total Undelivered Orders row, 2024 column",
-        "source_value": "$12,214 million"
-      }
-    ],
-    "review": "Table visually checked; draft.",
-    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
-    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
-  },
-  {
     "id": "adv-dev-text-03",
     "split": "dev",
     "group": "text",
@@ -246,8 +251,8 @@
     "id": "adv-dev-multihop-02",
     "split": "dev",
     "group": "multi-hop",
-    "question": "By how much did FY 2024 total funding exceed FY 2024 total undelivered orders?",
-    "expected_answer": "$17,837 million.",
+    "question": "Give FY 2024 total funding and total undelivered orders. Cite the two source pages.",
+    "expected_answer": "$30,051 million funding and $12,214 million undelivered orders.",
     "evidence": [
       {
         "page": 34,
@@ -299,5 +304,93 @@
     "review": "Absence checked across all 127 original-PDF page texts and the source-only visual catalog; original pages 4 and 102 visually reviewed, distinguishing exact-word flag from flagship. AI-assisted source review, not independent human adjudication.",
     "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
     "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
+  },
+  {
+    "id": "adv-dev-v2-chart-04",
+    "split": "dev",
+    "group": "chart",
+    "question": "In the FY 2024 liabilities-by-type chart, what percentage is Environmental and Disposal Liabilities?",
+    "expected_answer": "31%.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "evidence": [
+      {
+        "page": 31,
+        "region": "FY2024 donut, dark-green Environmental and Disposal Liabilities callout"
+      }
+    ],
+    "validation": "Original rendered source regions inspected; verify every run answer and citation against original.",
+    "origin_case": "adv2-test-chart-04"
+  },
+  {
+    "id": "adv-dev-v2-table-04",
+    "split": "dev",
+    "group": "table",
+    "question": "In the budgetary resources statement, what is New Obligations and Upward Adjustments (Total) in the 2024 column, in millions of dollars?",
+    "expected_answer": "$27,170 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "evidence": [
+      {
+        "page": 53,
+        "region": "Status of Budgetary Resources, New Obligations and Upward Adjustments (Total), 2024 column"
+      }
+    ],
+    "validation": "Original rendered source regions inspected; verify every run answer and citation against original.",
+    "origin_case": "adv2-test-table-04"
+  },
+  {
+    "id": "adv-dev-v2-table-06",
+    "split": "dev",
+    "group": "table",
+    "question": "In the consolidated balance sheets, what is Accounts Payable under Liabilities With the Public in the 2024 column, in millions of dollars?",
+    "expected_answer": "$1,746 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "evidence": [
+      {
+        "page": 50,
+        "region": "Liabilities With the Public, Accounts Payable row, 2024 column"
+      }
+    ],
+    "validation": "Original rendered source regions inspected; verify every run answer and citation against original.",
+    "origin_case": "adv2-test-table-06"
+  },
+  {
+    "id": "adv-dev-v2-multi-hop-01",
+    "split": "dev",
+    "group": "multi-hop",
+    "question": "Identify the Canadian astronaut in the Artemis II crew photograph and give FY 2024 Total Unexpended Appropriations from the changes-in-net-position statement.",
+    "expected_answer": "Jeremy Hansen; $13,157 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "evidence": [
+      {
+        "page": 2,
+        "region": "Crew photograph caption identifying Jeremy Hansen"
+      },
+      {
+        "page": 52,
+        "region": "Total Unexpended Appropriations, 2024 column"
+      }
+    ],
+    "validation": "Original rendered source regions inspected; verify every run answer and citation against original.",
+    "origin_case": "adv2-test-multi-hop-01"
+  },
+  {
+    "id": "adv-dev-v2-multi-hop-03",
+    "split": "dev",
+    "group": "multi-hop",
+    "question": "Name the display technology in the cover-image caption and give Appropriations in the FY 2024 budgetary resources statement.",
+    "expected_answer": "Augmented reality (AR); $24,876 million.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "evidence": [
+      {
+        "page": 2,
+        "region": "Cover-image caption describing AR display"
+      },
+      {
+        "page": 53,
+        "region": "Budgetary Resources, Appropriations, 2024 column"
+      }
+    ],
+    "validation": "Original rendered source regions inspected; verify every run answer and citation against original.",
+    "origin_case": "adv2-test-multi-hop-03"
   }
 ]
