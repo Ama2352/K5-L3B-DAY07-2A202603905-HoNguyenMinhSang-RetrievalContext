@@ -93,6 +93,23 @@ class FunctionToolTests(unittest.TestCase):
         self.assertEqual(trace['status'], 'error')
         self.assertEqual(trace['tool_counts']['search_bm25']['failed'], 1)
 
+    def test_visual_context_is_sent_but_image_data_is_not_saved(self):
+        calls = []
+        def model(_model, messages, _tools, _timeout):
+            calls.append(list(messages))
+            if len(calls) == 1:
+                return {'message': {'role': 'assistant', 'tool_calls': [{'function': {
+                    'name': 'search_bm25', 'arguments': {'query': 'evidence'}}}]}}, .1
+            return {'message': {'role': 'assistant', 'content': 'Evidence [C1]'}}, .1
+        def provider(_results):
+            return [{'page': 4, 'path': 'rendered/page.png', 'data': 'IMAGE_PAYLOAD_TEST'}]
+        with patch('function_agent.call_model', side_effect=model):
+            trace = run('question', 'test-model', FakeTools(), image_provider=provider)
+        self.assertEqual(trace['status'], 'answered')
+        self.assertEqual(calls[1][-1]['images'], ['IMAGE_PAYLOAD_TEST'])
+        self.assertNotIn('IMAGE_PAYLOAD_TEST', str(trace))
+        self.assertEqual(trace['visual_context'][0]['page'], 4)
+
 
 if __name__ == '__main__':
     unittest.main()

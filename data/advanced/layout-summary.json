@@ -1,0 +1,12 @@
+{
+  "pages": 127,
+  "chunks": 533,
+  "image_regions": 141,
+  "table_candidates": 59,
+  "errors": [],
+  "limitations": [
+    "Table candidates are not verified cell-level transcriptions.",
+    "Images and vector charts are linked to full-page renders but are not semantically indexed.",
+    "Visible text extraction and page layouts require source verification."
+  ]
+}

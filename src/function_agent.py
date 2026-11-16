@@ -25,11 +25,11 @@ def call_model(model, messages, tools, timeout):
 
 
 def run(question, model, tools, max_calls=3, budget=6000, timeout=180,
-        schemas=None, dispatcher=execute_tool):
+        schemas=None, dispatcher=execute_tool, image_provider=None):
     question = redact_text(question)
     start = time.perf_counter()
     trace = {'question': question, 'model': model, 'status': 'error', 'tool_calls': [], 'flow': [],
-             'model_calls': [], 'context': [], 'citations': [], 'answer': '',
+             'model_calls': [], 'context': [], 'visual_context': [], 'visual_errors': [], 'citations': [], 'answer': '',
              'context_budget_chars': budget, 'max_tool_calls': max_calls,
              'filter': None, 'filter_origin': 'No filter',
              'service_cost_usd': 0, 'cost_note': 'Local services; excludes hardware and electricity', 'error': None}
@@ -74,6 +74,7 @@ def run(question, model, tools, max_calls=3, budget=6000, timeout=180,
                                     'page': seen_chunks[i]['page'], 'metadata': seen_chunks[i].get('metadata', {})}
                                    for i in dict.fromkeys(ids)])
                 break
+            images_for_round = []
             for call in calls:
                 function = call.get('function', {}); name = function.get('name'); arguments = function.get('arguments', {})
                 if len(trace['tool_calls']) >= max_calls:
@@ -114,7 +115,13 @@ def run(question, model, tools, max_calls=3, budget=6000, timeout=180,
                     if context:
                         trace['context'].append(context)
                     content = context or 'No evidence fits the remaining context budget.'
+                    if image_provider is not None:
+                        try:
+                            images_for_round.extend(image_provider(output['results']))
+                        except Exception as exc:
+                            trace['visual_errors'].append(f'{type(exc).__name__}: {exc}')
                 except Exception as exc:
+                    event['status'] = 'error'
                     event['error'] = f'{type(exc).__name__}: {exc}'
                     content = f"Tool error: {event['error']}"
                 event['elapsed_seconds'] = time.perf_counter() - tool_start
@@ -126,6 +133,14 @@ def run(question, model, tools, max_calls=3, budget=6000, timeout=180,
                 messages.append({'role': 'tool', 'tool_name': name or 'unknown', 'content': content})
             if trace['status'] == 'abstain':
                 break
+            if images_for_round:
+                page_numbers = [item['page'] for item in images_for_round]
+                messages.append({'role': 'user', 'content': f'The attached images show PDF pages {page_numbers} in that order. '
+                                 'Use them as source data and cite the relevant retrieved text labels.',
+                                 'images': [item['data'] for item in images_for_round]})
+                trace['visual_context'].extend({'page': item['page'], 'path': item['path']} for item in images_for_round)
+                trace['flow'].append({'step': len(trace['flow']) + 1, 'event': 'visual_context_added',
+                                      'pages': page_numbers})
         else:
             trace.update(status='abstain', answer='Insufficient evidence within the model-call limit.')
     except Exception as exc:
@@ -135,6 +150,8 @@ def run(question, model, tools, max_calls=3, budget=6000, timeout=180,
             and not any(call['status'] == 'ok' for call in trace['tool_calls'])
             and any(call['status'] == 'error' for call in trace['tool_calls'])):
         trace.update(status='error', answer='', error='No retrieval tool call succeeded; see tool errors.')
+    if trace['visual_errors']:
+        trace.update(status='error', error='One or more page images could not be supplied; see visual_errors.')
     trace['context'] = '\n\n'.join(trace['context'])
     trace['citation_map'] = {label: {'id': chunk['id'], 'source': chunk['source'], 'page': chunk['page'],
                                      'metadata': chunk.get('metadata', {})}
