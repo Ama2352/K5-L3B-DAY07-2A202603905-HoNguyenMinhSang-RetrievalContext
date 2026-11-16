@@ -111,7 +111,10 @@ def run(question, model, tools, max_calls=3, budget=6000, timeout=180,
                             seen_chunks[label] = chunk
                     context = '\n\n'.join(blocks)
                     event.update(status='ok', results=output['results'], steps=output['steps'],
-                                 candidate_count=len(output['results']), context=context, context_ids=ids)
+                                 returned_count=len(output['results']),
+                                 stage_candidate_counts=[{'method': step.get('method'),
+                                     'count': len(step['results'])} for step in output['steps'] if 'results' in step],
+                                 context=context, context_ids=ids)
                     if context:
                         trace['context'].append(context)
                     content = context or 'No evidence fits the remaining context budget.'

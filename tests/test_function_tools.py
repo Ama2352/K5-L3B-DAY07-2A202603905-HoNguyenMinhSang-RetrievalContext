@@ -57,6 +57,7 @@ class FunctionToolTests(unittest.TestCase):
         self.assertEqual(trace['citations'][0]['page'], 4)
         self.assertIn('search_bm25', trace['display_answer'])
         self.assertEqual(trace['tool_calls'][0]['arguments']['query'], 'evidence')
+        self.assertEqual(trace['tool_calls'][0]['returned_count'], 1)
         self.assertEqual(trace['tool_counts']['search_bm25'], {'attempted': 1, 'succeeded': 1, 'failed': 0})
         self.assertEqual([s['event'] for s in trace['flow']],
                          ['model_request', 'model_response', 'tool_call_started', 'tool_call_finished',

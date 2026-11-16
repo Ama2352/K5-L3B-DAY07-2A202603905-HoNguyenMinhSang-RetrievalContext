@@ -12,7 +12,9 @@
         "source_value": "NASA insignia printed using GRX-810"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-image-02",
@@ -27,7 +29,9 @@
         "source_value": "Administrator Bill Nelson and Snoopy"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-image-03",
@@ -42,7 +46,9 @@
         "source_value": "Kate Rubins uses a hammer on a drive tube"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-image-04",
@@ -57,7 +63,9 @@
         "source_value": "Rocket Lab Electron rocket carrying the first PREFIRE CubeSat"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-image-05",
@@ -72,7 +80,9 @@
         "source_value": "SLS core stage transported to the Vehicle Assembly Building"
       }
     ],
-    "review": "Image and caption visually checked against rendered original; draft, not frozen."
+    "review": "Image and caption visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-chart-01",
@@ -87,7 +97,9 @@
         "source_value": "8 goals"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-chart-02",
@@ -102,7 +114,9 @@
         "source_value": "$19,416 million"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-chart-03",
@@ -117,7 +131,9 @@
         "source_value": "$9,331 million"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-chart-04",
@@ -132,7 +148,9 @@
         "source_value": "25%"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-chart-05",
@@ -147,7 +165,9 @@
         "source_value": "$369 million in FY 2024 minus $337 million in FY 2023 equals $32 million"
       }
     ],
-    "review": "Chart and labels visually checked against rendered original; draft, not frozen."
+    "review": "Chart and labels visually checked against rendered original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-table-01",
@@ -162,7 +182,9 @@
         "source_value": "$26 million"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-table-02",
@@ -177,7 +199,9 @@
         "source_value": "$146 million"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-table-03",
@@ -192,7 +216,9 @@
         "source_value": "$231 million"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-table-04",
@@ -207,7 +233,9 @@
         "source_value": "$2,881 million"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-table-05",
@@ -222,7 +250,9 @@
         "source_value": "$14,280 million"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-table-06",
@@ -237,7 +267,9 @@
         "source_value": "$1 million"
       }
     ],
-    "review": "Row, column, year and units visually checked against original; draft, not frozen."
+    "review": "Row, column, year and units visually checked against original; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-text-01",
@@ -252,7 +284,9 @@
         "source_value": "Audited FY 2024 and FY 2023 financial statements"
       }
     ],
-    "review": "Text visually checked; draft, not frozen."
+    "review": "Text visually checked; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-text-02",
@@ -267,7 +301,9 @@
         "source_value": "Safety, Integrity, Inclusion, Teamwork, and Excellence"
       }
     ],
-    "review": "Text visually checked; draft, not frozen."
+    "review": "Text visually checked; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-text-03",
@@ -282,7 +318,9 @@
         "source_value": "NASA Headquarters, located in Washington, DC"
       }
     ],
-    "review": "Text visually checked; draft, not frozen."
+    "review": "Text visually checked; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-text-04",
@@ -297,7 +335,9 @@
         "source_value": "Polar Radiant Energy in the Far-Infrared Experiment"
       }
     ],
-    "review": "Text visually checked; draft, not frozen."
+    "review": "Text visually checked; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-multihop-01",
@@ -317,7 +357,9 @@
         "source_value": "$25,015 million"
       }
     ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-multihop-02",
@@ -337,7 +379,9 @@
         "source_value": "$10,920 million"
       }
     ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-multihop-03",
@@ -357,7 +401,9 @@
         "source_value": "$124 million; 15 + 124 = 139 million"
       }
     ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-multihop-04",
@@ -377,7 +423,9 @@
         "source_value": "$25,015 million; 25,015 - 24,900 = 115 million"
       }
     ],
-    "review": "Both source pages visually checked; draft, not frozen; both locations required."
+    "review": "Both source pages visually checked; draft, not frozen; both locations required.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-u01",
@@ -387,7 +435,9 @@
     "answerable": false,
     "expected_behavior": "search_and_abstain",
     "absence_reason": "No licensing fee or license fee phrase in extracted 127-page text; page 8 only identifies four licensees in aggregate.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-u02",
@@ -397,7 +447,9 @@
     "answerable": false,
     "expected_behavior": "search_and_abstain",
     "absence_reason": "No photographs were taken phrase in extracted text; page 14 caption describes a sample-collection exercise.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-u03",
@@ -407,7 +459,9 @@
     "answerable": false,
     "expected_behavior": "search_and_abstain",
     "absence_reason": "No average age phrase in extracted text; page 13 lists counts, not ages.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-u04",
@@ -417,7 +471,9 @@
     "answerable": false,
     "expected_behavior": "search_and_abstain",
     "absence_reason": "No liters of fuel phrase in extracted text; inspect propellant/fuel synonyms and visual regions before freezing.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-u05",
@@ -427,7 +483,9 @@
     "answerable": false,
     "expected_behavior": "search_and_abstain",
     "absence_reason": "No battery mass phrase in extracted text; inspect battery synonyms and visual regions before freezing.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   },
   {
     "id": "adv-test-u06",
@@ -437,6 +495,8 @@
     "answerable": false,
     "expected_behavior": "search_and_abstain",
     "absence_reason": "No specific training count identified in the GRX-810 source page; check full document and visual regions before freezing.",
-    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen."
+    "review": "Provisional keyword check only; full-document and visual absence audit required; draft, not frozen.",
+    "source": "https://www.nasa.gov/wp-content/uploads/2023/11/nasa-fy-2024-afr-1.pdf",
+    "source_version": "NASA FY 2024 Agency Financial Report, physical PDF page numbering"
   }
 ]

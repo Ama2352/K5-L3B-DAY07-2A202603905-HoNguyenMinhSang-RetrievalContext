@@ -13,6 +13,7 @@ From the repo, after obtaining the exact PDF as `data/advanced/nasa-fy-2024-afr.
 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion/.venv/Scripts/python.exe src/advanced_text_index.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion
 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion/.venv/Scripts/python.exe src/advanced_layout_index.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion --pdf data/advanced/nasa-fy-2024-afr.pdf
 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion/.venv/Scripts/python.exe src/advanced_layout_agent.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion --question "What are NASA's core values?" --output tmp/advanced-example.json
+../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion/.venv/Scripts/python.exe src/advanced_layout_dev.py --day6 ../../lab6/K5-L3B-DAY06-2A202603905-DataIngestion --output tmp/advanced-dev.json
 ```
 
 `data/advanced/benchmark-dev-draft.json` contains 15 answerable dev examples covering charts, tables, photographs, text and two multi-hop calculations, plus three provisional missing-evidence examples. `benchmark-test-draft.json` contains 30 separate test drafts: six tables, five images, five charts, four multi-hop, four text and six missing-evidence cases. The answerable evidence was checked against rendered original pages. Absence checks cover extracted text but not every visual region; the questions, independence and absences still require full review. Neither draft is frozen or has been run.
