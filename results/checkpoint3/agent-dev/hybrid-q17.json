@@ -1,0 +1,159 @@
+{
+  "query_id": "q17",
+  "question": "Why do the authors suspect that shrinking the pre-training dataset can hurt downstream performance?",
+  "split": "dev",
+  "method": "hybrid",
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "budget_chars": 6000,
+  "service_cost_usd": 0,
+  "status": "abstain",
+  "answer": "Không đủ bằng chứng để trả lời.",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "query": "shrinking pre-training dataset impact on downstream performance",
+      "filter": null,
+      "results": [
+        {
+          "id": "9bc23bbb3a85aa315fe5f89c50acfad2",
+          "text": "Like the unsupervised objective, the pre-training data set itself is a crucial component of the transfer learning pipeline. However, unlike objectives and benchmarks, new pre-training data sets are usually not treated as significant contributions on their own and are often not released alongside pre-trained models and code. Instead, they are typically introduced in the course of presenting a new method or model. As a result, there has been relatively little comparison of different pre-training data sets as well as a lack of a “standard” data set used for pre-training. Some recent notable exceptions (Baevski et al., 2019; Liu et al., 2019c; Yang et al., 2019) have compared pre-training on a new large (often Common Crawl-sourced) data set to using a smaller preexisting data set (often Wikipedia). To probe more deeply into the impact of the pre-training data set on performance, in this section we compare variants of our C4 data set and other potential sources of pre-training data. We rele",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 25,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 774,
+            "end": 1774
+          },
+          "score": 0.032266458495966696,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "b1f649012fbe413e436b9b6e71d3d68e",
+          "text": "The resulting downstream performance is shown in Table 9. As expected, performance degrades as the data set size shrinks. We suspect this may be due to the fact that the model begins to memorize the pre-training data set. To measure if this is true, we plot the training loss for each of these data set sizes in Figure 6. Indeed, the model attains significantly smaller training losses as the size of the pre-training data set shrinks, suggesting possible memorization. Baevski et al. (2019) similarly observed that truncating the pre-training data set size can degrade downstream task performance.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 28,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 750,
+            "end": 1348
+          },
+          "score": 0.032266458495966696,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "2ecebf7620583e8b81fd39651835d68d",
+          "text": "Multi-task pre-training In Section 3.5.3, we showed that pre-training on a multi-task mixture of unsupervised and supervised tasks before fine-tuning worked as well as pre-training on the unsupervised task alone. This is the approach advocated by the “MT-DNN” (Liu et al., 2015, 2019b). It also has the practical benefit of being able to monitor “downstream” performance for the entire duration of training, rather than just during fine-tuning. We therefore used multi-task pre-training in our final set of experiments. We hypothesize that larger models trained for longer might benefit from a larger proportion of unlabeled data because they are more likely to overfit to smaller training data sets. However, we also note that the results of Section 3.5.3 suggest that fine-tuning after multi-task pre-training can mitigate some of the issues that might arise from choosing a suboptimal proportion of unlabeled data. Based on these ideas, we substitute the following artificial data set sizes for ou",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 37,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 508,
+            "end": 1508
+          },
+          "score": 0.030834914611005692,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "6fac90ce2fa0ba4df48b9ba8df3efe45",
+          "text": "The pipeline we use to create C4 was designed to be able to create extremely large pre-training data sets. The access to so much data allows us to pre-train our models without repeating examples. It is not clear whether repeating examples during pre-training would be helpful or harmful to downstream performance because our pre-training objective is itself stochastic and can help prevent the model from seeing the same exact data multiple times.\n\nTo test the effect of limited unlabeled data set sizes, we pre-trained our baseline model on artificially truncated versions of C4. Recall that we pre-train our baseline model on 235≈ 34B tokens (a small fraction of the total size of C4). We consider training on truncated variants of C4 consisting of 229, 227, 225 and 223 tokens. These sizes correspond to repeating the data set 64, 256, 1,024, and 4,096 times respectively over the course of pre-training.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 27,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2661,
+            "end": 3568
+          },
+          "score": 0.030776515151515152,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "bfd3ca9beb998bfd42e90df1533428bb",
+          "text": "supervised tasks. This is the method used by the “MT-DNN” (Liu et al., 2015, 2019b),\n\nwhich achieved state-of-the-art performance on GLUE and other benchmarks when it was\n\nintroduced. We consider three variants of this approach: In the first, we simply pre-train the\n\nmodel on an examples-proportional mixture with an artificial data set size limit of K = 219\n\nbefore fine-tuning it on each individual downstream task. This helps us measure whether\n\nincluding the supervised tasks alongside the unsupervised objective during pre-training\n\ngives the model some beneficial early exposure to the downstream tasks. We might also\n\nhope that mixing in many sources of supervision could help the pre-trained model obtain a\n\nmore general set of “skills” (loosely speaking) before it is adapted to an individual task. To\n\nmeasure this directly, we consider a second variant where we pre-train the model on the same\n\nexamples-proportional mixture (with K = 219) except that we omit one of the downstream",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 33,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 987,
+            "end": 1980
+          },
+          "score": 0.030536130536130537,
+          "strategy": "tfidf"
+        }
+      ],
+      "context": "[9bc23bbb3a85aa315fe5f89c50acfad2 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 25]\nLike the unsupervised objective, the pre-training data set itself is a crucial component of the transfer learning pipeline. However, unlike objectives and benchmarks, new pre-training data sets are usually not treated as significant contributions on their own and are often not released alongside pre-trained models and code. Instead, they are typically introduced in the course of presenting a new method or model. As a result, there has been relatively little comparison of different pre-training data sets as well as a lack of a “standard” data set used for pre-training. Some recent notable exceptions (Baevski et al., 2019; Liu et al., 2019c; Yang et al., 2019) have compared pre-training on a new large (often Common Crawl-sourced) data set to using a smaller preexisting data set (often Wikipedia). To probe more deeply into the impact of the pre-training data set on performance, in this section we compare variants of our C4 data set and other potential sources of pre-training data. We rele\n\n[b1f649012fbe413e436b9b6e71d3d68e | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 28]\nThe resulting downstream performance is shown in Table 9. As expected, performance degrades as the data set size shrinks. We suspect this may be due to the fact that the model begins to memorize the pre-training data set. To measure if this is true, we plot the training loss for each of these data set sizes in Figure 6. Indeed, the model attains significantly smaller training losses as the size of the pre-training data set shrinks, suggesting possible memorization. Baevski et al. (2019) similarly observed that truncating the pre-training data set size can degrade downstream task performance.\n\n[2ecebf7620583e8b81fd39651835d68d | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 37]\nMulti-task pre-training In Section 3.5.3, we showed that pre-training on a multi-task mixture of unsupervised and supervised tasks before fine-tuning worked as well as pre-training on the unsupervised task alone. This is the approach advocated by the “MT-DNN” (Liu et al., 2015, 2019b). It also has the practical benefit of being able to monitor “downstream” performance for the entire duration of training, rather than just during fine-tuning. We therefore used multi-task pre-training in our final set of experiments. We hypothesize that larger models trained for longer might benefit from a larger proportion of unlabeled data because they are more likely to overfit to smaller training data sets. However, we also note that the results of Section 3.5.3 suggest that fine-tuning after multi-task pre-training can mitigate some of the issues that might arise from choosing a suboptimal proportion of unlabeled data. Based on these ideas, we substitute the following artificial data set sizes for ou\n\n[6fac90ce2fa0ba4df48b9ba8df3efe45 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 27]\nThe pipeline we use to create C4 was designed to be able to create extremely large pre-training data sets. The access to so much data allows us to pre-train our models without repeating examples. It is not clear whether repeating examples during pre-training would be helpful or harmful to downstream performance because our pre-training objective is itself stochastic and can help prevent the model from seeing the same exact data multiple times.\n\nTo test the effect of limited unlabeled data set sizes, we pre-trained our baseline model on artificially truncated versions of C4. Recall that we pre-train our baseline model on 235≈ 34B tokens (a small fraction of the total size of C4). We consider training on truncated variants of C4 consisting of 229, 227, 225 and 223 tokens. These sizes correspond to repeating the data set 64, 256, 1,024, and 4,096 times respectively over the course of pre-training.\n\n[bfd3ca9beb998bfd42e90df1533428bb | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 33]\nsupervised tasks. This is the method used by the “MT-DNN” (Liu et al., 2015, 2019b),\n\nwhich achieved state-of-the-art performance on GLUE and other benchmarks when it was\n\nintroduced. We consider three variants of this approach: In the first, we simply pre-train the\n\nmodel on an examples-proportional mixture with an artificial data set size limit of K = 219\n\nbefore fine-tuning it on each individual downstream task. This helps us measure whether\n\nincluding the supervised tasks alongside the unsupervised objective during pre-training\n\ngives the model some beneficial early exposure to the downstream tasks. We might also\n\nhope that mixing in many sources of supervision could help the pre-trained model obtain a\n\nmore general set of “skills” (loosely speaking) before it is adapted to an individual task. To\n\nmeasure this directly, we consider a second variant where we pre-train the model on the same\n\nexamples-proportional mixture (with K = 219) except that we omit one of the downstream",
+      "context_ids": [
+        "9bc23bbb3a85aa315fe5f89c50acfad2",
+        "b1f649012fbe413e436b9b6e71d3d68e",
+        "2ecebf7620583e8b81fd39651835d68d",
+        "6fac90ce2fa0ba4df48b9ba8df3efe45",
+        "bfd3ca9beb998bfd42e90df1533428bb"
+      ]
+    },
+    {
+      "event": "invalid_or_missing_citations"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 4.265013300000646,
+      "prompt_eval_count": 169,
+      "eval_count": 18,
+      "action": {
+        "action": "search",
+        "query": "shrinking pre-training dataset impact on downstream performance"
+      }
+    },
+    {
+      "duration_seconds": 45.55616410000039,
+      "prompt_eval_count": 1529,
+      "eval_count": 45,
+      "action": {
+        "action": "answer",
+        "answer": "Shrinking the pre-training dataset may hurt downstream performance because the model may start to memorize the data, leading to decreased performance as the dataset size shrinks. [1]"
+      }
+    }
+  ],
+  "elapsed_seconds": 49.96926340000027
+}

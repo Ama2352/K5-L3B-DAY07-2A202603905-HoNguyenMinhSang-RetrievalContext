@@ -1,0 +1,164 @@
+{
+  "query_id": "q13",
+  "question": "What fraction of input tokens does the baseline denoising objective drop, and how are consecutive dropped spans represented?",
+  "split": "dev",
+  "method": "hybrid",
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "budget_chars": 6000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "The baseline denoising objective drops 15% of input tokens. Consecutive dropped spans are represented by a single unique mask token. [1a89a28c8f855f22b29f8cc7183e6cbd]",
+  "citations": [
+    "1a89a28c8f855f22b29f8cc7183e6cbd"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "baseline denoising objective token fraction and representation of consecutive dropped spans",
+      "filter": null,
+      "results": [
+        {
+          "id": "59c72f39f503774139438fefabe0c16e",
+          "text": "Figure 5: A flow chart of our exploration of unsupervised objectives. We first consider a few disparate approaches in Section 3.3.1 and find that a BERT-style denoising objective performs best. Then, we consider various methods for simplifying the BERT objective so that it produces shorter target sequences in Section 3.3.2. Given that replacing dropped-out spans with sentinel tokens performs well and results in short target sequences, in Section 3.3.3 we experiment with different corruption rates. Finally, we evaluate an objective that intentionally corrupts contiguous spans of tokens in Section 3.3.4.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 24,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 474,
+            "end": 1083
+          },
+          "score": 0.032018442622950824,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "1a89a28c8f855f22b29f8cc7183e6cbd",
+          "text": "“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 13,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 637,
+            "end": 1637
+          },
+          "score": 0.03177805800756621,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "8e9184fd3a2c276bc931255dcc63d4a2",
+          "text": "As an unsupervised objective, we will consider both a basic language modeling objective as well as our baseline denoising objective described in Section 3.1.4. We include the language modeling objective due to its historic use as a pre-training objective (Dai and Le, 2015; Ramachandran et al., 2016; Howard and Ruder, 2018; Radford et al., 2018; Peters et al., 2018) as well as its natural fit for the language model architectures we consider. For models that ingest a prefix before making predictions (the encoder-decoder model and prefix LM), we sample a span of text from our unlabeled data set and choose a random point to split it into prefix and target portions. For the standard language model, we train the model to predict the entire span from beginning to end. Our unsupervised denoising objective is designed for text-to-text models; to adapt it for use with a language model we concatenate the inputs and targets as described in Section 3.2.1.\n\n3.2.4. Results",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 19,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 870,
+            "end": 1842
+          },
+          "score": 0.030621785881252923,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "aae16a9ffa4d9b0d9b687c27e38472ac",
+          "text": "We now turn towards the goal of speeding up training by predicting shorter targets. The approach we have used so far makes an i.i.d. decision for each input token as to whether to corrupt it or not. When multiple consecutive tokens have been corrupted, they are treated as a “span” and a single unique mask token is used to replace the entire span. Replacing entire spans with a single token results in unlabeled text data being processed into shorter sequences. Since we are using an i.i.d. corruption strategy, it is not always the case that a significant number of corrupted tokens appear consecutively. As a result, we might obtain additional speedup by specifically corrupting spans of tokens rather than corrupting individual tokens in an i.i.d. manner. Corrupting spans was also previously considered as a pre-training objective for BERT, where it was found to improve performance (Joshi et al., 2019).",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 23,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 1324,
+            "end": 2233
+          },
+          "score": 0.030536130536130537,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "53c5d827e089f09653664bd05e99c59d",
+          "text": "First, we consider a simple variant of the BERT-style objective where we don’t include the random token swapping step. The resulting objective simply replaces 15% of the tokens in the input with a mask token and the model is trained to reconstruct the original uncorrupted sequence. A similar masking objective was used by Song et al. (2019) where it was referred to as “MASS”, so we call this variant the “MASS-style” objective. Second, we were interested to see if it was possible to avoid predicting the entire uncorrupted text span since this requires self-attention over long sequences in the decoder. We consider two strategies to achieve this: First, instead of replacing each corrupted token with a mask token, we replace the entirety of each consecutive span of corrupted tokens with a unique mask token. Then, the target sequence becomes the concatenation of the “corrupted” spans, each prefixed by the mask token used to replace it in the input. This is the pre-training objective we use i",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 22,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 1025,
+            "end": 2025
+          },
+          "score": 0.030017921146953404,
+          "strategy": "tfidf"
+        }
+      ],
+      "context": "[59c72f39f503774139438fefabe0c16e | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 24]\nFigure 5: A flow chart of our exploration of unsupervised objectives. We first consider a few disparate approaches in Section 3.3.1 and find that a BERT-style denoising objective performs best. Then, we consider various methods for simplifying the BERT objective so that it produces shorter target sequences in Section 3.3.2. Given that replacing dropped-out spans with sentinel tokens performs well and results in short target sequences, in Section 3.3.3 we experiment with different corruption rates. Finally, we evaluate an objective that intentionally corrupts contiguous spans of tokens in Section 3.3.4.\n\n[1a89a28c8f855f22b29f8cc7183e6cbd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 13]\n“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many\n\n[8e9184fd3a2c276bc931255dcc63d4a2 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 19]\nAs an unsupervised objective, we will consider both a basic language modeling objective as well as our baseline denoising objective described in Section 3.1.4. We include the language modeling objective due to its historic use as a pre-training objective (Dai and Le, 2015; Ramachandran et al., 2016; Howard and Ruder, 2018; Radford et al., 2018; Peters et al., 2018) as well as its natural fit for the language model architectures we consider. For models that ingest a prefix before making predictions (the encoder-decoder model and prefix LM), we sample a span of text from our unlabeled data set and choose a random point to split it into prefix and target portions. For the standard language model, we train the model to predict the entire span from beginning to end. Our unsupervised denoising objective is designed for text-to-text models; to adapt it for use with a language model we concatenate the inputs and targets as described in Section 3.2.1.\n\n3.2.4. Results\n\n[aae16a9ffa4d9b0d9b687c27e38472ac | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 23]\nWe now turn towards the goal of speeding up training by predicting shorter targets. The approach we have used so far makes an i.i.d. decision for each input token as to whether to corrupt it or not. When multiple consecutive tokens have been corrupted, they are treated as a “span” and a single unique mask token is used to replace the entire span. Replacing entire spans with a single token results in unlabeled text data being processed into shorter sequences. Since we are using an i.i.d. corruption strategy, it is not always the case that a significant number of corrupted tokens appear consecutively. As a result, we might obtain additional speedup by specifically corrupting spans of tokens rather than corrupting individual tokens in an i.i.d. manner. Corrupting spans was also previously considered as a pre-training objective for BERT, where it was found to improve performance (Joshi et al., 2019).\n\n[53c5d827e089f09653664bd05e99c59d | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 22]\nFirst, we consider a simple variant of the BERT-style objective where we don’t include the random token swapping step. The resulting objective simply replaces 15% of the tokens in the input with a mask token and the model is trained to reconstruct the original uncorrupted sequence. A similar masking objective was used by Song et al. (2019) where it was referred to as “MASS”, so we call this variant the “MASS-style” objective. Second, we were interested to see if it was possible to avoid predicting the entire uncorrupted text span since this requires self-attention over long sequences in the decoder. We consider two strategies to achieve this: First, instead of replacing each corrupted token with a mask token, we replace the entirety of each consecutive span of corrupted tokens with a unique mask token. Then, the target sequence becomes the concatenation of the “corrupted” spans, each prefixed by the mask token used to replace it in the input. This is the pre-training objective we use i",
+      "context_ids": [
+        "59c72f39f503774139438fefabe0c16e",
+        "1a89a28c8f855f22b29f8cc7183e6cbd",
+        "8e9184fd3a2c276bc931255dcc63d4a2",
+        "aae16a9ffa4d9b0d9b687c27e38472ac",
+        "53c5d827e089f09653664bd05e99c59d"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 4.282653700000083,
+      "prompt_eval_count": 175,
+      "eval_count": 22,
+      "action": {
+        "action": "search",
+        "query": "baseline denoising objective token fraction and representation of consecutive dropped spans"
+      }
+    },
+    {
+      "duration_seconds": 48.09376800000064,
+      "prompt_eval_count": 1521,
+      "eval_count": 60,
+      "action": {
+        "action": "answer",
+        "answer": "The baseline denoising objective drops 15% of input tokens. Consecutive dropped spans are represented by a single unique mask token.",
+        "citations": [
+          "1a89a28c8f855f22b29f8cc7183e6cbd"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 52.50615949999974
+}

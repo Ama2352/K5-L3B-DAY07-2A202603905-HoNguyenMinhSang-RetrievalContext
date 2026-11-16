@@ -1,0 +1,34 @@
+{
+  "dense": {
+    "n": 15,
+    "hit1": 12,
+    "hit3": 13,
+    "context_hit": 13,
+    "mean_ms": 49.39556666668068,
+    "service_cost_usd": 0
+  },
+  "tfidf": {
+    "n": 15,
+    "hit1": 11,
+    "hit3": 12,
+    "context_hit": 12,
+    "mean_ms": 1.2102933333456651,
+    "service_cost_usd": 0
+  },
+  "hybrid_rrf": {
+    "n": 15,
+    "hit1": 8,
+    "hit3": 14,
+    "context_hit": 14,
+    "mean_ms": 50.66639333332811,
+    "service_cost_usd": 0
+  },
+  "hybrid_top5": {
+    "n": 15,
+    "hit1": 8,
+    "hit3": 14,
+    "context_hit": 15,
+    "mean_ms": 50.66639333332811,
+    "service_cost_usd": 0
+  }
+}

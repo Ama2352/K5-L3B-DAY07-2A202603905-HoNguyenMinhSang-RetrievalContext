@@ -1,0 +1,163 @@
+{
+  "query_id": "q19",
+  "question": "How does the scaling experiment combine model outputs in an ensemble?",
+  "split": "dev",
+  "method": "hybrid",
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "budget_chars": 6000,
+  "service_cost_usd": 0,
+  "status": "abstain",
+  "answer": "Không đủ bằng chứng để trả lời.",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "query": "scaling experiment ensemble model output combination",
+      "filter": null,
+      "results": [
+        {
+          "id": "94e809134ae4c1cf679d277c08b2d31c",
+          "text": "It is common practice on many of the benchmarks we consider to eke out additional performance by training and evaluating using an ensemble of models. This provides an orthogonal way of using additional computation. To compare other scaling methods to ensembling, we also measure the performance of an ensemble of 4 separately pre-trained and fine-tuned models. We average the logits across the ensemble before feeding them into the output softmax nonlinearity to obtain an aggregate prediction. Instead of pre-training 4",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 34,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 3118,
+            "end": 3638
+          },
+          "score": 0.03278688524590164,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "6b0eabb5e6a47b80858b53a5047946e6",
+          "text": "ificantly outperformed every other scaling approach. Ensembling models that were pre-trained together but fine-tuned separately also gave a substantial performance increase over the baseline, which suggests a cheaper means of improving performance. The only exception was SuperGLUE, where neither ensembling approach significantly improved over the baseline.\n\nWe note that different scaling methods have different trade-offs that are separate from their performance. For example, using a larger model can make downstream fine-tuning and inference more expensive. In contrast, the cost of pre-training a small model for longer is effectively amortized if it is applied to many downstream tasks. Separately, we note that ensembling N separate models has a similar cost to using a model that has an N× higher computational cost. As a result, some consideration for the eventual use of the model is important when choosing between scaling methods.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 35,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2113,
+            "end": 3056
+          },
+          "score": 0.03125763125763126,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "0537cff0a7cba06538490e45baf3d7bd",
+          "text": "To achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 40,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2461,
+            "end": 3449
+          },
+          "score": 0.029827662395050816,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "9fd30ef9eee722f4a52487b7a30d306b",
+          "text": "As part of our study, we experiment with the scalability of these models, i.e. how their performance changes as they are made to have more parameters or layers. Training large models can be non-trivial since they might not fit on a single machine and require a great deal of computation. As a result, we use a combination of model and data parallelism and train models on “slices” of Cloud TPU Pods.5 TPU pods are are multi-rack ML supercomputers that contain 1,024 TPU v3 chips connected via a high-speed 2D mesh interconnect with supporting CPU host machines. We leverage the Mesh TensorFlow library (Shazeer et al., 2018) for ease of implementation of both model parallelism and data parallelism (Krizhevsky, 2014).\n\n2.2. The Colossal Clean Crawled Corpus",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 5,
+          "metadata": {
+            "section": [
+              "2. Setup"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2448,
+            "end": 3206
+          },
+          "score": 0.029437229437229435,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "7d8b34a17581ad365e9989cb36cf7b33",
+          "text": "After outlining our baseline experimental setup in the following subsection, we undertake an empirical comparison of model architectures (Section 3.2), unsupervised objectives (Section 3.3), pre-training data sets (Section 3.4), transfer approaches (Section 3.5), and scaling (Section 3.6). At the culmination of this section, we combine insights from our study with scale to obtain state-of-the-art results in many tasks we consider (Section 3.7).",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 10,
+          "metadata": {
+            "section": [
+              "2. Setup",
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2882,
+            "end": 3330
+          },
+          "score": 0.028373015873015873,
+          "strategy": "tfidf"
+        }
+      ],
+      "context": "[94e809134ae4c1cf679d277c08b2d31c | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 34]\nIt is common practice on many of the benchmarks we consider to eke out additional performance by training and evaluating using an ensemble of models. This provides an orthogonal way of using additional computation. To compare other scaling methods to ensembling, we also measure the performance of an ensemble of 4 separately pre-trained and fine-tuned models. We average the logits across the ensemble before feeding them into the output softmax nonlinearity to obtain an aggregate prediction. Instead of pre-training 4\n\n[6b0eabb5e6a47b80858b53a5047946e6 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 35]\nificantly outperformed every other scaling approach. Ensembling models that were pre-trained together but fine-tuned separately also gave a substantial performance increase over the baseline, which suggests a cheaper means of improving performance. The only exception was SuperGLUE, where neither ensembling approach significantly improved over the baseline.\n\nWe note that different scaling methods have different trade-offs that are separate from their performance. For example, using a larger model can make downstream fine-tuning and inference more expensive. In contrast, the cost of pre-training a small model for longer is effectively amortized if it is applied to many downstream tasks. Separately, we note that ensembling N separate models has a similar cost to using a model that has an N× higher computational cost. As a result, some consideration for the eventual use of the model is important when choosing between scaling methods.\n\n[0537cff0a7cba06538490e45baf3d7bd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nTo achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.\n\n[9fd30ef9eee722f4a52487b7a30d306b | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 5]\nAs part of our study, we experiment with the scalability of these models, i.e. how their performance changes as they are made to have more parameters or layers. Training large models can be non-trivial since they might not fit on a single machine and require a great deal of computation. As a result, we use a combination of model and data parallelism and train models on “slices” of Cloud TPU Pods.5 TPU pods are are multi-rack ML supercomputers that contain 1,024 TPU v3 chips connected via a high-speed 2D mesh interconnect with supporting CPU host machines. We leverage the Mesh TensorFlow library (Shazeer et al., 2018) for ease of implementation of both model parallelism and data parallelism (Krizhevsky, 2014).\n\n2.2. The Colossal Clean Crawled Corpus\n\n[7d8b34a17581ad365e9989cb36cf7b33 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 10]\nAfter outlining our baseline experimental setup in the following subsection, we undertake an empirical comparison of model architectures (Section 3.2), unsupervised objectives (Section 3.3), pre-training data sets (Section 3.4), transfer approaches (Section 3.5), and scaling (Section 3.6). At the culmination of this section, we combine insights from our study with scale to obtain state-of-the-art results in many tasks we consider (Section 3.7).",
+      "context_ids": [
+        "94e809134ae4c1cf679d277c08b2d31c",
+        "6b0eabb5e6a47b80858b53a5047946e6",
+        "0537cff0a7cba06538490e45baf3d7bd",
+        "9fd30ef9eee722f4a52487b7a30d306b",
+        "7d8b34a17581ad365e9989cb36cf7b33"
+      ]
+    },
+    {
+      "event": "invalid_or_missing_citations"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 2.3070324000000255,
+      "prompt_eval_count": 165,
+      "eval_count": 15,
+      "action": {
+        "action": "search",
+        "query": "scaling experiment ensemble model output combination"
+      }
+    },
+    {
+      "duration_seconds": 39.33859400000074,
+      "prompt_eval_count": 1320,
+      "eval_count": 47,
+      "action": {
+        "action": "answer",
+        "answer": "The scaling experiment combines model outputs in an ensemble by averaging the logits across the ensemble before feeding them into the output softmax nonlinearity to obtain an aggregate prediction.",
+        "citations": [
+          "20-074"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 41.74093919999996
+}

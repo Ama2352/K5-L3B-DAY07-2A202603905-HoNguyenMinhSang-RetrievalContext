@@ -1,0 +1,126 @@
+{
+  "query_id": "u01",
+  "question": "Within indexed pages 4?40, what was the monetary cost in US dollars of training the baseline model?",
+  "split": "dev",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "The monetary cost of training the baseline model is not explicitly stated in the provided text. However, it is mentioned that the model has roughly 220 million parameters and is pre-trained and fine-tuned for 219 and 218 steps respectively. [1316810423fb91e7decddd98c2122af0]",
+  "citations": [
+    "1316810423fb91e7decddd98c2122af0"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "baseline model training cost US dollars pages 4-40",
+      "filter": null,
+      "results": [
+        {
+          "id": "a6de1fa40b18d31e892bc17573f77705",
+          "text": "uld be repeated hundreds of times over the course of pre-training on 1 trillion tokens. Since we showed in Section 3.4.2 that this repetition could be harmful, we opted instead to continue using the C4 data set.\n\nModel sizes In Section 3.6 we also showed how scaling up the baseline model size improved performance. However, using smaller models can be helpful in settings where limited computational resources are available for fine-tuning or inference. Based on these factors, we train models with a wide range of sizes:\n\n• Base. This is our baseline model, whose hyperparameters are described in Section 3.1.1. It has roughly 220 million parameters.\n\n• Small. We consider a smaller model, which scales the baseline down by using dmodel = 512, dff = 2,048, 8-headed attention, and only 6 layers each in the encoder and decoder. This variant has about 60 million parameters.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 36,
+          "metadata": {
+            "end": 2687,
+            "page": 36,
+            "year": "2020",
+            "start": 1812,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7466734941808575
+        },
+        {
+          "id": "9acd5801460aa4cda34c0a5da7b0b77c",
+          "text": "We start with our baseline model, which has 220M parameters and is pre-trained and fine-tuned for 219 and 218 steps respectively. The encoder and decoder are both sized similarly to “BERTBASE”. To experiment with increased model size, we follow the guidelines of “BERTLARGE” Devlin et al. (2018) and use dff = 4096, dmodel = 1024, dkv = 64 and 16-head attention mechanisms. We then generate two variants with 16 and 32 layers each in the encoder and decoder, producing models with 2× and 4× as many parameters as our original model. These two variants also have a roughly 2× and 4× the computational cost. Using our baseline and these two larger models, we consider three ways of using 4× as much computation: Training for 4× as many steps, training for 2× as many steps with the 2× bigger model, and training the 4× bigger model for the “baseline” number of training steps. When we increase the training steps, we scale both the pre-train and fine-tune steps for simplicity. Note that when increasin",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 34,
+          "metadata": {
+            "end": 2478,
+            "page": 34,
+            "year": "2020",
+            "start": 1478,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7397520542144828
+        },
+        {
+          "id": "1316810423fb91e7decddd98c2122af0",
+          "text": "In this section, we present results using the baseline experimental procedure described above to get a sense of what kind of performance to expect on our suite of downstream tasks. Ideally, we would repeat every experiment in our study multiple times to get a confidence interval on our results. Unfortunately, this would be prohibitively expensive due to the large number of experiments we run. As a cheaper alternative, we train our baseline model 10 times from scratch (i.e. with different random initializations and data set shuffling) and assume that the variance over these runs of the base model also applies to each experimental variant. We don’t expect most of the changes we make to have a dramatic effect on the inter-run variance, so this should provide a reasonable indication of the significance of different changes. Separately, we also measure the performance of training our model for 218 steps (the same number we use for fine-tuning) on all downstream tasks without pre-training. T",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 13,
+          "metadata": {
+            "end": 2699,
+            "page": 13,
+            "year": "2020",
+            "start": 1699,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7264952063560537
+        }
+      ],
+      "context": "[a6de1fa40b18d31e892bc17573f77705 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 36]\nuld be repeated hundreds of times over the course of pre-training on 1 trillion tokens. Since we showed in Section 3.4.2 that this repetition could be harmful, we opted instead to continue using the C4 data set.\n\nModel sizes In Section 3.6 we also showed how scaling up the baseline model size improved performance. However, using smaller models can be helpful in settings where limited computational resources are available for fine-tuning or inference. Based on these factors, we train models with a wide range of sizes:\n\n• Base. This is our baseline model, whose hyperparameters are described in Section 3.1.1. It has roughly 220 million parameters.\n\n• Small. We consider a smaller model, which scales the baseline down by using dmodel = 512, dff = 2,048, 8-headed attention, and only 6 layers each in the encoder and decoder. This variant has about 60 million parameters.\n\n[9acd5801460aa4cda34c0a5da7b0b77c | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 34]\nWe start with our baseline model, which has 220M parameters and is pre-trained and fine-tuned for 219 and 218 steps respectively. The encoder and decoder are both sized similarly to “BERTBASE”. To experiment with increased model size, we follow the guidelines of “BERTLARGE” Devlin et al. (2018) and use dff = 4096, dmodel = 1024, dkv = 64 and 16-head attention mechanisms. We then generate two variants with 16 and 32 layers each in the encoder and decoder, producing models with 2× and 4× as many parameters as our original model. These two variants also have a roughly 2× and 4× the computational cost. Using our baseline and these two larger models, we consider three ways of using 4× as much computation: Training for 4× as many steps, training for 2× as many steps with the 2× bigger model, and training the 4× bigger model for the “baseline” number of training steps. When we increase the training steps, we scale both the pre-train and fine-tune steps for simplicity. Note that when increasin\n\n[1316810423fb91e7decddd98c2122af0 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 13]\nIn this section, we present results using the baseline experimental procedure described above to get a sense of what kind of performance to expect on our suite of downstream tasks. Ideally, we would repeat every experiment in our study multiple times to get a confidence interval on our results. Unfortunately, this would be prohibitively expensive due to the large number of experiments we run. As a cheaper alternative, we train our baseline model 10 times from scratch (i.e. with different random initializations and data set shuffling) and assume that the variance over these runs of the base model also applies to each experimental variant. We don’t expect most of the changes we make to have a dramatic effect on the inter-run variance, so this should provide a reasonable indication of the significance of different changes. Separately, we also measure the performance of training our model for 218 steps (the same number we use for fine-tuning) on all downstream tasks without pre-training. T",
+      "context_ids": [
+        "a6de1fa40b18d31e892bc17573f77705",
+        "9acd5801460aa4cda34c0a5da7b0b77c",
+        "1316810423fb91e7decddd98c2122af0"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 4.1831530999997995,
+      "prompt_eval_count": 175,
+      "eval_count": 20,
+      "action": {
+        "action": "search",
+        "query": "baseline model training cost US dollars pages 4-40"
+      }
+    },
+    {
+      "duration_seconds": 37.32718019999993,
+      "prompt_eval_count": 1065,
+      "eval_count": 95,
+      "action": {
+        "action": "answer",
+        "answer": "The monetary cost of training the baseline model is not explicitly stated in the provided text. However, it is mentioned that the model has roughly 220 million parameters and is pre-trained and fine-tuned for 219 and 218 steps respectively. [1316810423fb91e7decddd98c2122af0]",
+        "citations": [
+          "1316810423fb91e7decddd98c2122af0"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 41.601877299999614
+}

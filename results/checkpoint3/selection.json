@@ -1,0 +1,12 @@
+{
+  "selected": "hybrid",
+  "configuration": "hybrid top-5, 6000 characters, llama3.2:3b, up to three searches",
+  "split_used": "dev only",
+  "rule": "Highest grounded grade sum; then correct abstentions, context evidence, lower mean time. Errors count zero for selection.",
+  "dense_grounded_grade_sum": 8,
+  "hybrid_grounded_grade_sum": 9,
+  "denominator": 30,
+  "frozen_at_utc": "2026-11-16T03:38:19.419839+00:00",
+  "test_run": false,
+  "caveat": "Low dev quality; reviewed by AI assistant, not independently adjudicated."
+}

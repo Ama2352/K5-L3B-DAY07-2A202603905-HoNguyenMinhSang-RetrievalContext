@@ -1,0 +1,164 @@
+{
+  "query_id": "u01",
+  "question": "Within indexed pages 4?40, what was the monetary cost in US dollars of training the baseline model?",
+  "split": "dev",
+  "method": "hybrid",
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "budget_chars": 6000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "$0 [chunk-id] [9acd5801460aa4cda34c0a5da7b0b77c]",
+  "citations": [
+    "9acd5801460aa4cda34c0a5da7b0b77c"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "baseline model training cost US dollars pages 4-40",
+      "filter": null,
+      "results": [
+        {
+          "id": "9acd5801460aa4cda34c0a5da7b0b77c",
+          "text": "We start with our baseline model, which has 220M parameters and is pre-trained and fine-tuned for 219 and 218 steps respectively. The encoder and decoder are both sized similarly to “BERTBASE”. To experiment with increased model size, we follow the guidelines of “BERTLARGE” Devlin et al. (2018) and use dff = 4096, dmodel = 1024, dkv = 64 and 16-head attention mechanisms. We then generate two variants with 16 and 32 layers each in the encoder and decoder, producing models with 2× and 4× as many parameters as our original model. These two variants also have a roughly 2× and 4× the computational cost. Using our baseline and these two larger models, we consider three ways of using 4× as much computation: Training for 4× as many steps, training for 2× as many steps with the 2× bigger model, and training the 4× bigger model for the “baseline” number of training steps. When we increase the training steps, we scale both the pre-train and fine-tune steps for simplicity. Note that when increasin",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 34,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 1478,
+            "end": 2478
+          },
+          "score": 0.03200204813108039,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "c099dbe02fefd3e43943fa83ed26ab2c",
+          "text": "his gives us an idea of how much pre-training benefits our model in the baseline setting.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 13,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2699,
+            "end": 2788
+          },
+          "score": 0.03131881575727918,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "93a98786b5139816f164d03a48aabeaa",
+          "text": "Scaling strategy GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆Baseline 83.28 19.24 80.88 71.36 26.98 39.82 27.65\n\n1× size, 4× training steps 85.33 19.33 82.45 74.72 27.08 40.66 27.93\n\n1× size, 4× batch size 84.60 19.42 82.52 74.64 27.07 40.60 27.84\n\n2× size, 2× training steps 86.18 19.66 84.18 77.18 27.52 41.03 28.19\n\n4× size, 1× training steps 85.91 19.73 83.86 78.04 27.47 40.71 28.10\n\n4× ensembled 84.77 20.10 83.09 71.74 28.05 40.53 28.57\n\n4× ensembled, fine-tune only 84.05 19.57 82.36 71.55 27.55 40.22 28.09\n\nTable 13: Comparison of different methods of scaling up our baseline model. All methods except ensembling fine-tuned models use 4× the computation as the baseline. “Size” refers to the number of parameters in the model and “training time” refers to the number of steps used for both pre-training and fine-tuning.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 35,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 0,
+            "end": 825
+          },
+          "score": 0.030621785881252923,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "6b0eabb5e6a47b80858b53a5047946e6",
+          "text": "ificantly outperformed every other scaling approach. Ensembling models that were pre-trained together but fine-tuned separately also gave a substantial performance increase over the baseline, which suggests a cheaper means of improving performance. The only exception was SuperGLUE, where neither ensembling approach significantly improved over the baseline.\n\nWe note that different scaling methods have different trade-offs that are separate from their performance. For example, using a larger model can make downstream fine-tuning and inference more expensive. In contrast, the cost of pre-training a small model for longer is effectively amortized if it is applied to many downstream tasks. Separately, we note that ensembling N separate models has a similar cost to using a model that has an N× higher computational cost. As a result, some consideration for the eventual use of the model is important when choosing between scaling methods.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 35,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2113,
+            "end": 3056
+          },
+          "score": 0.029513888888888888,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "e96867cc90dc40f3ae2d90eb3190b9cd",
+          "text": "Longer training Our baseline model uses a relatively small amount of pre-training (1/4 as much as BERT (Devlin et al., 2018), 1/16 as much as XLNet (Yang et al., 2019), 1/64 as much as RoBERTa (Liu et al., 2019c), etc.). Fortunately, C4 is big enough that we can train for substantially longer without repeating data (which can be detrimental, as shown in Section 3.4.2). We found in Section 3.6 that additional pre-training can indeed be helpful, and that both increasing the batch size and increasing the number of training steps can confer this benefit. We therefore pre-train our models for 1 million steps on a batch size of 211 sequences of length 512, corresponding to a total of about 1 trillion pre-training tokens (about 32× as many as our baseline). In Section 3.4.1, we showed that pre-training on the RealNews-like, WebText-like, and Wikipedia + TBC data sets outperformed pre-training on C4 on a few downstream tasks. However, these data set variants are sufficiently small that they wo",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 36,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 812,
+            "end": 1812
+          },
+          "score": 0.029513888888888888,
+          "strategy": "tfidf"
+        }
+      ],
+      "context": "[9acd5801460aa4cda34c0a5da7b0b77c | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 34]\nWe start with our baseline model, which has 220M parameters and is pre-trained and fine-tuned for 219 and 218 steps respectively. The encoder and decoder are both sized similarly to “BERTBASE”. To experiment with increased model size, we follow the guidelines of “BERTLARGE” Devlin et al. (2018) and use dff = 4096, dmodel = 1024, dkv = 64 and 16-head attention mechanisms. We then generate two variants with 16 and 32 layers each in the encoder and decoder, producing models with 2× and 4× as many parameters as our original model. These two variants also have a roughly 2× and 4× the computational cost. Using our baseline and these two larger models, we consider three ways of using 4× as much computation: Training for 4× as many steps, training for 2× as many steps with the 2× bigger model, and training the 4× bigger model for the “baseline” number of training steps. When we increase the training steps, we scale both the pre-train and fine-tune steps for simplicity. Note that when increasin\n\n[c099dbe02fefd3e43943fa83ed26ab2c | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 13]\nhis gives us an idea of how much pre-training benefits our model in the baseline setting.\n\n[93a98786b5139816f164d03a48aabeaa | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 35]\nScaling strategy GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆Baseline 83.28 19.24 80.88 71.36 26.98 39.82 27.65\n\n1× size, 4× training steps 85.33 19.33 82.45 74.72 27.08 40.66 27.93\n\n1× size, 4× batch size 84.60 19.42 82.52 74.64 27.07 40.60 27.84\n\n2× size, 2× training steps 86.18 19.66 84.18 77.18 27.52 41.03 28.19\n\n4× size, 1× training steps 85.91 19.73 83.86 78.04 27.47 40.71 28.10\n\n4× ensembled 84.77 20.10 83.09 71.74 28.05 40.53 28.57\n\n4× ensembled, fine-tune only 84.05 19.57 82.36 71.55 27.55 40.22 28.09\n\nTable 13: Comparison of different methods of scaling up our baseline model. All methods except ensembling fine-tuned models use 4× the computation as the baseline. “Size” refers to the number of parameters in the model and “training time” refers to the number of steps used for both pre-training and fine-tuning.\n\n[6b0eabb5e6a47b80858b53a5047946e6 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 35]\nificantly outperformed every other scaling approach. Ensembling models that were pre-trained together but fine-tuned separately also gave a substantial performance increase over the baseline, which suggests a cheaper means of improving performance. The only exception was SuperGLUE, where neither ensembling approach significantly improved over the baseline.\n\nWe note that different scaling methods have different trade-offs that are separate from their performance. For example, using a larger model can make downstream fine-tuning and inference more expensive. In contrast, the cost of pre-training a small model for longer is effectively amortized if it is applied to many downstream tasks. Separately, we note that ensembling N separate models has a similar cost to using a model that has an N× higher computational cost. As a result, some consideration for the eventual use of the model is important when choosing between scaling methods.\n\n[e96867cc90dc40f3ae2d90eb3190b9cd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 36]\nLonger training Our baseline model uses a relatively small amount of pre-training (1/4 as much as BERT (Devlin et al., 2018), 1/16 as much as XLNet (Yang et al., 2019), 1/64 as much as RoBERTa (Liu et al., 2019c), etc.). Fortunately, C4 is big enough that we can train for substantially longer without repeating data (which can be detrimental, as shown in Section 3.4.2). We found in Section 3.6 that additional pre-training can indeed be helpful, and that both increasing the batch size and increasing the number of training steps can confer this benefit. We therefore pre-train our models for 1 million steps on a batch size of 211 sequences of length 512, corresponding to a total of about 1 trillion pre-training tokens (about 32× as many as our baseline). In Section 3.4.1, we showed that pre-training on the RealNews-like, WebText-like, and Wikipedia + TBC data sets outperformed pre-training on C4 on a few downstream tasks. However, these data set variants are sufficiently small that they wo",
+      "context_ids": [
+        "9acd5801460aa4cda34c0a5da7b0b77c",
+        "c099dbe02fefd3e43943fa83ed26ab2c",
+        "93a98786b5139816f164d03a48aabeaa",
+        "6b0eabb5e6a47b80858b53a5047946e6",
+        "e96867cc90dc40f3ae2d90eb3190b9cd"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 4.1971838999998,
+      "prompt_eval_count": 175,
+      "eval_count": 20,
+      "action": {
+        "action": "search",
+        "query": "baseline model training cost US dollars pages 4-40"
+      }
+    },
+    {
+      "duration_seconds": 45.86190669999996,
+      "prompt_eval_count": 1608,
+      "eval_count": 40,
+      "action": {
+        "action": "answer",
+        "answer": "$0 [chunk-id]",
+        "citations": [
+          "9acd5801460aa4cda34c0a5da7b0b77c"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 50.379695400000855
+}

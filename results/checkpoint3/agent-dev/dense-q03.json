@@ -1,0 +1,126 @@
+{
+  "query_id": "q03",
+  "question": "What minimum sentence and word counts were required when cleaning Common Crawl for C4?",
+  "split": "dev",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "5 sentences, 3 words [aa53bb8beb4468aadb92d622e8dba806]",
+  "citations": [
+    "aa53bb8beb4468aadb92d622e8dba806"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "Common Crawl C4 minimum sentence and word counts",
+      "filter": null,
+      "results": [
+        {
+          "id": "1c231fd78254151b0a1f73aebc84947d",
+          "text": "Common Crawl is a publicly-available web archive that provides “web extracted text” by removing markup and other non-text content from the scraped HTML files. This process produces around 20TB of scraped text data each month. Unfortunately, the majority of the resulting text is not natural language. Instead, it largely comprises gibberish or boiler-plate text like menus, error messages, or duplicate text. Furthermore, a good deal of the scraped text contains content that is unlikely to be helpful for any of the tasks we consider (offensive language, placeholder text, source code, etc.). To address these issues, we used the following heuristics for cleaning up Common Crawl’s web extracted text:\n\n• We only retained lines that ended in a terminal punctuation mark (i.e. a period, exclamation mark, question mark, or end quotation mark).\n\n• We discarded any page with fewer than 5 sentences and only retained lines that contained at least 3 words.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 6,
+          "metadata": {
+            "end": 1396,
+            "page": 6,
+            "year": "2020",
+            "start": 443,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7695874709136815
+        },
+        {
+          "id": "aa53bb8beb4468aadb92d622e8dba806",
+          "text": "To assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 7,
+          "metadata": {
+            "end": 563,
+            "page": 7,
+            "year": "2020",
+            "start": 0,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7560123205184937
+        },
+        {
+          "id": "08dea6b2189c19e795b550bccc14b1e4",
+          "text": "ase all of the C4 data set variants we consider as part of TensorFlow Datasets.11\n\n3.4.1. Unlabeled Data Sets\n\nIn creating C4, we developed various heuristics to filter the web-extracted text from Common Crawl (see Section 2.2 for a description). We are interested in measuring whether this filtering results in improved performance on downstream tasks, in addition to comparing it to other filtering approaches and common pre-training data sets. Towards this end, we compare the performance of our baseline model after pre-training on the following data sets:\n\nC4 As a baseline, we first consider pre-training on our proposed unlabeled data set as described in Section 2.2.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 25,
+          "metadata": {
+            "end": 2448,
+            "page": 25,
+            "year": "2020",
+            "start": 1774,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7546401912402932
+        }
+      ],
+      "context": "[1c231fd78254151b0a1f73aebc84947d | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 6]\nCommon Crawl is a publicly-available web archive that provides “web extracted text” by removing markup and other non-text content from the scraped HTML files. This process produces around 20TB of scraped text data each month. Unfortunately, the majority of the resulting text is not natural language. Instead, it largely comprises gibberish or boiler-plate text like menus, error messages, or duplicate text. Furthermore, a good deal of the scraped text contains content that is unlikely to be helpful for any of the tasks we consider (offensive language, placeholder text, source code, etc.). To address these issues, we used the following heuristics for cleaning up Common Crawl’s web extracted text:\n\n• We only retained lines that ended in a terminal punctuation mark (i.e. a period, exclamation mark, question mark, or end quotation mark).\n\n• We discarded any page with fewer than 5 sentences and only retained lines that contained at least 3 words.\n\n[aa53bb8beb4468aadb92d622e8dba806 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 7]\nTo assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks\n\n[08dea6b2189c19e795b550bccc14b1e4 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 25]\nase all of the C4 data set variants we consider as part of TensorFlow Datasets.11\n\n3.4.1. Unlabeled Data Sets\n\nIn creating C4, we developed various heuristics to filter the web-extracted text from Common Crawl (see Section 2.2 for a description). We are interested in measuring whether this filtering results in improved performance on downstream tasks, in addition to comparing it to other filtering approaches and common pre-training data sets. Towards this end, we compare the performance of our baseline model after pre-training on the following data sets:\n\nC4 As a baseline, we first consider pre-training on our proposed unlabeled data set as described in Section 2.2.",
+      "context_ids": [
+        "1c231fd78254151b0a1f73aebc84947d",
+        "aa53bb8beb4468aadb92d622e8dba806",
+        "08dea6b2189c19e795b550bccc14b1e4"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 4.724970300000223,
+      "prompt_eval_count": 170,
+      "eval_count": 19,
+      "action": {
+        "action": "search",
+        "query": "Common Crawl C4 minimum sentence and word counts"
+      }
+    },
+    {
+      "duration_seconds": 30.454876299999796,
+      "prompt_eval_count": 891,
+      "eval_count": 53,
+      "action": {
+        "action": "answer",
+        "answer": "5 sentences, 3 words [aa53bb8beb4468aadb92d622e8dba806]",
+        "citations": [
+          "aa53bb8beb4468aadb92d622e8dba806"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 35.41569269999991
+}

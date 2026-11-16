@@ -1,0 +1,126 @@
+{
+  "query_id": "q06",
+  "question": "Within the Setup section, how does the text-to-text model know which task to perform?",
+  "split": "dev",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "The text-to-text model knows which task to perform by adding a task-specific prefix to the original input sequence before feeding it to the model. [a691c4003e0f821ad4e54becebe9bacf]",
+  "citations": [
+    "a691c4003e0f821ad4e54becebe9bacf"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "text-to-text model task selection",
+      "filter": null,
+      "results": [
+        {
+          "id": "2b9581e9477a8efef62d324bdaa60579",
+          "text": "In order to train a single model on the diverse set of tasks described above, we cast all of the tasks we consider into a “text-to-text” format—that is, a task where the model is fed some text for context or conditioning and is then asked to produce some output text. This framework provides a consistent training objective both for pre-training and fine-tuning. Specifically, the model is trained with a maximum likelihood objective (using “teacher forcing” (Williams and Zipser, 1989)) regardless of the task. To specify which task the model should perform, we add a task-specific (text) prefix to the original input sequence before feeding it to the model.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 8,
+          "metadata": {
+            "end": 1432,
+            "page": 8,
+            "year": "2020",
+            "start": 773,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.842281391756619
+        },
+        {
+          "id": "a8c84c9dd5b34a15ca097fe5804c5a73",
+          "text": "2. Setup\n\nBefore presenting the results from our large-scale empirical study, we review the necessary background topics required to understand our results, including the Transformer model architecture and the downstream tasks we evaluate on. We also introduce our approach for treating every problem as a text-to-text task and describe our “Colossal Clean Crawled Corpus” (C4), the Common Crawl-based data set we created as a source of unlabeled text data. We refer to our model and framework as the “Text-to-Text Transfer Transformer” (T5).\n\n2.1. Model",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 4,
+          "metadata": {
+            "end": 553,
+            "page": 4,
+            "year": "2020",
+            "start": 0,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.8089132422856559
+        },
+        {
+          "id": "a691c4003e0f821ad4e54becebe9bacf",
+          "text": "this case, we always count the model’s output as wrong, though we never observed this behavior in any of our trained models. Note that the choice of text prefix used for a given task is essentially a hyperparameter; we found that changing the exact wording of the prefix had limited impact and so did not perform extensive experiments into different prefix choices. A diagram of our text-to-text framework with a few input/output examples is shown in Figure 1. We provide full examples of preprocessed inputs for every task we studied in Appendix D.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 8,
+          "metadata": {
+            "end": 2983,
+            "page": 8,
+            "year": "2020",
+            "start": 2434,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7857770451440202
+        }
+      ],
+      "context": "[2b9581e9477a8efef62d324bdaa60579 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 8]\nIn order to train a single model on the diverse set of tasks described above, we cast all of the tasks we consider into a “text-to-text” format—that is, a task where the model is fed some text for context or conditioning and is then asked to produce some output text. This framework provides a consistent training objective both for pre-training and fine-tuning. Specifically, the model is trained with a maximum likelihood objective (using “teacher forcing” (Williams and Zipser, 1989)) regardless of the task. To specify which task the model should perform, we add a task-specific (text) prefix to the original input sequence before feeding it to the model.\n\n[a8c84c9dd5b34a15ca097fe5804c5a73 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 4]\n2. Setup\n\nBefore presenting the results from our large-scale empirical study, we review the necessary background topics required to understand our results, including the Transformer model architecture and the downstream tasks we evaluate on. We also introduce our approach for treating every problem as a text-to-text task and describe our “Colossal Clean Crawled Corpus” (C4), the Common Crawl-based data set we created as a source of unlabeled text data. We refer to our model and framework as the “Text-to-Text Transfer Transformer” (T5).\n\n2.1. Model\n\n[a691c4003e0f821ad4e54becebe9bacf | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 8]\nthis case, we always count the model’s output as wrong, though we never observed this behavior in any of our trained models. Note that the choice of text prefix used for a given task is essentially a hyperparameter; we found that changing the exact wording of the prefix had limited impact and so did not perform extensive experiments into different prefix choices. A diagram of our text-to-text framework with a few input/output examples is shown in Figure 1. We provide full examples of preprocessed inputs for every task we studied in Appendix D.",
+      "context_ids": [
+        "2b9581e9477a8efef62d324bdaa60579",
+        "a8c84c9dd5b34a15ca097fe5804c5a73",
+        "a691c4003e0f821ad4e54becebe9bacf"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 4.859123299999737,
+      "prompt_eval_count": 171,
+      "eval_count": 15,
+      "action": {
+        "action": "search",
+        "query": "text-to-text model task selection"
+      }
+    },
+    {
+      "duration_seconds": 29.879571699999815,
+      "prompt_eval_count": 786,
+      "eval_count": 59,
+      "action": {
+        "action": "answer",
+        "answer": "The text-to-text model knows which task to perform by adding a task-specific prefix to the original input sequence before feeding it to the model.",
+        "citations": [
+          "a691c4003e0f821ad4e54becebe9bacf"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 34.92638780000016
+}

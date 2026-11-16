@@ -28,6 +28,21 @@ class DenseRetriever:
                  'metadata': h['metadata'], 'score': h['score']} for h in hits]
 
 
+class HybridRetriever(DenseRetriever):
+    def __init__(self, root, url):
+        super().__init__(root, url)
+        from baseline import TfidfIndex
+        self.lexical = TfidfIndex(json.loads(Path('data/day6_chunks.json').read_text(encoding='utf-8')))
+
+    def search(self, query, *, filters, top_k):
+        if filters:
+            raise ValueError('Hybrid metadata filters are not implemented')
+        from retrieval_dev import rrf
+        dense = super().search(query, filters=None, top_k=20)
+        lexical = self.lexical.search(query, top_k=20)
+        return rrf(dense, lexical, limit=top_k)
+
+
 class OllamaController:
     def __init__(self, model):
         self.model = model
@@ -77,6 +92,8 @@ def main():
     parser.add_argument('--day6', required=True, type=Path)
     parser.add_argument('--question', required=True)
     parser.add_argument('--model', default='llama3.2:3b')
+    parser.add_argument('--method', choices=('dense', 'hybrid'), default='dense')
+    parser.add_argument('--top-k', type=int, default=3)
     parser.add_argument('--output', required=True, type=Path)
     parser.add_argument('--budget', type=int, default=4000)
     args = parser.parse_args()
@@ -85,12 +102,12 @@ def main():
         parser.error('DATABASE_URL must point to the Day 6 database')
     started = time.perf_counter()
     controller = OllamaController(args.model)
-    trace = {'question': args.question, 'model': args.model, 'budget_chars': args.budget,
-             'top_k': 3, 'max_searches': 3, 'service_cost_usd': 0}
+    trace = {'question': args.question, 'model': args.model, 'method': args.method, 'budget_chars': args.budget,
+             'top_k': args.top_k, 'max_searches': 3, 'service_cost_usd': 0}
     try:
-        retriever = DenseRetriever(args.day6.resolve(), url)
+        retriever = (HybridRetriever if args.method == 'hybrid' else DenseRetriever)(args.day6.resolve(), url)
         trace.update(run_agent(args.question, controller, retriever, max_searches=3,
-                               top_k=3, budget=args.budget))
+                               top_k=args.top_k, budget=args.budget))
     except Exception as exc:
         trace.update(status='error', error=f'{type(exc).__name__}: {exc}')
     trace['model_calls'] = controller.calls

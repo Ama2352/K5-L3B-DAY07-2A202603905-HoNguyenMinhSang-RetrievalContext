@@ -1,0 +1,124 @@
+{
+  "query_id": "q02",
+  "question": "How are relative position embeddings simplified in the T5 implementation?",
+  "split": "dev",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "abstain",
+  "answer": "Không đủ bằng chứng để trả lời.",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "query": "T5 relative position embeddings simplification",
+      "filter": null,
+      "results": [
+        {
+          "id": "55553dca86ec07cdc5e2cb764c885244",
+          "text": "h corresponding to a range of possible key-query offsets. In this work, we use 32 embeddings for all of our models with ranges that increase in size logarithmically up to an offset of 128 beyond which we assign all relative positions to the same embedding. Note that a given layer is insensitive to relative position beyond 128 tokens, but subsequent layers can build a sensitivity to larger offsets by combining local information from previous layers. To summarize, our model is roughly equivalent to the original Transformer proposed by Vaswani et al. (2017) with the exception of removing the Layer Norm bias, placing the layer normalization outside the residual path, and using a different position embedding scheme. Since these architectural changes are orthogonal to the experimental factors we consider in our empirical survey of transfer learning, we leave the ablation of their impact for future work.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 5,
+          "metadata": {
+            "end": 2446,
+            "page": 5,
+            "year": "2020",
+            "start": 1536,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7973219397876391
+        },
+        {
+          "id": "72f1631c29ebc91eb2cd4a3f717bd5b8",
+          "text": "Since self-attention is order-independent (i.e. it is an operation on sets), it is common to provide an explicit position signal to the Transformer. While the original Transformer used a sinusoidal position signal or learned position embeddings, it has recently become more common to use relative position embeddings (Shaw et al., 2018; Huang et al., 2018a). Instead of using a fixed embedding for each position, relative position embeddings produce a different learned embedding according to the offset between the “key” and “query” being compared in the self-attention mechanism. We use a simplified form of position embeddings where each “embedding” is simply a scalar that is added to the corresponding logit used for computing the attention weights. For efficiency, we also share the position embedding parameters across all layers in our model, though within a given layer each attention head uses a different learned position embedding. Typically, a fixed number of embeddings are learned, eac",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 5,
+          "metadata": {
+            "end": 1536,
+            "page": 5,
+            "year": "2020",
+            "start": 536,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7940120469310213
+        },
+        {
+          "id": "0537cff0a7cba06538490e45baf3d7bd",
+          "text": "To achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 40,
+          "metadata": {
+            "end": 3449,
+            "page": 40,
+            "year": "2020",
+            "start": 2461,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7482303085052653
+        }
+      ],
+      "context": "[55553dca86ec07cdc5e2cb764c885244 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 5]\nh corresponding to a range of possible key-query offsets. In this work, we use 32 embeddings for all of our models with ranges that increase in size logarithmically up to an offset of 128 beyond which we assign all relative positions to the same embedding. Note that a given layer is insensitive to relative position beyond 128 tokens, but subsequent layers can build a sensitivity to larger offsets by combining local information from previous layers. To summarize, our model is roughly equivalent to the original Transformer proposed by Vaswani et al. (2017) with the exception of removing the Layer Norm bias, placing the layer normalization outside the residual path, and using a different position embedding scheme. Since these architectural changes are orthogonal to the experimental factors we consider in our empirical survey of transfer learning, we leave the ablation of their impact for future work.\n\n[72f1631c29ebc91eb2cd4a3f717bd5b8 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 5]\nSince self-attention is order-independent (i.e. it is an operation on sets), it is common to provide an explicit position signal to the Transformer. While the original Transformer used a sinusoidal position signal or learned position embeddings, it has recently become more common to use relative position embeddings (Shaw et al., 2018; Huang et al., 2018a). Instead of using a fixed embedding for each position, relative position embeddings produce a different learned embedding according to the offset between the “key” and “query” being compared in the self-attention mechanism. We use a simplified form of position embeddings where each “embedding” is simply a scalar that is added to the corresponding logit used for computing the attention weights. For efficiency, we also share the position embedding parameters across all layers in our model, though within a given layer each attention head uses a different learned position embedding. Typically, a fixed number of embeddings are learned, eac\n\n[0537cff0a7cba06538490e45baf3d7bd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 40]\nTo achieve its strong results, T5 combines insights from our experimental study with unprecedented scale. Note that in Section 3.6 we found that scaling up the pre-training amount or size of our baseline model produced substantial gains. Given this, we were interested to measure how much the “non-scaling” changes we introduced into T5 contributed to its strong performance. We therefore carried out a final experiment where we compared the following three configurations: First, the standard baseline model, which was pre-trained on 235≈ 34B tokens; second, the baseline trained instead for about 1 trillion tokens (i.e. the same amount of pre-training used for T5), which we refer to as “baseline-1T”; and third, T5-Base. Note that the differences between baseline-1T and T5-Base comprise the “non-scaling” changes we made when designing T5. As such, comparing the performance of these two models gives us a concrete measurement of the impact of the insights from our systematic study.",
+      "context_ids": [
+        "55553dca86ec07cdc5e2cb764c885244",
+        "72f1631c29ebc91eb2cd4a3f717bd5b8",
+        "0537cff0a7cba06538490e45baf3d7bd"
+      ]
+    },
+    {
+      "event": "invalid_or_missing_citations"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 3.887524400000075,
+      "prompt_eval_count": 165,
+      "eval_count": 16,
+      "action": {
+        "action": "search",
+        "query": "T5 relative position embeddings simplification"
+      }
+    },
+    {
+      "duration_seconds": 41.1636825999999,
+      "prompt_eval_count": 985,
+      "eval_count": 49,
+      "action": {
+        "action": "answer",
+        "answer": "Relative position embeddings in T5 are simplified by using a scalar added to the corresponding logit for computing attention weights, instead of a fixed embedding for each position. [1]",
+        "citations": [
+          "1"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 45.24265770000011
+}

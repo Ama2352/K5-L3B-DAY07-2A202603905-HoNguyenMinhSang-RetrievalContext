@@ -1,0 +1,126 @@
+{
+  "query_id": "q05",
+  "question": "Approximately how large is the cleaned English C4 corpus described in the paper?",
+  "split": "dev",
+  "method": "dense",
+  "model": "llama3.2:3b",
+  "top_k": 3,
+  "budget_chars": 4000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "Approximately 6.1TB [aa53bb8beb4468aadb92d622e8dba806]",
+  "citations": [
+    "aa53bb8beb4468aadb92d622e8dba806"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "size of cleaned English C4 corpus",
+      "filter": null,
+      "results": [
+        {
+          "id": "aa53bb8beb4468aadb92d622e8dba806",
+          "text": "To assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 7,
+          "metadata": {
+            "end": 563,
+            "page": 7,
+            "year": "2020",
+            "start": 0,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "2. Setup"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.8305503129959106
+        },
+        {
+          "id": "065c181f283ed6240d0de22550c247a4",
+          "text": "Data set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 26,
+          "metadata": {
+            "end": 684,
+            "page": 26,
+            "year": "2020",
+            "start": 0,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7845887413375834
+        },
+        {
+          "id": "cd063464c2209148f7d91cc76282ca6a",
+          "text": "We use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 12,
+          "metadata": {
+            "end": 2523,
+            "page": 12,
+            "year": "2020",
+            "start": 1705,
+            "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+            "section": [
+              "3. Experiments"
+            ],
+            "version": "JMLR 21(140), 2020",
+            "language": "en",
+            "page_kind": "pdf",
+            "document_id": "t5_jmlr_2020",
+            "document_type": "research_paper"
+          },
+          "score": 0.7701228535028926
+        }
+      ],
+      "context": "[aa53bb8beb4468aadb92d622e8dba806 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 7]\nTo assemble our base data set, we downloaded the web extracted text from April 2019 and applied the aforementioned filtering. This produces a collection of text that is not only orders of magnitude larger than most data sets used for pre-training (about 750 GB) but also comprises reasonably clean and natural English text. We dub this data set the “Colossal Clean Crawled Corpus” (or C4 for short) and release it as part of TensorFlow Datasets.8 We consider the impact of using various alternative versions of this data set in Section 3.4.\n\n2.3. Downstream Tasks\n\n[065c181f283ed6240d0de22550c247a4 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 26]\nData set Size GLUE CNNDM SQuAD SGLUE EnDe EnFr EnRo\n\n⋆C4 745GB 83.28 19.24 80.88 71.36 26.98 39.82 27.65 C4, unfiltered 6.1TB 81.46 19.14 78.78 68.04 26.55 39.34 27.21 RealNews-like 35GB 83.83 19.23 80.39 72.38 26.75 39.90 27.48 WebText-like 17GB 84.03 19.31 81.42 71.40 26.80 39.74 27.59 Wikipedia 16GB 81.85 19.31 81.29 68.01 26.94 39.69 27.67 Wikipedia + TBC 20GB 83.65 19.28 82.08 73.24 26.77 39.63 27.57\n\nTable 8: Performance resulting from pre-training on different data sets. The first four variants are based on our new C4 data set.\n\ncomparison, we retain the heuristic filtering methods used in C4; the only difference is that we have ostensibly omitted any non-news content.\n\n[cd063464c2209148f7d91cc76282ca6a | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 12]\nWe use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+      "context_ids": [
+        "aa53bb8beb4468aadb92d622e8dba806",
+        "065c181f283ed6240d0de22550c247a4",
+        "cd063464c2209148f7d91cc76282ca6a"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 3.480181800000082,
+      "prompt_eval_count": 169,
+      "eval_count": 16,
+      "action": {
+        "action": "search",
+        "query": "size of cleaned English C4 corpus"
+      }
+    },
+    {
+      "duration_seconds": 36.85290229999964,
+      "prompt_eval_count": 1021,
+      "eval_count": 36,
+      "action": {
+        "action": "answer",
+        "answer": "Approximately 6.1TB",
+        "citations": [
+          "aa53bb8beb4468aadb92d622e8dba806"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 40.429931600000145
+}

@@ -1,0 +1,162 @@
+{
+  "query_id": "q03",
+  "question": "What minimum sentence and word counts were required when cleaning Common Crawl for C4?",
+  "split": "dev",
+  "method": "hybrid",
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "budget_chars": 6000,
+  "service_cost_usd": 0,
+  "status": "abstain",
+  "answer": "Không đủ bằng chứng để trả lời.",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "query": "Common Crawl C4 sentence and word count requirements",
+      "filter": null,
+      "results": [
+        {
+          "id": "08dea6b2189c19e795b550bccc14b1e4",
+          "text": "ase all of the C4 data set variants we consider as part of TensorFlow Datasets.11\n\n3.4.1. Unlabeled Data Sets\n\nIn creating C4, we developed various heuristics to filter the web-extracted text from Common Crawl (see Section 2.2 for a description). We are interested in measuring whether this filtering results in improved performance on downstream tasks, in addition to comparing it to other filtering approaches and common pre-training data sets. Towards this end, we compare the performance of our baseline model after pre-training on the following data sets:\n\nC4 As a baseline, we first consider pre-training on our proposed unlabeled data set as described in Section 2.2.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 25,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 1774,
+            "end": 2448
+          },
+          "score": 0.032266458495966696,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "cd063464c2209148f7d91cc76282ca6a",
+          "text": "We use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 12,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 1705,
+            "end": 2523
+          },
+          "score": 0.0315136476426799,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "a8c84c9dd5b34a15ca097fe5804c5a73",
+          "text": "2. Setup\n\nBefore presenting the results from our large-scale empirical study, we review the necessary background topics required to understand our results, including the Transformer model architecture and the downstream tasks we evaluate on. We also introduce our approach for treating every problem as a text-to-text task and describe our “Colossal Clean Crawled Corpus” (C4), the Common Crawl-based data set we created as a source of unlabeled text data. We refer to our model and framework as the “Text-to-Text Transfer Transformer” (T5).\n\n2.1. Model",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 4,
+          "metadata": {
+            "section": [
+              "2. Setup"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 0,
+            "end": 553
+          },
+          "score": 0.031024531024531024,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "1c231fd78254151b0a1f73aebc84947d",
+          "text": "Common Crawl is a publicly-available web archive that provides “web extracted text” by removing markup and other non-text content from the scraped HTML files. This process produces around 20TB of scraped text data each month. Unfortunately, the majority of the resulting text is not natural language. Instead, it largely comprises gibberish or boiler-plate text like menus, error messages, or duplicate text. Furthermore, a good deal of the scraped text contains content that is unlikely to be helpful for any of the tasks we consider (offensive language, placeholder text, source code, etc.). To address these issues, we used the following heuristics for cleaning up Common Crawl’s web extracted text:\n\n• We only retained lines that ended in a terminal punctuation mark (i.e. a period, exclamation mark, question mark, or end quotation mark).\n\n• We discarded any page with fewer than 5 sentences and only retained lines that contained at least 3 words.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 6,
+          "metadata": {
+            "section": [
+              "2. Setup"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 443,
+            "end": 1396
+          },
+          "score": 0.030679156908665108,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "5a5762583cabcc2648b9b4b3f02e12b9",
+          "text": "Much of the previous work on transfer learning for NLP makes use of large unlabeled data sets for unsupervised learning. In this paper, we are interested in measuring the effect of the quality, characteristics, and size of this unlabeled data. To generate data sets that satisfy our needs, we leverage Common Crawl as a source of text scraped from the web. Common\n\n5. https://cloud.google.com/tpu/",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 5,
+          "metadata": {
+            "section": [
+              "2. Setup"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 3208,
+            "end": 3605
+          },
+          "score": 0.03021353930031804,
+          "strategy": "tfidf"
+        }
+      ],
+      "context": "[08dea6b2189c19e795b550bccc14b1e4 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 25]\nase all of the C4 data set variants we consider as part of TensorFlow Datasets.11\n\n3.4.1. Unlabeled Data Sets\n\nIn creating C4, we developed various heuristics to filter the web-extracted text from Common Crawl (see Section 2.2 for a description). We are interested in measuring whether this filtering results in improved performance on downstream tasks, in addition to comparing it to other filtering approaches and common pre-training data sets. Towards this end, we compare the performance of our baseline model after pre-training on the following data sets:\n\nC4 As a baseline, we first consider pre-training on our proposed unlabeled data set as described in Section 2.2.\n\n[cd063464c2209148f7d91cc76282ca6a | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 12]\nWe use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective\n\n[a8c84c9dd5b34a15ca097fe5804c5a73 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 4]\n2. Setup\n\nBefore presenting the results from our large-scale empirical study, we review the necessary background topics required to understand our results, including the Transformer model architecture and the downstream tasks we evaluate on. We also introduce our approach for treating every problem as a text-to-text task and describe our “Colossal Clean Crawled Corpus” (C4), the Common Crawl-based data set we created as a source of unlabeled text data. We refer to our model and framework as the “Text-to-Text Transfer Transformer” (T5).\n\n2.1. Model\n\n[1c231fd78254151b0a1f73aebc84947d | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 6]\nCommon Crawl is a publicly-available web archive that provides “web extracted text” by removing markup and other non-text content from the scraped HTML files. This process produces around 20TB of scraped text data each month. Unfortunately, the majority of the resulting text is not natural language. Instead, it largely comprises gibberish or boiler-plate text like menus, error messages, or duplicate text. Furthermore, a good deal of the scraped text contains content that is unlikely to be helpful for any of the tasks we consider (offensive language, placeholder text, source code, etc.). To address these issues, we used the following heuristics for cleaning up Common Crawl’s web extracted text:\n\n• We only retained lines that ended in a terminal punctuation mark (i.e. a period, exclamation mark, question mark, or end quotation mark).\n\n• We discarded any page with fewer than 5 sentences and only retained lines that contained at least 3 words.\n\n[5a5762583cabcc2648b9b4b3f02e12b9 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 5]\nMuch of the previous work on transfer learning for NLP makes use of large unlabeled data sets for unsupervised learning. In this paper, we are interested in measuring the effect of the quality, characteristics, and size of this unlabeled data. To generate data sets that satisfy our needs, we leverage Common Crawl as a source of text scraped from the web. Common\n\n5. https://cloud.google.com/tpu/",
+      "context_ids": [
+        "08dea6b2189c19e795b550bccc14b1e4",
+        "cd063464c2209148f7d91cc76282ca6a",
+        "a8c84c9dd5b34a15ca097fe5804c5a73",
+        "1c231fd78254151b0a1f73aebc84947d",
+        "5a5762583cabcc2648b9b4b3f02e12b9"
+      ]
+    },
+    {
+      "event": "invalid_or_missing_citations"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 3.0558743999999933,
+      "prompt_eval_count": 170,
+      "eval_count": 19,
+      "action": {
+        "action": "search",
+        "query": "Common Crawl C4 sentence and word count requirements"
+      }
+    },
+    {
+      "duration_seconds": 35.36943900000006,
+      "prompt_eval_count": 1322,
+      "eval_count": 25,
+      "action": {
+        "action": "answer",
+        "answer": "5 sentences and 3 words [chunk-id]",
+        "citations": [
+          "chunk-id"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 38.519671999999446
+}

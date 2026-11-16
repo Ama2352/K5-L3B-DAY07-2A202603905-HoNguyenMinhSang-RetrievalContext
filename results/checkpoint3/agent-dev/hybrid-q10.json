@@ -1,0 +1,164 @@
+{
+  "query_id": "q10",
+  "question": "What tokenizer and vocabulary size are used across the experiments?",
+  "split": "dev",
+  "method": "hybrid",
+  "model": "llama3.2:3b",
+  "top_k": 5,
+  "budget_chars": 6000,
+  "service_cost_usd": 0,
+  "status": "answered",
+  "answer": "SentencePiece (Kudo and Richardson, 2018) tokenizer with a vocabulary size of 32,000 [cd063464c2209148f7d91cc76282ca6a]",
+  "citations": [
+    "cd063464c2209148f7d91cc76282ca6a"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "query": "tokenizer and vocabulary size used across experiments",
+      "filter": null,
+      "results": [
+        {
+          "id": "cd063464c2209148f7d91cc76282ca6a",
+          "text": "We use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 12,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 1705,
+            "end": 2523
+          },
+          "score": 0.03278688524590164,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "f0155c1081bf7e7720c54ae8ea66b12e",
+          "text": "Apart from those changes mentioned above, we use the same training procedure and hyperparameters as our baseline (AdaFactor optimizer, inverse square root learning rate schedule for pre-training, constant learning rate for fine-tuning, dropout regularization, vocabulary, etc.). For reference, these details are described in Section 2.\n\nThe results of this final set of experiments are shown in Table 14. Overall, we achieved state-of-the-art performance on 18 out of the 24 tasks we consider. As expected, our largest (11 billion parameter) model performed best among our model size variants across all tasks. Our T5-3B model variant did beat the previous state of the art in a few tasks, but scaling the model size to 11 billion parameters was the most important ingredient for achieving our best performance. We now analyze the results for each individual benchmark.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 38,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 762,
+            "end": 1631
+          },
+          "score": 0.0304147465437788,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "1d290b31e52af041daf2ea37bcb94399",
+          "text": "Our models are fine-tuned for 218 = 262,144 steps on all tasks. This value was chosen as a trade-off between the high-resource tasks (i.e. those with large data sets), which benefit from additional fine-tuning, and low-resource tasks (smaller data sets), which overfit quickly. During fine-tuning, we continue using batches with 128 length-512 sequences (i.e. 216 tokens per batch). We use a constant learning rate of 0.001 when fine-tuning. We save a checkpoint every 5,000 steps and report results on the model checkpoint corresponding to the highest validation performance. For models fine-tuned on multiple tasks, we choose the best checkpoint for each task independently. For all of the experiments except those in Section 3.7, we report results in the validation set to avoid performing model selection on the test set.\n\n3.1.3. Vocabulary",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 12,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 859,
+            "end": 1703
+          },
+          "score": 0.029857397504456328,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "1a89a28c8f855f22b29f8cc7183e6cbd",
+          "text": "“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 13,
+          "metadata": {
+            "section": [
+              "3. Experiments"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 637,
+            "end": 1637
+          },
+          "score": 0.028949545078577336,
+          "strategy": "tfidf"
+        },
+        {
+          "id": "a691c4003e0f821ad4e54becebe9bacf",
+          "text": "this case, we always count the model’s output as wrong, though we never observed this behavior in any of our trained models. Note that the choice of text prefix used for a given task is essentially a hyperparameter; we found that changing the exact wording of the prefix had limited impact and so did not perform extensive experiments into different prefix choices. A diagram of our text-to-text framework with a few input/output examples is shown in Figure 1. We provide full examples of preprocessed inputs for every task we studied in Appendix D.",
+          "source_id": "t5_jmlr_2020",
+          "source": "https://www.jmlr.org/papers/volume21/20-074/20-074.pdf",
+          "page": 8,
+          "metadata": {
+            "section": [
+              "2. Setup"
+            ],
+            "language": "en",
+            "year": "2020",
+            "document_type": "research_paper",
+            "page_kind": "pdf",
+            "version": "JMLR 21(140), 2020",
+            "start": 2434,
+            "end": 2983
+          },
+          "score": 0.028438886647841874,
+          "strategy": "tfidf"
+        }
+      ],
+      "context": "[cd063464c2209148f7d91cc76282ca6a | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 12]\nWe use SentencePiece (Kudo and Richardson, 2018) to encode text as WordPiece tokens (Sennrich et al., 2015; Kudo, 2018). For all experiments, we use a vocabulary of 32,000 wordpieces. Since we ultimately fine-tune our model on English to German, French, and Romaniantranslation, wealsorequirethatourvocabularycoversthesenon-Englishlanguages. To address this, we classified pages from the Common Crawl scrape used in C4 as German, French, and Romanian. Then, we trained our SentencePiece model on a mixture of 10 parts of English C4 data with 1 part each of data classified as German, French or Romanian. This vocabulary was shared across both the input and output of our model. Note that our vocabulary makes it so that our model can only process a predetermined, fixed set of languages.\n\n3.1.4. Unsupervised Objective\n\n[f0155c1081bf7e7720c54ae8ea66b12e | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 38]\nApart from those changes mentioned above, we use the same training procedure and hyperparameters as our baseline (AdaFactor optimizer, inverse square root learning rate schedule for pre-training, constant learning rate for fine-tuning, dropout regularization, vocabulary, etc.). For reference, these details are described in Section 2.\n\nThe results of this final set of experiments are shown in Table 14. Overall, we achieved state-of-the-art performance on 18 out of the 24 tasks we consider. As expected, our largest (11 billion parameter) model performed best among our model size variants across all tasks. Our T5-3B model variant did beat the previous state of the art in a few tasks, but scaling the model size to 11 billion parameters was the most important ingredient for achieving our best performance. We now analyze the results for each individual benchmark.\n\n[1d290b31e52af041daf2ea37bcb94399 | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 12]\nOur models are fine-tuned for 218 = 262,144 steps on all tasks. This value was chosen as a trade-off between the high-resource tasks (i.e. those with large data sets), which benefit from additional fine-tuning, and low-resource tasks (smaller data sets), which overfit quickly. During fine-tuning, we continue using batches with 128 length-512 sequences (i.e. 216 tokens per batch). We use a constant learning rate of 0.001 when fine-tuning. We save a checkpoint every 5,000 steps and report results on the model checkpoint corresponding to the highest validation performance. For models fine-tuned on multiple tasks, we choose the best checkpoint for each task independently. For all of the experiments except those in Section 3.7, we report results in the validation set to avoid performing model selection on the test set.\n\n3.1.3. Vocabulary\n\n[1a89a28c8f855f22b29f8cc7183e6cbd | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 13]\n“word dropout” regularization technique (Bowman et al., 2015), we design an objective that randomly samples and then drops out 15% of tokens in the input sequence. All consecutive spans of dropped-out tokens are replaced by a single sentinel token. Each sentinel token is assigned a token ID that is unique to the sequence. The sentinel IDs are special tokens which are added to our vocabulary and do not correspond to any wordpiece. The target then corresponds to all of the dropped-out spans of tokens, delimited by the same sentinel tokens used in the input sequence plus a final sentinel token to mark the end of the target sequence. Our choices to mask consecutive spans of tokens and only predict dropped-out tokens were made to reduce the computational cost of pre-training. We perform thorough investigation into pre-training objectives in Section 3.3. An example of the transformation resulting from applying this objective is shown in Figure 2. We empirically compare this objective to many\n\n[a691c4003e0f821ad4e54becebe9bacf | https://www.jmlr.org/papers/volume21/20-074/20-074.pdf | page 8]\nthis case, we always count the model’s output as wrong, though we never observed this behavior in any of our trained models. Note that the choice of text prefix used for a given task is essentially a hyperparameter; we found that changing the exact wording of the prefix had limited impact and so did not perform extensive experiments into different prefix choices. A diagram of our text-to-text framework with a few input/output examples is shown in Figure 1. We provide full examples of preprocessed inputs for every task we studied in Appendix D.",
+      "context_ids": [
+        "cd063464c2209148f7d91cc76282ca6a",
+        "f0155c1081bf7e7720c54ae8ea66b12e",
+        "1d290b31e52af041daf2ea37bcb94399",
+        "1a89a28c8f855f22b29f8cc7183e6cbd",
+        "a691c4003e0f821ad4e54becebe9bacf"
+      ]
+    },
+    {
+      "event": "answer"
+    }
+  ],
+  "model_calls": [
+    {
+      "duration_seconds": 2.4625561000002563,
+      "prompt_eval_count": 164,
+      "eval_count": 16,
+      "action": {
+        "action": "search",
+        "query": "tokenizer and vocabulary size used across experiments"
+      }
+    },
+    {
+      "duration_seconds": 39.27196920000006,
+      "prompt_eval_count": 1416,
+      "eval_count": 52,
+      "action": {
+        "action": "answer",
+        "answer": "SentencePiece (Kudo and Richardson, 2018) tokenizer with a vocabulary size of 32,000",
+        "citations": [
+          "cd063464c2209148f7d91cc76282ca6a"
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 41.83620250000058
+}
